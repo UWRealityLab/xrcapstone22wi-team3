@@ -1,5 +1,5 @@
 # SITE CONFIGURATION
-baseurl: "xrcapstone22wi-team3" # the subpath of your site, e.g. /blog
+baseurl: "/xrcapstone22wi-team3" # the subpath of your site, e.g. /blog
 url: "https://uwrealitylab.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
 # THEME-SPECIFIC CONFIGURATION
@@ -79,7 +79,10 @@ highlighter: rouge
 sass:
   sass_dir: _sass
   style: :compressed
-plugins: [jekyll-paginate]
-exclude:
-  - Gemfile
-  - Gemfile.lock
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
