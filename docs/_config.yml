@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
 baseurl: "/xrcapstone22wi-team3" # the subpath of your site, e.g. /blog
-url: "uwrealitylab.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://uwrealitylab.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
