@@ -1,11 +1,11 @@
 # SITE CONFIGURATION
 baseurl: "/xrcapstone22wi-team3"
-url: "https://rohanchandra.github.io/"
+url: "https://uwrealitylab.github.io/"
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Type Theme
+  title: TODO TEAM TITLE
   avatar: assets/img/avatar.png
   favicon: assets/favicon.ico
   gravatar: # Email MD5 hash
@@ -29,7 +29,7 @@ theme_settings:
   facebook:
   flickr:
   gitlab:
-  github: "rohanchandra/type-theme"
+  github: "UWRealityLab/xrcapstone22wi-team3"
   gitter:
   google_plus:
   instagram:
