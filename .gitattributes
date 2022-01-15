@@ -62,5 +62,5 @@ Assets/Scenes/Generated/*.prefab filter=lfs diff=lfs merge=lfs -text
 *.prefab linguist-generated
 *.unity linguist-generated
 
-# # Override patterns for anything in the docs folder
-docs/* -text
+# Ignore anything in docs for git lfs
+docs/** -text
