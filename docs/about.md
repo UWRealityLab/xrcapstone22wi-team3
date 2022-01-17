@@ -28,7 +28,7 @@ feature-img: "assets/img/sample_feature_img_2.png"
     </td>
     </tr>
     <tr>
-    <td style="border: none; text-align: center;">I know how to unicycle!</td>
+    <td style="border: none; text-align: center;">I am not a penguin!</td>
     <td style="border: none; text-align: center;">I am a penguin.</td>
     <td style="border: none; text-align: center;">I enjoy skateboarding and playing soccer in my free time!</td>
     <td style="border: none; text-align: center;">I did a project on Adélie penguins in 2nd grade!</td>
