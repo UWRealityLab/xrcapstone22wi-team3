@@ -36,5 +36,8 @@ feature-img: "assets/img/sample_feature_img_2.png"
 </tbody>
 </table>
 
+## Product Requirements Document
+[https://docs.google.com/document/d/15pT5VOqQDEEqjV9ceLqranmixzjIYcOh1tiId3Bp3YU/edit?usp=sharing](https://docs.google.com/document/d/15pT5VOqQDEEqjV9ceLqranmixzjIYcOh1tiId3Bp3YU/edit?usp=sharing){:target="_blank"}
+
 ## Image sources
 https://image.shutterstock.com/image-vector/baby-penguin-fat-flying-vector-260nw-1495607204.jpg
