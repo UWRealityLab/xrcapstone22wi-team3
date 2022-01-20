@@ -11,37 +11,35 @@ public class HandlebarHandle : XRBaseInteractable
     // Start is called before the first frame update
     void Start()
     {
-        
     }
-    
+
     // Check that a controller is interacting with the object
     private IXRSelectInteractor selectInteractor = null;
 
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
         base.OnSelectEntered(args);
-        Debug.Log("PullMeasurer: select entered: " + args.interactorObject);
+        Debug.Log("HandlebarHandle: select entered: " + args.interactorObject);
         selectInteractor = args.interactorObject;
     }
+
+    public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
+    {
+        base.ProcessInteractable(updatePhase);
     
-    // public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
-    // {
-    //     base.ProcessInteractable(updatePhase);
-    //
-    //     if (isSelected)
-    //     {
-    //         if (updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)
-    //         {
-    //             CheckForPull();
-    //         }
-    //     }
-    // }
+        if (isSelected)
+        {
+            if (updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)
+            {
+                Debug.Log("Handle bar being held by " + selectInteractor);
+            }
+        }
+    }
 
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("YEEEET");
-
+        
     }
 }
