@@ -30,7 +30,7 @@ feature-img: "assets/img/sample_feature_img_2.png"
     <tr>
     <td style="border: none; text-align: center;">I am not a penguin!</td>
     <td style="border: none; text-align: center;">Penguins are my favorite animal!</td>
-    <td style="border: none; text-align: center;">I enjoy skateboarding and playing soccer in my free time!</td>
+    <td style="border: none; text-align: center;">Happy Feet is one of my favorite movies!</td>
     <td style="border: none; text-align: center;">I did a project on Adélie penguins in 2nd grade!</td>
     </tr>
 </tbody>
