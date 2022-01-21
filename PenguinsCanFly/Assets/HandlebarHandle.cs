@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class HandlebarHandle : XRBaseInteractable
     
     public Transform thingToRotate = null;
     public float MAX_ROTATION_DEGREES = 35;
+    public float DEGREES_PER_SECOND = 40;
     
     // Start is called before the first frame update
     void Start()
@@ -71,20 +73,28 @@ public class HandlebarHandle : XRBaseInteractable
             // Do some smoothing
             // thingToRotate.rotation *= targetRotation;
         }
-        
     }
     
-        protected override void OnSelectEntered(SelectEnterEventArgs args)
-        {
-            base.OnSelectEntered(args);
-            Debug.Log("HandlebarHandle: select entered: " + args.interactorObject);
-            selectInteractor = args.interactorObject;
-        }
+    protected override void OnSelectExited(SelectExitEventArgs args)
+    {
+        base.OnSelectExited(args);
+        Debug.Log("HandlebarHandle: select exited: " + args.interactorObject);
+        selectInteractor = null;
+    }
 
 
     // Update is called once per frame
     void Update()
     {
-        
+        Vector3 currentAngle = thingToRotate.eulerAngles;
+        if (selectInteractor == null && Math.Abs(currentAngle.z - 360) > 0.01)
+        {
+            // TODO: write logic so that it doesn't unnecessary calculate angles. Basically only need to return when you let go
+            float amountToRotateZ = currentAngle.z <= MAX_ROTATION_DEGREES ? -currentAngle.z : 360 - currentAngle.z;
+            // float amountToRotateZ = Vector3.SignedAngle(currentAngle, Vector3.right, thingToRotate.forward);
+            thingToRotate.Rotate(new Vector3(0, 0, Math.Min(amountToRotateZ, MAX_ROTATION_DEGREES)) * Time.deltaTime);
+            Debug.Log("SAVE:returnAngle:" + amountToRotateZ);
+            Debug.Log("SAVE:objectRotation:" + thingToRotate.eulerAngles);
+        }
     }
 }
