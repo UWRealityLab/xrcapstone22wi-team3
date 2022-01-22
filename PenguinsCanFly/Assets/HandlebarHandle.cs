@@ -86,6 +86,7 @@ public class HandlebarHandle : XRBaseInteractable
     // Update is called once per frame
     void Update()
     {
+        // If hands are not grabbing the glider, return it to its original position
         Vector3 currentAngle = thingToRotate.eulerAngles;
         if (selectInteractor == null && Math.Abs(currentAngle.z - 360) > 0.01)
         {
