@@ -9,15 +9,11 @@ public class GliderController : MonoBehaviour
     
     public float speed = 12.5f;
     public float drag = 6;
-
-    public float DEGREE_ROTATION_SPEED = 5;
     
     public Rigidbody rb;
     public Transform gliderDirection;
 
-    // TODO: This seems like really really bad design, will probably break even if it's working
-    public HandlebarHandle handlebar;
-
+    // Pitch is up/down. Looking straight ahead is pitch 90. Pitch 60 tilts up, pitch 120 tilts down 
     public float totalPitchDegree;
     public float totalYawDegree;
     
@@ -64,79 +60,27 @@ public class GliderController : MonoBehaviour
         rb.velocity = gliderDirection.TransformDirection(localV);
         
         // Yaw camera globally
-        float totalYawRadian = (float) (totalYawDegree * Math.PI / 180);
-        Vector3 cameraTarget = new Vector3(Mathf.Sin(totalYawRadian), 0, Mathf.Cos(totalYawRadian));
-        Quaternion cameraTargetNewRotation = Quaternion.LookRotation(cameraTarget, Vector3.up);
+        Quaternion cameraTargetNewRotation = Quaternion.Euler(0, totalYawDegree, 0);
         transform.rotation = Quaternion.Slerp(transform.rotation, cameraTargetNewRotation, Time.deltaTime);
         
         // Pitch locally off of the camera yaw
-        float totalPitchRadian = (float) (totalPitchDegree * Math.PI / 180);
-        Vector3 gliderTarget = new Vector3(0, Mathf.Cos(totalPitchRadian), Mathf.Sin(totalPitchRadian));
-        Quaternion gliderTargetNewRotation = Quaternion.LookRotation(gliderTarget, Vector3.up);
+        Quaternion gliderTargetNewRotation = Quaternion.Euler(totalPitchDegree - 90, 0, 0);  // Subtract 90 since looking forward is 90
         gliderDirection.localRotation = Quaternion.Slerp(gliderDirection.localRotation, gliderTargetNewRotation, Time.deltaTime);
 
 
-
-        // Quaternion newRotation = Quaternion.LookRotation(target, Vector3.up);
-        // gliderDirection.rotation = Quaternion.Slerp(gliderDirection.rotation, newRotation, Time.deltaTime);
-            
-        // Vector3 target = new Vector3(Mathf.Sin(totalPitchRadian) * Mathf.Sin(totalYawRadian),
-        //                              Mathf.Cos(totalPitchRadian),
-        //                              Mathf.Sin(totalPitchRadian) * Mathf.Cos(totalYawRadian));
-        // Debug.Log("SAVE:Penguin Origin Aiming:" + target);
-        // Quaternion newRotation = Quaternion.LookRotation(target, Vector3.up);
-        // gliderDirection.rotation = Quaternion.Slerp(gliderDirection.rotation, newRotation, Time.deltaTime);
-        // Debug.Log("SAVE:CameraRotation:" + gliderDirection.rotation.eulerAngles + " z should ALWAYS be 0!" );
-
         targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
+        targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue);
         if (primaryButtonValue)
         {
             totalPitchDegree = 60;
+        }
+        else if (secondaryButtonValue)
+        {
+            totalPitchDegree = 120;
         }
         else
         {
             totalPitchDegree = 90;
         }
-
-        return;
-
-        // Match the turning of the glider to the handlebar
-        Vector3 currentAngle = handlebar.thingToRotate.eulerAngles;
-        Vector3 rot = transform.eulerAngles;
-        // float amountToRotate = currentAngle.z <= handlebar.MAX_ROTATION_DEGREES ? -currentAngle.z : 360 - currentAngle.z;
-        float amountToRotate = handlebar.goalZ;
-        // rot.y += amountToRotate * Time.deltaTime;
-        rot.y += amountToRotate;
-        
-        // targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
-        if (primaryButtonValue)
-        {
-            Debug.Log("PrimaryButton pressed on target device!");
-            Debug.Log("SAVE:xyAngle:" + transform.eulerAngles.x);
-            float amountToRotateX = -10 - transform.eulerAngles.x;  
-            // rot.x += -5 * Time.deltaTime;  // - goes down, + goes up
-            // rot.x += -5 * Time.deltaTime;
-            // rot.x += -5;
-            rot.x = 330;
-        }
-        else
-        {
-            // TODO: return to 0 code is actually stupid hard wut LOL
-            // // float amountToRotateX = 0 - transform.eulerAngles.x;
-            // if (transform.eulerAngles.x < 90)
-            // {
-            //     rot.x += -transform.eulerAngles.x * Time.deltaTime;
-            // }
-            // else
-            // {
-            //     rot.x += 360 - transform.eulerAngles.x * Time.deltaTime;
-            // }
-            // Debug.Log("SAVE:OurCurrentX:" + transform.eulerAngles.x);
-            rot.x = 0;
-        }
-        Debug.Log("SAVE:XYZ:" + transform.eulerAngles);
-
-        // transform.rotation = Quaternion.Euler(rot);
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(rot), Time.deltaTime);
     }
 }

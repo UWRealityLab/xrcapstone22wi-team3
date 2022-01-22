@@ -85,7 +85,7 @@ public class HandlebarHandle : XRBaseInteractable
         {
             goalZ = Math.Max(360 - MAX_ROTATION_DEGREES, goalZ);
         }
-        
+
         // Rotate handlebar so it matches the position of hand
         Vector3 localAngles = thingToRotate.localEulerAngles;
         Vector3 rot = new Vector3(localAngles.x, localAngles.y, goalZ);
@@ -100,28 +100,5 @@ public class HandlebarHandle : XRBaseInteractable
         {
             gliderController.totalYawDegree += (360 - localAngles.z) * Time.deltaTime;
         }
-        
-        
-        // If hands are not grabbing the glider, return it to its original position
-        // Vector3 currentAngle = thingToRotate.eulerAngles;
-        // if (selectInteractor == null)
-        // {
-        //     // TODO: write logic so that it doesn't unnecessary calculate angles. Basically only need to return when you let go
-        //     float amountToRotateZ = currentAngle.z <= MAX_ROTATION_DEGREES ? -currentAngle.z : 360 - currentAngle.z;
-        //     // float amountToRotateZ = Vector3.SignedAngle(currentAngle, Vector3.right, thingToRotate.forward);
-        //     // thingToRotate.Rotate(new Vector3(0, 0, Math.Min(amountToRotateZ, MAX_ROTATION_DEGREES)) * Time.deltaTime);
-        //     Vector3 rot = thingToRotate.eulerAngles;
-        //     rot.z = 0;
-        //     // Update rotation so it is closer to z = 0 (ie: level position)
-        //     thingToRotate.rotation = Quaternion.Slerp(thingToRotate.rotation, Quaternion.Euler(rot), Time.deltaTime);
-        //     
-        //     Debug.Log("SAVE:objectRotation:" + thingToRotate.eulerAngles);
-        // }
-        // else
-        // {
-        // Vector3 rot = thingToRotate.eulerAngles;
-        // rot.z = goalZ;
-        // thingToRotate.rotation = Quaternion.Slerp(thingToRotate.rotation, Quaternion.Euler(rot), Time.deltaTime);
-        // }
     }
 }
