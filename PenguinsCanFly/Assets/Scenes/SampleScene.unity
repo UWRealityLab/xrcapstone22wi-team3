@@ -400,7 +400,8 @@ MonoBehaviour:
       m_Calls: []
   thingToRotate: {fileID: 1309923734}
   MAX_ROTATION_DEGREES: 35
-  DEGREES_PER_SECOND: 40
+  gliderController: {fileID: 2078797938}
+  goalZ: 0
 --- !u!54 &80783226
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3938,5 +3939,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 12.5
   drag: 8
+  DEGREE_ROTATION_SPEED: 20
   rb: {fileID: 0}
   handlebar: {fileID: 80783225}
+  totalPitchDegree: 90
+  totalYawDegree: 0

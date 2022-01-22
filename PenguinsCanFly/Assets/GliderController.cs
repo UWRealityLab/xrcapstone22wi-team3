@@ -9,12 +9,16 @@ public class GliderController : MonoBehaviour
     
     public float speed = 12.5f;
     public float drag = 6;
+
+    public float DEGREE_ROTATION_SPEED = 5;
     
     public Rigidbody rb;
 
     // TODO: This seems like really really bad design, will probably break even if it's working
     public HandlebarHandle handlebar;
-    
+
+    public float totalPitchDegree;
+    public float totalYawDegree;
     
     private InputDevice targetDevice;
 
@@ -57,21 +61,48 @@ public class GliderController : MonoBehaviour
         Vector3 localV = transform.InverseTransformDirection(rb.velocity);
         localV.z = speed;
         rb.velocity = transform.TransformDirection(localV);
+        
+
+        float totalPitchRadian = (float) (totalPitchDegree * Math.PI / 180);
+        float totalYawRadian = (float) (totalYawDegree * Math.PI / 180);
+        Vector3 target = new Vector3(Mathf.Sin(totalPitchRadian) * Mathf.Sin(totalYawRadian),
+                                     Mathf.Cos(totalPitchRadian),
+                                     Mathf.Sin(totalPitchRadian) * Mathf.Cos(totalYawRadian));
+        Debug.Log("SAVE:Penguin Origin Aiming:" + target);
+        Quaternion newRotation = Quaternion.LookRotation(target, Vector3.up);
+        transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime);
+        Debug.Log("SAVE:CameraRotation:" + transform.rotation.eulerAngles + " z should ALWAYS be 0!" );
+        
+        targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
+        if (primaryButtonValue)
+        {
+            totalPitchDegree = 60;
+        }
+        else
+        {
+            totalPitchDegree = 90;
+        }
+
+        return;
 
         // Match the turning of the glider to the handlebar
         Vector3 currentAngle = handlebar.thingToRotate.eulerAngles;
         Vector3 rot = transform.eulerAngles;
-        float amountToRotate = currentAngle.z <= handlebar.MAX_ROTATION_DEGREES ? -currentAngle.z : 360 - currentAngle.z;
-        rot.y += amountToRotate * Time.deltaTime;
+        // float amountToRotate = currentAngle.z <= handlebar.MAX_ROTATION_DEGREES ? -currentAngle.z : 360 - currentAngle.z;
+        float amountToRotate = handlebar.goalZ;
+        // rot.y += amountToRotate * Time.deltaTime;
+        rot.y += amountToRotate;
         
-        targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
+        // targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
         if (primaryButtonValue)
         {
             Debug.Log("PrimaryButton pressed on target device!");
             Debug.Log("SAVE:xyAngle:" + transform.eulerAngles.x);
             float amountToRotateX = -10 - transform.eulerAngles.x;  
             // rot.x += -5 * Time.deltaTime;  // - goes down, + goes up
-            rot.x += -5 * Time.deltaTime;
+            // rot.x += -5 * Time.deltaTime;
+            // rot.x += -5;
+            rot.x = 330;
         }
         else
         {
@@ -88,7 +119,9 @@ public class GliderController : MonoBehaviour
             // Debug.Log("SAVE:OurCurrentX:" + transform.eulerAngles.x);
             rot.x = 0;
         }
-        
-        transform.rotation = Quaternion.Euler(rot);
+        Debug.Log("SAVE:XYZ:" + transform.eulerAngles);
+
+        // transform.rotation = Quaternion.Euler(rot);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(rot), Time.deltaTime);
     }
 }
