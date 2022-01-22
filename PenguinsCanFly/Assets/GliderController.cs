@@ -13,6 +13,7 @@ public class GliderController : MonoBehaviour
     public float DEGREE_ROTATION_SPEED = 5;
     
     public Rigidbody rb;
+    public Transform gliderDirection;
 
     // TODO: This seems like really really bad design, will probably break even if it's working
     public HandlebarHandle handlebar;
@@ -56,23 +57,37 @@ public class GliderController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Add speed forward
+        // Add speed forward based on glider direction
         rb.drag = drag;
-        Vector3 localV = transform.InverseTransformDirection(rb.velocity);
+        Vector3 localV = gliderDirection.InverseTransformDirection(rb.velocity);
         localV.z = speed;
-        rb.velocity = transform.TransformDirection(localV);
+        rb.velocity = gliderDirection.TransformDirection(localV);
         
-
-        float totalPitchRadian = (float) (totalPitchDegree * Math.PI / 180);
+        // Yaw camera globally
         float totalYawRadian = (float) (totalYawDegree * Math.PI / 180);
-        Vector3 target = new Vector3(Mathf.Sin(totalPitchRadian) * Mathf.Sin(totalYawRadian),
-                                     Mathf.Cos(totalPitchRadian),
-                                     Mathf.Sin(totalPitchRadian) * Mathf.Cos(totalYawRadian));
-        Debug.Log("SAVE:Penguin Origin Aiming:" + target);
-        Quaternion newRotation = Quaternion.LookRotation(target, Vector3.up);
-        transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime);
-        Debug.Log("SAVE:CameraRotation:" + transform.rotation.eulerAngles + " z should ALWAYS be 0!" );
+        Vector3 cameraTarget = new Vector3(Mathf.Sin(totalYawRadian), 0, Mathf.Cos(totalYawRadian));
+        Quaternion cameraTargetNewRotation = Quaternion.LookRotation(cameraTarget, Vector3.up);
+        transform.rotation = Quaternion.Slerp(transform.rotation, cameraTargetNewRotation, Time.deltaTime);
         
+        // Pitch locally off of the camera yaw
+        float totalPitchRadian = (float) (totalPitchDegree * Math.PI / 180);
+        Vector3 gliderTarget = new Vector3(0, Mathf.Cos(totalPitchRadian), Mathf.Sin(totalPitchRadian));
+        Quaternion gliderTargetNewRotation = Quaternion.LookRotation(gliderTarget, Vector3.up);
+        gliderDirection.localRotation = Quaternion.Slerp(gliderDirection.localRotation, gliderTargetNewRotation, Time.deltaTime);
+
+
+
+        // Quaternion newRotation = Quaternion.LookRotation(target, Vector3.up);
+        // gliderDirection.rotation = Quaternion.Slerp(gliderDirection.rotation, newRotation, Time.deltaTime);
+            
+        // Vector3 target = new Vector3(Mathf.Sin(totalPitchRadian) * Mathf.Sin(totalYawRadian),
+        //                              Mathf.Cos(totalPitchRadian),
+        //                              Mathf.Sin(totalPitchRadian) * Mathf.Cos(totalYawRadian));
+        // Debug.Log("SAVE:Penguin Origin Aiming:" + target);
+        // Quaternion newRotation = Quaternion.LookRotation(target, Vector3.up);
+        // gliderDirection.rotation = Quaternion.Slerp(gliderDirection.rotation, newRotation, Time.deltaTime);
+        // Debug.Log("SAVE:CameraRotation:" + gliderDirection.rotation.eulerAngles + " z should ALWAYS be 0!" );
+
         targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
         if (primaryButtonValue)
         {
