@@ -398,9 +398,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  thingToRotate: {fileID: 1309923734}
-  MAX_ROTATION_DEGREES: 35
-  gliderController: {fileID: 2078797938}
+  hangGliderRotatePoint: {fileID: 1309923734}
   goalZ: 0
 --- !u!54 &80783226
 Rigidbody:
@@ -1093,7 +1091,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0.1}
 --- !u!114 &185442101
 MonoBehaviour:
@@ -1328,7 +1326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345858376}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.74, z: 19.2}
+  m_LocalPosition: {x: 0, y: -1.2, z: 10.1}
   m_LocalScale: {x: 3.4752, y: 50.14429, z: 183.09799}
   m_Children:
   - {fileID: 1949694300}
@@ -2319,7 +2317,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0.1}
 --- !u!114 &1237787204
 MonoBehaviour:
@@ -2574,6 +2572,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1309923734}
+  - component: {fileID: 1309923735}
   m_Layer: 0
   m_Name: Hang glider
   m_TagString: Untagged
@@ -2597,6 +2596,20 @@ Transform:
   m_Father: {fileID: 2078797934}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1309923735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309923733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f27af14738f6d41a097649cbb37fbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gliderInfo: {fileID: 2078797938}
+  rightHandlebar: {fileID: 80783225}
 --- !u!1 &1434499568
 GameObject:
   m_ObjectHideFlags: 0

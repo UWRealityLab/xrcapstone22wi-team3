@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 
-public class GliderController : MonoBehaviour
+public class GliderInfo : MonoBehaviour
 {
     
     public float speed = 12.5f;
