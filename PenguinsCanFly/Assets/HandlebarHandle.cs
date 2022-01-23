@@ -1,8 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using Quaternion = UnityEngine.Quaternion;
+using Vector3 = UnityEngine.Vector3;
 
 public class HandlebarHandle : XRBaseInteractable
 {
@@ -35,32 +38,13 @@ public class HandlebarHandle : XRBaseInteractable
     
         if (isSelected)
         {
-
-            
-            // thingToRotate.RotateAround(rotationPivot.position, thingToRotate.forward, 1);
-            // thingToRotate.RotateAround(rotationPivot.position, ); 
-            // Quaternion targetRotation = Quaternion.Euler(thingToRotate.rotation.eulerAngles.x,
-            //                                              thingToRotate.rotation.eulerAngles.y,
-            //                                              selectInteractor.transform.rotation.eulerAngles.z);
-            // thingToRotate.rotation = Quaternion.RotateTowards(thingToRotate.rotation, targetRotation, 5);
-            //
-            // if (updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)
-            // {
-            //     Debug.Log("Degree " + targetRotation.eulerAngles);
-            // }
-
+            // We move hand position and right to the same plane defined by the local forward vector and then compute angle
+            // to get the angle we want to be rotated
             Vector3 relativePos = selectInteractor.transform.position - thingToRotate.position;
-            // Vector3 relativePos = thingToRotate.InverseTransformDirection(selectInteractor.transform.position);
-            // Vector3 relativeYPos = new Vector3(relativePos.x, relativePos.y, 0);
-            // Vector3 
-
             Vector3 projectedVector = Vector3.ProjectOnPlane(relativePos, thingToRotate.forward);
-            
             // Note that because it is signed, it will be -180 < val < 180
-            float angleDifferenceTurn = Vector3.SignedAngle(thingToRotate.right, projectedVector, thingToRotate.forward);
-            goalZ = thingToRotate.localEulerAngles.z + angleDifferenceTurn;
-            Debug.Log("SAVE:angleDifferenceTurn:" + angleDifferenceTurn);
-            Debug.Log("SAVE:goalZValue:" + goalZ);
+            float rotationGoal = Vector3.SignedAngle(Vector3.up, projectedVector, thingToRotate.forward) + 90;
+            goalZ = Math.Min(Math.Max(rotationGoal, -MAX_ROTATION_DEGREES), MAX_ROTATION_DEGREES);
         }
     }
     
@@ -76,16 +60,6 @@ public class HandlebarHandle : XRBaseInteractable
     // Update is called once per frame
     void Update()
     {
-        // Make sure that goalZ is within bounds (TODO: this solution is buggy sadly bc of euler angles...)
-        if (goalZ <= 180)
-        {
-            goalZ = Math.Min(MAX_ROTATION_DEGREES, goalZ);
-        }
-        else
-        {
-            goalZ = Math.Max(360 - MAX_ROTATION_DEGREES, goalZ);
-        }
-
         // Rotate handlebar so it matches the position of hand
         Vector3 localAngles = thingToRotate.localEulerAngles;
         Vector3 rot = new Vector3(localAngles.x, localAngles.y, goalZ);

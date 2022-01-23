@@ -1,0 +1,103 @@
+warning: LF will be replaced by CRLF in PenguinsCanFly/ProjectSettings/EditorBuildSettings.asset.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in PenguinsCanFly/ProjectSettings/ProjectSettings.asset.
+The file will have its original line endings in your working directory.
+[1mdiff --git a/PenguinsCanFly/Assets/HandlebarHandle.cs b/PenguinsCanFly/Assets/HandlebarHandle.cs[m
+[1mindex f0e9595..c22097d 100644[m
+[1m--- a/PenguinsCanFly/Assets/HandlebarHandle.cs[m
+[1m+++ b/PenguinsCanFly/Assets/HandlebarHandle.cs[m
+[36m@@ -1,8 +1,11 @@[m
+ using System;[m
+ using System.Collections;[m
+ using System.Collections.Generic;[m
+[32m+[m[32musing System.Numerics;[m
+ using UnityEngine;[m
+ using UnityEngine.XR.Interaction.Toolkit;[m
+[32m+[m[32musing Quaternion = UnityEngine.Quaternion;[m
+[32m+[m[32musing Vector3 = UnityEngine.Vector3;[m
+ [m
+ public class HandlebarHandle : XRBaseInteractable[m
+ {[m
+[36m@@ -35,31 +38,17 @@[m [mpublic class HandlebarHandle : XRBaseInteractable[m
+     [m
+         if (isSelected)[m
+         {[m
+[31m-[m
+[31m-            [m
+[31m-            // thingToRotate.RotateAround(rotationPivot.position, thingToRotate.forward, 1);[m
+[31m-            // thingToRotate.RotateAround(rotationPivot.position, ); [m
+[31m-            // Quaternion targetRotation = Quaternion.Euler(thingToRotate.rotation.eulerAngles.x,[m
+[31m-            //                                              thingToRotate.rotation.eulerAngles.y,[m
+[31m-            //                                              selectInteractor.transform.rotation.eulerAngles.z);[m
+[31m-            // thingToRotate.rotation = Quaternion.RotateTowards(thingToRotate.rotation, targetRotation, 5);[m
+[31m-            //[m
+[31m-            // if (updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)[m
+[31m-            // {[m
+[31m-            //     Debug.Log("Degree " + targetRotation.eulerAngles);[m
+[31m-            // }[m
+[31m-[m
+[32m+[m[32m            // We move hand position and right to the same plane defined by the local forward vector and then compute angle[m
+[32m+[m[32m            // to get the angle we want to be rotated[m
+             Vector3 relativePos = selectInteractor.transform.position - thingToRotate.position;[m
+[31m-            // Vector3 relativePos = thingToRotate.InverseTransformDirection(selectInteractor.transform.position);[m
+[31m-            // Vector3 relativeYPos = new Vector3(relativePos.x, relativePos.y, 0);[m
+[31m-            // Vector3 [m
+[31m-[m
+[31m-            Vector3 projectedVector = Vector3.ProjectOnPlane(relativePos, thingToRotate.forward);[m
+[31m-            [m
+[32m+[m[32m            Vector3 localForwardDirection = thingToRotate.forward;[m
+[32m+[m[32m            Vector3 projectedVector = Vector3.ProjectOnPlane(relativePos, localForwardDirection);[m
+[32m+[m[32m            Vector3 rightOnSamePlane = Vector3.ProjectOnPlane(Vector3.right, localForwardDirection);[m
+             // Note that because it is signed, it will be -180 < val < 180[m
+[31m-            float angleDifferenceTurn = Vector3.SignedAngle(thingToRotate.right, projectedVector, thingToRotate.forward);[m
+[31m-            goalZ = thingToRotate.localEulerAngles.z + angleDifferenceTurn;[m
+[31m-            Debug.Log("SAVE:angleDifferenceTurn:" + angleDifferenceTurn);[m
+[32m+[m[32m            float goalRotation = Vector3.SignedAngle(rightOnSamePlane, projectedVector, localForwardDirection);[m
+[32m+[m[32m            goalZ = goalRotation;[m
+[32m+[m
+[32m+[m[32m            float testValue = Vector3.SignedAngle(Vector3.up, projectedVector, localForwardDirection);[m
+             Debug.Log("SAVE:goalZValue:" + goalZ);[m
+         }[m
+     }[m
+[36m@@ -76,15 +65,15 @@[m [mpublic class HandlebarHandle : XRBaseInteractable[m
+     // Update is called once per frame[m
+     void Update()[m
+     {[m
+[31m-        // Make sure that goalZ is within bounds (TODO: this solution is buggy sadly bc of euler angles...)[m
+[31m-        if (goalZ <= 180)[m
+[31m-        {[m
+[31m-            goalZ = Math.Min(MAX_ROTATION_DEGREES, goalZ);[m
+[31m-        }[m
+[31m-        else[m
+[31m-        {[m
+[31m-            goalZ = Math.Max(360 - MAX_ROTATION_DEGREES, goalZ);[m
+[31m-        }[m
+[32m+[m[32m        // // Make sure that goalZ is within bounds (TODO: this solution is buggy sadly bc of euler angles...)[m
+[32m+[m[32m        // if (goalZ <= 180)[m
+[32m+[m[32m        // {[m
+[32m+[m[32m        //     goalZ = Math.Min(MAX_ROTATION_DEGREES, goalZ);[m
+[32m+[m[32m        // }[m
+[32m+[m[32m        // else[m
+[32m+[m[32m        // {[m
+[32m+[m[32m        //     goalZ = Math.Max(360 - MAX_ROTATION_DEGREES, goalZ);[m
+[32m+[m[32m        // }[m
+ [m
+         // Rotate handlebar so it matches the position of hand[m
+         Vector3 localAngles = thingToRotate.localEulerAngles;[m
+[1mdiff --git a/PenguinsCanFly/ProjectSettings/ProjectSettings.asset b/PenguinsCanFly/ProjectSettings/ProjectSettings.asset[m
+[1mindex f349d53..32465a1 100644[m
+[1m--- a/PenguinsCanFly/ProjectSettings/ProjectSettings.asset[m
+[1m+++ b/PenguinsCanFly/ProjectSettings/ProjectSettings.asset[m
+[36m@@ -311,6 +311,12 @@[m [mPlayerSettings:[m
+   - {fileID: 0}[m
+   - {fileID: 0}[m
+   - {fileID: 0}[m
+[32m+[m[32m  - {fileID: 0}[m
+[32m+[m[32m  - {fileID: 0}[m
+[32m+[m[32m  - {fileID: 0}[m
+[32m+[m[32m  - {fileID: 0}[m
+[32m+[m[32m  - {fileID: 0}[m
+[32m+[m[32m  - {fileID: 0}[m
+   - {fileID: 11400000, guid: 8383bc818588f794f82d39eafdf30719, type: 2}[m
+   - {fileID: 0}[m
+   - {fileID: -8158722226129811354, guid: 76fd00d40ec5aca4781936bf3d94abd7, type: 2}[m
