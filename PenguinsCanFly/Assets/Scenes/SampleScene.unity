@@ -3940,10 +3940,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 12.5
   drag: 8
-  DEGREE_ROTATION_SPEED: 20
   rb: {fileID: 0}
   gliderDirection: {fileID: 2088056303}
-  handlebar: {fileID: 80783225}
   totalPitchDegree: 90
   totalYawDegree: 0
 --- !u!1 &2088056302

@@ -77,10 +77,13 @@ public class HandlebarHandle : XRBaseInteractable
     {
         // Rotate handlebar so it matches the position of hand
         Vector3 localAngles = thingToRotate.localEulerAngles;
-        Vector3 rot = new Vector3(localAngles.x, localAngles.y, goalZ);
+        // Vector3 rot = new Vector3(localAngles.x, localAngles.y, goalZ);  // Uncomment and use this instead to not rotate with pitch
+        // TODO: this might not be smooth since it pretends the axis are independent when they are not. 
+        Vector3 rot = new Vector3(0.75f * (gliderController.totalPitchDegree - 90), 0, goalZ);  
+
         Debug.Log("SAVE:Is this number always 0:" + rot.y);
         thingToRotate.localRotation = Quaternion.Slerp(thingToRotate.localRotation, Quaternion.Euler(rot), Time.deltaTime);
-
+        
         // TODO: remove magic numbers
         // Change yaw based on the local rotation so glider actually turns
         if (localAngles.z >= 5 && localAngles.z < MAX_ROTATION_DEGREES)
