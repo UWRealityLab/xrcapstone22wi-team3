@@ -13,11 +13,12 @@ public class HandlebarHandle : XRBaseInteractable
     
     public Transform hangGliderRotatePoint = null;
     
-    public float goalZ = 0;
+    public float goalZ;
 
     // Start is called before the first frame update
     void Start()
     {
+        goalZ = -90;
     }
 
     // Check that a controller is interacting with the object
@@ -41,23 +42,22 @@ public class HandlebarHandle : XRBaseInteractable
             Vector3 relativePos = selectInteractor.transform.position - hangGliderRotatePoint.position;
             Vector3 projectedVector = Vector3.ProjectOnPlane(relativePos, hangGliderRotatePoint.forward);
             // Note that because it is signed, it will be -180 < val < 180
-            float rotationGoal = Vector3.SignedAngle(Vector3.up, projectedVector, hangGliderRotatePoint.forward) + 90;
+            float rotationGoal = Vector3.SignedAngle(Vector3.up, projectedVector, hangGliderRotatePoint.forward);
 
-            // -90 is to the right since angle is measured from up -90 to right
-            //     0                                     90
-            // 90 -|- -90   after +90 adjustment    180 -|- 0
-            //    180                                   270 -45
-            if (rotationGoal < -GliderModelController.MAX_ROTATION_DEGREES || rotationGoal > 180)  // Need to custom write for balance
-            {
-                rotationGoal = -GliderModelController.MAX_ROTATION_DEGREES;
-            }
-            else
-            {
-                rotationGoal = Math.Min(GliderModelController.MAX_ROTATION_DEGREES, rotationGoal);
-            }
+            // // -90 is to the right since angle is measured from up -90 to right
+            // //     0                                     90
+            // // 90 -|- -90   after +90 adjustment    180 -|- 0
+            // //    180                                   270 -45
+            // if (rotationGoal < -GliderModelController.MAX_ROTATION_DEGREES || rotationGoal > 180)  // Need to custom write for balance
+            // {
+            //     rotationGoal = -GliderModelController.MAX_ROTATION_DEGREES;
+            // }
+            // else
+            // {
+            //     rotationGoal = Math.Min(GliderModelController.MAX_ROTATION_DEGREES, rotationGoal);
+            // }
 
             goalZ = rotationGoal;
-            Debug.Log("SAVE:goalZ:" + goalZ);
         }
     }
     
@@ -66,7 +66,7 @@ public class HandlebarHandle : XRBaseInteractable
         base.OnSelectExited(args);
         Debug.Log("HandlebarHandle: select exited: " + args.interactorObject);
         selectInteractor = null;
-        goalZ = 0;
+        goalZ = -90;
     }
 
 
