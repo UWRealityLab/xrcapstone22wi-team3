@@ -83,4 +83,5 @@ public class GliderInfo : MonoBehaviour
             totalPitchDegree = 90;
         }
     }
+    
 }

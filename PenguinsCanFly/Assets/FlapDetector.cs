@@ -32,4 +32,5 @@ public class FlapDetector : MonoBehaviour
         rb.velocity = gliderDirection.TransformDirection(localV);
         Debug.Log("SAVE:speed:" + localV.z);
     }
+    
 }
