@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GestureBox : MonoBehaviour
 {
-    public bool isTouched;
+    private bool _isTouched;
     
     // Start is called before the first frame update
     void Start()
@@ -19,15 +19,20 @@ public class GestureBox : MonoBehaviour
        
     }
 
+    public bool IsTouched()
+    {
+        return _isTouched;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         // TODO: check if touched by a left or right hand controller
-        isTouched = true;
+        _isTouched = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
         // TODO: check if touched by a left or right hand controller
-        isTouched = false;
+        _isTouched = false;
     }
 }

@@ -21,12 +21,12 @@ public class GestureGroup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (box1.isTouched && box2.isTouched && !_prevFrameWasHit)
+        if (box1.IsTouched() && box2.IsTouched() && !_prevFrameWasHit)
         {
             _hitCount += 1;
             _prevFrameWasHit = true;
         }
-        else if (!box1.isTouched && !box2.isTouched)
+        else if (!box1.IsTouched() && !box2.IsTouched())
         {
             // player has to move both hands out of the collision zone to register the next flap
             _prevFrameWasHit = false;
