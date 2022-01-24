@@ -44,11 +44,20 @@ public class GliderModelController : MonoBehaviour
         Vector3 rot = new Vector3(0.75f * (gliderInfo.totalPitchDegree - 90), 0, goalRotation);  
 
         Debug.Log("SAVE:Is this number always 0:" + rot.y);
-        transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(rot), Time.deltaTime);
+        // 
+        // transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(rot), Time.deltaTime);
         
         // Below is reference code for if we want to snap handlebar to hand
-        // Quaternion smoothTiltRotation = Quaternion.Slerp(thingToRotate.localRotation, Quaternion.Euler(rot), Time.deltaTime);
-        // thingToRotate.localRotation = Quaternion.Euler(smoothTiltRotation.eulerAngles.x, smoothTiltRotation.eulerAngles.y, goalZ);
+        Quaternion finalLocalRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(rot), Time.deltaTime);
+
+        // If we want the bar to snap faster to hand movement
+        // Current setup: only snap quickly if BOTH hands are on it, otherwise, you don't have as much control
+        if (leftHandlebar.IsBeingHeld() && rightHandlebar.IsBeingHeld())
+        {
+            finalLocalRotation = Quaternion.Euler(finalLocalRotation.eulerAngles.x, finalLocalRotation.eulerAngles.y, goalRotation);
+        }
+
+        transform.localRotation = finalLocalRotation;
         
         // TODO: remove magic numbers
         // Change yaw based on the local rotation so glider actually turns
