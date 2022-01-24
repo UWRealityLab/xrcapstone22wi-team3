@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlapDetector : MonoBehaviour
+public class LaunchController : MonoBehaviour
 {
     public GestureGroup top;
     public GestureGroup bottom;
