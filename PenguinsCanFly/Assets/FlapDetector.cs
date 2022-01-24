@@ -11,7 +11,7 @@ public class FlapDetector : MonoBehaviour
     public Rigidbody rb;
     public Transform gliderDirection;
     
-    private static float FLAP_SPEED_MULTIPLIER = 0.6f;
+    private static float FLAP_SPEED_MULTIPLIER = 0.8f;
     
     // Start is called before the first frame update
     void Start()
@@ -30,5 +30,6 @@ public class FlapDetector : MonoBehaviour
         Vector3 localV = gliderDirection.InverseTransformDirection(rb.velocity);
         localV.z = Math.Min(topCount, bottomCount) * FLAP_SPEED_MULTIPLIER;
         rb.velocity = gliderDirection.TransformDirection(localV);
+        Debug.Log("SAVE:speed:" + localV.z);
     }
 }
