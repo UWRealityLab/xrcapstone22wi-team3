@@ -11,6 +11,7 @@ public class FlapDetector : MonoBehaviour
     public Rigidbody penguinXRORigidbody;
     public Transform gliderDirection;
     
+    // TODO: different way of changing speed
     private static float FLAP_SPEED_MULTIPLIER = 3f;
     
     // Start is called before the first frame update
@@ -32,5 +33,9 @@ public class FlapDetector : MonoBehaviour
         penguinXRORigidbody.velocity = gliderDirection.TransformDirection(localV);
         Debug.Log("SAVE:speed:" + localV.z);
     }
-    
+
+    private void OnEnable()
+    {
+        penguinXRORigidbody.useGravity = false;
+    }
 }

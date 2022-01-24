@@ -22,9 +22,13 @@ public class GameController : MonoBehaviour
         if (_instance != null && _instance != this)
         {
             Destroy(gameObject);
-        } else {
-            _instance = this;
+            return;
         }
+        _instance = this;
+
+        // Disable everything on awake so that enabling works later
+        glidingController.SetActive(false);
+        launchController.SetActive(false);
     }
 
     // Start is called before the first frame update

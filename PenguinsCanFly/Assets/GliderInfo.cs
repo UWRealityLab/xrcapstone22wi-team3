@@ -83,4 +83,8 @@ public class GliderInfo : MonoBehaviour
         }
     }
     
+    private void OnEnable()
+    {
+        penguinXRORigidbody.useGravity = true;
+    }
 }
