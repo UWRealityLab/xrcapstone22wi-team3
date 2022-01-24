@@ -24,6 +24,10 @@ public class HandlebarHandle : XRBaseInteractable
     // Check that a controller is interacting with the object
     private IXRSelectInteractor selectInteractor = null;
 
+    public bool IsBeingHeld()
+    {
+        return selectInteractor != null;
+    }
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
         base.OnSelectEntered(args);
