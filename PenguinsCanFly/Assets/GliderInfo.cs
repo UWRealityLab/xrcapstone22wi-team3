@@ -10,10 +10,10 @@ public class GliderInfo : MonoBehaviour
     public float speed = 12.5f;
     public float drag = 6;
     
-    public Rigidbody rb;
+    public Rigidbody penguinXRORigidbody;
     public Transform gliderDirection;
 
-    public Transform penguinXROriginTransform;
+    public Transform penguinXROTransform;
 
     // Pitch is up/down. Looking straight ahead is pitch 90. Pitch 60 tilts up, pitch 120 tilts down 
     public float totalPitchDegree;
@@ -53,14 +53,14 @@ public class GliderInfo : MonoBehaviour
     void Update()
     {
         // Add speed forward based on glider direction
-        rb.drag = drag;
-        Vector3 localV = gliderDirection.InverseTransformDirection(rb.velocity);
+        penguinXRORigidbody.drag = drag;
+        Vector3 localV = gliderDirection.InverseTransformDirection(penguinXRORigidbody.velocity);
         localV.z = speed;
-        rb.velocity = gliderDirection.TransformDirection(localV);
+        penguinXRORigidbody.velocity = gliderDirection.TransformDirection(localV);
         
         // Yaw camera globally
         Quaternion cameraTargetNewRotation = Quaternion.Euler(0, totalYawDegree, 0);
-        penguinXROriginTransform.rotation = Quaternion.Slerp(penguinXROriginTransform.rotation, cameraTargetNewRotation, Time.deltaTime);
+        penguinXROTransform.rotation = Quaternion.Slerp(penguinXROTransform.rotation, cameraTargetNewRotation, Time.deltaTime);
         
         // Pitch locally off of the camera yaw
         Quaternion gliderTargetNewRotation = Quaternion.Euler(totalPitchDegree - 90, 0, 0);  // Subtract 90 since looking forward is 90

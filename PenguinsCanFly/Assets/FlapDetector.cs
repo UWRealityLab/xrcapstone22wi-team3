@@ -8,7 +8,7 @@ public class FlapDetector : MonoBehaviour
     public GestureGroup top;
     public GestureGroup bottom;
     
-    public Rigidbody rb;
+    public Rigidbody penguinXRORigidbody;
     public Transform gliderDirection;
     
     private static float FLAP_SPEED_MULTIPLIER = 3f;
@@ -27,9 +27,9 @@ public class FlapDetector : MonoBehaviour
         Debug.Log("SAVE:flaps: top-" + topCount + " bottom-" + bottomCount + " min-" + Math.Min(topCount, bottomCount));
 
         // TODO: if you stop flapping, should your speed increase
-        Vector3 localV = gliderDirection.InverseTransformDirection(rb.velocity);
+        Vector3 localV = gliderDirection.InverseTransformDirection(penguinXRORigidbody.velocity);
         localV.z = Math.Min(topCount, bottomCount) * FLAP_SPEED_MULTIPLIER;
-        rb.velocity = gliderDirection.TransformDirection(localV);
+        penguinXRORigidbody.velocity = gliderDirection.TransformDirection(localV);
         Debug.Log("SAVE:speed:" + localV.z);
     }
     

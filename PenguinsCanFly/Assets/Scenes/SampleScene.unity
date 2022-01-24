@@ -2049,7 +2049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {fileID: 40919616}
   bottom: {fileID: 854905464}
-  rb: {fileID: 2078797937}
+  penguinXRORigidbody: {fileID: 2078797937}
   gliderDirection: {fileID: 2088056303}
 --- !u!1 &476343502
 GameObject:
@@ -4649,9 +4649,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 12.5
   drag: 6
-  rb: {fileID: 2078797937}
+  penguinXRORigidbody: {fileID: 2078797937}
   gliderDirection: {fileID: 2088056303}
-  penguinXROriginTransform: {fileID: 2078797934}
+  penguinXROTransform: {fileID: 2078797934}
   totalPitchDegree: 90
   totalYawDegree: 0
 --- !u!4 &1980159961
