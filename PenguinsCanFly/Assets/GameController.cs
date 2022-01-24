@@ -50,7 +50,8 @@ public class GameController : MonoBehaviour
     public void StartGlidingMode()
     {
         Debug.Log("GLIDING STARTED!!");
+        // TODO: refactor gldiing stuff
         _glidingScript.enabled = true;
-        _launchScript.enabled = false;
+        launchController.SetActive(false);
     }
 }
