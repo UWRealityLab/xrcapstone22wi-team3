@@ -13,6 +13,8 @@ public class GliderInfo : MonoBehaviour
     public Rigidbody rb;
     public Transform gliderDirection;
 
+    public Transform penguinXROriginTransform;
+
     // Pitch is up/down. Looking straight ahead is pitch 90. Pitch 60 tilts up, pitch 120 tilts down 
     public float totalPitchDegree;
     public float totalYawDegree;
@@ -23,9 +25,6 @@ public class GliderInfo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        
-        
         var inputDevices = new List<UnityEngine.XR.InputDevice>();
         UnityEngine.XR.InputDevices.GetDevices(inputDevices);
 
@@ -61,7 +60,7 @@ public class GliderInfo : MonoBehaviour
         
         // Yaw camera globally
         Quaternion cameraTargetNewRotation = Quaternion.Euler(0, totalYawDegree, 0);
-        transform.rotation = Quaternion.Slerp(transform.rotation, cameraTargetNewRotation, Time.deltaTime);
+        penguinXROriginTransform.rotation = Quaternion.Slerp(penguinXROriginTransform.rotation, cameraTargetNewRotation, Time.deltaTime);
         
         // Pitch locally off of the camera yaw
         Quaternion gliderTargetNewRotation = Quaternion.Euler(totalPitchDegree - 90, 0, 0);  // Subtract 90 since looking forward is 90

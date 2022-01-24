@@ -11,7 +11,7 @@ public class FlapDetector : MonoBehaviour
     public Rigidbody rb;
     public Transform gliderDirection;
     
-    private static float FLAP_SPEED_MULTIPLIER = 0.8f;
+    private static float FLAP_SPEED_MULTIPLIER = 3f;
     
     // Start is called before the first frame update
     void Start()
