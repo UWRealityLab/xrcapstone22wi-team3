@@ -6,10 +6,7 @@ public class GameController : MonoBehaviour
 {
     public GameObject launchController;
     public GameObject glidingController;
-
-    private MonoBehaviour _launchScript;
-    private MonoBehaviour _glidingScript;
-
+    
     private static GameController _instance;
 
     public static GameController Instance
@@ -33,25 +30,20 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _launchScript = launchController.GetComponent<FlapDetector>();
-        _glidingScript = glidingController.GetComponent<GliderInfo>();
-
-        _launchScript.enabled = true;
-        _glidingScript.enabled = false;
+        glidingController.SetActive(false);
+        launchController.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        // TODO: remove
-        Debug.Log("SAVE:enabled:launch-" + _launchScript.enabled + "...gliding-" + _glidingScript.enabled);
+
     }
 
     public void StartGlidingMode()
     {
         Debug.Log("GLIDING STARTED!!");
-        // TODO: refactor gldiing stuff
-        _glidingScript.enabled = true;
+        glidingController.SetActive(true);
         launchController.SetActive(false);
     }
 }
