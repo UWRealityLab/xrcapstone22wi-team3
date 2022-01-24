@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Resources;
 using UnityEngine;
 
-public class FlapGroup : MonoBehaviour
+public class GestureGroup : MonoBehaviour
 {
-    public GestureBox left;
+    public GestureBox box1;
 
-    public GestureBox right;
+    public GestureBox box2;
 
     private int _hitCount = 0;
     private bool _prevFrameWasHit = false;
@@ -21,12 +21,12 @@ public class FlapGroup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (left.isTouched && right.isTouched && !_prevFrameWasHit)
+        if (box1.isTouched && box2.isTouched && !_prevFrameWasHit)
         {
             _hitCount += 1;
             _prevFrameWasHit = true;
         }
-        else if (!left.isTouched && !right.isTouched)
+        else if (!box1.isTouched && !box2.isTouched)
         {
             // player has to move both hands out of the collision zone to register the next flap
             _prevFrameWasHit = false;

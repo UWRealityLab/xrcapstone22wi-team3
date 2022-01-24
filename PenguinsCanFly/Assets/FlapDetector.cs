@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class FlapDetector : MonoBehaviour
 {
-    public FlapGroup top;
+    public GestureGroup top;
 
-    public FlapGroup bottom;
+    public GestureGroup bottom;
     
     // Start is called before the first frame update
     void Start()
