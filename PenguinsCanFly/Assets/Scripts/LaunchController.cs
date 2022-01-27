@@ -10,6 +10,8 @@ public class LaunchController : MonoBehaviour
     
     public Rigidbody penguinXRORigidbody;
     public Transform gliderDirection;
+
+    public float speed = 0f;
     
     // TODO: different way of changing speed
     private static float FLAP_SPEED_MULTIPLIER = 3f;
@@ -25,12 +27,14 @@ public class LaunchController : MonoBehaviour
     {
         int topCount = top.GetHitCount();
         int bottomCount = bottom.GetHitCount();
-        Debug.Log("SAVE:flaps: top-" + topCount + " bottom-" + bottomCount + " min-" + Math.Min(topCount, bottomCount));
 
         // TODO: if you stop flapping, should your speed increase
+        speed = Math.Min(topCount, bottomCount) * FLAP_SPEED_MULTIPLIER;
+        
         Vector3 localV = gliderDirection.InverseTransformDirection(penguinXRORigidbody.velocity);
-        localV.z = Math.Min(topCount, bottomCount) * FLAP_SPEED_MULTIPLIER;
+        localV.z = speed;
         penguinXRORigidbody.velocity = gliderDirection.TransformDirection(localV);
+        
         Debug.Log("SAVE:speed:" + localV.z);
     }
 

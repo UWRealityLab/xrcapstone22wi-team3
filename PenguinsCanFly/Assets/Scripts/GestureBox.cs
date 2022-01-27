@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GestureBox : MonoBehaviour
 {
+    private const string ColliderTag = "Player";
     private bool _isTouched;
     
     // Start is called before the first frame update
@@ -27,12 +29,18 @@ public class GestureBox : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // TODO: check if touched by a left or right hand controller
-        _isTouched = true;
+        if (other.gameObject.CompareTag(ColliderTag))
+        {
+            _isTouched = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         // TODO: check if touched by a left or right hand controller
-        _isTouched = false;
+        if (other.gameObject.CompareTag(ColliderTag))
+        {
+            _isTouched = false;
+        }
     }
 }

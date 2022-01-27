@@ -19,7 +19,9 @@ public class CliffHitDetector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // TODO: check if player
-        GameController.Instance.StartGlidingMode();
+        if (other.gameObject.CompareTag("Player"))
+        {
+            GameController.Instance.StartGlidingMode();
+        }
     }
 }
