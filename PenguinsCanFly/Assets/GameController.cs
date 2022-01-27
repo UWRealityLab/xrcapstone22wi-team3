@@ -34,14 +34,19 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        glidingController.SetActive(false);
-        launchController.SetActive(true);
+        StartLaunchMode();
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    public void StartLaunchMode()
+    {
+        glidingController.SetActive(false);
+        launchController.SetActive(true);
     }
 
     public void StartGlidingMode()
