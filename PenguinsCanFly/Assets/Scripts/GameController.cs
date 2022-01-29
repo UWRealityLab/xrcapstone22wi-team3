@@ -6,6 +6,7 @@ public class GameController : MonoBehaviour
 {
     public GameObject launchController;
     public GameObject glidingController;
+    public GameObject landingController;
 
     private LaunchController _launchScript;
     private GliderInfo _glidingScript;
@@ -50,14 +51,23 @@ public class GameController : MonoBehaviour
 
     public void StartLaunchMode()
     {
-        glidingController.SetActive(false);
         launchController.SetActive(true);
+        glidingController.SetActive(false);
+        landingController.SetActive(false);
     }
 
     public void StartGlidingMode()
     {
         _glidingScript.speed = _launchScript.speed;
-        glidingController.SetActive(true);
         launchController.SetActive(false);
+        glidingController.SetActive(true);
+        landingController.SetActive(false);
+    }
+
+    public void StartLandingMode()
+    {        
+        launchController.SetActive(false);
+        glidingController.SetActive(false);
+        landingController.SetActive(true);
     }
 }

@@ -6,6 +6,10 @@ using UnityEngine.XR;
 
 public class GliderInfo : MonoBehaviour
 {
+    // TODO: experiment with this value.
+    // After we hit this min height, gliding disables and landing starts
+    // Assumes that the ground is ar y = 0
+    private const float MIN_HEIGHT = 5f;
     
     public float speed = 12.5f;
     public float drag = 6;
@@ -52,6 +56,13 @@ public class GliderInfo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // TODO: this code should maybe move to GameController
+        Debug.Log("SAVE:height:" + penguinXROTransform.position.y);
+        if (penguinXROTransform.position.y <= MIN_HEIGHT)
+        {
+            GameController.Instance.StartLandingMode();
+        }
+        
         // Add speed forward based on glider direction
         penguinXRORigidbody.drag = drag;
         Vector3 localV = gliderDirection.InverseTransformDirection(penguinXRORigidbody.velocity);
