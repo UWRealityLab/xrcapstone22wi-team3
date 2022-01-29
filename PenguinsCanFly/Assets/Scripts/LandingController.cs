@@ -26,15 +26,17 @@ public class LandingController : MonoBehaviour
     private void FixedUpdate()
     {
         Debug.Log("SAVE:landing:" + penguinXRORigidbody.velocity + " " + _currForce);
-        if (_currForce > 0.02)
+        if (_currForce > 0.2)
         {
             _currForce *= 0.99f;
             penguinXRORigidbody.AddRelativeForce(0, 0, _currForce, ForceMode.VelocityChange);
         }
         else if (!spawnedCertificate) {
             spawnedCertificate = true;
-            //Vector3 spawnPosition = penguinXRORigidbody.transform.TransformDirection(Vector3.forward);
-            Instantiate(goHomeCertificatePrefab, penguinXRORigidbody.transform.position, penguinXRORigidbody.transform.rotation);
+            Vector3 localOffset = new Vector3(0.5f, 1, 3);
+            Vector3 worldOffset = penguinXRORigidbody.transform.rotation * localOffset;
+            Vector3 spawnPosition = penguinXRORigidbody.transform.position + worldOffset;
+            Instantiate(goHomeCertificatePrefab, spawnPosition, penguinXRORigidbody.transform.rotation);
             Debug.Log("SPAWNED");
         }
     }
