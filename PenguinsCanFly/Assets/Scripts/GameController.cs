@@ -77,7 +77,13 @@ public class GameController : MonoBehaviour
     public void StartLandingMode()
     {        
         launchController.SetActive(false);
-        glidingController.SetActive(false);
+        _glidingScript.DisableGlider();
+        _glidingScript.enabled = false;
+        //glidingController.SetActive(false);
         landingController.SetActive(true);
+    }
+    public void DisableGlider()
+    {
+        glidingController.SetActive(false);
     }
 }

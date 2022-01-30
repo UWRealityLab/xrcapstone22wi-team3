@@ -37,7 +37,6 @@ public class GoHomeCertificate : XRGrabInteractable
             int timeLeft = (int)Math.Ceiling(TimeBeforeReset - (Time.time - _goHomeCallTime));
             display.text = "Great flight! :DD\n\nReturning home in " + timeLeft;
         }
-        Debug.Log("SAVE:time:" + Time.time);
     }
 
     private void GoHome()

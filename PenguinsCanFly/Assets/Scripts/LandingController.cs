@@ -42,6 +42,7 @@ public class LandingController : MonoBehaviour
             Vector3 worldOffset = penguinTransform.rotation * localOffset;
             Vector3 spawnPosition = penguinTransform.position + worldOffset;
             Instantiate(goHomeCertificatePrefab, spawnPosition, penguinTransform.rotation);
+            GameController.Instance.DisableGlider();
         }
     }
 

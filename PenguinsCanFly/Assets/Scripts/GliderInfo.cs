@@ -13,6 +13,9 @@ public class GliderInfo : MonoBehaviour
     
     public float speed = 12.5f;
     public float drag = 6;
+
+    // TODO: fix this circular dependency
+    public GliderModelController gliderModelController;
     
     public Rigidbody penguinXRORigidbody;
     public Transform gliderDirection;
@@ -25,7 +28,6 @@ public class GliderInfo : MonoBehaviour
     
     private InputDevice targetDevice;
 
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -92,6 +94,15 @@ public class GliderInfo : MonoBehaviour
         {
             totalPitchDegree = 90;
         }
+    }
+
+    // Disable user control of gliding, but still display the hang glider
+    // Use for landing sequence
+    public void DisableGlider()
+    {
+        gliderModelController.enabled = false;
+        penguinXRORigidbody.drag = 0;
+        this.enabled = false;
     }
     
     private void OnEnable()
