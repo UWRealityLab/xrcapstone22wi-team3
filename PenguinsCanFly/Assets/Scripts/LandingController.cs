@@ -37,7 +37,7 @@ public class LandingController : MonoBehaviour
             // Spawn the certificate w/ high score that takes the user back home
             _spawnedCertificate = true;
             Transform penguinTransform = penguinXRORigidbody.transform; 
-            Vector3 localOffset = new Vector3(0.5f, 1, 3);  // spawn in front and to the right
+            Vector3 localOffset = new Vector3(0.5f, 1, 1.5f);  // spawn in front and to the right
             Vector3 worldOffset = penguinTransform.rotation * localOffset;
             Vector3 spawnPosition = penguinTransform.position + worldOffset;
             Instantiate(goHomeCertificatePrefab, spawnPosition, penguinTransform.rotation);

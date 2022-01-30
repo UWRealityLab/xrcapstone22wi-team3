@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class GameController : MonoBehaviour
     public GameObject launchController;
     public GameObject glidingController;
     public GameObject landingController;
+
+    public Animator fadeAnimator;
 
     private LaunchController _launchScript;
     private GliderInfo _glidingScript;
@@ -53,6 +56,8 @@ public class GameController : MonoBehaviour
     public void ResetToLaunch()
     {
         // TODO: assumes we only have one scene
+        fadeAnimator.SetTrigger("FadeTransition");
+        // TODO: fade out animation doesn't trigger because scene loads too soon
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         StartLaunchMode();;
     }
