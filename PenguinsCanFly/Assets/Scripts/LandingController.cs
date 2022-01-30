@@ -26,19 +26,22 @@ public class LandingController : MonoBehaviour
     private void FixedUpdate()
     {
         Debug.Log("SAVE:landing:" + penguinXRORigidbody.velocity + " " + _currForce);
-        if (_currForce > 0.2)
+        // TODO: this is a super jank landing
+        // TODO: reset tilt?
+        if (_currForce > 0.4)
         {
             _currForce *= 0.99f;
             penguinXRORigidbody.AddRelativeForce(0, 0, _currForce, ForceMode.VelocityChange);
         }
         else if (!_spawnedCertificate) 
         {
+            // Spawn the certificate w/ high score that takes the user back home
             _spawnedCertificate = true;
+            Transform penguinTransform = penguinXRORigidbody.transform; 
             Vector3 localOffset = new Vector3(0.5f, 1, 3);
-            Vector3 worldOffset = penguinXRORigidbody.transform.rotation * localOffset;
-            Vector3 spawnPosition = penguinXRORigidbody.transform.position + worldOffset;
-            Instantiate(goHomeCertificatePrefab, spawnPosition, penguinXRORigidbody.transform.rotation);
-            Debug.Log("SPAWNED");
+            Vector3 worldOffset = penguinTransform.rotation * localOffset;
+            Vector3 spawnPosition = penguinTransform.position + worldOffset;
+            Instantiate(goHomeCertificatePrefab, spawnPosition, penguinTransform.rotation);
         }
     }
 
