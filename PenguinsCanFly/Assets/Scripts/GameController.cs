@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    public Transform penguinXROTransform;
+    
     public GameObject launchController;
     public GameObject glidingController;
     public GameObject landingController;
@@ -16,6 +18,11 @@ public class GameController : MonoBehaviour
     private GliderInfo _glidingScript;
     
     private static GameController _instance;
+    
+    // TODO: experiment with this value.
+    // After we hit this min height, the landing sequence starts
+    // Assumes that the ground is ar y = 0
+    private const float GLIDING_MIN_HEIGHT = 10f;
 
     public static GameController Instance
     {
@@ -50,7 +57,10 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (penguinXROTransform.position.y <= GLIDING_MIN_HEIGHT)
+        {
+            Instance.StartLandingMode();
+        }
     }
 
     public void ResetToLaunch()
