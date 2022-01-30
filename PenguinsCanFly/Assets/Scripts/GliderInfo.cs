@@ -96,7 +96,7 @@ public class GliderInfo : MonoBehaviour
         // TODO: fix this circular dependency
         gliderModelController.transform.localRotation = 
             Quaternion.RotateTowards(gliderModelController.transform.localRotation, 
-            Quaternion.identity, 0.1f);
+            Quaternion.identity, 0.2f);
         gliderModelController.enabled = false;
         _userControlEnabled = false;
         totalPitchDegree = 90;

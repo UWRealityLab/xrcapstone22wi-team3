@@ -1739,10 +1739,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a11a992e4eacd4662ad8b1a362f27445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetManager: {fileID: 598660284}
+  penguinXROTransform: {fileID: 2078797934}
   launchController: {fileID: 463930438}
   glidingController: {fileID: 1980159959}
   landingController: {fileID: 1430624251}
-  fadeAnimator: {fileID: 598660280}
 --- !u!4 &476343504
 Transform:
   m_ObjectHideFlags: 0
@@ -1854,8 +1855,9 @@ GameObject:
   - component: {fileID: 598660282}
   - component: {fileID: 598660281}
   - component: {fileID: 598660280}
+  - component: {fileID: 598660284}
   m_Layer: 6
-  m_Name: FadeManager
+  m_Name: ResetManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1961,6 +1963,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &598660284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598660278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bde41b0d96b844e1bffa184c063edf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeAnimator: {fileID: 598660280}
 --- !u!1 &633987594
 GameObject:
   m_ObjectHideFlags: 0
@@ -3380,6 +3395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3337fa668d9c941e28f09c8912dc1353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gliderInfo: {fileID: 1980159960}
   penguinXRORigidbody: {fileID: 2078797937}
   goHomeCertificatePrefab: {fileID: 579951339}
 --- !u!4 &1430624253
