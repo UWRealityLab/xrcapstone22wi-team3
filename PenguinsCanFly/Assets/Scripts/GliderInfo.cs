@@ -100,6 +100,7 @@ public class GliderInfo : MonoBehaviour
     // Use for landing sequence
     public void DisableGlider()
     {
+        // TODO: fix this circular dependency
         gliderModelController.enabled = false;
         penguinXRORigidbody.drag = 0;
         this.enabled = false;

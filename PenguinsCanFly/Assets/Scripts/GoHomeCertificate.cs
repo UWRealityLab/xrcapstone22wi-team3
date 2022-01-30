@@ -17,14 +17,13 @@ public class GoHomeCertificate : XRGrabInteractable
     // Start is called before the first frame update
     void Start()
     {
-        
+        display.text = "Great flight! :DD";
     }
 
     // Update is called once per frame
     void Update()
     {
         // TODO: add high score
-        display.text = "Great flight! :DD";
         if (!_goHomeCalled && isSelected)
         {
             _goHomeCalled = true;
