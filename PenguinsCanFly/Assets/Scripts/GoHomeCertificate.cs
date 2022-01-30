@@ -12,7 +12,7 @@ public class GoHomeCertificate : XRGrabInteractable
     private bool _goHomeCalled = false;
     private float _goHomeCallTime = -1f;
     
-    private const float TimeBeforeReset = 5f;
+    private const float TimeBeforeReset = 3f;
 
     // Start is called before the first frame update
     void Start()

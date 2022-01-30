@@ -9,7 +9,7 @@ public class GliderInfo : MonoBehaviour
     // TODO: experiment with this value.
     // After we hit this min height, gliding disables and landing starts
     // Assumes that the ground is ar y = 0
-    private const float MIN_HEIGHT = 5f;
+    private const float MIN_HEIGHT = 10f;
     
     public float speed = 12.5f;
     public float drag = 6;
@@ -59,7 +59,6 @@ public class GliderInfo : MonoBehaviour
     void Update()
     {
         // TODO: this code should maybe move to GameController
-        Debug.Log("SAVE:height:" + penguinXROTransform.position.y);
         if (penguinXROTransform.position.y <= MIN_HEIGHT)
         {
             GameController.Instance.StartLandingMode();
@@ -97,13 +96,11 @@ public class GliderInfo : MonoBehaviour
     }
 
     // Disable user control of gliding, but still display the hang glider
-    // Use for landing sequence
-    public void DisableGlider()
+    // and allow this script to control the glider's speed. Use for landing sequence
+    public void DisableUserControlOfGlider()
     {
         // TODO: fix this circular dependency
         gliderModelController.enabled = false;
-        penguinXRORigidbody.drag = 0;
-        this.enabled = false;
     }
     
     private void OnEnable()

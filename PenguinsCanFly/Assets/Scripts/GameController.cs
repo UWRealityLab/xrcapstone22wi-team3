@@ -83,11 +83,11 @@ public class GameController : MonoBehaviour
     {        
         launchController.SetActive(false);
         // Don't deactivate glidingController yet since we want the glider to still be visible
-        _glidingScript.DisableGlider();
-        _glidingScript.enabled = false;
+        // Don't disable the _glidingScript since we still want to control the speed using it
+        _glidingScript.DisableUserControlOfGlider();
         landingController.SetActive(true);
     }
-    public void DisableGlider()
+    public void DeactivateGlider()
     {
         // Hides the glider
         glidingController.SetActive(false);

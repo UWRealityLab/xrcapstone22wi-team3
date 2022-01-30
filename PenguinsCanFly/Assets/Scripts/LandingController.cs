@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class LandingController : MonoBehaviour
 {
+    public GliderInfo gliderInfo;
+    
     public Rigidbody penguinXRORigidbody;
     public GameObject goHomeCertificatePrefab;
     
-    private float _currForce = 2f;
     private bool _spawnedCertificate = false;
     
     // Start is called before the first frame update
@@ -20,33 +21,36 @@ public class LandingController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("SAVE:height:" + penguinXRORigidbody.transform.position.y);
+        Debug.Log("SAVE:speed:" + gliderInfo.speed);
         
-    }
-
-    private void FixedUpdate()
-    {
-        Debug.Log("SAVE:landing:" + penguinXRORigidbody.velocity + " " + _currForce);
-        // TODO: this is a super jank landing
-        if (_currForce > 0.4)
+        // TODO: change this number to whatever the "ground" level is
+        if (penguinXRORigidbody.transform.position.y <= 4) 
         {
-            _currForce *= 0.99f;
-            penguinXRORigidbody.AddRelativeForce(0, 0, _currForce, ForceMode.VelocityChange);
-        }
-        else if (!_spawnedCertificate) 
-        {
-            // Spawn the certificate w/ high score that takes the user back home
-            _spawnedCertificate = true;
-            Transform penguinTransform = penguinXRORigidbody.transform; 
-            Vector3 localOffset = new Vector3(0.5f, 1, 1.5f);  // spawn in front and to the right
-            Vector3 worldOffset = penguinTransform.rotation * localOffset;
-            Vector3 spawnPosition = penguinTransform.position + worldOffset;
-            Instantiate(goHomeCertificatePrefab, spawnPosition, penguinTransform.rotation);
-            GameController.Instance.DisableGlider();
-        }
-    }
+            // we've hit the ground, decay faster and disable gravity
+            gliderInfo.speed *= 0.99f;
+            penguinXRORigidbody.useGravity = false;
+            
+            if (!_spawnedCertificate && gliderInfo.speed < 1) 
+            {
+                // Stop the glider
+                _spawnedCertificate = true;
+                gliderInfo.speed = 0;
+                GameController.Instance.DeactivateGlider();
 
-    private void OnEnable()
-    {
-        penguinXRORigidbody.useGravity = false;
+                // Spawn the certificate w/ high score that takes the user back home
+                Transform penguinTransform = penguinXRORigidbody.transform; 
+                Vector3 localOffset = new Vector3(0.5f, 1, 1.5f);  // spawn in front and to the right
+                Vector3 worldOffset = penguinTransform.rotation * localOffset;
+                Vector3 spawnPosition = penguinTransform.position + worldOffset;
+                Instantiate(goHomeCertificatePrefab, spawnPosition, penguinTransform.rotation);
+            }
+        }
+        else
+        {
+            // decay speed to slow down the glider
+            gliderInfo.speed *= 0.999f;
+        }
     }
+    
 }
