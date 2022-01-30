@@ -20,8 +20,15 @@ public class GoHomeCertificate : XRGrabInteractable
         if (!_goHomeCalled && isSelected)
         {
             _goHomeCalled = true;
-            Debug.Log("Time to go home!");
+            Invoke("GoHome", 5);
+            Debug.Log("Time to go home! " + Time.time);
         }
+        Debug.Log("SAVE:time:" + Time.time);
     }
-    
+
+    private void GoHome()
+    {
+        GameController.Instance.ResetToLaunch();
+    }
+
 }

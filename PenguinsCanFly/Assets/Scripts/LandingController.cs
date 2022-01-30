@@ -9,7 +9,7 @@ public class LandingController : MonoBehaviour
     public GameObject goHomeCertificatePrefab;
     
     private float _currForce = 2f;
-    private bool spawnedCertificate = false;
+    private bool _spawnedCertificate = false;
     
     // Start is called before the first frame update
     void Start()
@@ -31,8 +31,9 @@ public class LandingController : MonoBehaviour
             _currForce *= 0.99f;
             penguinXRORigidbody.AddRelativeForce(0, 0, _currForce, ForceMode.VelocityChange);
         }
-        else if (!spawnedCertificate) {
-            spawnedCertificate = true;
+        else if (!_spawnedCertificate) 
+        {
+            _spawnedCertificate = true;
             Vector3 localOffset = new Vector3(0.5f, 1, 3);
             Vector3 worldOffset = penguinXRORigidbody.transform.rotation * localOffset;
             Vector3 spawnPosition = penguinXRORigidbody.transform.position + worldOffset;

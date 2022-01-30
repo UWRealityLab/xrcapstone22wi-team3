@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -47,6 +48,13 @@ public class GameController : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void ResetToLaunch()
+    {
+        // TODO: assumes we only have one scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        StartLaunchMode();;
     }
 
     public void StartLaunchMode()
