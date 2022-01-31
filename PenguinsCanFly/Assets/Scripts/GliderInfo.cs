@@ -83,9 +83,10 @@ public class GliderInfo : MonoBehaviour
             }
             else
             {
-                totalPitchDegree = 90;
+                // totalPitchDegree = 90;
             }
         }
+        Debug.Log("SAVE:TotalPitchDegree:" + totalPitchDegree);
 
     }
 
