@@ -69,7 +69,7 @@ public class GliderModelController : MonoBehaviour
             gliderInfo.totalYawDegree += (360 - localAngles.z) * Time.deltaTime;
         }
     }
-
+ 
     private float clampRightHand()
     {
         float rotationGoal = rightHandlebar.goalZ + 90;
