@@ -14,7 +14,7 @@ public class LaunchController : MonoBehaviour
     public float speed = 0f;
     
     // TODO: different way of changing speed
-    private static float FLAP_SPEED_MULTIPLIER = 3f;
+    private const float FLAP_SPEED_MULTIPLIER = 3f;
     
     // Start is called before the first frame update
     void Start()

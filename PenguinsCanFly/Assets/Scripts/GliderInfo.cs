@@ -6,9 +6,11 @@ using UnityEngine.XR;
 
 public class GliderInfo : MonoBehaviour
 {
-    
     public float speed = 12.5f;
     public float drag = 6;
+
+    // TODO: fix this circular dependency
+    public GliderModelController gliderModelController;
     
     public Rigidbody penguinXRORigidbody;
     public Transform gliderDirection;
@@ -21,7 +23,8 @@ public class GliderInfo : MonoBehaviour
     
     private InputDevice targetDevice;
 
-    
+    private bool _userControlEnabled = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,21 +69,37 @@ public class GliderInfo : MonoBehaviour
         Quaternion gliderTargetNewRotation = Quaternion.Euler(totalPitchDegree - 90, 0, 0);  // Subtract 90 since looking forward is 90
         gliderDirection.localRotation = Quaternion.Slerp(gliderDirection.localRotation, gliderTargetNewRotation, Time.deltaTime);
 
+        if (_userControlEnabled)
+        {
+            targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
+            targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue);
+            if (primaryButtonValue)
+            {
+                totalPitchDegree = 60;
+            }
+            else if (secondaryButtonValue)
+            {
+                totalPitchDegree = 120;
+            }
+            else
+            {
+                totalPitchDegree = 90;
+            }
+        }
 
-        targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
-        targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue);
-        if (primaryButtonValue)
-        {
-            totalPitchDegree = 60;
-        }
-        else if (secondaryButtonValue)
-        {
-            totalPitchDegree = 120;
-        }
-        else
-        {
-            totalPitchDegree = 90;
-        }
+    }
+
+    // Disable user control of gliding, but still display the hang glider
+    // and allow this script to control the glider's speed. Use for landing sequence
+    public void DisableUserControlOfGlider()
+    {
+        // TODO: fix this circular dependency
+        gliderModelController.transform.localRotation = 
+            Quaternion.RotateTowards(gliderModelController.transform.localRotation, 
+            Quaternion.identity, 0.2f);
+        gliderModelController.enabled = false;
+        _userControlEnabled = false;
+        totalPitchDegree = 90;
     }
     
     private void OnEnable()
