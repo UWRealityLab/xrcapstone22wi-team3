@@ -1664,8 +1664,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a11a992e4eacd4662ad8b1a362f27445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetManager: {fileID: 0}
+  penguinXROTransform: {fileID: 0}
   launchController: {fileID: 463930438}
   glidingController: {fileID: 1980159959}
+  landingController: {fileID: 0}
 --- !u!4 &476343504
 Transform:
   m_ObjectHideFlags: 0
@@ -2269,6 +2272,63 @@ Transform:
   m_Father: {fileID: 2078797934}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &760883544
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 314428122082663593, guid: 41618008d22c44f349dc9e3d54e6628e, type: 3}
+      propertyPath: m_Name
+      value: Snow Terrain V1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375485025055757749, guid: 41618008d22c44f349dc9e3d54e6628e, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375485025055757749, guid: 41618008d22c44f349dc9e3d54e6628e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375485025055757749, guid: 41618008d22c44f349dc9e3d54e6628e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375485025055757749, guid: 41618008d22c44f349dc9e3d54e6628e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375485025055757749, guid: 41618008d22c44f349dc9e3d54e6628e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375485025055757749, guid: 41618008d22c44f349dc9e3d54e6628e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375485025055757749, guid: 41618008d22c44f349dc9e3d54e6628e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375485025055757749, guid: 41618008d22c44f349dc9e3d54e6628e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375485025055757749, guid: 41618008d22c44f349dc9e3d54e6628e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375485025055757749, guid: 41618008d22c44f349dc9e3d54e6628e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375485025055757749, guid: 41618008d22c44f349dc9e3d54e6628e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 41618008d22c44f349dc9e3d54e6628e, type: 3}
 --- !u!1 &854905462
 GameObject:
   m_ObjectHideFlags: 0
@@ -4111,6 +4171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 12.5
   drag: 6
+  gliderModelController: {fileID: 0}
   penguinXRORigidbody: {fileID: 2078797937}
   gliderDirection: {fileID: 2088056303}
   penguinXROTransform: {fileID: 2078797934}
