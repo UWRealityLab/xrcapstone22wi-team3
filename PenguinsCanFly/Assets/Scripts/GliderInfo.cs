@@ -53,14 +53,26 @@ public class GliderInfo : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // Add speed forward based on glider direction
-        penguinXRORigidbody.drag = drag;
-        Vector3 localV = gliderDirection.InverseTransformDirection(penguinXRORigidbody.velocity);
-        localV.z = speed;
-        penguinXRORigidbody.velocity = gliderDirection.TransformDirection(localV);
+        // penguinXRORigidbody.drag = drag;
+        // Vector3 localV = gliderDirection.InverseTransformDirection(penguinXRORigidbody.velocity);
+        // localV.z = speed;
+        // penguinXRORigidbody.velocity = gliderDirection.TransformDirection(localV);
         
+        // penguinXRORigidbody.AddRelativeForce(Vector3.forward * (speed * 10));
+
+        Vector3 gliderDirectionForward = gliderDirection.forward;
+        penguinXRORigidbody.AddForce(gliderDirectionForward * (speed * 10));
+
+        Debug.Log("SAVE:GliderSpeed:" + penguinXRORigidbody.velocity.magnitude);
+
+        float modified_drag = -0.1f * (totalPitchDegree - 90) + drag;
+        Debug.Log("SAVE:ModifiedDrag:" + modified_drag + " " + totalPitchDegree);
+        penguinXRORigidbody.drag = modified_drag;
+
+
         // Yaw camera globally
         Quaternion cameraTargetNewRotation = Quaternion.Euler(0, totalYawDegree, 0);
         penguinXROTransform.rotation = Quaternion.Slerp(penguinXROTransform.rotation, cameraTargetNewRotation, Time.deltaTime);
@@ -83,7 +95,8 @@ public class GliderInfo : MonoBehaviour
             }
             else
             {
-                // totalPitchDegree = 90;
+                Debug.Log("Remove this for wind to work!!!!");
+                totalPitchDegree = 90;
             }
         }
         Debug.Log("SAVE:TotalPitchDegree:" + totalPitchDegree);
