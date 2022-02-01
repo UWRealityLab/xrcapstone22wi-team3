@@ -68,8 +68,11 @@ public class GliderInfo : MonoBehaviour
 
         Debug.Log("SAVE:GliderSpeed:" + penguinXRORigidbody.velocity.magnitude);
 
-        float modified_drag = -0.1f * (totalPitchDegree - 90) + drag;
-        Debug.Log("SAVE:ModifiedDrag:" + modified_drag + " " + totalPitchDegree);
+        // float modified_drag = -0.1f * (totalPitchDegree - 90) + drag;
+        // float modified_drag = -0.1f * (gliderDirection.localEulerAngles.x - 90) + drag;
+        float actualPitchRotation = Vector3.SignedAngle(Vector3.up, gliderDirectionForward, gliderDirection.right);
+        float modified_drag = -0.1f * (actualPitchRotation - 90) + drag;
+        Debug.Log("SAVE:ModifiedDrag:" + modified_drag + " " + actualPitchRotation + " " + gliderDirection.localEulerAngles.x);
         penguinXRORigidbody.drag = modified_drag;
 
 
