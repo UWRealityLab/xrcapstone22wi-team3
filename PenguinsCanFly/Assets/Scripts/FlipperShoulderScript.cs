@@ -5,6 +5,10 @@ using UnityEngine;
 public class FlipperShoulderScript : MonoBehaviour
 {
     public Transform controller;
+    public GameObject flipper;
+
+    public float flipperHandWidth = 0.1f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -15,24 +19,19 @@ public class FlipperShoulderScript : MonoBehaviour
     void Update()
     {
         Vector3 controllerShoulderDiff = controller.position - transform.position;
+
+        // Point shoulder / flipper in controllers direction
         transform.forward = controllerShoulderDiff;
+
+        // Add rotation for some mobility
         this.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, controller.transform.eulerAngles.z);
 
-        //transform.rotation.SetLookRotation(controllerShoulderDiff);
-        //transform.forward = controllerShoulderDiff;
-        //Debug.Log("Controller" + controllerShoulderDiff);
-        //Debug.Log("Should Rotation" + transform.rotation);
-        //transform.rotation = Quaternion.Euler(transform.rotation.x, transform.eulerAngles.y, controller.transform.eulerAngles, )
 
-        //transform.forward = controllerShoulderDiff;
+        // Change Penguin Flipper length
+        float flipperLength = controllerShoulderDiff.magnitude + flipperHandWidth;
+        flipper.transform.localScale = new Vector3(flipper.transform.localScale.x, flipper.transform.localScale.y, flipperLength);
+        flipper.transform.localPosition = new Vector3(0f, 0f, flipperLength / 2);
+        Debug.Log(flipper.transform.localPosition);
 
-        //// Flip back into right orientation
-        //if (transform.rotation.w == 1)
-        //{
-        //    this.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, -transform.eulerAngles.y, controller.transform.eulerAngles.z);
-        //} else
-        //{
-        //    this.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, controller.transform.eulerAngles.z);
-        //}
     }
 }
