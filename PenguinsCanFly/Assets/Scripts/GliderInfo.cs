@@ -6,6 +6,7 @@ using UnityEngine.XR;
 
 public class GliderInfo : MonoBehaviour
 {
+    public float extraSpeed = 10f;
     public float speed = 12.5f;
     public float drag = 6;
 
@@ -27,7 +28,6 @@ public class GliderInfo : MonoBehaviour
 
     private bool _userControlEnabled = true;
     
-    private float _speed;
 
 
     // Start is called before the first frame update
@@ -61,8 +61,13 @@ public class GliderInfo : MonoBehaviour
     {
         // Add speed forward based on glider direction
         Vector3 gliderDirectionForward = gliderDirection.forward;
-        penguinXRORigidbody.AddForce(gliderDirectionForward * (speed * 10));
+        float modifiedSpeed = speed + extraSpeed;
+        penguinXRORigidbody.AddForce(gliderDirectionForward * (modifiedSpeed * 10));
         
+        // Reduce extra speed
+        extraSpeed -= .1f;
+        extraSpeed = Mathf.Clamp(extraSpeed, 0, 3 * speed);
+
         // Depending on pitch, change drag so that if you are looking down, you go faster and vice versa
         // 0.05f was calculated based on -2drag / 40degrees 
         float actualPitchRotation = Vector3.SignedAngle(Vector3.up, gliderDirectionForward, gliderDirection.right);
@@ -70,7 +75,7 @@ public class GliderInfo : MonoBehaviour
         penguinXRORigidbody.drag = modifiedDrag;
         
 
-        Debug.Log("SAVE:GliderSpeed:" + penguinXRORigidbody.velocity.magnitude + " " + _speed);
+        Debug.Log("SAVE:GliderSpeed:" + penguinXRORigidbody.velocity.magnitude + " ExtraSpeed " + extraSpeed);
 
         // Yaw camera globally
         Quaternion cameraTargetNewRotation = Quaternion.Euler(0, totalYawDegree, 0);
@@ -87,7 +92,7 @@ public class GliderInfo : MonoBehaviour
             if (primaryButtonValue)
             {
                 Debug.Log("Disabled up dummy >:)");
-                // totalPitchDegree = 60;
+                totalPitchDegree = 60;
             }
             else if (secondaryButtonValue)
             {
