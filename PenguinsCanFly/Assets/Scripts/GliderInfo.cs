@@ -104,6 +104,9 @@ public class GliderInfo : MonoBehaviour
                 // totalPitchDegree = 90;
             }
         }
+        
+        // Decay pitch
+        totalPitchDegree = (totalPitchDegree - 90) * 0.9f + 90;
 
         Debug.Log("SAVE:TotalPitchDegree:" + totalPitchDegree);
 

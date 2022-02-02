@@ -36,7 +36,7 @@ public class WindCollider : MonoBehaviour
             m_Material.color = color;
             gliderInfo.totalPitchDegree = Math.Max(90 - MAX_PITCH_OFFSET_DEGREE, gliderInfo.totalPitchDegree - 20);
             // gliderInfo.penguinXRORigidbody.AddForce(Vector3.up * 500f);
-            gliderInfo.extraSpeed += 1f;
+            gliderInfo.extraSpeed += 0.5f;
             Debug.Log("SAVE:gliderInfoPitchDegree:" + gliderInfo.totalPitchDegree);
         }
     }
@@ -48,7 +48,7 @@ public class WindCollider : MonoBehaviour
             Color color = m_Material.color;
             color.a = 0.4f;
             m_Material.color = color;
-            gliderInfo.totalPitchDegree = 90;
+            // gliderInfo.totalPitchDegree = 90;
             Debug.Log("EXITED! Wind collider");
         }
     }

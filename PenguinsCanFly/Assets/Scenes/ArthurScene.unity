@@ -4620,6 +4620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f83ca94c60098574dbdb41dafa140f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  extraSpeed: 10
   speed: 12.5
   drag: 6
   gliderModelController: {fileID: 1985308839}
@@ -5055,7 +5056,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078797929}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 74.6, z: -151.7}
+  m_LocalPosition: {x: 0, y: 20.8, z: -151.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 172605653}
