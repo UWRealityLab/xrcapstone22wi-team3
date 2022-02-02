@@ -6,8 +6,7 @@ using UnityEngine.XR;
 
 public class GliderInfo : MonoBehaviour
 {
-    public float baseSpeed = 12.5f;
-    public float maxSpeed = 20f;
+    public float speed = 12.5f;
     public float drag = 6;
 
     // TODO: fix this circular dependency
@@ -34,7 +33,6 @@ public class GliderInfo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _speed = baseSpeed;
         var inputDevices = new List<UnityEngine.XR.InputDevice>();
         UnityEngine.XR.InputDevices.GetDevices(inputDevices);
 
@@ -59,59 +57,20 @@ public class GliderInfo : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         // Add speed forward based on glider direction
-        penguinXRORigidbody.drag = drag;
-        // Vector3 localV = gliderDirection.InverseTransformDirection(penguinXRORigidbody.velocity);
-        // localV.z = speed;
-        // penguinXRORigidbody.velocity = gliderDirection.TransformDirection(localV);
-        
-        // penguinXRORigidbody.AddRelativeForce(Vector3.forward * (speed * 10));
-
         Vector3 gliderDirectionForward = gliderDirection.forward;
-
-        // float modified_drag = -0.1f * (totalPitchDegree - 90) + drag;
-        // float modified_drag = -0.1f * (gliderDirection.localEulerAngles.x - 90) + drag;
+        penguinXRORigidbody.AddForce(gliderDirectionForward * (speed * 10));
+        
+        // Depending on pitch, change drag so that if you are looking down, you go faster and vice versa
+        // 0.05f was calculated based on -2drag / 40degrees 
         float actualPitchRotation = Vector3.SignedAngle(Vector3.up, gliderDirectionForward, gliderDirection.right);
-        // float modified_drag = -0.1f * (actualPitchRotation - 90) + drag;
-        // Debug.Log("SAVE:ModifiedDrag:" + modified_drag + " " + actualPitchRotation + " " + gliderDirection.localEulerAngles.x);
-        // penguinXRORigidbody.drag = modified_drag;
-
-        // TODO: make sure this doesn't go negative tho, also when flying straight, should have speed feel more constant?
-
-        _speed = baseSpeed;
+        float modifiedDrag = -(actualPitchRotation - 90) * 0.05f + drag;
+        penguinXRORigidbody.drag = modifiedDrag;
         
-        // Looking down!
-        if (actualPitchRotation >  90 + PitchRotationTolerance)
-        {
-            // _speed += (actualPitchRotation - 90) * 0.001f;
-            // _speed = Math.Min(_speed, maxSpeed);
-            float modified_drag = -(actualPitchRotation - 90) * 0.05f + drag;
-            penguinXRORigidbody.drag = modified_drag;
-        }
-        else if (actualPitchRotation < 90 - PitchRotationTolerance) // Looking up!
-        {
-            float modified_drag = (90 - actualPitchRotation) * 0.05f + drag;
-            penguinXRORigidbody.drag = modified_drag;
-            // _speed += (actualPitchRotation - 90) * 0.001f;
-            // _speed = Math.Max(_speed, 5);  // Maybe have the min be something smaller than gravity force essentially
-        }
-
-        baseSpeed = _speed;
-        
-        
-        penguinXRORigidbody.AddForce(gliderDirectionForward * (baseSpeed * 10));
 
         Debug.Log("SAVE:GliderSpeed:" + penguinXRORigidbody.velocity.magnitude + " " + _speed);
-        // else
-        // {
-        //     _speed = baseSpeed + (float) (Math.Sign(_speed - baseSpeed) * Math.Pow(_speed - baseSpeed, 2) * 0.005f);
-        // }
-        // Decay towards base speed -> decay exponentially based on speed
-        // _speed = Math.Max((float) Math.Pow(_speed - baseSpeed, 2) * -0.005f, baseSpeed);
-
 
         // Yaw camera globally
         Quaternion cameraTargetNewRotation = Quaternion.Euler(0, totalYawDegree, 0);
@@ -127,7 +86,8 @@ public class GliderInfo : MonoBehaviour
             targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue);
             if (primaryButtonValue)
             {
-                totalPitchDegree = 60;
+                Debug.Log("Disabled up dummy >:)");
+                // totalPitchDegree = 60;
             }
             else if (secondaryButtonValue)
             {
@@ -143,6 +103,8 @@ public class GliderInfo : MonoBehaviour
         Debug.Log("SAVE:TotalPitchDegree:" + totalPitchDegree);
 
     }
+
+    // Update is called once per frame
 
     // Disable user control of gliding, but still display the hang glider
     // and allow this script to control the glider's speed. Use for landing sequence
