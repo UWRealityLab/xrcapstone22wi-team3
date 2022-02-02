@@ -78,7 +78,7 @@ public class GameController : MonoBehaviour
     public void StartGlidingMode()
     {
         // Transfer launch speed to gliding mode
-        _glidingScript.speed = _launchScript.speed;
+        _glidingScript.extraSpeed = _launchScript.speed - _glidingScript.speed;
         
         launchController.SetActive(false);
         glidingController.SetActive(true);

@@ -9,7 +9,7 @@ public class DebugDisplay : MonoBehaviour
     private List<string> debugLogs = new List<string>();
     private Dictionary<string, string> saveValues = new Dictionary<string, string>();
     public Text Display;
-    public int NUM_LOG_ITEMS = 12;
+    public int NUM_LOG_ITEMS = 20;
     
     protected void OnEnable()
     {
