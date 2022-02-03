@@ -20,9 +20,8 @@ public class GameController : MonoBehaviour
     private static GameController _instance;
     
     // TODO: experiment with this value.
-    // After we hit this min height, the landing sequence starts
-    // Assumes that the ground is ar y = 0
-    private const float GLIDING_MIN_HEIGHT = 10f;
+    // After we hit this min height from the ground, the landing sequence starts
+    private const float GlidingMinHeight = 7f;
 
     public static GameController Instance
     {
@@ -59,7 +58,7 @@ public class GameController : MonoBehaviour
     {
         float distance = GetDistanceToGround();
         Debug.Log("SAVE:rayDistance:" + distance);
-        if (distance <= GLIDING_MIN_HEIGHT)
+        if (distance <= GlidingMinHeight)
         {
             Instance.StartLandingMode();
         }
