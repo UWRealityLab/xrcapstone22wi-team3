@@ -1280,7 +1280,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 235541992602056571, guid: b10d1b1a9f2385e4594600203e44900f, type: 3}
+  m_ModelPrefab: {fileID: 0}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -2688,7 +2688,6 @@ MonoBehaviour:
   controller: {fileID: 1237787202}
   flipper: {fileID: 528599520}
   gliderDirection: {fileID: 2088056302}
-  flipperHandWidth: 0.1
   isLeft: 0
 --- !u!1 &733509491
 GameObject:
@@ -4779,6 +4778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f83ca94c60098574dbdb41dafa140f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  extraSpeed: 10
   speed: 12.5
   drag: 6
   gliderModelController: {fileID: 0}
@@ -4849,7 +4849,6 @@ MonoBehaviour:
   controller: {fileID: 185442097}
   flipper: {fileID: 2011817618}
   gliderDirection: {fileID: 2088056302}
-  flipperHandWidth: 0.1
   isLeft: 1
 --- !u!1 &2005997630
 GameObject:
