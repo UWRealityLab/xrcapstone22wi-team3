@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1541,6 +1541,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gliderInfo: {fileID: 1980159960}
+  speedToAdd: 0.5
+  pitchToAdd: -20
 --- !u!65 &333055505
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2516,6 +2518,134 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2078797934}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &845603313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 845603319}
+  - component: {fileID: 845603318}
+  - component: {fileID: 845603317}
+  - component: {fileID: 845603316}
+  - component: {fileID: 845603315}
+  - component: {fileID: 845603314}
+  m_Layer: 0
+  m_Name: WindCollider (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!54 &845603314
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845603313}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &845603315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845603313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e531680ff9a25b145898bc6d650295d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gliderInfo: {fileID: 0}
+  speedToAdd: -0.2
+  pitchToAdd: 5
+--- !u!65 &845603316
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845603313}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &845603317
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845603313}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: ce92fb546daf494429894674fbdccbb9, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &845603318
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845603313}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &845603319
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845603313}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12, y: 30.4, z: 105.8}
+  m_LocalScale: {x: 10.022682, y: 9.676593, z: 44.572994}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &854905462
 GameObject:
@@ -3923,6 +4053,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gliderInfo: {fileID: 1980159960}
+  speedToAdd: 0.5
+  pitchToAdd: -20
 --- !u!65 &1704592865
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4057,6 +4189,10 @@ PrefabInstance:
     - target: {fileID: 314428122082663593, guid: 41618008d22c44f349dc9e3d54e6628e, type: 3}
       propertyPath: m_Name
       value: Snow Terrain V1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909594124978443888, guid: 41618008d22c44f349dc9e3d54e6628e, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5375485025055757749, guid: 41618008d22c44f349dc9e3d54e6628e, type: 3}
       propertyPath: m_RootOrder
@@ -4792,7 +4928,8 @@ MonoBehaviour:
   penguinXRORigidbody: {fileID: 2078797937}
   gliderDirection: {fileID: 2088056303}
   penguinXROTransform: {fileID: 2078797934}
-  totalPitchDegree: 90
+  pitchDegree: 90
+  extraPitchDegree: 0
   totalYawDegree: 0
 --- !u!4 &1980159961
 Transform:
@@ -4816,6 +4953,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1980159961}
     m_Modifications:
+    - target: {fileID: 6770263184940660263, guid: 593dc35aa92e843ab93d610cb4544925, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770263185149392778, guid: 593dc35aa92e843ab93d610cb4544925, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 6770263185850730692, guid: 593dc35aa92e843ab93d610cb4544925, type: 3}
       propertyPath: m_RootOrder
       value: 0

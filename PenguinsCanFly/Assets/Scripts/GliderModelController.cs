@@ -49,7 +49,7 @@ public class GliderModelController : MonoBehaviour
         
         // Change pitch based on local rotation so you can tilt down
         if (leftHandlebar.IsBeingHeld() && rightHandlebar.IsBeingHeld() &&
-            leftHandlebar.goalX < 180 && rightHandlebar.goalX < 180)
+            isWithinRangePitchRotation(leftHandlebar) && isWithinRangePitchRotation(rightHandlebar))
         {
             float averagePitch = (rightHandlebar.goalX + leftHandlebar.goalX) / 2;
             float goalPitch = (averagePitch) * 0.75f + 90;
@@ -60,6 +60,11 @@ public class GliderModelController : MonoBehaviour
         {
             gliderInfo.pitchDegree = 90;
         }
+    }
+
+    private bool isWithinRangePitchRotation(HandlebarHandle handlebarHandle)
+    {
+        return handlebarHandle.goalX < 180 && handlebarHandle.goalX > 10;
     }
 
     private float clampRightHand()
