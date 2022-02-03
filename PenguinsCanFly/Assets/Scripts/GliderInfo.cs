@@ -65,8 +65,15 @@ public class GliderInfo : MonoBehaviour
         penguinXRORigidbody.AddForce(gliderDirectionForward * (modifiedSpeed * 10));
         
         // Reduce extra speed towards 0
-        extraSpeed -= Math.Sign(extraSpeed) * .1f;
-        extraSpeed = Mathf.Clamp(extraSpeed, -speed, 3 * speed);
+        if (extraSpeed > 0)
+        {
+            extraSpeed *= 0.99f;
+        }
+        else if (extraSpeed < 0)
+        {
+            extraSpeed += .05f;
+        }
+        extraSpeed = Mathf.Clamp(extraSpeed, -0.95f * speed, 3 * speed);
 
         // Depending on pitch, change drag so that if you are looking down, you go faster and vice versa
         // 0.05f was calculated based on -2drag / 40degrees 

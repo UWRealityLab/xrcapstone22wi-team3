@@ -8,6 +8,8 @@ public class WindCollider : MonoBehaviour
     private const string HangGliderTag = "HangGlider";
     private Material m_Material;
     public GliderInfo gliderInfo;
+    public float speedToAdd = 0.5f;
+    public float pitchToAdd = -20f;  // Negative to pitch up, positive to pitch down
 
     // Note, 0 is up, 90 is forward, 180 is down
     public const int MAX_PITCH_OFFSET_DEGREE = 40;
@@ -34,9 +36,11 @@ public class WindCollider : MonoBehaviour
             Color color = m_Material.color;
             color.a = 1f;
             m_Material.color = color;
-            gliderInfo.totalPitchDegree = Math.Max(90 - MAX_PITCH_OFFSET_DEGREE, gliderInfo.totalPitchDegree - 20);
+            gliderInfo.totalPitchDegree = Mathf.Clamp(gliderInfo.totalPitchDegree + pitchToAdd,
+                                                    90 - MAX_PITCH_OFFSET_DEGREE,
+                                                    90 + MAX_PITCH_OFFSET_DEGREE);
             // gliderInfo.penguinXRORigidbody.AddForce(Vector3.up * 500f);
-            gliderInfo.extraSpeed += 0.5f;
+            gliderInfo.extraSpeed += speedToAdd;
             Debug.Log("SAVE:gliderInfoPitchDegree:" + gliderInfo.totalPitchDegree);
         }
     }
