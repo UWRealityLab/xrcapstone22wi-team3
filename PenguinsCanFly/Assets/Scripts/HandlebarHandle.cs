@@ -49,20 +49,6 @@ public class HandlebarHandle : XRBaseInteractable
             Vector3 projectedVector = Vector3.ProjectOnPlane(relativePos, hangGliderRotatePoint.forward);
             // Note that because it is signed, it will be -180 < val < 180
             float rotationGoal = Vector3.SignedAngle(Vector3.up, projectedVector, hangGliderRotatePoint.forward);
-
-            // // -90 is to the right since angle is measured from up -90 to right
-            // //     0                                     90
-            // // 90 -|- -90   after +90 adjustment    180 -|- 0
-            // //    180                                   270 -45
-            // if (rotationGoal < -GliderModelController.MAX_ROTATION_DEGREES || rotationGoal > 180)  // Need to custom write for balance
-            // {
-            //     rotationGoal = -GliderModelController.MAX_ROTATION_DEGREES;
-            // }
-            // else
-            // {
-            //     rotationGoal = Math.Min(GliderModelController.MAX_ROTATION_DEGREES, rotationGoal);
-            // }
-
             goalZ = rotationGoal;
             goalX = selectInteractor.transform.localEulerAngles.x;
         }

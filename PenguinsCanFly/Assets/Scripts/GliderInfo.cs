@@ -22,7 +22,7 @@ public class GliderInfo : MonoBehaviour
     public Transform penguinXROTransform;
 
     // Pitch is up/down. Looking straight ahead is pitch 90. Pitch 60 tilts up, pitch 120 tilts down 
-    public float pitchDegree = 90f; // This is only modified by the hand controller
+    public float pitchDegree = 90f; // This should only be modified by the hand controller, changes "base" pitch
     public float extraPitchDegree = 0f;
     public float TotalPitchDegree
     {
