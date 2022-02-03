@@ -11799,6 +11799,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: nature_artic_terrain
       objectReference: {fileID: 0}
+    - target: {fileID: 174692, guid: 3bfc35fc8fd31b54e858bf09f4ca80e3, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 411566, guid: 3bfc35fc8fd31b54e858bf09f4ca80e3, type: 3}
       propertyPath: m_RootOrder
       value: 17

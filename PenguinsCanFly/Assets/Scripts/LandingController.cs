@@ -11,21 +11,24 @@ public class LandingController : MonoBehaviour
     public GameObject goHomeCertificatePrefab;
     
     private bool _spawnedCertificate = false;
+
+    // Distance from the ground where we turn off gravity and decay speed faster
+    private const float LandingHeight = 2f;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("SAVE:height:" + penguinXRORigidbody.transform.position.y);
         Debug.Log("SAVE:speed:" + gliderInfo.speed);
         
         // TODO: change this number to whatever the "ground" level is
-        if (penguinXRORigidbody.transform.position.y <= 4) 
+        float distance = GameController.Instance.GetDistanceToGround();
+        if (distance <= LandingHeight) 
         {
             // we've hit the ground, decay faster and disable gravity
             gliderInfo.speed *= 0.99f;

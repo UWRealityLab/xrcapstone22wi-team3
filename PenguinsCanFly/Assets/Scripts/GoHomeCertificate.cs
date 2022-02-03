@@ -17,7 +17,7 @@ public class GoHomeCertificate : XRGrabInteractable
     // Start is called before the first frame update
     void Start()
     {
-        display.text = "Great flight! :DD";
+        display.text = "Great flight! :DD\n\nScore: " + ScoreCounter.Instance.GetScore();
     }
 
     // Update is called once per frame
@@ -26,13 +26,14 @@ public class GoHomeCertificate : XRGrabInteractable
         // TODO: add high score
         if (!_goHomeCalled && isSelected)
         {
+            // Initiate go home timer
             _goHomeCalled = true;
             _goHomeCallTime = Time.time;
             Invoke("GoHome", TimeBeforeReset);
-            Debug.Log("Time to go home! " + Time.time);
         } 
         else if (_goHomeCalled)
         {
+            // Display go home count down
             int timeLeft = (int)Math.Ceiling(TimeBeforeReset - (Time.time - _goHomeCallTime));
             display.text = "Great flight! :DD\n\nReturning home in " + timeLeft;
         }

@@ -20,9 +20,8 @@ public class GameController : MonoBehaviour
     private static GameController _instance;
     
     // TODO: experiment with this value.
-    // After we hit this min height, the landing sequence starts
-    // Assumes that the ground is ar y = 0
-    private const float GLIDING_MIN_HEIGHT = 10f;
+    // After we hit this min height from the ground, the landing sequence starts
+    private const float GlidingMinHeight = 7f;
 
     public static GameController Instance
     {
@@ -57,9 +56,26 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (penguinXROTransform.position.y <= GLIDING_MIN_HEIGHT)
+        float distance = GetDistanceToGround();
+        Debug.Log("SAVE:rayDistance:" + distance);
+        // TODO: only call this method once
+        if (distance <= GlidingMinHeight && !landingController.activeSelf)
         {
-            Instance.StartLandingMode();
+            StartLandingMode();
+        }
+    }
+
+    public float GetDistanceToGround()
+    {
+        int layerMask = LayerMask.GetMask("Ground");
+        RaycastHit hit;
+        if (Physics.Raycast(penguinXROTransform.position, Vector3.down, out hit, Mathf.Infinity, layerMask))
+        {
+            return hit.distance;
+        }
+        else
+        {
+            return float.PositiveInfinity;
         }
     }
 
@@ -86,7 +102,8 @@ public class GameController : MonoBehaviour
     }
 
     public void StartLandingMode()
-    {        
+    {
+        Debug.Log("Landing sequence initiated!!");
         launchController.SetActive(false);
         // Don't deactivate glidingController yet since we want the glider to still be visible
         // Don't disable the _glidingScript since we still want to control the speed using it

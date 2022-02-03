@@ -25,6 +25,14 @@ public class GestureGroup : MonoBehaviour
         {
             _hitCount += 1;
             _prevFrameWasHit = true;
+
+            // TODO: might want to remove this all together when we make the boxes always invisible
+            if (_hitCount == 1)
+            {
+                box1.GetComponent<Renderer>().enabled = false;
+                box2.GetComponent<Renderer>().enabled = false;
+            }
+
         }
         else if (!box1.IsTouched() && !box2.IsTouched())
         {
