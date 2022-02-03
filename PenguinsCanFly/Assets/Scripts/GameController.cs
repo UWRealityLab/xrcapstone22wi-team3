@@ -57,9 +57,19 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (penguinXROTransform.position.y <= GLIDING_MIN_HEIGHT)
+        int layerMask = LayerMask.GetMask("Ground");
+        RaycastHit hit;
+        if (Physics.Raycast(penguinXROTransform.position, Vector3.down, out hit, Mathf.Infinity, layerMask))
         {
-            Instance.StartLandingMode();
+            Debug.Log("SAVE:rayDistance:" + hit.distance);
+            if (hit.distance <= GLIDING_MIN_HEIGHT)
+            {
+                Instance.StartLandingMode();
+            }
+        }
+        else
+        {
+            Debug.Log("SAVE:rayDistance:can't raycast ground rn");
         }
     }
 

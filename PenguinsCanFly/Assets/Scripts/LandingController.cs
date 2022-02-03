@@ -25,7 +25,11 @@ public class LandingController : MonoBehaviour
         Debug.Log("SAVE:speed:" + gliderInfo.speed);
         
         // TODO: change this number to whatever the "ground" level is
-        if (penguinXRORigidbody.transform.position.y <= 4) 
+        int layerMask = LayerMask.GetMask("Ground");
+        RaycastHit hit;
+        Physics.Raycast(penguinXRORigidbody.transform.position, Vector3.down, out hit, Mathf.Infinity, layerMask);
+        Debug.Log("SAVE:rayDistance:" + hit.distance);
+        if (hit.distance <= 2) 
         {
             // we've hit the ground, decay faster and disable gravity
             gliderInfo.speed *= 0.99f;
