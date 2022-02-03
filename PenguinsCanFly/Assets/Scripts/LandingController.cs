@@ -31,11 +31,10 @@ public class LandingController : MonoBehaviour
             gliderInfo.speed *= 0.99f;
             penguinXRORigidbody.useGravity = false;
             
-            if (!_spawnedCertificate && gliderInfo.speed < 1) 
+            if (!_spawnedCertificate && penguinXRORigidbody.velocity.magnitude < 1) 
             {
                 // Stop the glider
                 _spawnedCertificate = true;
-                gliderInfo.speed = 0;
                 GameController.Instance.DeactivateGlider();
 
                 // Spawn the certificate w/ high score that takes the user back home
