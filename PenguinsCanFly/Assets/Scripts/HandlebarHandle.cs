@@ -14,11 +14,13 @@ public class HandlebarHandle : XRBaseInteractable
     public Transform hangGliderRotatePoint = null;
     
     public float goalZ;
+    public float goalX; 
 
     // Start is called before the first frame update
     void Start()
     {
         goalZ = -90;
+        goalX = 0;
     }
 
     // Check that a controller is interacting with the object
@@ -62,6 +64,7 @@ public class HandlebarHandle : XRBaseInteractable
             // }
 
             goalZ = rotationGoal;
+            goalX = selectInteractor.transform.localEulerAngles.x;
         }
     }
     
@@ -71,11 +74,7 @@ public class HandlebarHandle : XRBaseInteractable
         Debug.Log("HandlebarHandle: select exited: " + args.interactorObject);
         selectInteractor = null;
         goalZ = -90;
+        goalX = 90;
     }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
+    
 }

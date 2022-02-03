@@ -6,6 +6,9 @@ using UnityEngine.XR;
 
 public class GliderInfo : MonoBehaviour
 {
+    // Note, 0 is up, 90 is forward, 180 is down
+    public const int MaxPitchOffsetDegree = 40;
+    
     public float extraSpeed = 10f;
     public float speed = 12.5f;
     public float drag = 6;
@@ -19,10 +22,14 @@ public class GliderInfo : MonoBehaviour
     public Transform penguinXROTransform;
 
     // Pitch is up/down. Looking straight ahead is pitch 90. Pitch 60 tilts up, pitch 120 tilts down 
-    public float totalPitchDegree;
-    public float totalYawDegree;
+    public float pitchDegree = 90f; // This is only modified by the hand controller
+    public float extraPitchDegree = 0f;
+    public float TotalPitchDegree
+    {
+        get { return pitchDegree + extraPitchDegree; }
+    }
 
-    public const float PitchRotationTolerance = 5;
+    public float totalYawDegree;
     
     private InputDevice targetDevice;
 
@@ -74,6 +81,10 @@ public class GliderInfo : MonoBehaviour
             extraSpeed += .05f;
         }
         extraSpeed = Mathf.Clamp(extraSpeed, -0.95f * speed, 3 * speed);
+        
+        // Reduce extra pitch towards 0
+        extraPitchDegree *= 0.9f;
+        extraPitchDegree = Mathf.Clamp(extraPitchDegree,-MaxPitchOffsetDegree, MaxPitchOffsetDegree);
 
         // Depending on pitch, change drag so that if you are looking down, you go faster and vice versa
         // 0.05f was calculated based on -2drag / 40degrees 
@@ -89,7 +100,7 @@ public class GliderInfo : MonoBehaviour
         penguinXROTransform.rotation = Quaternion.Slerp(penguinXROTransform.rotation, cameraTargetNewRotation, Time.deltaTime);
         
         // Pitch locally off of the camera yaw
-        Quaternion gliderTargetNewRotation = Quaternion.Euler(totalPitchDegree - 90, 0, 0);  // Subtract 90 since looking forward is 90
+        Quaternion gliderTargetNewRotation = Quaternion.Euler(TotalPitchDegree - 90, 0, 0);  // Subtract 90 since looking forward is 90
         gliderDirection.localRotation = Quaternion.Slerp(gliderDirection.localRotation, gliderTargetNewRotation, Time.deltaTime);
 
         if (_userControlEnabled)
@@ -98,24 +109,18 @@ public class GliderInfo : MonoBehaviour
             targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue);
             if (primaryButtonValue)
             {
-                Debug.Log("Disabled up dummy >:)");
-                totalPitchDegree = 60;
+                Debug.Log("Hacker detected!");
+                extraPitchDegree = -30;
             }
             else if (secondaryButtonValue)
             {
-                totalPitchDegree = 120;
-            }
-            else
-            {
-                // TODO: Remove this for wind to work!!!!");
-                // totalPitchDegree = 90;
+                extraPitchDegree = 30;
             }
         }
         
-        // Decay pitch
-        totalPitchDegree = (totalPitchDegree - 90) * 0.9f + 90;
 
-        Debug.Log("SAVE:TotalPitchDegree:" + totalPitchDegree);
+
+        Debug.Log("SAVE:TotalPitchDegree:" + TotalPitchDegree + " extraPitchDegree " + extraPitchDegree);
 
     }
 
@@ -131,7 +136,8 @@ public class GliderInfo : MonoBehaviour
             Quaternion.identity, 0.2f);
         gliderModelController.enabled = false;
         _userControlEnabled = false;
-        totalPitchDegree = 90;
+        extraPitchDegree = 0;
+        pitchDegree = 90;
     }
     
     private void OnEnable()

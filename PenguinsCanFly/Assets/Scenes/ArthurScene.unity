@@ -4570,7 +4570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gliderInfo: {fileID: 1980159960}
   speedToAdd: -0.2
-  pitchToAdd: 1
+  pitchToAdd: 5
 --- !u!65 &1920367827
 BoxCollider:
   m_ObjectHideFlags: 0
