@@ -42,8 +42,6 @@ public class ScoreCounter : MonoBehaviour
         float newPositionZ = transform.position.z;
         totalDistance += (newPositionZ - lastPositionZ);
         lastPositionZ = newPositionZ;
-        
-        Debug.Log("SAVE:score:" + GetScore());
     }
 
     public int GetScore()

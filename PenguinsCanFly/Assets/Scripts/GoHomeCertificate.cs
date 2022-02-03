@@ -30,7 +30,6 @@ public class GoHomeCertificate : XRGrabInteractable
             _goHomeCalled = true;
             _goHomeCallTime = Time.time;
             Invoke("GoHome", TimeBeforeReset);
-            Debug.Log("Time to go home! " + Time.time);
         } 
         else if (_goHomeCalled)
         {

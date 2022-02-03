@@ -18,13 +18,12 @@ public class LandingController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("SAVE:height:" + penguinXRORigidbody.transform.position.y);
         Debug.Log("SAVE:speed:" + gliderInfo.speed);
         
         // TODO: change this number to whatever the "ground" level is
