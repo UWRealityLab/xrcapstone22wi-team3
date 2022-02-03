@@ -6,6 +6,7 @@ using UnityEngine.XR;
 
 public class GliderInfo : MonoBehaviour
 {
+    public float extraSpeed = 10f;
     public float speed = 12.5f;
     public float drag = 6;
 
@@ -20,10 +21,14 @@ public class GliderInfo : MonoBehaviour
     // Pitch is up/down. Looking straight ahead is pitch 90. Pitch 60 tilts up, pitch 120 tilts down 
     public float totalPitchDegree;
     public float totalYawDegree;
+
+    public const float PitchRotationTolerance = 5;
     
     private InputDevice targetDevice;
 
     private bool _userControlEnabled = true;
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -52,15 +57,26 @@ public class GliderInfo : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // Add speed forward based on glider direction
-        penguinXRORigidbody.drag = drag;
-        Vector3 localV = gliderDirection.InverseTransformDirection(penguinXRORigidbody.velocity);
-        localV.z = speed;
-        penguinXRORigidbody.velocity = gliderDirection.TransformDirection(localV);
+        Vector3 gliderDirectionForward = gliderDirection.forward;
+        float modifiedSpeed = speed + extraSpeed;
+        penguinXRORigidbody.AddForce(gliderDirectionForward * (modifiedSpeed * 10));
         
+        // Reduce extra speed towards 0
+        extraSpeed -= Math.Sign(extraSpeed) * .1f;
+        extraSpeed = Mathf.Clamp(extraSpeed, -speed, 3 * speed);
+
+        // Depending on pitch, change drag so that if you are looking down, you go faster and vice versa
+        // 0.05f was calculated based on -2drag / 40degrees 
+        float actualPitchRotation = Vector3.SignedAngle(Vector3.up, gliderDirectionForward, gliderDirection.right);
+        float modifiedDrag = -(actualPitchRotation - 90) * 0.05f + drag;
+        penguinXRORigidbody.drag = modifiedDrag;
+        
+
+        Debug.Log("SAVE:GliderSpeed:" + penguinXRORigidbody.velocity.magnitude + " ExtraSpeed " + extraSpeed);
+
         // Yaw camera globally
         Quaternion cameraTargetNewRotation = Quaternion.Euler(0, totalYawDegree, 0);
         penguinXROTransform.rotation = Quaternion.Slerp(penguinXROTransform.rotation, cameraTargetNewRotation, Time.deltaTime);
@@ -75,6 +91,7 @@ public class GliderInfo : MonoBehaviour
             targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue);
             if (primaryButtonValue)
             {
+                Debug.Log("Disabled up dummy >:)");
                 totalPitchDegree = 60;
             }
             else if (secondaryButtonValue)
@@ -83,11 +100,19 @@ public class GliderInfo : MonoBehaviour
             }
             else
             {
-                totalPitchDegree = 90;
+                // TODO: Remove this for wind to work!!!!");
+                // totalPitchDegree = 90;
             }
         }
+        
+        // Decay pitch
+        totalPitchDegree = (totalPitchDegree - 90) * 0.9f + 90;
+
+        Debug.Log("SAVE:TotalPitchDegree:" + totalPitchDegree);
 
     }
+
+    // Update is called once per frame
 
     // Disable user control of gliding, but still display the hang glider
     // and allow this script to control the glider's speed. Use for landing sequence
