@@ -28,10 +28,10 @@ feature-img: "assets/img/sample_feature_img_2.png"
     </td>
     </tr>
     <tr>
-    <td style="border: none; text-align: center;">I am not a penguin!</td>
-    <td style="border: none; text-align: center;">Penguins are my favorite animal!</td>
-    <td style="border: none; text-align: center;">Happy Feet is one of my favorite movies!</td>
-    <td style="border: none; text-align: center;">I did a project on Adélie penguins in 2nd grade!</td>
+    <td style="border: none; text-align: center;">I am not a penguin!<br>--<br>I am a MS student studying CS! There was this one hackathon where my team placed second to this other team that did a really cool VR project. Maybe this will be my comeback story.</td>
+    <td style="border: none; text-align: center;">Penguins are my favorite animal! <br>--<br> I'm a senior studying CS! I haven't had much experience with VR prior to this class, but I will say that I've been getting pretty good at Beat Saber recently.</td>
+    <td style="border: none; text-align: center;">Happy Feet is one of my favorite movies! <br>--<br> I'm also studying CS and this is my senior year! Besides working on VR, I enjoy skateboarding and playing soccer. I'm playing intramural futsal this quarter!</td>
+    <td style="border: none; text-align: center;">I did a project on Adélie penguins in 2nd grade! <br>--<br> I am a MS student studying CS, and in my free-time, I enjoy dancing, crafting, board games, and being outside. Besides penguins (of course), I love my 2 cats!</td>
     </tr>
 </tbody>
 </table>
