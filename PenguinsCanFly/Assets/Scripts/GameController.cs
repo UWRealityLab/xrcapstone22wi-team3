@@ -21,7 +21,7 @@ public class GameController : MonoBehaviour
     
     // TODO: experiment with this value.
     // After we hit this min height from the ground, the landing sequence starts
-    private const float GlidingMinHeight = 7f;
+    private const float GlidingMinHeight = 10f;
 
     public static GameController Instance
     {

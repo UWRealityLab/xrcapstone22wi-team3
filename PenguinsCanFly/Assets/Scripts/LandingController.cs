@@ -13,7 +13,7 @@ public class LandingController : MonoBehaviour
     private bool _spawnedCertificate = false;
 
     // Distance from the ground where we turn off gravity and decay speed faster
-    private const float LandingHeight = 2f;
+    private const float LandingHeight = 5f;
     
     // Start is called before the first frame update
     void Start()

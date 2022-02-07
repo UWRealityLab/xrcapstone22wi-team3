@@ -33,7 +33,7 @@ public class GliderInfo : MonoBehaviour
     
     private InputDevice targetDevice;
 
-    private bool _userControlEnabled = true;
+    public bool _userControlEnabled = true;
     
 
 
@@ -130,11 +130,12 @@ public class GliderInfo : MonoBehaviour
     // and allow this script to control the glider's speed. Use for landing sequence
     public void DisableUserControlOfGlider()
     {
+        Debug.Log("DISABLE CONTROL");
         // TODO: fix this circular dependency
         gliderModelController.transform.localRotation = 
             Quaternion.RotateTowards(gliderModelController.transform.localRotation, 
             Quaternion.identity, 0.2f);
-        gliderModelController.enabled = false;
+        // gliderModelController.enabled = false;
         _userControlEnabled = false;
         extraPitchDegree = 0;
         pitchDegree = 90;
