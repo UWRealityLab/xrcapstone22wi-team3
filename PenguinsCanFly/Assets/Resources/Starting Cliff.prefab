@@ -124,6 +124,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-mountains
       objectReference: {fileID: 0}
+    - target: {fileID: 1657682059889758, guid: adf7979a398244cfaa6e31333ced4b39, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4781452209106370, guid: adf7979a398244cfaa6e31333ced4b39, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -184,6 +188,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5f35ae9530edec84085e28d4c3302e29, type: 2}
+    - target: {fileID: 64170550819560910, guid: adf7979a398244cfaa6e31333ced4b39, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: 45c976cb303514a5e92dbbec78f63e15, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adf7979a398244cfaa6e31333ced4b39, type: 3}
 --- !u!4 &1347496753772251052 stripped
@@ -1104,6 +1112,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-mountain-range (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1833029047212144, guid: 94ac6c4ade9ea4ad3b68abed356206d0, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4809235775907454, guid: 94ac6c4ade9ea4ad3b68abed356206d0, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -1181,6 +1193,10 @@ PrefabInstance:
     - target: {fileID: 1833029047212144, guid: 94ac6c4ade9ea4ad3b68abed356206d0, type: 3}
       propertyPath: m_Name
       value: terrain-mountain-range
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833029047212144, guid: 94ac6c4ade9ea4ad3b68abed356206d0, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4809235775907454, guid: 94ac6c4ade9ea4ad3b68abed356206d0, type: 3}
       propertyPath: m_RootOrder
