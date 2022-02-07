@@ -33,9 +33,8 @@ public class GliderInfo : MonoBehaviour
     
     private InputDevice targetDevice;
 
-    public bool _userControlEnabled = true;
-    
-
+    // when userControlEnabled = false, the user cannot control the glider
+    public bool userControlEnabled = true;
 
     // Start is called before the first frame update
     void Start()
@@ -103,7 +102,7 @@ public class GliderInfo : MonoBehaviour
         Quaternion gliderTargetNewRotation = Quaternion.Euler(TotalPitchDegree - 90, 0, 0);  // Subtract 90 since looking forward is 90
         gliderDirection.localRotation = Quaternion.Slerp(gliderDirection.localRotation, gliderTargetNewRotation, Time.deltaTime);
 
-        if (_userControlEnabled)
+        if (userControlEnabled)
         {
             targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
             targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue);
@@ -130,13 +129,9 @@ public class GliderInfo : MonoBehaviour
     // and allow this script to control the glider's speed. Use for landing sequence
     public void DisableUserControlOfGlider()
     {
-        Debug.Log("DISABLE CONTROL");
-        // TODO: fix this circular dependency
-        gliderModelController.transform.localRotation = 
-            Quaternion.RotateTowards(gliderModelController.transform.localRotation, 
-            Quaternion.identity, 0.2f);
-        // gliderModelController.enabled = false;
-        _userControlEnabled = false;
+        Debug.Log("DISABLE USER CONTROL");
+        // Glider model controller checks the userControlEnabled flag to reset to neutral
+        userControlEnabled = false;
         extraPitchDegree = 0;
         pitchDegree = 90;
     }

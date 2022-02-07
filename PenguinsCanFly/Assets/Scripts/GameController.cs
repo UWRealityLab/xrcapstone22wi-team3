@@ -110,6 +110,7 @@ public class GameController : MonoBehaviour
         _glidingScript.DisableUserControlOfGlider();
         landingController.SetActive(true);
     }
+    
     public void DeactivateGlider()
     {
         // Hides the glider

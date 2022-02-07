@@ -14,64 +14,61 @@ public class GliderModelController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!gliderInfo._userControlEnabled)
+        if (!gliderInfo.userControlEnabled)
         {
-            Vector3 rot = new Vector3(0.75f * (gliderInfo.TotalPitchDegree - 90), 0, 0);
-            Quaternion finalLocalRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(rot), Time.deltaTime);
-            transform.localRotation = finalLocalRotation;
+            ResetGliderToNeutral();
+            return;
+        }
+        
+        float clampedRightGoalZ = clampRightHand();
+        float clampedLeftGoalZ = clampLeftHand();
+
+        // TODO: find better way to merge!!! PRETTY IMPACTFUL CHANGE
+        // One alternative is that you can make a line between teh two lines and run that angle instead
+        // Can also require both hands have to be grabbing for it to work
+        float goalRotation = (clampedRightGoalZ + clampedLeftGoalZ) / 2;
+
+        // Rotate handlebar so it matches the position of hand
+        Vector3 localAngles = transform.localEulerAngles;
+
+        // TODO: this might not be smooth since it pretends the axis are independent when they are not. 
+        // Tilt glider up and down based on pitch!
+        Vector3 rot = new Vector3(0.75f * (gliderInfo.TotalPitchDegree - 90), 0, goalRotation);
+
+        Quaternion finalLocalRotation =
+            Quaternion.Slerp(transform.localRotation, Quaternion.Euler(rot), Time.deltaTime);
+        // Snap bar quickly if BOTH hands are on it, otherwise, you don't have as much control
+        if (leftHandlebar.IsBeingHeld() && rightHandlebar.IsBeingHeld())
+        {
+            finalLocalRotation = Quaternion.Euler(finalLocalRotation.eulerAngles.x,
+                finalLocalRotation.eulerAngles.y, goalRotation);
+        }
+
+        transform.localRotation = finalLocalRotation;
+
+        // TODO: remove magic numbers
+        // Change yaw based on the local rotation so glider actually turns
+        if (localAngles.z >= 5 && localAngles.z <= MaxRotationDegrees)
+        {
+            gliderInfo.totalYawDegree -= localAngles.z * Time.deltaTime;
+        }
+        else if (localAngles.z <= 355 && localAngles.z >= 360 - MaxRotationDegrees)
+        {
+            gliderInfo.totalYawDegree += (360 - localAngles.z) * Time.deltaTime;
+        }
+
+        // Change pitch based on local rotation so you can tilt down
+        if (leftHandlebar.IsBeingHeld() && rightHandlebar.IsBeingHeld() &&
+            isWithinRangePitchRotation(leftHandlebar) && isWithinRangePitchRotation(rightHandlebar))
+        {
+            float averagePitch = (rightHandlebar.goalX + leftHandlebar.goalX) / 2;
+            float goalPitch = (averagePitch) * 0.75f + 90;
+            goalPitch = Math.Min(GliderInfo.MaxPitchOffsetDegree + 90, goalPitch);
+            gliderInfo.pitchDegree = goalPitch;
         }
         else
         {
-            float clampedRightGoalZ = clampRightHand();
-            float clampedLeftGoalZ = clampLeftHand();
-
-            // TODO: find better way to merge!!! PRETTY IMPACTFUL CHANGE
-            // One alternative is that you can make a line between teh two lines and run that angle instead
-            // Can also require both hands have to be grabbing for it to work
-            float goalRotation = (clampedRightGoalZ + clampedLeftGoalZ) / 2;
-
-            // Rotate handlebar so it matches the position of hand
-            Vector3 localAngles = transform.localEulerAngles;
-
-            // TODO: this might not be smooth since it pretends the axis are independent when they are not. 
-            // Tilt glider up and down based on pitch!
-            Vector3 rot = new Vector3(0.75f * (gliderInfo.TotalPitchDegree - 90), 0, goalRotation);
-
-            Quaternion finalLocalRotation =
-                Quaternion.Slerp(transform.localRotation, Quaternion.Euler(rot), Time.deltaTime);
-            // Snap bar quickly if BOTH hands are on it, otherwise, you don't have as much control
-            if (leftHandlebar.IsBeingHeld() && rightHandlebar.IsBeingHeld())
-            {
-                finalLocalRotation = Quaternion.Euler(finalLocalRotation.eulerAngles.x,
-                    finalLocalRotation.eulerAngles.y, goalRotation);
-            }
-
-            transform.localRotation = finalLocalRotation;
-
-            // TODO: remove magic numbers
-            // Change yaw based on the local rotation so glider actually turns
-            if (localAngles.z >= 5 && localAngles.z <= MaxRotationDegrees)
-            {
-                gliderInfo.totalYawDegree -= localAngles.z * Time.deltaTime;
-            }
-            else if (localAngles.z <= 355 && localAngles.z >= 360 - MaxRotationDegrees)
-            {
-                gliderInfo.totalYawDegree += (360 - localAngles.z) * Time.deltaTime;
-            }
-
-            // Change pitch based on local rotation so you can tilt down
-            if (leftHandlebar.IsBeingHeld() && rightHandlebar.IsBeingHeld() &&
-                isWithinRangePitchRotation(leftHandlebar) && isWithinRangePitchRotation(rightHandlebar))
-            {
-                float averagePitch = (rightHandlebar.goalX + leftHandlebar.goalX) / 2;
-                float goalPitch = (averagePitch) * 0.75f + 90;
-                goalPitch = Math.Min(GliderInfo.MaxPitchOffsetDegree + 90, goalPitch);
-                gliderInfo.pitchDegree = goalPitch;
-            }
-            else
-            {
-                gliderInfo.pitchDegree = 90;
-            }
+            gliderInfo.pitchDegree = 90;
         }
     }
 
@@ -129,5 +126,12 @@ public class GliderModelController : MonoBehaviour
             }
             return rotationGoal - 180;
         }
+    }
+
+    private void ResetGliderToNeutral()
+    {
+        Vector3 rot = new Vector3(0.75f * (gliderInfo.TotalPitchDegree - 90), 0, 0);
+        Quaternion finalLocalRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(rot), Time.deltaTime);
+        transform.localRotation = finalLocalRotation;
     }
 }
