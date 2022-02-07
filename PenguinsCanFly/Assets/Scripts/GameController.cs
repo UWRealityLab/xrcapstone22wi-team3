@@ -44,6 +44,8 @@ public class GameController : MonoBehaviour
         // Disable everything on awake so that enabling works later
         glidingController.SetActive(false);
         launchController.SetActive(false);
+        landingController.SetActive(false);
+        locomotionSystem.SetActive(false);
     }
 
     // Start is called before the first frame update
