@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.69037783, g: 0.7790705, b: 0.86253184, a: 1}
+  m_IndirectSpecularColor: {r: 0.69299155, g: 0.7805977, b: 0.8643612, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1703,7 +1703,7 @@ MonoBehaviour:
   launchController: {fileID: 463930438}
   glidingController: {fileID: 1980159959}
   landingController: {fileID: 656115083}
-  locomotionSystem: {fileID: 0}
+  locomotionSystem: {fileID: 733509491}
 --- !u!4 &476343504
 Transform:
   m_ObjectHideFlags: 0

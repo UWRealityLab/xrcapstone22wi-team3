@@ -21,6 +21,12 @@ public class LandingController : MonoBehaviour
 
     }
 
+    private void OnEnable()
+    {
+        // TODO: Remove - fail safe to spawn the certificate even if get stuck and never land
+        Invoke("SpawnCertificate", 7f);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -36,22 +42,30 @@ public class LandingController : MonoBehaviour
             
             if (!_spawnedCertificate && penguinXRORigidbody.velocity.magnitude < 1) 
             {
-                // Stop the glider
-                _spawnedCertificate = true;
                 GameController.Instance.StartGroundMode();
-
-                // Spawn the certificate w/ high score that takes the user back home
-                Transform penguinTransform = penguinXRORigidbody.transform; 
-                Vector3 localOffset = new Vector3(0.5f, 1, 1.5f);  // spawn in front and to the right
-                Vector3 worldOffset = penguinTransform.rotation * localOffset;
-                Vector3 spawnPosition = penguinTransform.position + worldOffset;
-                Instantiate(goHomeCertificatePrefab, spawnPosition, penguinTransform.rotation);
+                SpawnCertificate();
             }
         }
         else
         {
             // decay speed to slow down the glider
             gliderInfo.speed *= 0.999f;
+        }
+    }
+
+    public void SpawnCertificate()
+    {
+        if (!_spawnedCertificate)
+        {
+            gliderInfo.speed = 0; // TODO: remove - this is just for the fail safe
+            _spawnedCertificate = true;
+            
+            // Spawn the certificate w/ high score that takes the user back home
+            Transform penguinTransform = penguinXRORigidbody.transform; 
+            Vector3 localOffset = new Vector3(0.5f, 1, 1.5f);  // spawn in front and to the right
+            Vector3 worldOffset = penguinTransform.rotation * localOffset;
+            Vector3 spawnPosition = penguinTransform.position + worldOffset;
+            Instantiate(goHomeCertificatePrefab, spawnPosition, penguinTransform.rotation);
         }
     }
     
