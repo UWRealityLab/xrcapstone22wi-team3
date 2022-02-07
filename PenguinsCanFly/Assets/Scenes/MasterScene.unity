@@ -1828,6 +1828,7 @@ MonoBehaviour:
   launchController: {fileID: 463930438}
   glidingController: {fileID: 1980159959}
   landingController: {fileID: 656115083}
+  locomotionSystem: {fileID: 733509491}
 --- !u!4 &476343504
 Transform:
   m_ObjectHideFlags: 0

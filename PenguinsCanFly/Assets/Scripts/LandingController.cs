@@ -38,7 +38,7 @@ public class LandingController : MonoBehaviour
             {
                 // Stop the glider
                 _spawnedCertificate = true;
-                GameController.Instance.DeactivateGlider();
+                GameController.Instance.StartGroundMode();
 
                 // Spawn the certificate w/ high score that takes the user back home
                 Transform penguinTransform = penguinXRORigidbody.transform; 
