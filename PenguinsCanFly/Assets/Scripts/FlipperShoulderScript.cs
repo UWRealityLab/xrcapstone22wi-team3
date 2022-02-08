@@ -17,7 +17,7 @@ public class FlipperShoulderScript : MonoBehaviour
     public const float shoulderZOffset = -0.05f;
     public const float backwardAngleThreshold = 140f;
 
-    private const float flipperInitialYScale = 0.6f;
+    private const float flipperInitialZScale = 0.6f;
     private const float flipperInitialOffset = 0.398f;
 
     public const float flipperHandWidth = 0.12f;
@@ -63,7 +63,7 @@ public class FlipperShoulderScript : MonoBehaviour
 
         // Change Penguin Flipper length depending on how close controller is
         float flipperLength = controllerShoulderDiff.magnitude + flipperHandWidth;
-        flipper.transform.localScale = new Vector3(flipper.transform.localScale.x, flipperInitialYScale * flipperLength, flipper.transform.localScale.z);
+        flipper.transform.localScale = new Vector3(flipper.transform.localScale.x, flipper.transform.localScale.y, flipperInitialZScale * flipperLength);
         flipper.transform.localPosition = new Vector3(0f, 0f, (flipperLength / 2) * flipperInitialOffset);
     }
 }
