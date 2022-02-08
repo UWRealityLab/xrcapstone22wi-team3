@@ -17,6 +17,9 @@ public class FlipperShoulderScript : MonoBehaviour
     public const float shoulderZOffset = -0.05f;
     public const float backwardAngleThreshold = 120f;
 
+    private const float flipperInitialYScale = 0.6f;
+    private const float flipperInitialOffset = 0.398f;
+
     public const float flipperHandWidth = 0.12f;
 
     // Start is called before the first frame update
@@ -38,7 +41,6 @@ public class FlipperShoulderScript : MonoBehaviour
         {
             float gliderFrontAngle = Vector2.SignedAngle(new Vector2(gliderForward.x, gliderForward.z), new Vector2(0, 1));
             rotation = Quaternion.AngleAxis(gliderFrontAngle, Vector3.up);
-
         }
         else
         {
@@ -61,7 +63,7 @@ public class FlipperShoulderScript : MonoBehaviour
 
         // Change Penguin Flipper length depending on how close controller is
         float flipperLength = controllerShoulderDiff.magnitude + flipperHandWidth;
-        flipper.transform.localScale = new Vector3(flipper.transform.localScale.x, flipper.transform.localScale.y, flipperLength);
-        flipper.transform.localPosition = new Vector3(0f, 0f, flipperLength / 2);
+        flipper.transform.localScale = new Vector3(flipper.transform.localScale.x, flipperInitialYScale * flipperLength, flipper.transform.localScale.z);
+        flipper.transform.localPosition = new Vector3(0f, 0f, (flipperLength / 2) * flipperInitialOffset);
     }
 }
