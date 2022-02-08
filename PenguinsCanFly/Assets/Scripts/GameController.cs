@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     public GameObject launchController;
     public GameObject glidingController;
     public GameObject landingController;
+    public GameObject locomotionSystem;
 
     private LaunchController _launchScript;
     private GliderInfo _glidingScript;
@@ -21,7 +22,7 @@ public class GameController : MonoBehaviour
     
     // TODO: experiment with this value.
     // After we hit this min height from the ground, the landing sequence starts
-    private const float GlidingMinHeight = 7f;
+    private const float GlidingMinHeight = 10f;
 
     public static GameController Instance
     {
@@ -43,6 +44,8 @@ public class GameController : MonoBehaviour
         // Disable everything on awake so that enabling works later
         glidingController.SetActive(false);
         launchController.SetActive(false);
+        landingController.SetActive(false);
+        locomotionSystem.SetActive(false);
     }
 
     // Start is called before the first frame update
@@ -89,6 +92,7 @@ public class GameController : MonoBehaviour
         launchController.SetActive(true);
         glidingController.SetActive(false);
         landingController.SetActive(false);
+        locomotionSystem.SetActive(false);
     }
 
     public void StartGlidingMode()
@@ -99,6 +103,7 @@ public class GameController : MonoBehaviour
         launchController.SetActive(false);
         glidingController.SetActive(true);
         landingController.SetActive(false);
+        locomotionSystem.SetActive(false);
     }
 
     public void StartLandingMode()
@@ -109,10 +114,14 @@ public class GameController : MonoBehaviour
         // Don't disable the _glidingScript since we still want to control the speed using it
         _glidingScript.DisableUserControlOfGlider();
         landingController.SetActive(true);
+        locomotionSystem.SetActive(false);
     }
-    public void DeactivateGlider()
+    
+    public void StartGroundMode()
     {
-        // Hides the glider
+        // Hides the glider and enables locomotion
         glidingController.SetActive(false);
+        locomotionSystem.SetActive(true);
     }
+    
 }
