@@ -12,10 +12,10 @@ public class FlipperShoulderScript : MonoBehaviour
     public bool isLeft;
 
     private Vector3 shoulderOffset;
-    public const float shoulderXOffset = 0.09f;
+    public const float shoulderXOffset = 0.11f;
     public const float shoulderYOffset = -0.2f;
     public const float shoulderZOffset = -0.05f;
-    public const float backwardAngleThreshold = 120f;
+    public const float backwardAngleThreshold = 140f;
 
     private const float flipperInitialYScale = 0.6f;
     private const float flipperInitialOffset = 0.398f;

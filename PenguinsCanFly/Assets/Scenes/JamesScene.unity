@@ -2088,6 +2088,7 @@ MonoBehaviour:
   launchController: {fileID: 463930438}
   glidingController: {fileID: 1980159959}
   landingController: {fileID: 0}
+  locomotionSystem: {fileID: 0}
 --- !u!4 &476343504
 Transform:
   m_ObjectHideFlags: 0
@@ -2799,7 +2800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ec98c3140e5e940f18fbc5bf560d873d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 0.235
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ec98c3140e5e940f18fbc5bf560d873d, type: 3}
       propertyPath: m_LocalScale.y
@@ -2807,7 +2808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ec98c3140e5e940f18fbc5bf560d873d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.3
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ec98c3140e5e940f18fbc5bf560d873d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4610,7 +4611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ee7676a21fdb4d06b72b17a2b085cdd, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 0.235
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ee7676a21fdb4d06b72b17a2b085cdd, type: 3}
       propertyPath: m_LocalScale.y
@@ -4618,7 +4619,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ee7676a21fdb4d06b72b17a2b085cdd, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.3
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ee7676a21fdb4d06b72b17a2b085cdd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4869,6 +4870,7 @@ MonoBehaviour:
   pitchDegree: 90
   extraPitchDegree: 0
   totalYawDegree: 0
+  userControlEnabled: 1
 --- !u!4 &1980159961
 Transform:
   m_ObjectHideFlags: 0
