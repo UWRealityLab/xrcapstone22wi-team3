@@ -15,6 +15,11 @@ public class DebugDisplay : MonoBehaviour
     {
         Application.logMessageReceived += HandleLog;
         // Debug.Log("Hey there dork!");
+        Debug.Log("Hello!!\n");
+        Debug.Log("To launch, flap your flippers as hard as you can! Make sure you hit both the top and bottom boxes.\n");
+        Debug.Log("Hold onto the handlebar with the grip buttons on the controller and tilt right, left, and down!\n");
+        Debug.Log("In the air, the green boxes are updrafts and the red boxes are downdrafts. Fly into them to increase the glider's height!\n");
+        Debug.Log("You'll have to land once you get too close to the ground, so try to stay as high as possible!\n");
     }
     
     protected void OnDisable()
