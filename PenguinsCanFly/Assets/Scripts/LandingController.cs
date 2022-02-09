@@ -30,7 +30,7 @@ public class LandingController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("SAVE:speed:" + gliderInfo.speed);
+        // Debug.Log("SAVE:speed:" + gliderInfo.speed);
         
         // TODO: change this number to whatever the "ground" level is
         float distance = GameController.Instance.GetDistanceToGround();

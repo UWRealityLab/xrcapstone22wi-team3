@@ -33,7 +33,7 @@ public class HandlebarHandle : XRBaseInteractable
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
         base.OnSelectEntered(args);
-        Debug.Log("HandlebarHandle: select entered: " + args.interactorObject);
+        // Debug.Log("HandlebarHandle: select entered: " + args.interactorObject);
         selectInteractor = args.interactorObject;
     }
 
@@ -57,7 +57,7 @@ public class HandlebarHandle : XRBaseInteractable
     protected override void OnSelectExited(SelectExitEventArgs args)
     {
         base.OnSelectExited(args);
-        Debug.Log("HandlebarHandle: select exited: " + args.interactorObject);
+        // Debug.Log("HandlebarHandle: select exited: " + args.interactorObject);
         selectInteractor = null;
         goalZ = -90;
         goalX = 90;

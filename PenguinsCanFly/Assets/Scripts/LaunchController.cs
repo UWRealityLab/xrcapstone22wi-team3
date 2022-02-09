@@ -35,7 +35,7 @@ public class LaunchController : MonoBehaviour
         localV.z = speed;
         penguinXRORigidbody.velocity = gliderDirection.TransformDirection(localV);
         
-        Debug.Log("SAVE:speed:" + localV.z);
+        // Debug.Log("SAVE:speed:" + localV.z);
     }
 
     private void OnEnable()

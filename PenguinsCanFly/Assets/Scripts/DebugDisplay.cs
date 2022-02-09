@@ -14,7 +14,7 @@ public class DebugDisplay : MonoBehaviour
     protected void OnEnable()
     {
         Application.logMessageReceived += HandleLog;
-        Debug.Log("Hey there dork!");
+        // Debug.Log("Hey there dork!");
     }
     
     protected void OnDisable()

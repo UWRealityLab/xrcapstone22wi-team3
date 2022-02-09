@@ -44,7 +44,7 @@ public class GliderInfo : MonoBehaviour
 
         foreach (var device in inputDevices)
         {
-            Debug.Log(string.Format("Device found with name '{0}' and role '{1}'", device.name, device.role.ToString()));
+            // Debug.Log(string.Format("Device found with name '{0}' and role '{1}'", device.name, device.role.ToString()));
         }
         
         // Devices we are actually  using:
@@ -54,7 +54,7 @@ public class GliderInfo : MonoBehaviour
         
         foreach (var device in inputDevices)
         {
-            Debug.Log(string.Format("With proper characteristics '{0}' and role '{1}'", device.name, device.role.ToString()));
+            // Debug.Log(string.Format("With proper characteristics '{0}' and role '{1}'", device.name, device.role.ToString()));
         }
 
         if (inputDevices.Count > 0)
@@ -92,7 +92,7 @@ public class GliderInfo : MonoBehaviour
         penguinXRORigidbody.drag = modifiedDrag;
         
 
-        Debug.Log("SAVE:GliderSpeed:" + penguinXRORigidbody.velocity.magnitude + " ExtraSpeed " + extraSpeed);
+        // Debug.Log("SAVE:GliderSpeed:" + penguinXRORigidbody.velocity.magnitude + " ExtraSpeed " + extraSpeed);
 
         // Yaw camera globally
         Quaternion cameraTargetNewRotation = Quaternion.Euler(0, totalYawDegree, 0);
@@ -108,7 +108,7 @@ public class GliderInfo : MonoBehaviour
             targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue);
             if (primaryButtonValue)
             {
-                Debug.Log("Hacker detected!");
+                // Debug.Log("Hacker detected!");
                 extraPitchDegree = -30;
             }
             else if (secondaryButtonValue)
@@ -119,7 +119,7 @@ public class GliderInfo : MonoBehaviour
         
 
 
-        Debug.Log("SAVE:TotalPitchDegree:" + TotalPitchDegree + " extraPitchDegree " + extraPitchDegree);
+        // Debug.Log("SAVE:TotalPitchDegree:" + TotalPitchDegree + " extraPitchDegree " + extraPitchDegree);
 
     }
 
@@ -129,7 +129,7 @@ public class GliderInfo : MonoBehaviour
     // and allow this script to control the glider's speed. Use for landing sequence
     public void DisableUserControlOfGlider()
     {
-        Debug.Log("DISABLE USER CONTROL");
+        // Debug.Log("DISABLE USER CONTROL");
         // Glider model controller checks the userControlEnabled flag to reset to neutral
         userControlEnabled = false;
         extraPitchDegree = 0;

@@ -18,7 +18,7 @@ public class HandPresence : MonoBehaviour
 
         foreach (var device in inputDevices)
         {
-            Debug.Log(string.Format("Device found with name '{0}' and role '{1}'", device.name, device.role.ToString()));
+            // Debug.Log(string.Format("Device found with name '{0}' and role '{1}'", device.name, device.role.ToString()));
         }
         
         // Devices we are actually  using:
@@ -28,7 +28,7 @@ public class HandPresence : MonoBehaviour
         
         foreach (var device in inputDevices)
         {
-            Debug.Log(string.Format("With proper characteristics '{0}' and role '{1}'", device.name, device.role.ToString()));
+            // Debug.Log(string.Format("With proper characteristics '{0}' and role '{1}'", device.name, device.role.ToString()));
         }
 
         if (inputDevices.Count > 0)
@@ -43,7 +43,7 @@ public class HandPresence : MonoBehaviour
         targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
         if (primaryButtonValue)
         {
-            Debug.Log("PrimaryButton pressed on target device!");
+            // Debug.Log("PrimaryButton pressed on target device!");
         }
     }
 }

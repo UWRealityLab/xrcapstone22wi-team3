@@ -45,7 +45,7 @@ public class TerrainManager : MonoBehaviour
             windColliderScript.gliderInfo = gliderInfo;
 
             numInstantiated++;
-            Debug.Log("SAVE:NUMInstantiated:" + numInstantiated);
+            // Debug.Log("SAVE:NUMInstantiated:" + numInstantiated);
         }
     }
 }

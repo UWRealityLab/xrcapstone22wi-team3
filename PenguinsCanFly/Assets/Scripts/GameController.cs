@@ -60,7 +60,7 @@ public class GameController : MonoBehaviour
     void Update()
     {
         float distance = GetDistanceToGround();
-        Debug.Log("SAVE:rayDistance:" + distance);
+        // Debug.Log("SAVE:rayDistance:" + distance);
         // TODO: only call this method once
         if (distance <= GlidingMinHeight && !landingController.activeSelf)
         {
@@ -108,7 +108,7 @@ public class GameController : MonoBehaviour
 
     public void StartLandingMode()
     {
-        Debug.Log("Landing sequence initiated!!");
+        // Debug.Log("Landing sequence initiated!!");
         launchController.SetActive(false);
         // Don't deactivate glidingController yet since we want the glider to still be visible
         // Don't disable the _glidingScript since we still want to control the speed using it

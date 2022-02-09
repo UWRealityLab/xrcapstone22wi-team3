@@ -27,7 +27,7 @@ public class WindCollider : MonoBehaviour
             m_Material.color = color;
             gliderInfo.extraPitchDegree += pitchToAdd;
             gliderInfo.extraSpeed += speedToAdd;
-            Debug.Log("SAVE:gliderInfoPitchDegree:" + gliderInfo.TotalPitchDegree);
+            // Debug.Log("SAVE:gliderInfoPitchDegree:" + gliderInfo.TotalPitchDegree);
         }
     }
     
@@ -38,7 +38,7 @@ public class WindCollider : MonoBehaviour
             Color color = m_Material.color;
             color.a = 0.4f;
             m_Material.color = color;
-            Debug.Log("EXITED! Wind collider");
+            // Debug.Log("EXITED! Wind collider");
         }
     }
 }
