@@ -1744,6 +1744,7 @@ MonoBehaviour:
   launchController: {fileID: 463930438}
   glidingController: {fileID: 1980159959}
   landingController: {fileID: 656115083}
+  locomotionSystem: {fileID: 0}
 --- !u!4 &476343504
 Transform:
   m_ObjectHideFlags: 0
@@ -4759,8 +4760,10 @@ MonoBehaviour:
   penguinXRORigidbody: {fileID: 2078797937}
   gliderDirection: {fileID: 2088056303}
   penguinXROTransform: {fileID: 2078797934}
-  totalPitchDegree: 90
+  pitchDegree: 90
+  extraPitchDegree: 0
   totalYawDegree: 0
+  userControlEnabled: 1
 --- !u!4 &1980159961
 Transform:
   m_ObjectHideFlags: 0
@@ -5311,3 +5314,60 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088056302}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &8010673703162903670
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 815252848692712697, guid: 3ac09a2c358ac654186e6c2277a49d0b, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 815252848692712697, guid: 3ac09a2c358ac654186e6c2277a49d0b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -96.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 815252848692712697, guid: 3ac09a2c358ac654186e6c2277a49d0b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -47
+      objectReference: {fileID: 0}
+    - target: {fileID: 815252848692712697, guid: 3ac09a2c358ac654186e6c2277a49d0b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 259
+      objectReference: {fileID: 0}
+    - target: {fileID: 815252848692712697, guid: 3ac09a2c358ac654186e6c2277a49d0b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 815252848692712697, guid: 3ac09a2c358ac654186e6c2277a49d0b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 815252848692712697, guid: 3ac09a2c358ac654186e6c2277a49d0b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 815252848692712697, guid: 3ac09a2c358ac654186e6c2277a49d0b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 815252848692712697, guid: 3ac09a2c358ac654186e6c2277a49d0b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 815252848692712697, guid: 3ac09a2c358ac654186e6c2277a49d0b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 815252848692712697, guid: 3ac09a2c358ac654186e6c2277a49d0b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379305886412558953, guid: 3ac09a2c358ac654186e6c2277a49d0b, type: 3}
+      propertyPath: m_Name
+      value: Wind
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3ac09a2c358ac654186e6c2277a49d0b, type: 3}
