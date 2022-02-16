@@ -8,8 +8,6 @@ public class GameController : MonoBehaviour
 {
     public ResetManager resetManager;
     
-    public Transform penguinXROTransform;
-    
     public GameObject launchController;
     public GameObject glidingController;
     public GameObject landingController;
@@ -20,9 +18,7 @@ public class GameController : MonoBehaviour
     
     private static GameController _instance;
     
-    // TODO: experiment with this value.
-    // After we hit this min height from the ground, the landing sequence starts
-    private const float GlidingMinHeight = 10f;
+
 
     public static GameController Instance
     {
@@ -59,27 +55,13 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = GetDistanceToGround();
-        Debug.Log("SAVE:rayDistance:" + distance);
-        // TODO: only call this method once
-        if (distance <= GlidingMinHeight && !landingController.activeSelf)
-        {
-            StartLandingMode();
-        }
-    }
-
-    public float GetDistanceToGround()
-    {
-        int layerMask = LayerMask.GetMask("Ground");
-        RaycastHit hit;
-        if (Physics.Raycast(penguinXROTransform.position, Vector3.down, out hit, Mathf.Infinity, layerMask))
-        {
-            return hit.distance;
-        }
-        else
-        {
-            return float.PositiveInfinity;
-        }
+        // float distance = GetDistanceToGround();
+        // Debug.Log("SAVE:rayDistance:" + distance);
+        // // TODO: only call this method once
+        // if (distance <= GlidingMinHeight && !landingController.activeSelf)
+        // {
+        //     StartLandingMode();
+        // }
     }
 
     public void ResetToLaunch()
@@ -102,7 +84,7 @@ public class GameController : MonoBehaviour
         
         launchController.SetActive(false);
         glidingController.SetActive(true);
-        landingController.SetActive(false);
+        landingController.SetActive(true);
         locomotionSystem.SetActive(false);
     }
 
