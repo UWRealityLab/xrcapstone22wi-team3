@@ -13,28 +13,18 @@ public class LandingController : MonoBehaviour
 
     // Distance from the ground where we turn off gravity and decay speed faster
     private const float LandingHeight = 2f;
-
-
-    private float previousGroundWorldHeight;
     
     private Transform penguinXROTransform;
     private Rigidbody penguinXRORigidbody;
 
     private bool isLanded;
-    
-    
+
     // Start is called before the first frame update
     void Start()
     {
         penguinXRORigidbody = gliderInfo.penguinXRORigidbody;
         penguinXROTransform = gliderInfo.penguinXROTransform;
         isLanded = false;
-    }
-
-    private void OnEnable()
-    {
-        // TODO: Remove - fail safe to spawn the certificate even if get stuck and never land
-        // Invoke("SpawnCertificate", 7f);
     }
 
     // Update is called once per frame
@@ -77,24 +67,6 @@ public class LandingController : MonoBehaviour
             Debug.Log("Reducing speed!" + speedToReduce);
             gliderInfo.speed = Math.Max(0, gliderInfo.speed - speedToReduce);
         }
-
-
-        // we've hit the ground, decay faster and disable gravity
-        // gliderInfo.speed *= 0.99f;
-        // penguinXRORigidbody.useGravity = false;
-        //
-        // if (!_spawnedCertificate && penguinXRORigidbody.velocity.magnitude < 1) 
-        // {
-        //     GameController.Instance.StartGroundMode();
-        //     SpawnCertificate();
-        // }
-
-
-        // Logic for starting actual landing
-        // if (gliderInfo.speed < 5)
-        // {
-        //     GameController.Instance.StartLandingMode();
-        // }
     }
 
     public void SpawnCertificate()
@@ -123,7 +95,7 @@ public class LandingController : MonoBehaviour
             // Subtract from the earlier compensation
             return hit.distance - 50;
         }
-        else  // TODO: return previous stored distance in case clip through ground
+        else
         {
             return float.PositiveInfinity;
         }
