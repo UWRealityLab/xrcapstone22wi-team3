@@ -9,22 +9,19 @@ public class LandingController : MonoBehaviour
 
     public GameObject goHomeCertificatePrefab;
     
-    private bool _spawnedCertificate = false;
-
     // Distance from the ground where we turn off gravity and decay speed faster
     private const float LandingHeight = 2f;
     
     private Transform penguinXROTransform;
     private Rigidbody penguinXRORigidbody;
 
-    private bool isLanded;
+    private bool isLanded = false;
 
     // Start is called before the first frame update
     void Start()
     {
         penguinXRORigidbody = gliderInfo.penguinXRORigidbody;
         penguinXROTransform = gliderInfo.penguinXROTransform;
-        isLanded = false;
     }
 
     // Update is called once per frame
@@ -44,6 +41,11 @@ public class LandingController : MonoBehaviour
  
         if (distance <= LandingHeight)
         {
+            if (gliderInfo.speed <= 4)
+            {
+                GameController.Instance.DisableGliderController();
+                // TODO: spawn in the penguins who start chasing you!
+            }
             // Check if speed is slow enough that we should just land and disable gravity
             Debug.Log("SAVE:gliderVelocity:" + penguinXRORigidbody.velocity.magnitude);
             if (gliderInfo.speed == 0 && penguinXRORigidbody.velocity.magnitude < 0.5)
@@ -71,17 +73,12 @@ public class LandingController : MonoBehaviour
 
     public void SpawnCertificate()
     {
-        if (!_spawnedCertificate)
-        {
-            _spawnedCertificate = true;
-            
-            // Spawn the certificate w/ high score that takes the user back home
-            Transform penguinTransform = penguinXRORigidbody.transform; 
-            Vector3 localOffset = new Vector3(0.5f, 1, 1.5f);  // spawn in front and to the right
-            Vector3 worldOffset = penguinTransform.rotation * localOffset;
-            Vector3 spawnPosition = penguinTransform.position + worldOffset;
-            Instantiate(goHomeCertificatePrefab, spawnPosition, penguinTransform.rotation);
-        }
+        // Spawn the certificate w/ high score that takes the user back home
+        Transform penguinTransform = penguinXRORigidbody.transform; 
+        Vector3 localOffset = new Vector3(0.3f, 1, 0.5f);  // spawn in front and to the right
+        Vector3 worldOffset = penguinTransform.rotation * localOffset;
+        Vector3 spawnPosition = penguinTransform.position + worldOffset;
+        Instantiate(goHomeCertificatePrefab, spawnPosition, penguinTransform.rotation);
     }
     
     public float GetDistanceToGround()

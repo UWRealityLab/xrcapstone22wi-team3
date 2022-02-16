@@ -52,18 +52,6 @@ public class GameController : MonoBehaviour
         StartLaunchMode();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // float distance = GetDistanceToGround();
-        // Debug.Log("SAVE:rayDistance:" + distance);
-        // // TODO: only call this method once
-        // if (distance <= GlidingMinHeight && !landingController.activeSelf)
-        // {
-        //     StartLandingMode();
-        // }
-    }
-
     public void ResetToLaunch()
     {
         resetManager.FadeAndReset();
@@ -98,12 +86,18 @@ public class GameController : MonoBehaviour
         landingController.SetActive(true);
         locomotionSystem.SetActive(false);
     }
+
+    public void DisableGliderController()
+    {
+        Debug.Log("Disabling gliderModelScontrolle!" + _glidingScript.gliderModelController);
+        _glidingScript.DisableUserControlOfGlider();
+    }
     
     public void StartGroundMode()
     {
         // Hides the glider and enables locomotion
         glidingController.SetActive(false);
-        locomotionSystem.SetActive(true);
+        locomotionSystem.SetActive(false);
     }
     
 }
