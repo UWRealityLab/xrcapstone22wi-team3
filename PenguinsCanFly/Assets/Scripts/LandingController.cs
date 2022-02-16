@@ -65,7 +65,7 @@ public class LandingController : MonoBehaviour
             penguinXRORigidbody.AddForce(Vector3.up * Physics.gravity.magnitude + Vector3.up * upwardForce);
 
             // Reduce speed since too close to ground
-            float speedToReduce = Math.Max(0.01f, gliderInfo.speed * 0.01f);
+            float speedToReduce = Math.Max(0.05f, gliderInfo.speed * 0.01f);
             Debug.Log("Reducing speed!" + speedToReduce);
             gliderInfo.speed = Math.Max(0, gliderInfo.speed - speedToReduce);
         }
