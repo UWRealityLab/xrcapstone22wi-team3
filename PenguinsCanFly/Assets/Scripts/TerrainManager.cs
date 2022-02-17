@@ -37,12 +37,6 @@ public class TerrainManager : MonoBehaviour
             Instantiate(Resources.Load("Snow Tile 1"),
                 new Vector3(-75, 0, totalDistance + terrainZ),
                 Quaternion.identity);
-            
-            GameObject windColliderObject = (GameObject) Instantiate(Resources.Load("WindCollider"),
-                new Vector3(0, 50, totalDistance + terrainZ),
-                Quaternion.identity);
-            WindCollider windColliderScript = windColliderObject.GetComponent<WindCollider>();
-            windColliderScript.gliderInfo = gliderInfo;
 
             numInstantiated++;
             Debug.Log("SAVE:NUMInstantiated:" + numInstantiated);

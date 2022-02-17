@@ -38,7 +38,6 @@ public class WindCollider : MonoBehaviour
             Color color = m_Material.color;
             color.a = 0.4f;
             m_Material.color = color;
-            Debug.Log("EXITED! Wind collider");
         }
     }
 }
