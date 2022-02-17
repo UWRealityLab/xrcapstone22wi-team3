@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.Audio;
 
 public class GliderInfo : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GliderInfo : MonoBehaviour
     public float extraSpeed = 10f;
     public float speed = 12.5f;
     public float drag = 6;
+    public AudioMixer am;
 
     // TODO: fix this circular dependency
     public GliderModelController gliderModelController;
@@ -117,7 +119,11 @@ public class GliderInfo : MonoBehaviour
             }
         }
         
-
+        float audioPitchIncrease = Mathf.Clamp((speed + extraSpeed) / 20, 0, 1);
+        float audioVolume = Mathf.Clamp((speed + extraSpeed) / 15, 0f, 1.5f);
+        Debug.Log("SAVE:AdioPitchIncrease:" + audioPitchIncrease);
+        am.SetFloat("Pitch", 1 + audioPitchIncrease);
+        am.SetFloat("Volume", audioVolume);
 
         Debug.Log("SAVE:TotalPitchDegree:" + TotalPitchDegree + " extraPitchDegree " + extraPitchDegree);
 
