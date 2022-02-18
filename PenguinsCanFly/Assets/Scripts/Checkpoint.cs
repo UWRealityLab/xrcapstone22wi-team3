@@ -6,22 +6,29 @@ public class Checkpoint : MonoBehaviour
 {
     private const string HangGliderTag = "HangGlider";
     public GliderInfo gliderInfo;
-    public float pitchToAdd = -20f;  // Negative to pitch up, positive to pitch down
-    public float heightToAdd = 50f;
-    
+    private float pitchToAdd = -20f;  // Negative to pitch up, positive to pitch down
+
     // Start is called before the first frame update
     void Start()
     {
     }
     
     
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag(HangGliderTag))
         {
-            gliderInfo.penguinXRORigidbody.AddForce(Vector3.up * heightToAdd);
+            StartCoroutine(IncreaseHeight());
+        }
+    }
+
+    IEnumerator IncreaseHeight()
+    {
+        for (int i = 0; i < 100; i++)
+        {
+            gliderInfo.penguinXRORigidbody.AddForce(Vector3.up * 20);
             gliderInfo.extraPitchDegree += pitchToAdd;
-            Debug.Log("SAVE:gliderInfoPitchDegree:" + gliderInfo.TotalPitchDegree);
+            yield return null;
         }
     }
 }

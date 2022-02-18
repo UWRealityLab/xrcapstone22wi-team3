@@ -63,7 +63,7 @@ public class LevelManager : MonoBehaviour
                     float x;
                     if (i < 2)
                     {
-                        // Makes sure we get enough in the middle
+                        // Make sure we get enough in the middleish
                         x = Random.Range(-50, 50);
                     }
                     else
