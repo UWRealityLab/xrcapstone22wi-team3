@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.Audio;
 
 public class GliderInfo : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GliderInfo : MonoBehaviour
     public float extraSpeed = 10f;
     public float speed = 12.5f;
     public float drag = 6;
+    public AudioMixer am;
 
     // TODO: fix this circular dependency
     public GliderModelController gliderModelController;
@@ -117,7 +119,20 @@ public class GliderInfo : MonoBehaviour
             }
         }
         
-
+        float audioPitchIncrease = Mathf.Clamp((speed + extraSpeed) / 20, 0, 1);
+        float audioVolume = Mathf.Clamp((speed + extraSpeed) / 15, 0f, 1.5f);
+        if (speed < 5)
+        {
+            Debug.Log("CLAMPING!!!");
+            audioVolume = -80f;
+            StartCoroutine(StartFade(am, "Volume", 1, -80f));
+        }
+        else
+        {
+            am.SetFloat("Volume", audioVolume);
+        }
+        Debug.Log("SAVE:AdioPitchIncrease, Volume:" + audioPitchIncrease + " " + audioVolume);
+        am.SetFloat("Pitch", 1 + audioPitchIncrease);
 
         Debug.Log("SAVE:TotalPitchDegree:" + TotalPitchDegree + " extraPitchDegree " + extraPitchDegree);
 
@@ -139,5 +154,22 @@ public class GliderInfo : MonoBehaviour
     private void OnEnable()
     {
         penguinXRORigidbody.useGravity = true;
+    }
+    
+    public static IEnumerator StartFade(AudioMixer audioMixer, string exposedParam, float duration, float targetVolume)
+    {
+        float currentTime = 0;
+        float currentVol;
+        audioMixer.GetFloat(exposedParam, out currentVol);
+        currentVol = Mathf.Pow(10, currentVol / 20);
+        float targetValue = Mathf.Clamp(targetVolume, 0.0001f, 1);
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            float newVol = Mathf.Lerp(currentVol, targetValue, currentTime / duration);
+            audioMixer.SetFloat(exposedParam, Mathf.Log10(newVol) * 20);
+            yield return null;
+        }
+        yield break;
     }
 }
