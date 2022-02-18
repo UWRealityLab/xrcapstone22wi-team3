@@ -39,7 +39,7 @@ public class LevelManager : MonoBehaviour
         if (_totalDistance >= startingOffset && 
             numSegments == _numCheckpointsInstantiated)
         {
-            StartCoroutine(IncreaseSpeed());
+            StartCoroutine(IncreaseSpeed(getSpeedIncrease()));
             
             int checkpointX = Random.Range(-75, 75); 
             GameObject checkpointObject = (GameObject) Instantiate(Resources.Load("Checkpoint"),
@@ -97,12 +97,26 @@ public class LevelManager : MonoBehaviour
         }
 
     }
-    
-    IEnumerator IncreaseSpeed()
+
+    private float getSpeedIncrease()
     {
+        if (_numCheckpointsInstantiated < 5)
+        {
+            return 2f;
+        }
+        if (_numCheckpointsInstantiated < 10)
+        {
+            return 1f;
+        }
+        return 0.5f;
+    }
+    
+    IEnumerator IncreaseSpeed(float speedIncrease)
+    {
+        // Apply speed over 10 seconds
         for (int i = 0; i < 100; i++)
         {
-            gliderInfo.speed += 0.01f;
+            gliderInfo.speed += 0.01f * speedIncrease;
             yield return new WaitForSeconds(0.1f);
         }
     }
