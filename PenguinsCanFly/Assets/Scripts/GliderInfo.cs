@@ -31,6 +31,11 @@ public class GliderInfo : MonoBehaviour
         get { return pitchDegree + extraPitchDegree; }
     }
 
+    public float ActualSpeed
+    {
+        get { return penguinXRORigidbody.velocity.magnitude; }
+    }
+
     public float totalYawDegree;
     
     private InputDevice targetDevice;
