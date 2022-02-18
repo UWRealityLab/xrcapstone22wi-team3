@@ -9,8 +9,8 @@ public class SnowflakeObstacle : Obstacle
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Rigidbody>().drag = 1f + Random.Range(-0.5f, 1f);
-        _rotateOffset = Random.Range(-10f, 10f);
+        GetComponent<Rigidbody>().drag = Random.Range(0.5f, 2f);
+        _rotateOffset = Random.Range(10f, 30f);
     }
 
     // Update is called once per frame
