@@ -1858,6 +1858,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gliderInfo: {fileID: 1980159960}
   penguinXROTransform: {fileID: 2078797934}
+  obstacleCheckRadius: 3
+  maxSpawnAttemptsPerObstacle: 10
 --- !u!4 &528216692
 Transform:
   m_ObjectHideFlags: 0

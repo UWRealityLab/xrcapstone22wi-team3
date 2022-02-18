@@ -47,7 +47,7 @@ public class LevelManager : MonoBehaviour
             _numCheckpointsInstantiated++;
 
             int numObstaclesSpawned = 0;
-            for (int i = 0; i < 30 + numSegments*5; i++)
+            for (int i = 0; i < 10 + numSegments*5; i++)
             {
                 Vector3 position = Vector3.zero;
                 bool validPosition = false;
@@ -59,8 +59,8 @@ public class LevelManager : MonoBehaviour
                     spawnAttempts++;
  
                     // Pick a random position
-                    float x = Random.Range(-100, 100);
-                    float y = penguinXROTransform.position.y + Random.Range(-10, 80);
+                    float x = Random.Range(-200, 200);
+                    float y = penguinXROTransform.position.y;
                     float z = _totalDistance + Random.Range(5, CheckpointDistance - 5);
                     position = new Vector3(x, y, z);
 
