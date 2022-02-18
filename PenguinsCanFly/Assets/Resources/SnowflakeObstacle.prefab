@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2733523343717403241}
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 80, y: 80, z: 80}
   m_Children: []
   m_Father: {fileID: 2733523344670738441}
   m_RootOrder: 0
@@ -107,7 +107,6 @@ GameObject:
   - component: {fileID: 2733523344670738441}
   - component: {fileID: 2733523344670738440}
   - component: {fileID: 2733523344670738442}
-  - component: {fileID: 7652378316589936680}
   - component: {fileID: 4358953172611757980}
   m_Layer: 9
   m_Name: SnowflakeObstacle
@@ -159,21 +158,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7652378316589936680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2733523344670738679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e531680ff9a25b145898bc6d650295d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gliderInfo: {fileID: 0}
-  speedToAdd: -0.2
-  pitchToAdd: 5
 --- !u!65 &4358953172611757980
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -185,5 +169,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 40, y: 40, z: 1}
+  m_Size: {x: 30, y: 30, z: 1}
   m_Center: {x: 0, y: 0, z: 0}

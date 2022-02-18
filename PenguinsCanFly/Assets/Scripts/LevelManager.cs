@@ -38,14 +38,14 @@ public class LevelManager : MonoBehaviour
         
         // Spawn checkpoints
         int numSegments = (int)((_totalDistance - startingOffset) / CheckpointDistance);
-        if (_totalDistance >= startingOffset && 
+        if (_totalDistance >= startingOffset &&
             numSegments == _numCheckpointsInstantiated)
         {
             StartCoroutine(IncreaseSpeed(getSpeedIncrease()));
             
             int checkpointX = Random.Range(-75, 75); 
             GameObject checkpointObject = (GameObject) Instantiate(Resources.Load("Checkpoint"),
-                new Vector3(checkpointX, 120, _totalDistance + CheckpointDistance),
+                new Vector3(checkpointX, 175, _totalDistance + CheckpointDistance),
                 Quaternion.identity);
             Checkpoint checkpointObjectScript = checkpointObject.GetComponent<Checkpoint>();
             checkpointObjectScript.gliderInfo = gliderInfo;
@@ -61,7 +61,7 @@ public class LevelManager : MonoBehaviour
                 
                 // Choose a random obstacle
                 GameObject obstacle = obstacleTypes[Random.Range(0, obstacleTypes.Length)];
-                IObstacle obstacleScript = obstacle.GetComponent<IObstacle>();
+                Obstacle obstacleScript = obstacle.GetComponent<Obstacle>();
  
                 // While we don't have a valid position and we haven't tried spawning this obstacle too many times
                 while(!validPosition && spawnAttempts < _maxSpawnAttemptsPerObstacle)
@@ -73,7 +73,7 @@ public class LevelManager : MonoBehaviour
                     if (i < 2)
                     {
                         // Make sure we get enough in the middleish
-                        x = Random.Range(-50, 50);
+                        x = Random.Range(-25, 25);
                     }
                     else
                     {

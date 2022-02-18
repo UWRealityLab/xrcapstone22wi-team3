@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnowflakeObstacle : MonoBehaviour, IObstacle
+public class SnowflakeObstacle : Obstacle
 {
     private float _rotateOffset;
     
@@ -19,12 +19,12 @@ public class SnowflakeObstacle : MonoBehaviour, IObstacle
         transform.Rotate((20f+_rotateOffset) * Vector3.forward * Time.deltaTime);
     }
 
-    public float GetSpawnOffsetLowerBound()
+    public override float GetSpawnOffsetLowerBound()
     {
-        return 150f;
+        return 200f;
     }
 
-    public float GetSpawnOffsetUpperBound()
+    public override float GetSpawnOffsetUpperBound()
     {
         return 0f;
     }

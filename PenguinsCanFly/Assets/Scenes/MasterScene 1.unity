@@ -5652,10 +5652,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2733523343717403243, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2733523344670738441, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -5704,20 +5700,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowflakeObstacle
       objectReference: {fileID: 0}
-    - target: {fileID: 6464803317470323199, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7652378316589936680, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
-      propertyPath: pitchToAdd
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7652378316589936680, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
-      propertyPath: speedToAdd
-      value: -0.2
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6464803317470323199, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
 --- !u!1001 &9128588959763672921
 PrefabInstance:
