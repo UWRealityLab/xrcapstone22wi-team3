@@ -3722,7 +3722,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3271638572244818109, guid: 0627e719efc3c48549c06799a8cae4da, type: 3}
       propertyPath: m_IsKinematic
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5296170243713047716, guid: 0627e719efc3c48549c06799a8cae4da, type: 3}
       propertyPath: m_Name
