@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour
     public GameObject locomotionSystem;
 
     private LaunchController _launchScript;
-    private GliderInfo _glidingScript;
+    public GliderInfo _glidingScript;
     
     private static GameController _instance;
     
