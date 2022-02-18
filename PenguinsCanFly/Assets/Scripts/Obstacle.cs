@@ -8,6 +8,7 @@ public abstract class Obstacle : MonoBehaviour
     
     public abstract float GetSpawnOffsetLowerBound();
     public abstract float GetSpawnOffsetUpperBound();
+    public abstract Quaternion GetSpawnRotation();
     
     private void OnTriggerEnter(Collider other)
     {

@@ -21,11 +21,19 @@ public class SnowflakeObstacle : Obstacle
 
     public override float GetSpawnOffsetLowerBound()
     {
-        return 200f;
+        return 0f;
     }
 
     public override float GetSpawnOffsetUpperBound()
     {
-        return 0f;
+        return 200f;
+    }
+
+    public override Quaternion GetSpawnRotation()
+    {
+        // Choose a random rotation to spawn in
+        Quaternion rotation = new Quaternion();
+        rotation.eulerAngles = new Vector3(0, 0,Random.Range(0, 360));
+        return rotation;
     }
 }

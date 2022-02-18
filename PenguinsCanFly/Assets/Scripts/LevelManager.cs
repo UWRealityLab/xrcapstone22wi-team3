@@ -37,8 +37,9 @@ public class LevelManager : MonoBehaviour
         _lastPositionZ = newPositionZ;
         
         // Spawn checkpoints
-        int numSegments = (int)((_totalDistance - startingOffset) / CheckpointDistance);
-        if (_totalDistance >= startingOffset &&
+        //int numSegments = (int)((_totalDistance - startingOffset) / CheckpointDistance);
+        int numSegments = (int)((_totalDistance) / CheckpointDistance);
+        if (// _totalDistance >= startingOffset &&
             numSegments == _numCheckpointsInstantiated)
         {
             StartCoroutine(IncreaseSpeed(getSpeedIncrease()));
@@ -94,11 +95,9 @@ public class LevelManager : MonoBehaviour
                     // Spawn the obstacle here
                     numObstaclesSpawned++;
                     
-                    Quaternion rotation = new Quaternion();
-                    rotation.eulerAngles = new Vector3(0, 0,Random.Range(0, 360));
-                    Instantiate(obstacleTypes[0],
+                    Instantiate(obstacle,
                         position,
-                        rotation);
+                        obstacleScript.GetSpawnRotation());
                     // WindCollider obstacleScript = obstacle.GetComponent<WindCollider>();
                     // obstacleScript.gliderInfo = gliderInfo;
                 }
