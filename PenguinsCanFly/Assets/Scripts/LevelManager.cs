@@ -39,10 +39,11 @@ public class LevelManager : MonoBehaviour
         if (_totalDistance >= startingOffset && 
             numSegments == _numCheckpointsInstantiated)
         {
+            int checkpointX = Random.Range(-75, 75); 
             GameObject checkpointObject = (GameObject) Instantiate(Resources.Load("Checkpoint"),
-                new Vector3(0, 120, _totalDistance + CheckpointDistance),
+                new Vector3(checkpointX, 120, _totalDistance + CheckpointDistance),
                 Quaternion.identity);
-            WindCollider checkpointObjectScript = checkpointObject.GetComponent<WindCollider>();
+            Checkpoint checkpointObjectScript = checkpointObject.GetComponent<Checkpoint>();
             checkpointObjectScript.gliderInfo = gliderInfo;
             _numCheckpointsInstantiated++;
 
@@ -59,7 +60,16 @@ public class LevelManager : MonoBehaviour
                     spawnAttempts++;
  
                     // Pick a random position
-                    float x = Random.Range(-200, 200);
+                    float x;
+                    if (i < 2)
+                    {
+                        // Makes sure we get enough in the middle
+                        x = Random.Range(-50, 50);
+                    }
+                    else
+                    {
+                        x = Random.Range(-150, 150);
+                    }
                     float y = penguinXROTransform.position.y;
                     float z = _totalDistance + Random.Range(5, CheckpointDistance - 5);
                     position = new Vector3(x, y, z);

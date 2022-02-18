@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9128588961142069166}
   - component: {fileID: 9128588961142069167}
   - component: {fileID: 9128588961142069164}
-  - component: {fileID: 9128588961142069165}
+  - component: {fileID: 8737611351136864110}
   m_Layer: 0
   m_Name: Checkpoint
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 9128588961142069162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 270, z: 500}
-  m_LocalScale: {x: 400, y: 500, z: 20}
+  m_LocalScale: {x: 100, y: 500, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -113,7 +113,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &9128588961142069165
+--- !u!114 &8737611351136864110
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,9 +122,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 9128588961142069162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e531680ff9a25b145898bc6d650295d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a0027ca6a53045c984bf92ad53e33bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gliderInfo: {fileID: 0}
-  speedToAdd: 2
   pitchToAdd: -20
+  heightToAdd: 50
