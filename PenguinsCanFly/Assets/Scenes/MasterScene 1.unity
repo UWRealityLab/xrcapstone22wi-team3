@@ -1734,6 +1734,7 @@ MonoBehaviour:
   glidingController: {fileID: 1980159959}
   landingController: {fileID: 656115083}
   locomotionSystem: {fileID: 733509491}
+  gliderInfo: {fileID: 0}
 --- !u!4 &476343504
 Transform:
   m_ObjectHideFlags: 0
@@ -1858,8 +1859,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gliderInfo: {fileID: 1980159960}
   penguinXROTransform: {fileID: 2078797934}
-  obstacleCheckRadius: 3
-  maxSpawnAttemptsPerObstacle: 10
+  obstacleTypes:
+  - {fileID: 2733523344670738679, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
 --- !u!4 &528216692
 Transform:
   m_ObjectHideFlags: 0
@@ -5644,6 +5645,80 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088056302}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &2733523345506337928
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2733523343717403243, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733523344670738441, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733523344670738441, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733523344670738441, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733523344670738441, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733523344670738441, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733523344670738441, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733523344670738441, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733523344670738441, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733523344670738441, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733523344670738441, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733523344670738441, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733523344670738679, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
+      propertyPath: m_Name
+      value: SnowflakeObstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6464803317470323199, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7652378316589936680, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
+      propertyPath: pitchToAdd
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7652378316589936680, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
+      propertyPath: speedToAdd
+      value: -0.2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6464803317470323199, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
 --- !u!1001 &9128588959763672921
 PrefabInstance:
   m_ObjectHideFlags: 0

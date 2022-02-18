@@ -18,8 +18,10 @@ public class LevelManager : MonoBehaviour
     private const float CheckpointDistance = 500;
     private int _numCheckpointsInstantiated;
     
-    public float obstacleCheckRadius = 10f;
-    public int maxSpawnAttemptsPerObstacle = 10;  // to prevent infinite loop
+    private const float ObstacleCheckRadius = 10f;
+    private int _maxSpawnAttemptsPerObstacle = 10;  // to prevent infinite loop
+
+    public GameObject[] obstacleTypes;
 
     // Start is called before the first frame update
     void Start()
@@ -55,9 +57,14 @@ public class LevelManager : MonoBehaviour
                 Vector3 position = Vector3.zero;
                 bool validPosition = false;
                 int spawnAttempts = 0;
+                
+                
+                // Choose a random obstacle
+                GameObject obstacle = obstacleTypes[Random.Range(0, obstacleTypes.Length)];
+                IObstacle obstacleScript = obstacle.GetComponent<IObstacle>();
  
                 // While we don't have a valid position and we haven't tried spawning this obstacle too many times
-                while(!validPosition && spawnAttempts < maxSpawnAttemptsPerObstacle)
+                while(!validPosition && spawnAttempts < _maxSpawnAttemptsPerObstacle)
                 {
                     spawnAttempts++;
  
@@ -72,12 +79,12 @@ public class LevelManager : MonoBehaviour
                     {
                         x = Random.Range(-150, 150);
                     }
-                    float y = penguinXROTransform.position.y;
+                    float y = penguinXROTransform.position.y + Random.Range(obstacleScript.GetSpawnOffsetLowerBound(), obstacleScript.GetSpawnOffsetUpperBound());;
                     float z = _totalDistance + Random.Range(5, CheckpointDistance - 5);
                     position = new Vector3(x, y, z);
 
                     // Collect all colliders within our Obstacle Check Radius
-                    Collider[] colliders = Physics.OverlapSphere(position, obstacleCheckRadius);
+                    Collider[] colliders = Physics.OverlapSphere(position, ObstacleCheckRadius);
 
                     validPosition = colliders.Length == 0;
                 }
@@ -86,11 +93,14 @@ public class LevelManager : MonoBehaviour
                 {
                     // Spawn the obstacle here
                     numObstaclesSpawned++;
-                    GameObject obstacle = (GameObject) Instantiate(Resources.Load("Obstacle"),
+                    
+                    Quaternion rotation = new Quaternion();
+                    rotation.eulerAngles = new Vector3(0, 0,Random.Range(0, 360));
+                    Instantiate(obstacleTypes[0],
                         position,
-                        Quaternion.identity);
-                    WindCollider obstacleScript = obstacle.GetComponent<WindCollider>();
-                    obstacleScript.gliderInfo = gliderInfo;
+                        rotation);
+                    // WindCollider obstacleScript = obstacle.GetComponent<WindCollider>();
+                    // obstacleScript.gliderInfo = gliderInfo;
                 }
             }
             Debug.Log("Num obstacles spawned:" + numObstaclesSpawned);
