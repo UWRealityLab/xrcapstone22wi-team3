@@ -1,0 +1,150 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-6469634014059950685
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 28ecee820bbd44cff947af1c6003ea32
+  m_EffectName: Attenuation
+  m_MixLevel: 7244588942e34424a8b1c5d3169c8f73
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!241 &24100000
+AudioMixerController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GliderWindEffects
+  m_OutputGroup: {fileID: 0}
+  m_MasterGroup: {fileID: 24300002}
+  m_Snapshots:
+  - {fileID: 24500006}
+  m_StartSnapshot: {fileID: 24500006}
+  m_SuspendThreshold: -80
+  m_EnableSuspend: 1
+  m_UpdateMode: 0
+  m_ExposedParameters:
+  - guid: c2b12640038414bf3afc94172fc3a0c9
+    name: Pitch
+  - guid: bbd94c56d31ac4df78de310b381a6a6c
+    name: Volume
+  m_AudioMixerGroupViews:
+  - guids:
+    - b245455eb444b4f51b315ad979959a08
+    - 523c7e61b8e4d408f93237e5a9ce1f41
+    - bc90563b9985f41c0956d2358d15fa71
+    name: View
+  m_CurrentViewIndex: 0
+  m_TargetSnapshot: {fileID: 24500006}
+--- !u!243 &24300002
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Master
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: b245455eb444b4f51b315ad979959a08
+  m_Children:
+  - {fileID: 8849155281691083066}
+  - {fileID: 4942020898132662166}
+  m_Volume: bbd94c56d31ac4df78de310b381a6a6c
+  m_Pitch: c2b12640038414bf3afc94172fc3a0c9
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 24400004}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &24400004
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 464544f73899246beb3d3f16bbcf06f4
+  m_EffectName: Attenuation
+  m_MixLevel: 6ee44dc85b8fd4132a6364f2f6b52db2
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &24500006
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Snapshot
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: ef54cf5f4dca948bd99653a27eedfde9
+  m_FloatValues:
+    c2b12640038414bf3afc94172fc3a0c9: 1
+    6dcbc908d00c84381bb46b970025cb07: 10
+    c219329894d55450291cf7edc9093e5b: 0
+    6fd4ec19dece44201a748b4913335cb8: 0.1
+    82e8c9791fcb142a6a34c2327eaca0ef: 1.2959994
+    a54f0f3b156b94d41953b11bcd8afd8a: -10
+    48a5143f962ec4ed3a187cf6e95a4b84: 0.1
+    64ff9edf998fc4269aa1ba8c1ce7e4e9: 0
+  m_TransitionOverrides: {}
+--- !u!244 &1221095632158319709
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Attenuation
+  m_EffectID: a4df8ccc34b3e47edb0a97881285b3c7
+  m_EffectName: Attenuation
+  m_MixLevel: bee3cd1842f8c4571ab82778fcf1a287
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &4942020898132662166
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WindFX2
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: bc90563b9985f41c0956d2358d15fa71
+  m_Children: []
+  m_Volume: 854ad6cda07a6426aabce07577da31d1
+  m_Pitch: 3bec229f1752343148b055eaad53b8f2
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 1221095632158319709}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &8849155281691083066
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WindFX1
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 523c7e61b8e4d408f93237e5a9ce1f41
+  m_Children: []
+  m_Volume: c219329894d55450291cf7edc9093e5b
+  m_Pitch: a596bac14eb4d4812b02fce28be740b3
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -6469634014059950685}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
