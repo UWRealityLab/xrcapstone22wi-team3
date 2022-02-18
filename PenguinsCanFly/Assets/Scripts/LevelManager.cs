@@ -6,7 +6,6 @@ using Random = UnityEngine.Random;
 
 public class LevelManager : MonoBehaviour
 {
-    public GliderInfo gliderInfo;  // Used for winds
     public Transform penguinXROTransform;
     
     private float _lastPositionZ;
@@ -41,14 +40,12 @@ public class LevelManager : MonoBehaviour
         if (_totalDistance >= startingOffset &&
             numSegments == _numCheckpointsInstantiated)
         {
-            StartCoroutine(IncreaseSpeed(getSpeedIncrease()));
+            StartCoroutine(IncreaseSpeed(GetSpeedIncrease()));
             
             int checkpointX = Random.Range(-75, 75); 
             GameObject checkpointObject = (GameObject) Instantiate(Resources.Load("Checkpoint"),
                 new Vector3(checkpointX, 175, _totalDistance + CheckpointDistance),
                 Quaternion.identity);
-            Checkpoint checkpointObjectScript = checkpointObject.GetComponent<Checkpoint>();
-            checkpointObjectScript.gliderInfo = gliderInfo;
             _numCheckpointsInstantiated++;
 
             int numObstaclesSpawned = 0;
@@ -97,8 +94,6 @@ public class LevelManager : MonoBehaviour
                     Instantiate(obstacle,
                         position,
                         obstacleScript.GetSpawnRotation());
-                    // WindCollider obstacleScript = obstacle.GetComponent<WindCollider>();
-                    // obstacleScript.gliderInfo = gliderInfo;
                 }
             }
             Debug.Log("Num obstacles spawned:" + numObstaclesSpawned);
@@ -106,7 +101,7 @@ public class LevelManager : MonoBehaviour
 
     }
 
-    private float getSpeedIncrease()
+    private float GetSpeedIncrease()
     {
         if (_numCheckpointsInstantiated < 5)
         {
@@ -124,7 +119,7 @@ public class LevelManager : MonoBehaviour
         // Apply speed over 10 seconds
         for (int i = 0; i < 100; i++)
         {
-            gliderInfo.speed += 0.01f * speedIncrease;
+            GameController.Instance.gliderInfo.speed += 0.01f * speedIncrease;
             yield return new WaitForSeconds(0.1f);
         }
     }
