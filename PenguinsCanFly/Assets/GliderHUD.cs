@@ -16,7 +16,7 @@ public class GliderHUD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float gliderSpeed = GameController.Instance._glidingScript.ActualSpeed;
+        float gliderSpeed = GameController.Instance.gliderInfo.ActualSpeed;
         speedText.text = ((int) Math.Round(gliderSpeed)).ToString("D3"); 
         distanceText.text = ScoreCounter.Instance.GetScore().ToString("D7");
         float needleAngle = Mathf.Clamp(185 - 185 * (gliderSpeed / 50f), -12, 185);

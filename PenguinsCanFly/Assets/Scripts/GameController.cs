@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour
     public GameObject locomotionSystem;
 
     private LaunchController _launchScript;
-    public GliderInfo _glidingScript;
+    public GliderInfo gliderInfo;
     
     private static GameController _instance;
     
@@ -48,7 +48,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         _launchScript = launchController.GetComponent<LaunchController>();
-        _glidingScript = glidingController.GetComponent<GliderInfo>();
+        gliderInfo = glidingController.GetComponent<GliderInfo>();
         StartLaunchMode();
     }
 
@@ -68,7 +68,7 @@ public class GameController : MonoBehaviour
     public void StartGlidingMode()
     {
         // Transfer launch speed to gliding mode
-        _glidingScript.extraSpeed = _launchScript.speed - _glidingScript.speed;
+        gliderInfo.extraSpeed = _launchScript.speed - gliderInfo.speed;
         
         launchController.SetActive(false);
         glidingController.SetActive(true);
@@ -82,15 +82,15 @@ public class GameController : MonoBehaviour
         launchController.SetActive(false);
         // Don't deactivate glidingController yet since we want the glider to still be visible
         // Don't disable the _glidingScript since we still want to control the speed using it
-        _glidingScript.DisableUserControlOfGlider();
+        gliderInfo.DisableUserControlOfGlider();
         landingController.SetActive(true);
         locomotionSystem.SetActive(false);
     }
 
     public void DisableGliderController()
     {
-        Debug.Log("Disabling gliderModelScontrolle!" + _glidingScript.gliderModelController);
-        _glidingScript.DisableUserControlOfGlider();
+        Debug.Log("Disabling gliderModelScontrolle!" + gliderInfo.gliderModelController);
+        gliderInfo.DisableUserControlOfGlider();
     }
     
     public void StartGroundMode()
