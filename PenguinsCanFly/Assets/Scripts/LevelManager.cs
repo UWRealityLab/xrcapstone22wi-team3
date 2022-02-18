@@ -39,6 +39,8 @@ public class LevelManager : MonoBehaviour
         if (_totalDistance >= startingOffset && 
             numSegments == _numCheckpointsInstantiated)
         {
+            StartCoroutine(IncreaseSpeed());
+            
             int checkpointX = Random.Range(-75, 75); 
             GameObject checkpointObject = (GameObject) Instantiate(Resources.Load("Checkpoint"),
                 new Vector3(checkpointX, 120, _totalDistance + CheckpointDistance),
@@ -48,7 +50,7 @@ public class LevelManager : MonoBehaviour
             _numCheckpointsInstantiated++;
 
             int numObstaclesSpawned = 0;
-            for (int i = 0; i < 10 + numSegments*5; i++)
+            for (int i = 0; i < 10 + numSegments*2; i++)
             {
                 Vector3 position = Vector3.zero;
                 bool validPosition = false;
@@ -94,5 +96,14 @@ public class LevelManager : MonoBehaviour
             Debug.Log("Num obstacles spawned:" + numObstaclesSpawned);
         }
 
+    }
+    
+    IEnumerator IncreaseSpeed()
+    {
+        for (int i = 0; i < 100; i++)
+        {
+            gliderInfo.speed += 0.01f;
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 }
