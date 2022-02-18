@@ -10,7 +10,7 @@ public class SnowflakeObstacle : Obstacle
     void Start()
     {
         GetComponent<Rigidbody>().drag = Random.Range(0.5f, 2f);
-        _rotateOffset = Random.Range(10f, 30f);
+        _rotateOffset = (Random.value < .5 ? 1 : -1) * Random.Range(10f, 30f);
     }
 
     // Update is called once per frame
