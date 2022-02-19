@@ -3586,7 +3586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1880702368995336949, guid: 6dec9bf1ac3e84ee984331926846f081, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -115
       objectReference: {fileID: 0}
     - target: {fileID: 1880702368995336949, guid: 6dec9bf1ac3e84ee984331926846f081, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4148,6 +4148,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gliderInfo: {fileID: 1980159960}
   penguinXROTransform: {fileID: 2078797934}
+  numInstantiateInAdvance: 5
+  tilesPerScene: 3
 --- !u!1 &1704592862
 GameObject:
   m_ObjectHideFlags: 0
@@ -6056,7 +6058,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078797929}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.5, y: 49.2, z: -62.5}
+  m_LocalPosition: {x: 4.5, y: 49.2, z: -100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 172605653}
