@@ -74,8 +74,8 @@ public class LandingController : MonoBehaviour
     public void SpawnCertificate()
     {
         // Spawn the certificate w/ high score that takes the user back home
-        Transform penguinTransform = penguinXRORigidbody.transform; 
-        Vector3 localOffset = new Vector3(0.3f, 1, 0.5f);  // spawn in front and to the right
+        Transform penguinTransform = gliderInfo.transform; 
+        Vector3 localOffset = new Vector3(0.3f, 1f, 0.75f);  // spawn in front and to the right
         Vector3 worldOffset = penguinTransform.rotation * localOffset;
         Vector3 spawnPosition = penguinTransform.position + worldOffset;
         Instantiate(goHomeCertificatePrefab, spawnPosition, penguinTransform.rotation);
