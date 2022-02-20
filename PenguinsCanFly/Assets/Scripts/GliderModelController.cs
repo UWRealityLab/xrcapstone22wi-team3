@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class GliderModelController : MonoBehaviour
 {
@@ -58,23 +59,13 @@ public class GliderModelController : MonoBehaviour
         }
 
         // Change pitch based on local rotation so you can tilt down
-        if (leftHandlebar.IsBeingHeld() && rightHandlebar.IsBeingHeld() &&
-            isWithinRangePitchRotation(leftHandlebar) && isWithinRangePitchRotation(rightHandlebar))
-        {
-            float averagePitch = (rightHandlebar.goalX + leftHandlebar.goalX) / 2;
-            float goalPitch = (averagePitch) * 0.75f + 90;
-            goalPitch = Math.Min(GliderInfo.MaxPitchOffsetDegree + 90, goalPitch);
-            gliderInfo.pitchDegree = goalPitch;
-        }
-        else
-        {
-            gliderInfo.pitchDegree = 90;
-        }
-    }
+        DeviceManager.Instance.rightHandDevice.TryGetFeatureValue(CommonUsages.trigger, out float rightTriggerValue);
+        DeviceManager.Instance.leftHandDevice.TryGetFeatureValue(CommonUsages.trigger, out float leftTriggerValue);
 
-    private bool isWithinRangePitchRotation(HandlebarHandle handlebarHandle)
-    {
-        return handlebarHandle.goalX < 180 && handlebarHandle.goalX > 10;
+        float averagePitch = (rightTriggerValue + leftTriggerValue) / 4;
+        Debug.Log("SAVE:averagePitch: " + averagePitch + " " + leftTriggerValue + " " + rightTriggerValue);
+        float goalPitch = GliderInfo.MaxPitchOffsetDegree * averagePitch + 90;
+        gliderInfo.pitchDegree = goalPitch;
     }
 
     private float clampRightHand()
