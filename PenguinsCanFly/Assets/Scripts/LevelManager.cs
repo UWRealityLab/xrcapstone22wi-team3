@@ -90,14 +90,12 @@ public class LevelManager : MonoBehaviour
 
         // Generate cosmetic obstacles
         int numCosmeticLower = Math.Max(2, (int) penguinXROTransform.position.y / 50);
-        Debug.Log("lower: " + numCosmeticLower);
         for (int i = 0; i < numCosmeticLower; i++)
         {
             SpawnRandomObstacle(startOfInterval, GetPositionForCosmeticObstacleLower);
         }
         
         int numCosmeticHigher = Math.Max(2, (int)(MaxObstacleHeight - penguinXROTransform.position.y) / 50);
-        Debug.Log("higher: " + numCosmeticHigher);
         for (int i = 0; i < numCosmeticHigher; i++)
         {
             SpawnRandomObstacle(startOfInterval, GetPositionForCosmeticObstacleHigher);
