@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,21 +12,24 @@ public class Checkpoint : MonoBehaviour
     void Start()
     {
     }
-    
-    
+
+
+    private void Update()
+    {
+        float gliderPositionZ = GameController.Instance.gliderInfo.penguinXROTransform.position.z;
+        float selfPositionZ = transform.position.z;
+        if (selfPositionZ - gliderPositionZ < -20f)
+        {
+            // Destroy checkpoint when the user is past it
+            Destroy(gameObject);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag(HangGliderTag))
         {
             StartCoroutine(IncreaseHeight());
-        }
-    }
-    
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag(HangGliderTag))
-        {
-            Destroy(gameObject);
         }
     }
 
