@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class LandingController : MonoBehaviour
 {
@@ -75,13 +76,23 @@ public class LandingController : MonoBehaviour
     public void SpawnCertificate()
     {
         // Spawn the certificate w/ high score that takes the user back home
-        Transform penguinTransform = gliderInfo.transform; 
-        Vector3 localOffset = new Vector3(0.3f, 1f, 0.75f);  // spawn in front and to the right
-        Vector3 worldOffset = penguinTransform.rotation * localOffset;
+        Transform penguinTransform = gliderInfo.transform;
+        Vector3 worldOffset;
+        GameObject certificate;
+        if (ScoreCounter.Instance.GetScore() > SaveManager.Instance.GetHiScore())
+        {
+            Vector3 localOffset = new Vector3(0.3f, 0.4f, 0.75f);  // spawn in front and to the right
+            worldOffset = penguinTransform.rotation * localOffset;
+            certificate = goHomeTrophyPrefab;
+        }
+        else
+        {
+            Vector3 localOffset = new Vector3(0.3f, 1f, 0.75f);  // spawn in front and to the right
+            worldOffset = penguinTransform.rotation * localOffset;
+            certificate = goHomeCertificatePrefab;
+        }
         Vector3 spawnPosition = penguinTransform.position + worldOffset;
-        Instantiate(goHomeCertificatePrefab, spawnPosition, penguinTransform.rotation);
-        Instantiate(goHomeTrophyPrefab, spawnPosition + new Vector3(-0.5f, -0.5f, 0), penguinTransform.rotation);
-
+        Instantiate(certificate, spawnPosition, penguinTransform.rotation);
     }
     
     public float GetDistanceToGround()

@@ -20,7 +20,9 @@ public class GoHomeCertificate : XRGrabInteractable
     // Start is called before the first frame update
     void Start()
     {
-        scoreText.text = ScoreCounter.Instance.GetScore() + "\n" + ScoreCounter.Instance.GetScore();
+        float score = ScoreCounter.Instance.GetScore();
+        SaveManager.Instance.SaveScore(score);
+        scoreText.text = score + "\n" + SaveManager.Instance.GetHiScore();
     }
 
     // Update is called once per frame
