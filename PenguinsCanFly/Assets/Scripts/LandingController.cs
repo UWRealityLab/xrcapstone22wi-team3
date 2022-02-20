@@ -34,8 +34,6 @@ public class LandingController : MonoBehaviour
             return;
         }
 
-        Debug.Log("SAVE:speed:" + gliderInfo.speed);
-        
         // TODO: change this number to whatever the "ground" level is
         float distance = GetDistanceToGround();
         Debug.Log("SAVE:LandingCtronllerDistance:" + distance);

@@ -11,7 +11,7 @@ public class BalloonObstacle : Obstacle
     void Start()
     {
         _speed = (Random.value < .5 ? 1 : -1) * Random.Range(0.3f, 0.6f);
-        _height = Random.Range(0.03f, 0.05f);
+        _height = Random.Range(0.04f, 0.07f);
     }
 
     // Update is called once per frame
