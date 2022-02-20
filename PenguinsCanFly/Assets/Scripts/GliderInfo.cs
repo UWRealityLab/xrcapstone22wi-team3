@@ -38,38 +38,9 @@ public class GliderInfo : MonoBehaviour
 
     public float totalYawDegree;
     
-    private InputDevice targetDevice;
-
     // when userControlEnabled = false, the user cannot control the glider
     public bool userControlEnabled = true;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        var inputDevices = new List<UnityEngine.XR.InputDevice>();
-        UnityEngine.XR.InputDevices.GetDevices(inputDevices);
-
-        foreach (var device in inputDevices)
-        {
-            Debug.Log(string.Format("Device found with name '{0}' and role '{1}'", device.name, device.role.ToString()));
-        }
-        
-        // Devices we are actually  using:
-        InputDeviceCharacteristics rightControllerCharacteristics =
-            InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
-        InputDevices.GetDevicesWithCharacteristics(rightControllerCharacteristics, inputDevices);
-        
-        foreach (var device in inputDevices)
-        {
-            Debug.Log(string.Format("With proper characteristics '{0}' and role '{1}'", device.name, device.role.ToString()));
-        }
-
-        if (inputDevices.Count > 0)
-        {
-            targetDevice = inputDevices[0];
-        }
-    }
-
+    
     void FixedUpdate()
     {
         // Add speed forward based on glider direction
@@ -111,8 +82,9 @@ public class GliderInfo : MonoBehaviour
 
         if (userControlEnabled)
         {
-            targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
-            targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue);
+            DeviceManager.Instance.rightHandDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
+            DeviceManager.Instance.rightHandDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue);
+            
             if (primaryButtonValue)
             {
                 Debug.Log("Hacker detected!");
