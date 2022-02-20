@@ -8,6 +8,8 @@ public class Checkpoint : MonoBehaviour
     private const string HangGliderTag = "HangGlider";
     private float pitchToAdd = -20f;  // Negative to pitch up, positive to pitch down
 
+    public const float CheckpointHeightIncrease = 2f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,11 +37,13 @@ public class Checkpoint : MonoBehaviour
 
     IEnumerator IncreaseHeight()
     {
-        for (int i = 0; i < 100; i++)
+        float iterations = 200;  // iterations * WaitForSeconds = length of time to apply height increase over
+        float heightIncreasePerIteration = CheckpointHeightIncrease / iterations;
+        for (int i = 0; i < iterations; i++)
         {
-            GameController.Instance.gliderInfo.penguinXRORigidbody.AddForce(Vector3.up * 20);
+            GameController.Instance.gliderInfo.penguinXROTransform.position += Vector3.up * heightIncreasePerIteration;
             GameController.Instance.gliderInfo.extraPitchDegree += pitchToAdd;
-            yield return null;
+            yield return new WaitForSeconds(0.01f);
         }
     }
 }
