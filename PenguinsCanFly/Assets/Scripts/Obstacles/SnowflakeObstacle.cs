@@ -21,12 +21,12 @@ public class SnowflakeObstacle : Obstacle
 
     public override float GetSpawnOffsetLowerBound()
     {
-        return 0f;
+        return 50f;
     }
 
     public override float GetSpawnOffsetUpperBound()
     {
-        return 200f;
+        return 400f;
     }
 
     public override Quaternion GetSpawnRotation()

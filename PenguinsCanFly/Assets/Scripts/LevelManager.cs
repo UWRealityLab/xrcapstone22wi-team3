@@ -32,7 +32,8 @@ public class LevelManager : MonoBehaviour
             GenerateCheckpoint(i * GetCheckpointInterval());
         }
         
-        for (int i = 0; i < GenerateDistance/ObstacleInterval; i++)
+        // Don't generate obstacles in the first interval
+        for (int i = 1; i < GenerateDistance / ObstacleInterval; i++)
         {
             GenerateObstacles(i * ObstacleInterval);
         }
@@ -85,49 +86,53 @@ public class LevelManager : MonoBehaviour
     {
         Debug.Log("Generated obstacles for " + startOfInterval + "num: " + _numObstacleIntervalsGenerated);
         
+        // Generate cosmetic obstacles
+
+        // Generate obstacles in the danger zone
         for (int i = 0; i < GetNumCheckpointsPerInterval(startOfInterval); i++)
         {
-            Vector3 position = Vector3.zero;
-            bool validPosition = false;
-            int spawnAttempts = 0;
-            
-            // Choose a random obstacle
-            GameObject obstacle = obstacleTypes[Random.Range(0, obstacleTypes.Length)];
-            Obstacle obstacleScript = obstacle.GetComponent<Obstacle>();
-
-            // While we don't have a valid position and we haven't tried spawning this obstacle too many times
-            while(!validPosition && spawnAttempts < _maxSpawnAttemptsPerObstacle)
-            {
-                spawnAttempts++;
-
-                // Pick a random position
-                float x;
-                if (i < 2)
-                {
-                    // Make sure we get enough in the middleish
-                    x = Random.Range(-25, 25);
-                }
-                else
-                {
-                    x = Random.Range(-150, 150);
-                }
-                float y = penguinXROTransform.position.y + 
-                          Random.Range(obstacleScript.GetSpawnOffsetLowerBound(), obstacleScript.GetSpawnOffsetUpperBound());;
-                float z = startOfInterval + Random.Range(0, ObstacleInterval);
-                position = new Vector3(x, y, z);
-
-                // Collect all colliders within our Obstacle Check Radius
-                Collider[] colliders = Physics.OverlapSphere(position, ObstacleCheckRadius);
-
-                validPosition = colliders.Length == 0;
-            }
-            
-            if(validPosition)
-            {
-                // Spawn the obstacle here
-                Instantiate(obstacle, position, obstacleScript.GetSpawnRotation());
-            }
+            SpawnRandomObstacle(startOfInterval, GetPositionForObstacleInDangerZone);
         }
+    }
+
+    private void SpawnRandomObstacle(float startOfInterval, Func<Obstacle, float, Vector3> getPositionForObstacle)
+    {
+        Vector3 position = Vector3.zero;
+        bool validPosition = false;
+        int spawnAttempts = 0;
+            
+        // Choose a random obstacle
+        GameObject obstacle = obstacleTypes[Random.Range(0, obstacleTypes.Length)];
+        Obstacle obstacleScript = obstacle.GetComponent<Obstacle>();
+
+        // While we don't have a valid position and we haven't tried spawning this obstacle too many times
+        while(!validPosition && spawnAttempts < _maxSpawnAttemptsPerObstacle)
+        {
+            spawnAttempts++;
+
+            // Pick a random position
+            position = getPositionForObstacle(obstacleScript, startOfInterval);
+
+            // Collect all colliders within our Obstacle Check Radius
+            Collider[] colliders = Physics.OverlapSphere(position, ObstacleCheckRadius);
+
+            validPosition = colliders.Length == 0;
+        }
+            
+        if(validPosition)
+        {
+            // Spawn the obstacle here
+            Instantiate(obstacle, position, obstacleScript.GetSpawnRotation());
+        }
+    }
+
+    private Vector3 GetPositionForObstacleInDangerZone(Obstacle obstacleScript, float startOfInterval)
+    {
+        float x = Random.Range(-150, 150);
+        float y = penguinXROTransform.position.y + 
+                  Random.Range(obstacleScript.GetSpawnOffsetLowerBound(), obstacleScript.GetSpawnOffsetUpperBound());;
+        float z = startOfInterval + Random.Range(0, ObstacleInterval);
+        return new Vector3(x, y, z);
     }
 
     private float GetSpeedIncrease()
