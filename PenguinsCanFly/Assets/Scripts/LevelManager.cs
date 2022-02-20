@@ -51,11 +51,13 @@ public class LevelManager : MonoBehaviour
             StartCoroutine(IncreaseSpeed(GetSpeedIncrease()));
             
             GenerateCheckpoint(_totalDistance + GenerateDistance);
+            _numCheckpointsInstantiated++;
         }
 
         if ((int)(_totalDistance / ObstacleInterval) == _numObstacleIntervalsGenerated)
         {
             GenerateObstacles(_totalDistance + GenerateDistance);
+            _numObstacleIntervalsGenerated++;
         }
 
     }
@@ -72,17 +74,16 @@ public class LevelManager : MonoBehaviour
         Instantiate(Resources.Load("Checkpoint"),
             new Vector3(checkpointX, 175, location),
             Quaternion.identity);
-        _numCheckpointsInstantiated++;
     }
 
     private int GetNumCheckpointsPerInterval(float distance)
     {
-       return 3 + (int)(distance / GetCheckpointInterval()) * 2;
+       return 2 + (int)(distance / GetCheckpointInterval());
     }
 
     private void GenerateObstacles(float startOfInterval)
     {
-         _numObstacleIntervalsGenerated++;
+        Debug.Log("Generated obstacles for " + startOfInterval + "num: " + _numObstacleIntervalsGenerated);
         
         for (int i = 0; i < GetNumCheckpointsPerInterval(startOfInterval); i++)
         {
