@@ -16,11 +16,11 @@ public class Checkpoint : MonoBehaviour
 
     private void Update()
     {
+        // Destroy checkpoint when the user is past it
         float gliderPositionZ = GameController.Instance.gliderInfo.penguinXROTransform.position.z;
         float selfPositionZ = transform.position.z;
         if (selfPositionZ - gliderPositionZ < -20f)
         {
-            // Destroy checkpoint when the user is past it
             Destroy(gameObject);
         }
     }

@@ -6,6 +6,8 @@ public abstract class Obstacle : MonoBehaviour
 {
     private const string HangGliderTag = "HangGlider";
     private float pitchToAdd = 3f;  // Negative to pitch up, positive to pitch down
+
+    private const float DestroyDistance = 1000f;
     
     public abstract float GetSpawnOffsetLowerBound();
     public abstract float GetSpawnOffsetUpperBound();
@@ -13,7 +15,16 @@ public abstract class Obstacle : MonoBehaviour
 
     public void Update()
     {
+        // Destroy obstacle if it falls below the ground
         if (transform.position.y < -20)
+        {
+            Destroy(gameObject);
+        }
+        
+        // Destroy obstacle when the user is too far past it
+        float gliderPositionZ = GameController.Instance.gliderInfo.penguinXROTransform.position.z;
+        float selfPositionZ = transform.position.z;
+        if (selfPositionZ - gliderPositionZ < -DestroyDistance)
         {
             Destroy(gameObject);
         }
