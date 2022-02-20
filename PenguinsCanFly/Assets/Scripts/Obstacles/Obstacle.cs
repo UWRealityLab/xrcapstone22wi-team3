@@ -36,6 +36,7 @@ public abstract class Obstacle : MonoBehaviour
     {
         if (other.gameObject.CompareTag(HangGliderTag))
         {
+            DeviceManager.Instance.SendCollisionHaptics();
             StartCoroutine(DecreaseHeight());
         }
     }
