@@ -20,6 +20,8 @@ public class LevelManager : MonoBehaviour
     private const float ObstacleCheckRadius = 10f;
     private int _maxSpawnAttemptsPerObstacle = 10;  // to prevent infinite loop
 
+    private const float MaxObstacleHeight = 500f;
+
     public GameObject[] obstacleTypes;
 
     // Start is called before the first frame update
@@ -77,21 +79,28 @@ public class LevelManager : MonoBehaviour
             Quaternion.identity);
     }
 
-    private int GetNumCheckpointsPerInterval(float distance)
-    {
-       return 2 + (int)(distance / GetCheckpointInterval());
-    }
-
     private void GenerateObstacles(float startOfInterval)
     {
-        Debug.Log("Generated obstacles for " + startOfInterval + "num: " + _numObstacleIntervalsGenerated);
-        
-        // Generate cosmetic obstacles
-
         // Generate obstacles in the danger zone
-        for (int i = 0; i < GetNumCheckpointsPerInterval(startOfInterval); i++)
+        int numObstaclesPerInterval = 2 + (int)(startOfInterval / GetCheckpointInterval());
+        for (int i = 0; i < numObstaclesPerInterval; i++)
         {
             SpawnRandomObstacle(startOfInterval, GetPositionForObstacleInDangerZone);
+        }
+
+        // Generate cosmetic obstacles
+        int numCosmeticLower = Math.Max(2, (int) penguinXROTransform.position.y / 50);
+        Debug.Log("lower: " + numCosmeticLower);
+        for (int i = 0; i < numCosmeticLower; i++)
+        {
+            SpawnRandomObstacle(startOfInterval, GetPositionForCosmeticObstacleLower);
+        }
+        
+        int numCosmeticHigher = Math.Max(2, (int)(MaxObstacleHeight - penguinXROTransform.position.y) / 50);
+        Debug.Log("higher: " + numCosmeticHigher);
+        for (int i = 0; i < numCosmeticHigher; i++)
+        {
+            SpawnRandomObstacle(startOfInterval, GetPositionForCosmeticObstacleHigher);
         }
     }
 
@@ -126,6 +135,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    // Obstacles that the user will probably player
     private Vector3 GetPositionForObstacleInDangerZone(Obstacle obstacleScript, float startOfInterval)
     {
         float x = Random.Range(-150, 150);
@@ -134,9 +144,29 @@ public class LevelManager : MonoBehaviour
         float z = startOfInterval + Random.Range(0, ObstacleInterval);
         return new Vector3(x, y, z);
     }
+    
+    // Obstacles that are lower than the player
+    private Vector3 GetPositionForCosmeticObstacleLower(Obstacle obstacleScript, float startOfInterval)
+    {
+        // TODO: maybe this x range is too wide
+        float x = Random.Range(-200, 200);
+        float y = Random.Range(0, obstacleScript.GetSpawnOffsetLowerBound() + penguinXROTransform.position.y);
+        float z = startOfInterval + Random.Range(0, ObstacleInterval);
+        return new Vector3(x, y, z);
+    }
+    
+    // Obstacles that are higher than the player
+    private Vector3 GetPositionForCosmeticObstacleHigher(Obstacle obstacleScript, float startOfInterval)
+    {
+        float x = Random.Range(-200, 200);
+        float y = Random.Range(penguinXROTransform.position.y + obstacleScript.GetSpawnOffsetUpperBound(), MaxObstacleHeight);
+        float z = startOfInterval + Random.Range(0, ObstacleInterval);
+        return new Vector3(x, y, z);
+    }
 
     private float GetSpeedIncrease()
     {
+        // Increase speed depending on number of checkpoints we've passed
         if (_numCheckpointsInstantiated == 0)
         {
             return 0f;
