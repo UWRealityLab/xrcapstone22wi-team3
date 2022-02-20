@@ -1,16 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class GoHomeCertificate : XRGrabInteractable
+public class GoHomeCertificateOld : XRGrabInteractable
 {
-    public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI returnHomeText;
-
+    public Text display;
     
     private bool _goHomeCalled = false;
     private float _goHomeCallTime = -1f;
@@ -20,7 +17,7 @@ public class GoHomeCertificate : XRGrabInteractable
     // Start is called before the first frame update
     void Start()
     {
-        scoreText.text = ScoreCounter.Instance.GetScore() + "\n" + ScoreCounter.Instance.GetScore();
+        display.text = "Great flight! :DD\n\nScore: " + ScoreCounter.Instance.GetScore();
     }
 
     // Update is called once per frame
@@ -38,7 +35,7 @@ public class GoHomeCertificate : XRGrabInteractable
         {
             // Display go home count down
             int timeLeft = (int)Math.Ceiling(TimeBeforeReset - (Time.time - _goHomeCallTime));
-            returnHomeText.text = "Returning home in " + timeLeft;
+            display.text = "Great flight! :DD\n\nReturning home in " + timeLeft;
         }
     }
 

@@ -8,6 +8,7 @@ public class LandingController : MonoBehaviour
     public GliderInfo gliderInfo;
 
     public GameObject goHomeCertificatePrefab;
+    public GameObject goHomeTrophyPrefab;
     
     // Distance from the ground where we turn off gravity and decay speed faster
     private const float LandingHeight = 2f;
@@ -79,6 +80,8 @@ public class LandingController : MonoBehaviour
         Vector3 worldOffset = penguinTransform.rotation * localOffset;
         Vector3 spawnPosition = penguinTransform.position + worldOffset;
         Instantiate(goHomeCertificatePrefab, spawnPosition, penguinTransform.rotation);
+        Instantiate(goHomeTrophyPrefab, spawnPosition + new Vector3(-0.5f, -0.5f, 0), penguinTransform.rotation);
+
     }
     
     public float GetDistanceToGround()
