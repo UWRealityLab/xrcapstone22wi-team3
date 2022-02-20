@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43020576, g: 0.56304204, b: 0.71133375, a: 1}
+  m_IndirectSpecularColor: {r: 0.43062702, g: 0.56337565, b: 0.7113785, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1872,6 +1872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   penguinXROTransform: {fileID: 2078797934}
   obstacleTypes:
+  - {fileID: 2733523344670738679, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
   - {fileID: 2733523344670738679, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
   - {fileID: 5296170243713047716, guid: 0627e719efc3c48549c06799a8cae4da, type: 3}
 --- !u!4 &437040826
