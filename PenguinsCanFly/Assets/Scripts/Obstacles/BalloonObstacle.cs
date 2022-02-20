@@ -15,11 +15,13 @@ public class BalloonObstacle : Obstacle
     }
 
     // Update is called once per frame
-    void Update() {
+    new void Update()
+    {
+        base.Update();
         float y = Mathf.Sin(Time.time * _speed) * _height;
         transform.position += Vector3.up * y;
     }
-    
+
     public override float GetSpawnOffsetLowerBound()
     {
         return -20f;

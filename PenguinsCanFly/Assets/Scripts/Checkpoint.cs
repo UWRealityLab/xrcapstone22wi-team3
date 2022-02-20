@@ -20,6 +20,14 @@ public class Checkpoint : MonoBehaviour
             StartCoroutine(IncreaseHeight());
         }
     }
+    
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag(HangGliderTag))
+        {
+            Destroy(gameObject);
+        }
+    }
 
     IEnumerator IncreaseHeight()
     {

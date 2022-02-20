@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections;
 
@@ -9,13 +10,34 @@ public abstract class Obstacle : MonoBehaviour
     public abstract float GetSpawnOffsetLowerBound();
     public abstract float GetSpawnOffsetUpperBound();
     public abstract Quaternion GetSpawnRotation();
-    
-    private void OnTriggerEnter(Collider other)
+
+    public void Update()
+    {
+        if (transform.position.y < -20)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag(HangGliderTag))
         {
             StartCoroutine(DecreaseHeight());
         }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag(HangGliderTag))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void OnDestroy()
+    {
+        LevelManager.NumObstaclesActiveInGame--;
     }
 
     IEnumerator DecreaseHeight()

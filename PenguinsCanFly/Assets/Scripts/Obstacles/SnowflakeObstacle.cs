@@ -14,8 +14,9 @@ public class SnowflakeObstacle : Obstacle
     }
 
     // Update is called once per frame
-    void Update()
+    new void Update()
     {
+        base.Update();
         transform.Rotate((20f+_rotateOffset) * Vector3.forward * Time.deltaTime);
     }
 
@@ -36,4 +37,5 @@ public class SnowflakeObstacle : Obstacle
         rotation.eulerAngles = new Vector3(0, 0,Random.Range(0, 360));
         return rotation;
     }
+    
 }

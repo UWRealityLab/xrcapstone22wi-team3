@@ -24,6 +24,9 @@ public class LevelManager : MonoBehaviour
 
     public GameObject[] obstacleTypes;
 
+    // TODO: remove, this is for debugging purposes
+    public static int NumObstaclesActiveInGame = 0;
+        
     // Start is called before the first frame update
     void Start()
     {
@@ -62,7 +65,8 @@ public class LevelManager : MonoBehaviour
             GenerateObstacles(_totalDistance + GenerateDistance);
             _numObstacleIntervalsGenerated++;
         }
-
+        
+        Debug.Log("SAVE:numObstaclesActive:" + NumObstaclesActiveInGame);
     }
 
     private float GetCheckpointInterval()
@@ -89,17 +93,17 @@ public class LevelManager : MonoBehaviour
         }
 
         // Generate cosmetic obstacles
-        int numCosmeticLower = Math.Max(2, (int) penguinXROTransform.position.y / 50);
-        for (int i = 0; i < numCosmeticLower; i++)
-        {
-            SpawnRandomObstacle(startOfInterval, GetPositionForCosmeticObstacleLower);
-        }
-        
-        int numCosmeticHigher = Math.Max(2, (int)(MaxObstacleHeight - penguinXROTransform.position.y) / 50);
-        for (int i = 0; i < numCosmeticHigher; i++)
-        {
-            SpawnRandomObstacle(startOfInterval, GetPositionForCosmeticObstacleHigher);
-        }
+        // int numCosmeticLower = Math.Max(2, (int) penguinXROTransform.position.y / 100);
+        // for (int i = 0; i < numCosmeticLower; i++)
+        // {
+        //     SpawnRandomObstacle(startOfInterval, GetPositionForCosmeticObstacleLower);
+        // }
+        //
+        // int numCosmeticHigher = Math.Max(2, (int)(MaxObstacleHeight - penguinXROTransform.position.y) / 100);
+        // for (int i = 0; i < numCosmeticHigher; i++)
+        // {
+        //     SpawnRandomObstacle(startOfInterval, GetPositionForCosmeticObstacleHigher);
+        // }
     }
 
     private void SpawnRandomObstacle(float startOfInterval, Func<Obstacle, float, Vector3> getPositionForObstacle)
@@ -130,6 +134,7 @@ public class LevelManager : MonoBehaviour
         {
             // Spawn the obstacle here
             Instantiate(obstacle, position, obstacleScript.GetSpawnRotation());
+            NumObstaclesActiveInGame++;
         }
     }
 
@@ -148,7 +153,7 @@ public class LevelManager : MonoBehaviour
     {
         // TODO: maybe this x range is too wide
         float x = Random.Range(-200, 200);
-        float y = Random.Range(0, obstacleScript.GetSpawnOffsetLowerBound() + penguinXROTransform.position.y);
+        float y = Random.Range(10, obstacleScript.GetSpawnOffsetLowerBound() + penguinXROTransform.position.y);
         float z = startOfInterval + Random.Range(0, ObstacleInterval);
         return new Vector3(x, y, z);
     }
