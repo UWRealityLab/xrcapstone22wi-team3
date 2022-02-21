@@ -63,4 +63,10 @@ public class DeviceManager : MonoBehaviour
             leftHandDevice = inputDevices[0];
         }
     }
+
+    public void SendCollisionHaptics()
+    {
+        leftHandDevice.SendHapticImpulse(0, 1, 0.5f);
+        rightHandDevice.SendHapticImpulse(0, 1, 0.5f);
+    }
 }
