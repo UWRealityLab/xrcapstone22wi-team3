@@ -19,7 +19,6 @@ public class LaunchController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -34,8 +33,6 @@ public class LaunchController : MonoBehaviour
         Vector3 localV = gliderDirection.InverseTransformDirection(penguinXRORigidbody.velocity);
         localV.z = speed;
         penguinXRORigidbody.velocity = gliderDirection.TransformDirection(localV);
-        
-        Debug.Log("SAVE:speed:" + localV.z);
     }
 
     private void OnEnable()

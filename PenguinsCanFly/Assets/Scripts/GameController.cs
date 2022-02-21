@@ -8,21 +8,17 @@ public class GameController : MonoBehaviour
 {
     public ResetManager resetManager;
     
-    public Transform penguinXROTransform;
-    
     public GameObject launchController;
     public GameObject glidingController;
     public GameObject landingController;
     public GameObject locomotionSystem;
 
     private LaunchController _launchScript;
-    private GliderInfo _glidingScript;
+    public GliderInfo gliderInfo;
     
     private static GameController _instance;
     
-    // TODO: experiment with this value.
-    // After we hit this min height from the ground, the landing sequence starts
-    private const float GlidingMinHeight = 10f;
+
 
     public static GameController Instance
     {
@@ -52,34 +48,8 @@ public class GameController : MonoBehaviour
     void Start()
     {
         _launchScript = launchController.GetComponent<LaunchController>();
-        _glidingScript = glidingController.GetComponent<GliderInfo>();
+        gliderInfo = glidingController.GetComponent<GliderInfo>();
         StartLaunchMode();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        float distance = GetDistanceToGround();
-        Debug.Log("SAVE:rayDistance:" + distance);
-        // TODO: only call this method once
-        if (distance <= GlidingMinHeight && !landingController.activeSelf)
-        {
-            StartLandingMode();
-        }
-    }
-
-    public float GetDistanceToGround()
-    {
-        int layerMask = LayerMask.GetMask("Ground");
-        RaycastHit hit;
-        if (Physics.Raycast(penguinXROTransform.position, Vector3.down, out hit, Mathf.Infinity, layerMask))
-        {
-            return hit.distance;
-        }
-        else
-        {
-            return float.PositiveInfinity;
-        }
     }
 
     public void ResetToLaunch()
@@ -98,11 +68,11 @@ public class GameController : MonoBehaviour
     public void StartGlidingMode()
     {
         // Transfer launch speed to gliding mode
-        _glidingScript.extraSpeed = _launchScript.speed - _glidingScript.speed;
+        gliderInfo.extraSpeed = _launchScript.speed - gliderInfo.speed;
         
         launchController.SetActive(false);
         glidingController.SetActive(true);
-        landingController.SetActive(false);
+        landingController.SetActive(true);
         locomotionSystem.SetActive(false);
     }
 
@@ -112,16 +82,22 @@ public class GameController : MonoBehaviour
         launchController.SetActive(false);
         // Don't deactivate glidingController yet since we want the glider to still be visible
         // Don't disable the _glidingScript since we still want to control the speed using it
-        _glidingScript.DisableUserControlOfGlider();
+        gliderInfo.DisableUserControlOfGlider();
         landingController.SetActive(true);
         locomotionSystem.SetActive(false);
+    }
+
+    public void DisableGliderController()
+    {
+        Debug.Log("Disabling gliderModelScontrolle!" + gliderInfo.gliderModelController);
+        gliderInfo.DisableUserControlOfGlider();
     }
     
     public void StartGroundMode()
     {
         // Hides the glider and enables locomotion
         glidingController.SetActive(false);
-        locomotionSystem.SetActive(true);
+        locomotionSystem.SetActive(false);
     }
     
 }

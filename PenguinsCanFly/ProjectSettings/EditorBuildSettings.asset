@@ -5,18 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MasterScene.unity
-    guid: ff6b1fc1558244e5d949dc5a7fb80298
-  - enabled: 0
-    path: Assets/Scenes/ArthurSceneUpdated.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: Assets/Oculus/VR/Scenes/SpectatorMode.unity
-    guid: 48f290ede0df84ec8bd990c5f5026654
-  - enabled: 0
-    path: Assets/Scenes/ArthurScene.unity
-    guid: e4fa8b4699c8144f89af898d02f009ad
+    guid: 75903851234dc4227afc159cdaf31dc9
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 8383bc818588f794f82d39eafdf30719, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 76fd00d40ec5aca4781936bf3d94abd7, type: 2}

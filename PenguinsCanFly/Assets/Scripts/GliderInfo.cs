@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.Audio;
 
 public class GliderInfo : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GliderInfo : MonoBehaviour
     public float extraSpeed = 10f;
     public float speed = 12.5f;
     public float drag = 6;
+    public AudioMixer am;
 
     // TODO: fix this circular dependency
     public GliderModelController gliderModelController;
@@ -29,40 +31,16 @@ public class GliderInfo : MonoBehaviour
         get { return pitchDegree + extraPitchDegree; }
     }
 
-    public float totalYawDegree;
-    
-    private InputDevice targetDevice;
-
-    // when userControlEnabled = false, the user cannot control the glider
-    public bool userControlEnabled = true;
-
-    // Start is called before the first frame update
-    void Start()
+    public float ActualSpeed
     {
-        var inputDevices = new List<UnityEngine.XR.InputDevice>();
-        UnityEngine.XR.InputDevices.GetDevices(inputDevices);
-
-        foreach (var device in inputDevices)
-        {
-            Debug.Log(string.Format("Device found with name '{0}' and role '{1}'", device.name, device.role.ToString()));
-        }
-        
-        // Devices we are actually  using:
-        InputDeviceCharacteristics rightControllerCharacteristics =
-            InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
-        InputDevices.GetDevicesWithCharacteristics(rightControllerCharacteristics, inputDevices);
-        
-        foreach (var device in inputDevices)
-        {
-            Debug.Log(string.Format("With proper characteristics '{0}' and role '{1}'", device.name, device.role.ToString()));
-        }
-
-        if (inputDevices.Count > 0)
-        {
-            targetDevice = inputDevices[0];
-        }
+        get { return penguinXRORigidbody.velocity.magnitude; }
     }
 
+    public float totalYawDegree;
+    
+    // when userControlEnabled = false, the user cannot control the glider
+    public bool userControlEnabled = true;
+    
     void FixedUpdate()
     {
         // Add speed forward based on glider direction
@@ -104,8 +82,9 @@ public class GliderInfo : MonoBehaviour
 
         if (userControlEnabled)
         {
-            targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
-            targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue);
+            DeviceManager.Instance.rightHandDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
+            DeviceManager.Instance.rightHandDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue);
+            
             if (primaryButtonValue)
             {
                 Debug.Log("Hacker detected!");
@@ -117,7 +96,20 @@ public class GliderInfo : MonoBehaviour
             }
         }
         
-
+        float audioPitchIncrease = Mathf.Clamp((speed + extraSpeed) / 20, 0, 1);
+        float audioVolume = Mathf.Clamp((speed + extraSpeed) / 15, 0f, 1.5f);
+        if (speed < 5)
+        {
+            Debug.Log("CLAMPING!!!");
+            audioVolume = -80f;
+            StartCoroutine(StartFade(am, "Volume", 1, -80f));
+        }
+        else
+        {
+            am.SetFloat("Volume", audioVolume);
+        }
+        Debug.Log("SAVE:AdioPitchIncrease, Volume:" + audioPitchIncrease + " " + audioVolume);
+        am.SetFloat("Pitch", 1 + audioPitchIncrease);
 
         Debug.Log("SAVE:TotalPitchDegree:" + TotalPitchDegree + " extraPitchDegree " + extraPitchDegree);
 
@@ -139,5 +131,22 @@ public class GliderInfo : MonoBehaviour
     private void OnEnable()
     {
         penguinXRORigidbody.useGravity = true;
+    }
+    
+    public static IEnumerator StartFade(AudioMixer audioMixer, string exposedParam, float duration, float targetVolume)
+    {
+        float currentTime = 0;
+        float currentVol;
+        audioMixer.GetFloat(exposedParam, out currentVol);
+        currentVol = Mathf.Pow(10, currentVol / 20);
+        float targetValue = Mathf.Clamp(targetVolume, 0.0001f, 1);
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            float newVol = Mathf.Lerp(currentVol, targetValue, currentTime / duration);
+            audioMixer.SetFloat(exposedParam, Mathf.Log10(newVol) * 20);
+            yield return null;
+        }
+        yield break;
     }
 }
