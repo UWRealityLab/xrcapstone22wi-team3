@@ -180,7 +180,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6636219998645947900, guid: 08469cf35ddfa1b47b3bdfa92f6e6355, type: 3}
       propertyPath: m_LODs.Array.data[0].screenRelativeHeight
-      value: 0.8591331
+      value: 0.39824507
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636219998645947900, guid: 08469cf35ddfa1b47b3bdfa92f6e6355, type: 3}
+      propertyPath: m_LODs.Array.data[1].screenRelativeHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636219998645947900, guid: 08469cf35ddfa1b47b3bdfa92f6e6355, type: 3}
+      propertyPath: m_LODs.Array.data[2].screenRelativeHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636219998645947900, guid: 08469cf35ddfa1b47b3bdfa92f6e6355, type: 3}
+      propertyPath: m_LODs.Array.data[3].screenRelativeHeight
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08469cf35ddfa1b47b3bdfa92f6e6355, type: 3}
@@ -1139,6 +1151,22 @@ PrefabInstance:
     - target: {fileID: 5779898025191846653, guid: 08469cf35ddfa1b47b3bdfa92f6e6355, type: 3}
       propertyPath: m_Name
       value: Tutorial Penguin
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636219998645947900, guid: 08469cf35ddfa1b47b3bdfa92f6e6355, type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.39601153
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636219998645947900, guid: 08469cf35ddfa1b47b3bdfa92f6e6355, type: 3}
+      propertyPath: m_LODs.Array.data[1].screenRelativeHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636219998645947900, guid: 08469cf35ddfa1b47b3bdfa92f6e6355, type: 3}
+      propertyPath: m_LODs.Array.data[2].screenRelativeHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636219998645947900, guid: 08469cf35ddfa1b47b3bdfa92f6e6355, type: 3}
+      propertyPath: m_LODs.Array.data[3].screenRelativeHeight
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08469cf35ddfa1b47b3bdfa92f6e6355, type: 3}
