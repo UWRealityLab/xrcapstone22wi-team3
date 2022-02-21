@@ -27,28 +27,7 @@ public class LevelManager : MonoBehaviour
 
     // TODO: remove, this is for debugging purposes
     public static int NumObstaclesActiveInGame = 0;
-    
-    private static LevelManager _instance;
 
-    public static LevelManager Instance
-    {
-        get
-        {
-            return _instance;
-        }
-    }
-    
-    private void Awake()
-    {
-        if (_instance != null && _instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        _instance = this;
-    }
-
-    
     // Start is called before the first frame update
     void Start()
     {
