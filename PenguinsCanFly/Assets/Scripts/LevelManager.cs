@@ -61,7 +61,7 @@ public class LevelManager : MonoBehaviour
             StartCoroutine(IncreaseSpeed(GetSpeedIncrease()));
             
             _locationOfLastCheckpoint = Single.MaxValue;
-            GenerateCheckpoint(0);
+            GenerateCheckpoint();
             _numCheckpointsInstantiated++;
         }
 
@@ -79,9 +79,8 @@ public class LevelManager : MonoBehaviour
         // TODO: change this to depend on speed
         return 500f;
     }
-
-    // TODO: clean up parameter
-    public void GenerateCheckpoint(float location)
+    
+    public void GenerateCheckpoint()
     {
         GliderInfo gliderInfo = GameController.Instance.gliderInfo;
 
