@@ -16,14 +16,11 @@ public class LoadSceneAsyncScript : MonoBehaviour
 
     IEnumerator LoadYourAsyncScene()
     {
-        // The Application loads the Scene in the background as the current Scene runs.
-        // This is particularly good for creating loading screens.
-        // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
-        // a sceneBuildIndex of 1 as shown in Build Settings.
-
+        // The Application loads the Scene in the background as the current Scene runs
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad);
 
         // Wait until the asynchronous scene fully loads
+        // TODO: Display a black loading screen so jump isn't as apparent? Or loading overlay
         while (!asyncLoad.isDone)
         {
             yield return null;

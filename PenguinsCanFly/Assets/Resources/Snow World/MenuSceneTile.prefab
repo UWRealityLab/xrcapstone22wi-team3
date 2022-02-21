@@ -35,6 +35,7 @@ Transform:
   - {fileID: 3407111095316356591}
   - {fileID: 4297835039255403040}
   - {fileID: 8499088228985182418}
+  - {fileID: 6731096259602028720}
   m_Father: {fileID: 4192868679028800692}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -126,7 +127,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5545391706303706384}
   m_LocalRotation: {x: -0, y: 0.5537857, z: -0, w: 0.83265924}
-  m_LocalPosition: {x: -1.87, y: 0, z: 10.65}
+  m_LocalPosition: {x: -1.87, y: 0.27, z: 10.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6558325812321539388}
@@ -163,7 +164,6 @@ Transform:
   m_Children:
   - {fileID: 1541068566327524315}
   - {fileID: 5422974615420262974}
-  - {fileID: 6731096259602028720}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -870,7 +870,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 4192868679028800692}
+    m_TransformParent: {fileID: 5422974615420262974}
     m_Modifications:
     - target: {fileID: 2298634000669483377, guid: 08469cf35ddfa1b47b3bdfa92f6e6355, type: 3}
       propertyPath: m_Controller
@@ -886,7 +886,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 88f74b688d91f4d8a899e678e5822699, type: 2}
     - target: {fileID: 5779898025191846652, guid: 08469cf35ddfa1b47b3bdfa92f6e6355, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5779898025191846652, guid: 08469cf35ddfa1b47b3bdfa92f6e6355, type: 3}
       propertyPath: m_LocalPosition.x
@@ -930,7 +930,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5779898025191846653, guid: 08469cf35ddfa1b47b3bdfa92f6e6355, type: 3}
       propertyPath: m_Name
-      value: Penguin
+      value: DeadPenguin
       objectReference: {fileID: 0}
     - target: {fileID: 8072647159987425535, guid: 08469cf35ddfa1b47b3bdfa92f6e6355, type: 3}
       propertyPath: m_Controller
