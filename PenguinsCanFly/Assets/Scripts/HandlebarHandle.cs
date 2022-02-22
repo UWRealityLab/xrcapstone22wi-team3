@@ -14,13 +14,17 @@ public class HandlebarHandle : XRBaseInteractable
     public Transform hangGliderRotatePoint = null;
     
     public float goalZ;
-    public float goalX; 
+
+    public FlipperShoulderScript leftShoulder;
+    public FlipperShoulderScript rightShoulder;
+
+    // Used for indicating where the flipper should be locked in
+    public Transform grabLockPosition;
 
     // Start is called before the first frame update
     void Start()
     {
         goalZ = -90;
-        goalX = 0;
     }
 
     // Check that a controller is interacting with the object
@@ -35,6 +39,14 @@ public class HandlebarHandle : XRBaseInteractable
         base.OnSelectEntered(args);
         Debug.Log("HandlebarHandle: select entered: " + args.interactorObject);
         selectInteractor = args.interactorObject;
+        if (selectInteractor.ToString().Contains("Left"))
+        {
+            leftShoulder.gliderHandlePos = grabLockPosition;
+        }
+        else
+        {
+            rightShoulder.gliderHandlePos = grabLockPosition;
+        }
     }
 
     public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
@@ -50,7 +62,6 @@ public class HandlebarHandle : XRBaseInteractable
             // Note that because it is signed, it will be -180 < val < 180
             float rotationGoal = Vector3.SignedAngle(Vector3.up, projectedVector, hangGliderRotatePoint.forward);
             goalZ = rotationGoal;
-            goalX = selectInteractor.transform.localEulerAngles.x;
         }
     }
     
@@ -58,9 +69,17 @@ public class HandlebarHandle : XRBaseInteractable
     {
         base.OnSelectExited(args);
         Debug.Log("HandlebarHandle: select exited: " + args.interactorObject);
+        if (selectInteractor.ToString().Contains("Left"))
+        {
+            leftShoulder.gliderHandlePos = null;
+        }
+        else
+        {
+            rightShoulder.gliderHandlePos = null;
+        }
         selectInteractor = null;
         goalZ = -90;
-        goalX = 90;
+        
     }
     
 }
