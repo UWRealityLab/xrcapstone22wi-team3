@@ -22,6 +22,8 @@ public class FlipperShoulderScript : MonoBehaviour
 
     public const float flipperHandWidth = 0.12f;
 
+    public Transform gliderHandlePos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,16 +52,22 @@ public class FlipperShoulderScript : MonoBehaviour
             rotation = Quaternion.AngleAxis(gliderBackAngle, Vector3.up);
         }
 
+        Transform goalPosition = controller;
+        if (gliderHandlePos != null)
+        {
+            goalPosition = gliderHandlePos;
+        }
+
         // Set start point of shoulder
         Vector3 shoulderPosition = this.mainCamera.transform.position + (rotation * shoulderOffset);
         transform.position = shoulderPosition;
 
         // Point shoulder / flipper in controllers direction
-        Vector3 controllerShoulderDiff = controller.position - shoulderPosition;
+        Vector3 controllerShoulderDiff = goalPosition.position - shoulderPosition;
         transform.forward = controllerShoulderDiff;
 
         // Add controller rotation in z dimension for some responsiveness
-        this.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, controller.transform.eulerAngles.z);
+        this.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, goalPosition.transform.eulerAngles.z);
 
         // Change Penguin Flipper length depending on how close controller is
         float flipperLength = controllerShoulderDiff.magnitude + flipperHandWidth;
