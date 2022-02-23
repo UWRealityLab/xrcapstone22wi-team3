@@ -199,7 +199,15 @@ public class LevelManager : MonoBehaviour
         {
             return 1f;
         }
-        return 0.5f;
+        if (_numCheckpointsInstantiated < 20)
+        {
+            return 0.5f;
+        }
+        if (_numCheckpointsInstantiated < 30)
+        {
+            return 0.1f;
+        }
+        return 0;
     }
     
     IEnumerator IncreaseSpeed(float speedIncrease)

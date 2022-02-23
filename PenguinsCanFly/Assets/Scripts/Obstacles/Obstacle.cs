@@ -9,8 +9,6 @@ public abstract class Obstacle : MonoBehaviour
 
     private const float DestroyDistance = 1000f;
 
-    public const float ObstacleHeightDecrease = 3f;
-    
     public abstract float GetSpawnOffsetLowerBound();
     public abstract float GetSpawnOffsetUpperBound();
     public abstract Quaternion GetSpawnRotation();
@@ -56,13 +54,13 @@ public abstract class Obstacle : MonoBehaviour
 
     IEnumerator DecreaseHeight()
     {
+        float targetTotalPitchDegree = 30f; // tilt 30 degrees down
         float iterations = 200;  // iterations * WaitForSeconds = length of time to apply height increase over
-        float heightIncDecreasePerIteration = ObstacleHeightDecrease / iterations;
         for (int i = 0; i < iterations; i++)
         {
-            GameController.Instance.gliderInfo.penguinXROTransform.position += Vector3.down * heightIncDecreasePerIteration;
             GameController.Instance.gliderInfo.extraPitchDegree += pitchToAdd;
             yield return new WaitForSeconds(0.01f);
         }
+        yield return null;
     }
 }
