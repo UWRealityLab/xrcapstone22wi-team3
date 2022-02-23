@@ -51,10 +51,9 @@ public class GliderInfo : MonoBehaviour
 
         // Depending on pitch, change drag so that if you are looking down, you go faster and vice versa
         // 0.05f was calculated based on -2drag / 40degrees 
-        float actualPitchRotation = Vector3.SignedAngle(Vector3.up, gliderDirectionForward, gliderDirection.right);
+        float actualPitchRotation = Vector3.SignedAngle(Vector3.up, penguinXRORigidbody.velocity.normalized, gliderDirection.right);
         float modifiedDrag = -(actualPitchRotation - 90) * 0.05f + drag;
         penguinXRORigidbody.drag = modifiedDrag;
-        // TODO: NEED TO ADDRESS THIS DRAG THING >> CAN BASE IT OFF OF VELOCITY INSTEAD BUT DURING LANDING, VELOCITY REACHES 0 AND IS NOT STABLE
         
 
         Debug.Log("SAVE:GliderSpeed:" + penguinXRORigidbody.velocity.magnitude + " ExtraSpeed " + extraSpeed);
