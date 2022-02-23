@@ -58,8 +58,8 @@ public abstract class Obstacle : MonoBehaviour
         float iterations = 200;  // iterations * WaitForSeconds = length of time to apply height increase over
         for (int i = 0; i < iterations; i++)
         {
-            GameController.Instance.gliderInfo.extraPitchDegree += pitchToAdd;
-            yield return new WaitForSeconds(0.01f);
+            GameController.Instance.gliderInfo.penguinXRORigidbody.AddForce(Vector3.down * 5);
+            yield return null;
         }
         yield return null;
     }
