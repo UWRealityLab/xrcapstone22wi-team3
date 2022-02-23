@@ -6,7 +6,6 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     private const string HangGliderTag = "HangGlider";
-    private float pitchToAdd = -20f;  // Negative to pitch up, positive to pitch down
 
     private bool checkpointHit = false;
 
@@ -41,10 +40,10 @@ public class Checkpoint : MonoBehaviour
 
     IEnumerator IncreaseHeight()
     {
-        float iterations = 200;  // iterations * WaitForSeconds = length of time to apply height increase over
+        float iterations = 200;
         for (int i = 0; i < iterations; i++)
         {
-            GameController.Instance.gliderInfo.penguinXRORigidbody.AddForce(Vector3.up * 20);
+            GameController.Instance.gliderInfo.penguinXRORigidbody.AddForce(Vector3.up * 50);
             yield return null;
         }
         LevelManager.Instance.ReadyToGenerateCheckpoint();

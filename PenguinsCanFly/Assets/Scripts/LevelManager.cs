@@ -56,9 +56,9 @@ public class LevelManager : MonoBehaviour
 
         // Hardcode spawn first checkpoint
         float checkpointX = Random.Range(-75f, 75f);
-        float checkpointZ = 300f;
+        float checkpointZ = 200f;
         Instantiate(Resources.Load("Checkpoint"),
-            new Vector3(checkpointX, 175, checkpointZ),
+            new Vector3(checkpointX, 20, checkpointZ),
             Quaternion.identity);
         _locationOfLastCheckpoint = checkpointZ;
         
@@ -110,11 +110,12 @@ public class LevelManager : MonoBehaviour
         Debug.Log("time until land:" + timeUntilWeHitGround);
         Debug.Log("distance until land:" + distanceWhereWeWillLand);
 
-        float spawnZ = gliderInfo.penguinXROTransform.position.z + distanceWhereWeWillLand;
+        float minSpawnOffset = 200f;
+        float spawnZ = gliderInfo.penguinXROTransform.position.z + Math.Max(minSpawnOffset, distanceWhereWeWillLand);
         _locationOfLastCheckpoint = spawnZ;
         
         float spawnX = Random.Range(-100f, 100f);
-        Instantiate(Resources.Load("Checkpoint"), new Vector3(spawnX, 0, spawnZ), Quaternion.identity);
+        Instantiate(Resources.Load("Checkpoint"), new Vector3(spawnX, 20, spawnZ), Quaternion.identity);
     }
 
     private void GenerateObstacles(float startOfInterval)

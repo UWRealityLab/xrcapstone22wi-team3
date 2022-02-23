@@ -5,9 +5,10 @@ using System.Collections;
 public abstract class Obstacle : MonoBehaviour
 {
     private const string HangGliderTag = "HangGlider";
-    private float pitchToAdd = 3f;  // Negative to pitch up, positive to pitch down
 
     private const float DestroyDistance = 1000f;
+    
+    private bool _obstacleHit = false;
 
     public abstract float GetSpawnOffsetLowerBound();
     public abstract float GetSpawnOffsetUpperBound();
@@ -38,15 +39,7 @@ public abstract class Obstacle : MonoBehaviour
             StartCoroutine(DecreaseHeight());
         }
     }
-
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag(HangGliderTag))
-        {
-            Destroy(gameObject);
-        }
-    }
-
+    
     void OnDestroy()
     {
         LevelManager.NumObstaclesActiveInGame--;
@@ -54,13 +47,12 @@ public abstract class Obstacle : MonoBehaviour
 
     IEnumerator DecreaseHeight()
     {
-        float targetTotalPitchDegree = 30f; // tilt 30 degrees down
-        float iterations = 200;  // iterations * WaitForSeconds = length of time to apply height increase over
+        float iterations = 300;
         for (int i = 0; i < iterations; i++)
         {
-            GameController.Instance.gliderInfo.penguinXRORigidbody.AddForce(Vector3.down * 5);
+            GameController.Instance.gliderInfo.penguinXRORigidbody.AddForce(Vector3.down * 50);
             yield return null;
         }
-        yield return null;
+        Destroy(gameObject);
     }
 }
