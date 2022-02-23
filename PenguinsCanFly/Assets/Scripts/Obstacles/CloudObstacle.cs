@@ -11,12 +11,12 @@ public class CloudObstacle : Obstacle
     
     public override float GetSpawnOffsetLowerBound()
     {
-        return -10f;
+        return -40f;
     }
 
     public override float GetSpawnOffsetUpperBound()
     {
-        return 100f;
+        return 50f;
     }
 
     public override Quaternion GetSpawnRotation()
