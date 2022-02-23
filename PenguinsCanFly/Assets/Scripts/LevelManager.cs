@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
     private float _locationOfLastCheckpoint;
     private int _numCheckpointsInstantiated = 0;
     
-    private const float ObstacleCheckRadius = 10f;
+    private const float ObstacleCheckRadius = 15f;
     private int _maxSpawnAttemptsPerObstacle = 10;  // to prevent infinite loop
 
     private const float MaxObstacleHeight = 500f;
@@ -73,12 +73,6 @@ public class LevelManager : MonoBehaviour
         
         Debug.Log("SAVE:numObstaclesActive:" + NumObstaclesActiveInGame);
     }
-
-    private float GetCheckpointInterval()
-    {
-        // TODO: change this to depend on speed
-        return 500f;
-    }
     
     public void GenerateCheckpoint()
     {
@@ -97,13 +91,15 @@ public class LevelManager : MonoBehaviour
 
         float spawnZ = gliderInfo.penguinXROTransform.position.z + distanceWhereWeWillLand;
         _locationOfLastCheckpoint = spawnZ;
-        Instantiate(Resources.Load("Checkpoint"), Vector3.forward * spawnZ, Quaternion.identity);
+        
+        float spawnX = Random.Range(-100f, 100f);
+        Instantiate(Resources.Load("Checkpoint"), new Vector3(spawnX, 0, spawnZ), Quaternion.identity);
     }
 
     private void GenerateObstacles(float startOfInterval)
     {
         // Generate obstacles in the danger zone
-        int numObstaclesPerInterval = 2 + (int)(startOfInterval / GetCheckpointInterval());
+        int numObstaclesPerInterval = 2 + _numCheckpointsInstantiated / 3;
         for (int i = 0; i < numObstaclesPerInterval; i++)
         {
             SpawnRandomObstacle(startOfInterval, GetPositionForObstacleInDangerZone);
@@ -160,7 +156,8 @@ public class LevelManager : MonoBehaviour
     {
         float x = Random.Range(-150, 150);
         float y = penguinXROTransform.position.y + 
-                  Random.Range(obstacleScript.GetSpawnOffsetLowerBound(), obstacleScript.GetSpawnOffsetUpperBound());;
+                  Random.Range(obstacleScript.GetSpawnOffsetLowerBound(), obstacleScript.GetSpawnOffsetUpperBound());
+        y = Math.Max(10, y);  // min spawn height of 10
         float z = startOfInterval + Random.Range(0, ObstacleInterval);
         return new Vector3(x, y, z);
     }
