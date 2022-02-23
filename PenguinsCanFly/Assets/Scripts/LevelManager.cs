@@ -101,7 +101,7 @@ public class LevelManager : MonoBehaviour
 
         float predictedPositionY = gliderInfo.penguinXROTransform.position.y;
         // TODO: physics says this should be sqrt, but removing it gives a much better approximation
-        float targetHeightToHitCheckpoint = 20;
+        float targetHeightToHitCheckpoint = 50;
         float timeUntilWeHitGround = -2 * (predictedPositionY - targetHeightToHitCheckpoint)/ (Physics.gravity.y + gliderInfo.drag); // sqrt
 
         float projectedSpeed = gliderInfo.ActualSpeed + GetSpeedIncrease();
@@ -114,7 +114,7 @@ public class LevelManager : MonoBehaviour
         float spawnZ = gliderInfo.penguinXROTransform.position.z + Math.Max(minSpawnOffset, distanceWhereWeWillLand);
         _locationOfLastCheckpoint = spawnZ;
         
-        float spawnX = Random.Range(-100f, 100f);
+        float spawnX = Random.Range(-50f, 50f);
         Instantiate(Resources.Load("Checkpoint"), new Vector3(spawnX, 20, spawnZ), Quaternion.identity);
     }
 
@@ -179,7 +179,7 @@ public class LevelManager : MonoBehaviour
         float x = Random.Range(-150, 150);
         float y = penguinXROTransform.position.y + 
                   Random.Range(obstacleScript.GetSpawnOffsetLowerBound(), obstacleScript.GetSpawnOffsetUpperBound());
-        y = Math.Max(10, y);  // min spawn height of 10
+        y = Math.Max(20, y);  // min spawn height of 20
         float z = startOfInterval + Random.Range(0, ObstacleInterval);
         return new Vector3(x, y, z);
     }
