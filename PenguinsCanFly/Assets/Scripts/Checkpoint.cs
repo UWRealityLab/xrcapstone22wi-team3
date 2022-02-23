@@ -41,9 +41,8 @@ public class Checkpoint : MonoBehaviour
         float heightIncreasePerIteration = CheckpointHeightIncrease / iterations;
         for (int i = 0; i < iterations; i++)
         {
-            GameController.Instance.gliderInfo.penguinXROTransform.position += Vector3.up * heightIncreasePerIteration;
-            GameController.Instance.gliderInfo.extraPitchDegree += pitchToAdd;
-            yield return new WaitForSeconds(0.01f);
+            GameController.Instance.gliderInfo.penguinXRORigidbody.AddForce(Vector3.up * 20);
+            yield return null;
         }
     }
 }

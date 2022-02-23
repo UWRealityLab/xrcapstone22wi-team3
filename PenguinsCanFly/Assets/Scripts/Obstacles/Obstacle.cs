@@ -60,9 +60,8 @@ public abstract class Obstacle : MonoBehaviour
         float heightIncDecreasePerIteration = ObstacleHeightDecrease / iterations;
         for (int i = 0; i < iterations; i++)
         {
-            GameController.Instance.gliderInfo.penguinXROTransform.position += Vector3.down * heightIncDecreasePerIteration;
-            GameController.Instance.gliderInfo.extraPitchDegree += pitchToAdd;
-            yield return new WaitForSeconds(0.01f);
+            GameController.Instance.gliderInfo.penguinXRORigidbody.AddForce(Vector3.down * 5);
+            yield return null;
         }
     }
 }
