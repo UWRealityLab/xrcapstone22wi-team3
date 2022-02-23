@@ -6,6 +6,7 @@ using UnityEngine.XR;
 
 public class GliderModelController : MonoBehaviour
 {
+    public const int MaxPitchOffsetDegree = 40;
     private const float MaxRotationDegrees = 35;
 
     public GliderInfo gliderInfo = null;
@@ -32,9 +33,13 @@ public class GliderModelController : MonoBehaviour
         // Rotate handlebar so it matches the position of hand
         Vector3 localAngles = transform.localEulerAngles;
 
-        // TODO: this might not be smooth since it pretends the axis are independent when they are not. 
-        // Tilt glider up and down based on pitch!
-        Vector3 rot = new Vector3(0.75f * (gliderInfo.TotalPitchDegree - 90), 0, goalRotation);
+        // Tilt glider up and down based on direction of flight!
+        Vector3 gliderDirectionForward = gliderInfo.penguinXRORigidbody.velocity.normalized;
+        float goalPitch = Vector3.SignedAngle(Vector3.up, gliderDirectionForward, gliderInfo.gliderDirection.right) - 90;
+        goalPitch = Mathf.Clamp(goalPitch, -MaxPitchOffsetDegree, MaxPitchOffsetDegree);
+        
+        Vector3 rot = new Vector3(goalPitch, 0, goalRotation);
+        
 
         Quaternion finalLocalRotation =
             Quaternion.Slerp(transform.localRotation, Quaternion.Euler(rot), Time.deltaTime);
@@ -59,13 +64,21 @@ public class GliderModelController : MonoBehaviour
         }
 
         // Change pitch based on local rotation so you can tilt down
-        DeviceManager.Instance.rightHandDevice.TryGetFeatureValue(CommonUsages.trigger, out float rightTriggerValue);
-        DeviceManager.Instance.leftHandDevice.TryGetFeatureValue(CommonUsages.trigger, out float leftTriggerValue);
+        // Only allow this to work if the hand is holding on
+        float rightTriggerValue = 0;
+        float leftTriggerValue = 0;
+        if (leftHandlebar.IsBeingHeld())
+        {
+            DeviceManager.Instance.rightHandDevice.TryGetFeatureValue(CommonUsages.trigger, out rightTriggerValue);
+        }
 
-        float averagePitch = (rightTriggerValue + leftTriggerValue) / 2;
-        Debug.Log("SAVE:averagePitch: " + averagePitch + " " + leftTriggerValue + " " + rightTriggerValue);
-        float goalPitch = GliderInfo.MaxPitchOffsetDegree * averagePitch + 90;
-        gliderInfo.pitchDegree = goalPitch;
+        if (rightHandlebar.IsBeingHeld())
+        {
+            DeviceManager.Instance.leftHandDevice.TryGetFeatureValue(CommonUsages.trigger, out leftTriggerValue);
+        }
+
+        float averageForceDownPercent = (rightTriggerValue + leftTriggerValue) / 2;
+        gliderInfo.penguinXRORigidbody.AddForce(Vector3.down * 30 * averageForceDownPercent);
     }
 
     private float clampRightHand()
@@ -121,7 +134,7 @@ public class GliderModelController : MonoBehaviour
 
     private void ResetGliderToNeutral()
     {
-        Vector3 rot = new Vector3(0.75f * (gliderInfo.TotalPitchDegree - 90), 0, 0);
+        Vector3 rot = new Vector3(0, 0, 0);
         Quaternion finalLocalRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(rot), Time.deltaTime);
         transform.localRotation = finalLocalRotation;
     }
