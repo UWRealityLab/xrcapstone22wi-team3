@@ -62,7 +62,7 @@ public class GliderModelController : MonoBehaviour
         DeviceManager.Instance.rightHandDevice.TryGetFeatureValue(CommonUsages.trigger, out float rightTriggerValue);
         DeviceManager.Instance.leftHandDevice.TryGetFeatureValue(CommonUsages.trigger, out float leftTriggerValue);
 
-        float averagePitch = (rightTriggerValue + leftTriggerValue) / 4;
+        float averagePitch = (rightTriggerValue + leftTriggerValue) / 2;
         Debug.Log("SAVE:averagePitch: " + averagePitch + " " + leftTriggerValue + " " + rightTriggerValue);
         float goalPitch = GliderInfo.MaxPitchOffsetDegree * averagePitch + 90;
         gliderInfo.pitchDegree = goalPitch;
