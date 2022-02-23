@@ -27,6 +27,27 @@ public class LevelManager : MonoBehaviour
 
     // TODO: remove, this is for debugging purposes
     public static int NumObstaclesActiveInGame = 0;
+    
+    private static LevelManager _instance;
+
+    public static LevelManager Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+    
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        _instance = this;
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -55,16 +76,6 @@ public class LevelManager : MonoBehaviour
         _totalDistance += (newPositionZ - _lastPositionZ);
         _lastPositionZ = newPositionZ;
 
-        // TODO: hack to try to delay checkpoint instantiation until height and stuff is done increasing
-        if (newPositionZ > _locationOfLastCheckpoint + 100f)
-        {
-            StartCoroutine(IncreaseSpeed(GetSpeedIncrease()));
-            
-            _locationOfLastCheckpoint = Single.MaxValue;
-            GenerateCheckpoint();
-            _numCheckpointsInstantiated++;
-        }
-
         if ((int)(_totalDistance / ObstacleInterval) == _numObstacleIntervalsGenerated)
         {
             GenerateObstacles(_totalDistance + GenerateDistance);
@@ -73,8 +84,18 @@ public class LevelManager : MonoBehaviour
         
         Debug.Log("SAVE:numObstaclesActive:" + NumObstaclesActiveInGame);
     }
+
+    public void ReadyToGenerateCheckpoint()
+    {
+        StartCoroutine(IncreaseSpeed(GetSpeedIncrease()));
+            
+        _locationOfLastCheckpoint = Single.MaxValue;
+        GenerateCheckpoint();
+        _numCheckpointsInstantiated++;
+        Debug.Log("num checkpoints passed:" + _numCheckpointsInstantiated);
+    }
     
-    public void GenerateCheckpoint()
+    private void GenerateCheckpoint()
     {
         GliderInfo gliderInfo = GameController.Instance.gliderInfo;
 

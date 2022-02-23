@@ -8,6 +8,8 @@ public class Checkpoint : MonoBehaviour
     private const string HangGliderTag = "HangGlider";
     private float pitchToAdd = -20f;  // Negative to pitch up, positive to pitch down
 
+    private bool checkpointHit = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +18,15 @@ public class Checkpoint : MonoBehaviour
 
     private void Update()
     {
-        // Destroy checkpoint when the user is past it
-        float gliderPositionZ = GameController.Instance.gliderInfo.penguinXROTransform.position.z;
-        float selfPositionZ = transform.position.z;
-        if (selfPositionZ - gliderPositionZ < -20f)
+        // Destroy checkpoint when the user is past it, and only if we didn't hit the checkpoint already
+        if (!checkpointHit)
         {
-            Destroy(gameObject);
+            float gliderPositionZ = GameController.Instance.gliderInfo.penguinXROTransform.position.z;
+            float selfPositionZ = transform.position.z;
+            if (selfPositionZ - gliderPositionZ < -20f)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -29,6 +34,7 @@ public class Checkpoint : MonoBehaviour
     {
         if (other.gameObject.CompareTag(HangGliderTag))
         {
+            checkpointHit = true;
             StartCoroutine(IncreaseHeight());
         }
     }
@@ -41,5 +47,7 @@ public class Checkpoint : MonoBehaviour
             GameController.Instance.gliderInfo.extraPitchDegree += pitchToAdd;
             yield return new WaitForSeconds(0.01f);
         }
+        LevelManager.Instance.ReadyToGenerateCheckpoint();
+        Destroy(gameObject);
     }
 }
