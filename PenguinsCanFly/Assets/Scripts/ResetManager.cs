@@ -36,7 +36,6 @@ public class ResetManager : MonoBehaviour
     // Event called after end of FadeOutAnimation
     private void OnFadeOutCompleted()
     {
-        // TODO: assumes we only have one scene
         hasBeenSelected = false;
         SceneManager.LoadScene(mScene);
     }
