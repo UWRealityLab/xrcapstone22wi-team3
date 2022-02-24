@@ -10,6 +10,7 @@ public class LandingController : MonoBehaviour
 
     public GameObject goHomeCertificatePrefab;
     public GameObject goHomeTrophyPrefab;
+    public GameObject goMenuPrefab;
     
     // Distance from the ground where we turn off gravity and decay speed faster
     private const float LandingHeight = 2f;
@@ -54,7 +55,7 @@ public class LandingController : MonoBehaviour
                 penguinXRORigidbody.useGravity = false;
                 isLanded = true;
                 GameController.Instance.StartGroundMode();
-                SpawnCertificate();
+                SpawnPostFlightInteractables();
                 return;
             }
             
@@ -69,6 +70,12 @@ public class LandingController : MonoBehaviour
             Debug.Log("Reducing speed!" + speedToReduce);
             gliderInfo.speed = Math.Max(0, gliderInfo.speed - speedToReduce);
         }
+    }
+
+    public void SpawnPostFlightInteractables()
+    {
+        SpawnCertificate();
+        SpawnMenuObject();
     }
 
     public void SpawnCertificate()
@@ -92,7 +99,18 @@ public class LandingController : MonoBehaviour
         Vector3 spawnPosition = penguinTransform.position + worldOffset;
         Instantiate(certificate, spawnPosition, penguinTransform.rotation);
     }
-    
+
+    public void SpawnMenuObject()
+    {
+        // Spawn the go back to menu screen
+        Transform penguinTransform = gliderInfo.transform;
+        Vector3 localOffset = new Vector3(-0.3f, 1f, 0.75f);  // spawn in front and to the left
+        Vector3 worldOffset = penguinTransform.rotation * localOffset;
+        Vector3 spawnPosition = penguinTransform.position + worldOffset;
+        Instantiate(goMenuPrefab, spawnPosition, penguinTransform.rotation);
+    }
+
+
     public float GetDistanceToGround()
     {
         int layerMask = LayerMask.GetMask("Ground");

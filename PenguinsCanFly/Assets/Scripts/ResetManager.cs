@@ -7,7 +7,8 @@ public class ResetManager : MonoBehaviour
 {
     
     public Animator fadeAnimator;
-    
+    private string scene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,15 +21,23 @@ public class ResetManager : MonoBehaviour
         
     }
 
-    public void FadeAndReset()
+    public void FadeResetToMenu()
     {
         fadeAnimator.SetTrigger("FadeTransition");
+        scene = "JamesMenuScene";
+    }
+
+    public void FadeResetToLaunch()
+    {
+        fadeAnimator.SetTrigger("FadeTransition");
+        scene = "MasterScene";
     }
 
     // Event called after end of FadeOutAnimation
     private void OnFadeOutCompleted()
     {
         // TODO: assumes we only have one scene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(scene);
     }
+
 }

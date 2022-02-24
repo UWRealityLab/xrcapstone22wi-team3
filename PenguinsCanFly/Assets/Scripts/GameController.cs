@@ -54,7 +54,12 @@ public class GameController : MonoBehaviour
 
     public void ResetToLaunch()
     {
-        resetManager.FadeAndReset();
+        resetManager.FadeResetToLaunch();
+    }
+
+    public void ResetToMenu()
+    {
+        resetManager.FadeResetToMenu();
     }
 
     public void StartLaunchMode()
