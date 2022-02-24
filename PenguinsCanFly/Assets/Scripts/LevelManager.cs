@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
     private float _locationOfLastCheckpoint;
     private int _numCheckpointsInstantiated = 0;
     
-    private const float ObstacleCheckRadius = 10f;
+    private const float ObstacleCheckRadius = 15f;
     private int _maxSpawnAttemptsPerObstacle = 10;  // to prevent infinite loop
 
     private const float MaxObstacleHeight = 500f;
@@ -27,6 +27,27 @@ public class LevelManager : MonoBehaviour
 
     // TODO: remove, this is for debugging purposes
     public static int NumObstaclesActiveInGame = 0;
+    
+    private static LevelManager _instance;
+
+    public static LevelManager Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+    
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        _instance = this;
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,9 +56,9 @@ public class LevelManager : MonoBehaviour
 
         // Hardcode spawn first checkpoint
         float checkpointX = Random.Range(-75f, 75f);
-        float checkpointZ = 300f;
+        float checkpointZ = 200f;
         Instantiate(Resources.Load("Checkpoint"),
-            new Vector3(checkpointX, 175, checkpointZ),
+            new Vector3(checkpointX, 20, checkpointZ),
             Quaternion.identity);
         _locationOfLastCheckpoint = checkpointZ;
         
@@ -55,16 +76,6 @@ public class LevelManager : MonoBehaviour
         _totalDistance += (newPositionZ - _lastPositionZ);
         _lastPositionZ = newPositionZ;
 
-        // TODO: hack to try to delay checkpoint instantiation until height and stuff is done increasing
-        if (newPositionZ > _locationOfLastCheckpoint + 100f)
-        {
-            StartCoroutine(IncreaseSpeed(GetSpeedIncrease()));
-            
-            _locationOfLastCheckpoint = Single.MaxValue;
-            GenerateCheckpoint();
-            _numCheckpointsInstantiated++;
-        }
-
         if ((int)(_totalDistance / ObstacleInterval) == _numObstacleIntervalsGenerated)
         {
             GenerateObstacles(_totalDistance + GenerateDistance);
@@ -74,19 +85,23 @@ public class LevelManager : MonoBehaviour
         Debug.Log("SAVE:numObstaclesActive:" + NumObstaclesActiveInGame);
     }
 
-    private float GetCheckpointInterval()
+    public void ReadyToGenerateCheckpoint()
     {
-        // TODO: change this to depend on speed
-        return 500f;
+        StartCoroutine(IncreaseSpeed(GetSpeedIncrease()));
+            
+        _locationOfLastCheckpoint = Single.MaxValue;
+        GenerateCheckpoint();
+        _numCheckpointsInstantiated++;
+        Debug.Log("num checkpoints passed:" + _numCheckpointsInstantiated);
     }
     
-    public void GenerateCheckpoint()
+    private void GenerateCheckpoint()
     {
         GliderInfo gliderInfo = GameController.Instance.gliderInfo;
 
         float predictedPositionY = gliderInfo.penguinXROTransform.position.y;
         // TODO: physics says this should be sqrt, but removing it gives a much better approximation
-        float targetHeightToHitCheckpoint = 20;
+        float targetHeightToHitCheckpoint = 50;
         float timeUntilWeHitGround = -2 * (predictedPositionY - targetHeightToHitCheckpoint)/ (Physics.gravity.y + gliderInfo.drag); // sqrt
 
         float projectedSpeed = gliderInfo.ActualSpeed + GetSpeedIncrease();
@@ -95,15 +110,18 @@ public class LevelManager : MonoBehaviour
         Debug.Log("time until land:" + timeUntilWeHitGround);
         Debug.Log("distance until land:" + distanceWhereWeWillLand);
 
-        float spawnZ = gliderInfo.penguinXROTransform.position.z + distanceWhereWeWillLand;
+        float minSpawnOffset = 200f;
+        float spawnZ = gliderInfo.penguinXROTransform.position.z + Math.Max(minSpawnOffset, distanceWhereWeWillLand);
         _locationOfLastCheckpoint = spawnZ;
-        Instantiate(Resources.Load("Checkpoint"), Vector3.forward * spawnZ, Quaternion.identity);
+        
+        float spawnX = Random.Range(-50f, 50f);
+        Instantiate(Resources.Load("Checkpoint"), new Vector3(spawnX, 20, spawnZ), Quaternion.identity);
     }
 
     private void GenerateObstacles(float startOfInterval)
     {
         // Generate obstacles in the danger zone
-        int numObstaclesPerInterval = 2 + (int)(startOfInterval / GetCheckpointInterval());
+        int numObstaclesPerInterval = 2 + _numCheckpointsInstantiated / 3;
         for (int i = 0; i < numObstaclesPerInterval; i++)
         {
             SpawnRandomObstacle(startOfInterval, GetPositionForObstacleInDangerZone);
@@ -160,7 +178,8 @@ public class LevelManager : MonoBehaviour
     {
         float x = Random.Range(-150, 150);
         float y = penguinXROTransform.position.y + 
-                  Random.Range(obstacleScript.GetSpawnOffsetLowerBound(), obstacleScript.GetSpawnOffsetUpperBound());;
+                  Random.Range(obstacleScript.GetSpawnOffsetLowerBound(), obstacleScript.GetSpawnOffsetUpperBound());
+        y = Math.Max(20, y);  // min spawn height of 20
         float z = startOfInterval + Random.Range(0, ObstacleInterval);
         return new Vector3(x, y, z);
     }
@@ -199,7 +218,15 @@ public class LevelManager : MonoBehaviour
         {
             return 1f;
         }
-        return 0.5f;
+        if (_numCheckpointsInstantiated < 20)
+        {
+            return 0.5f;
+        }
+        if (_numCheckpointsInstantiated < 30)
+        {
+            return 0.1f;
+        }
+        return 0;
     }
     
     IEnumerator IncreaseSpeed(float speedIncrease)

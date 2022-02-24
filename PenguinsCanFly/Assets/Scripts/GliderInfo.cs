@@ -7,9 +7,7 @@ using UnityEngine.Audio;
 
 public class GliderInfo : MonoBehaviour
 {
-    // Note, 0 is up, 90 is forward, 180 is down
-    public const int MaxPitchOffsetDegree = 40;
-    
+
     public float extraSpeed = 10f;
     public float speed = 12.5f;
     public float drag = 6;
@@ -22,15 +20,7 @@ public class GliderInfo : MonoBehaviour
     public Transform gliderDirection;
 
     public Transform penguinXROTransform;
-
-    // Pitch is up/down. Looking straight ahead is pitch 90. Pitch 60 tilts up, pitch 120 tilts down 
-    public float pitchDegree = 90f; // This should only be modified by the hand controller, changes "base" pitch
-    public float extraPitchDegree = 0f;
-    public float TotalPitchDegree
-    {
-        get { return pitchDegree + extraPitchDegree; }
-    }
-
+    
     public float ActualSpeed
     {
         get { return penguinXRORigidbody.velocity.magnitude; }
@@ -58,14 +48,10 @@ public class GliderInfo : MonoBehaviour
             extraSpeed += .05f;
         }
         extraSpeed = Mathf.Clamp(extraSpeed, -0.95f * speed, 3 * speed);
-        
-        // Reduce extra pitch towards 0
-        extraPitchDegree *= 0.9f;
-        extraPitchDegree = Mathf.Clamp(extraPitchDegree,-MaxPitchOffsetDegree, MaxPitchOffsetDegree);
 
         // Depending on pitch, change drag so that if you are looking down, you go faster and vice versa
         // 0.05f was calculated based on -2drag / 40degrees 
-        float actualPitchRotation = Vector3.SignedAngle(Vector3.up, gliderDirectionForward, gliderDirection.right);
+        float actualPitchRotation = Vector3.SignedAngle(Vector3.up, penguinXRORigidbody.velocity.normalized, gliderDirection.right);
         float modifiedDrag = -(actualPitchRotation - 90) * 0.05f + drag;
         penguinXRORigidbody.drag = modifiedDrag;
         
@@ -76,10 +62,6 @@ public class GliderInfo : MonoBehaviour
         Quaternion cameraTargetNewRotation = Quaternion.Euler(0, totalYawDegree, 0);
         penguinXROTransform.rotation = Quaternion.Slerp(penguinXROTransform.rotation, cameraTargetNewRotation, Time.deltaTime);
         
-        // Pitch locally off of the camera yaw
-        Quaternion gliderTargetNewRotation = Quaternion.Euler(TotalPitchDegree - 90, 0, 0);  // Subtract 90 since looking forward is 90
-        gliderDirection.localRotation = Quaternion.Slerp(gliderDirection.localRotation, gliderTargetNewRotation, Time.deltaTime);
-
         if (userControlEnabled)
         {
             DeviceManager.Instance.rightHandDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
@@ -88,11 +70,12 @@ public class GliderInfo : MonoBehaviour
             if (primaryButtonValue)
             {
                 Debug.Log("Hacker detected!");
-                extraPitchDegree = -30;
+                penguinXRORigidbody.AddForce(Vector3.up * 30);
             }
             else if (secondaryButtonValue)
             {
-                extraPitchDegree = 30;
+                penguinXRORigidbody.AddForce(Vector3.down * 30);
+
             }
         }
         
@@ -110,9 +93,6 @@ public class GliderInfo : MonoBehaviour
         }
         Debug.Log("SAVE:AdioPitchIncrease, Volume:" + audioPitchIncrease + " " + audioVolume);
         am.SetFloat("Pitch", 1 + audioPitchIncrease);
-
-        Debug.Log("SAVE:TotalPitchDegree:" + TotalPitchDegree + " extraPitchDegree " + extraPitchDegree);
-
     }
 
     // Update is called once per frame
@@ -124,8 +104,6 @@ public class GliderInfo : MonoBehaviour
         Debug.Log("DISABLE USER CONTROL");
         // Glider model controller checks the userControlEnabled flag to reset to neutral
         userControlEnabled = false;
-        extraPitchDegree = 0;
-        pitchDegree = 90;
     }
     
     private void OnEnable()

@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2733523343717403241}
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 80, y: 80, z: 80}
+  m_LocalScale: {x: 125, y: 500, z: 125}
   m_Children: []
   m_Father: {fileID: 2733523344670738441}
   m_RootOrder: 0
@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 2733523344670738440}
   - component: {fileID: 2733523344670738442}
   - component: {fileID: 4358953172611757980}
+  - component: {fileID: 8365826301781772065}
   m_Layer: 9
   m_Name: SnowflakeObstacle
   m_TagString: Untagged
@@ -154,5 +155,19 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30, y: 30, z: 1}
+  m_Size: {x: 45, y: 45, z: 6}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!64 &8365826301781772065
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2733523344670738679}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
