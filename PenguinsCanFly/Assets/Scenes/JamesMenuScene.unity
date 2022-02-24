@@ -698,6 +698,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3311171078019771937, guid: 95bfd9fa22c824d3c96111d9691fc404, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4192868679028800692, guid: 95bfd9fa22c824d3c96111d9691fc404, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -740,6 +744,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4192868679028800692, guid: 95bfd9fa22c824d3c96111d9691fc404, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405773683416169924, guid: 95bfd9fa22c824d3c96111d9691fc404, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6731096259602028721, guid: 95bfd9fa22c824d3c96111d9691fc404, type: 3}
