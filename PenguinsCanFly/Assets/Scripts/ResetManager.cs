@@ -7,12 +7,14 @@ public class ResetManager : MonoBehaviour
 {
     
     public Animator fadeAnimator;
-    private string scene;
+
+    private bool hasBeenSelected;
+    private string mScene;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        hasBeenSelected = false;
     }
 
     // Update is called once per frame
@@ -21,23 +23,22 @@ public class ResetManager : MonoBehaviour
         
     }
 
-    public void FadeResetToMenu()
+    public void FadeResetToScene(string sceneToLoad)
     {
-        fadeAnimator.SetTrigger("FadeTransition");
-        scene = "JamesMenuScene";
-    }
-
-    public void FadeResetToLaunch()
-    {
-        fadeAnimator.SetTrigger("FadeTransition");
-        scene = "MasterScene";
+        if (!hasBeenSelected)
+        {
+            fadeAnimator.SetTrigger("FadeTransition");
+            mScene = sceneToLoad;
+            hasBeenSelected = true;
+        }
     }
 
     // Event called after end of FadeOutAnimation
     private void OnFadeOutCompleted()
     {
         // TODO: assumes we only have one scene
-        SceneManager.LoadScene(scene);
+        hasBeenSelected = false;
+        SceneManager.LoadScene(mScene);
     }
 
 }

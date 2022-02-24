@@ -17,8 +17,9 @@ public class GameController : MonoBehaviour
     public GliderInfo gliderInfo;
     
     private static GameController _instance;
-    
 
+    public const string MASTER_SCENE_NAME = "MasterScene";
+    public const string MENU_SCENE_NAME = "JamesMenuScene";
 
     public static GameController Instance
     {
@@ -54,12 +55,12 @@ public class GameController : MonoBehaviour
 
     public void ResetToLaunch()
     {
-        resetManager.FadeResetToLaunch();
+        resetManager.FadeResetToScene(MASTER_SCENE_NAME);
     }
 
     public void ResetToMenu()
     {
-        resetManager.FadeResetToMenu();
+        resetManager.FadeResetToScene(MENU_SCENE_NAME);
     }
 
     public void StartLaunchMode()
