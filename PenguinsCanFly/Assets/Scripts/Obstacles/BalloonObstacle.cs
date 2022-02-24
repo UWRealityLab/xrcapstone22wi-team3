@@ -24,12 +24,12 @@ public class BalloonObstacle : Obstacle
 
     public override float GetSpawnOffsetLowerBound()
     {
-        return -20f;
+        return -30f;
     }
 
     public override float GetSpawnOffsetUpperBound()
     {
-        return 100f;
+        return 70f;
     }
 
     public override Quaternion GetSpawnRotation()
