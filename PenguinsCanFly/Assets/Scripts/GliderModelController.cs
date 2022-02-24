@@ -69,12 +69,12 @@ public class GliderModelController : MonoBehaviour
         float leftTriggerValue = 0;
         if (leftHandlebar.IsBeingHeld())
         {
-            DeviceManager.Instance.rightHandDevice.TryGetFeatureValue(CommonUsages.trigger, out rightTriggerValue);
+            DeviceManager.Instance.leftHandDevice.TryGetFeatureValue(CommonUsages.trigger, out leftTriggerValue);
         }
 
         if (rightHandlebar.IsBeingHeld())
         {
-            DeviceManager.Instance.leftHandDevice.TryGetFeatureValue(CommonUsages.trigger, out leftTriggerValue);
+            DeviceManager.Instance.rightHandDevice.TryGetFeatureValue(CommonUsages.trigger, out rightTriggerValue);
         }
 
         float averageForceDownPercent = (rightTriggerValue + leftTriggerValue) / 2;
