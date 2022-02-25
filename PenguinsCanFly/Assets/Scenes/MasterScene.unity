@@ -2369,7 +2369,7 @@ MonoBehaviour:
   onMultiValueEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1869033106}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: VoiceObstacleHandler, Assembly-CSharp
         m_MethodName: SpawnVoiceObstacle
         m_Mode: 0
@@ -4493,7 +4493,7 @@ Transform:
   m_Children:
   - {fileID: 127906110}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1373300869
 GameObject:
@@ -4556,7 +4556,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1880702368995336949, guid: 6dec9bf1ac3e84ee984331926846f081, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1880702368995336949, guid: 6dec9bf1ac3e84ee984331926846f081, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6115,53 +6115,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e131e7946d49c41e49eceb880df29eee, type: 3}
---- !u!1 &1869033104
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1869033105}
-  - component: {fileID: 1869033106}
-  m_Layer: 0
-  m_Name: ObstacleSpawnerHandler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1869033105
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869033104}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2005257364}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1869033106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869033104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9a84296678cc47cda5bd9dc5eca58c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftLocation: {fileID: 156368365}
-  middleLocation: {fileID: 156368365}
-  rightLocation: {fileID: 156368365}
-  gliderInfo: {fileID: 1980159960}
 --- !u!1 &1955947409
 GameObject:
   m_ObjectHideFlags: 0
@@ -6580,6 +6533,7 @@ GameObject:
   - component: {fileID: 2005257364}
   - component: {fileID: 2005257363}
   - component: {fileID: 2005257362}
+  - component: {fileID: 2005257365}
   m_Layer: 0
   m_Name: VoiceCommandSystem
   m_TagString: Untagged
@@ -6681,10 +6635,24 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 616235468}
-  - {fileID: 1869033105}
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2005257365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005257361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9a84296678cc47cda5bd9dc5eca58c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  voiceObstacle: {fileID: 440510015710742410, guid: 0ae1fa5e17a164a459f936affab46b6e, type: 3}
+  SpawnEnabled: 1
+  TempUseRandom: 1
 --- !u!1 &2005997630
 GameObject:
   m_ObjectHideFlags: 0

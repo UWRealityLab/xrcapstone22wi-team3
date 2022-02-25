@@ -36,13 +36,24 @@ public abstract class Obstacle : MonoBehaviour
         if (other.gameObject.CompareTag(HangGliderTag))
         {
             DeviceManager.Instance.SendCollisionHaptics();
+            CustomCollisionEffects(other);
             StartCoroutine(DecreaseHeight());
         }
     }
-    
+
+    public virtual void CustomCollisionEffects(Collider other)
+    {
+        // TODO: find out what code can be shared so we can use base.CustomCollisionEffects
+    }
+
     void OnDestroy()
     {
         LevelManager.NumObstaclesActiveInGame--;
+    }
+
+    public virtual float GetCollisionForce()
+    {
+        return 50;
     }
 
     IEnumerator DecreaseHeight()
@@ -50,7 +61,7 @@ public abstract class Obstacle : MonoBehaviour
         float iterations = 300;
         for (int i = 0; i < iterations; i++)
         {
-            GameController.Instance.gliderInfo.penguinXRORigidbody.AddForce(Vector3.down * 50);
+            GameController.Instance.gliderInfo.penguinXRORigidbody.AddForce(Vector3.down * GetCollisionForce());
             yield return null;
         }
         Destroy(gameObject);
