@@ -16,7 +16,6 @@ public class VoiceObstacleHandler : MonoBehaviour
     private GliderInfo gliderInfo;
 
     // TODO: enable / disable based on when allowed to spawn in.
-    public bool SpawnEnabled = true;
     public bool TempUseRandom = true;
     
     private Transform penguinXROTransform;
@@ -27,7 +26,7 @@ public class VoiceObstacleHandler : MonoBehaviour
         gliderInfo = GameController.Instance.gliderInfo;
         penguinXROTransform = gliderInfo.penguinXROTransform;
 
-        if (SpawnEnabled && TempUseRandom)
+        if (TempUseRandom)
         {
             InvokeRepeating("SpawnRandom", 10.0f, 7f);
         }

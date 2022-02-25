@@ -27,7 +27,7 @@ public class CastleVoiceObstacle : VoiceObstacle
 
     public override float GetCollisionForce()
     {
-        return 20;
+        return 50;
     }
 
     public override void CustomCollisionEffects(Collider other)
@@ -40,9 +40,8 @@ public class CastleVoiceObstacle : VoiceObstacle
         {
             Transform destroyedPiece = destroyedPieces.transform.GetChild(i);
             Rigidbody destroyedPieceRb = destroyedPiece.GetComponent<Rigidbody>();
-            destroyedPieceRb.AddExplosionForce(1000, collisionLocation, 50, 20);
+            destroyedPieceRb.AddExplosionForce(1000, collisionLocation, 50, 15);
         }
         
-        Destroy(gameObject, 7);
     }
 }
