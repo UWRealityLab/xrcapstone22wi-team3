@@ -39,10 +39,9 @@ public abstract class Obstacle : MonoBehaviour
             StartCoroutine(DecreaseHeight());
         }
     }
-    
+
     void OnDestroy()
     {
-        Debug.Log("IS HTIS EVER CALLED?)");
         LevelManager.NumObstaclesActiveInGame--;
     }
 
