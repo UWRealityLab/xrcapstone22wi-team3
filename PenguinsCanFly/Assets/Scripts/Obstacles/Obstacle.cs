@@ -42,6 +42,7 @@ public abstract class Obstacle : MonoBehaviour
     
     void OnDestroy()
     {
+        Debug.Log("IS HTIS EVER CALLED?)");
         LevelManager.NumObstaclesActiveInGame--;
     }
 
