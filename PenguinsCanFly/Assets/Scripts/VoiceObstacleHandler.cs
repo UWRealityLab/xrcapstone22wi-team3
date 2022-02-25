@@ -14,7 +14,10 @@ public class VoiceObstacleHandler : MonoBehaviour
     public const float LeftRightOffset = 50;
 
     private GliderInfo gliderInfo;
-    
+
+    // TODO: enable / disable based on when allowed to spawn in.
+    public bool SpawnEnabled = true;
+    public bool TempUseRandom = true;
     
     private Transform penguinXROTransform;
 
@@ -23,9 +26,11 @@ public class VoiceObstacleHandler : MonoBehaviour
     {
         gliderInfo = GameController.Instance.gliderInfo;
         penguinXROTransform = gliderInfo.penguinXROTransform;
-        
-        InvokeRepeating("SpawnRandom", 2.0f, 5f);
 
+        if (SpawnEnabled && TempUseRandom)
+        {
+            InvokeRepeating("SpawnRandom", 10.0f, 7f);
+        }
     }
 
     // Update is called once per frame
@@ -33,7 +38,7 @@ public class VoiceObstacleHandler : MonoBehaviour
     {
         Vector3 penguinPosition = penguinXROTransform.position;
         transform.position = Vector3.forward * (penguinPosition.z + GameController.Instance.gliderInfo.speed * 10) +
-                             Vector3.up * (penguinPosition.y * 0.5f - 10);
+                             Vector3.up * (penguinPosition.y * 0.75f - 15);
     }
 
     private Vector3 LeftLocation()
@@ -51,16 +56,16 @@ public class VoiceObstacleHandler : MonoBehaviour
         int rand = Random.Range(0, 3);
         if (rand == 0)
         {
-            GameObject go = GameObject.Instantiate(voiceObstacle, null, true);
+            GameObject go = Instantiate(voiceObstacle, null, true);
             go.transform.position = LeftLocation();
         } else if (rand == 1)
         {
-            GameObject go = GameObject.Instantiate(voiceObstacle, null, true);
+            GameObject go = Instantiate(voiceObstacle, null, true);
             go.transform.position = RightLocation();
         }
         else
         {
-            GameObject go = GameObject.Instantiate(voiceObstacle, null, true);
+            GameObject go = Instantiate(voiceObstacle, null, true);
             go.transform.position = transform.position;
         }
     }
@@ -68,26 +73,20 @@ public class VoiceObstacleHandler : MonoBehaviour
     public void SpawnVoiceObstacle(string[] values)
     {
         string location = values[0];
-        Debug.Log("SPAWN ITEM!!!!!! YAYAYA " + location + " " + values);
+        Debug.Log("SPAWNING ITEM: " + location + " " + values);
         if (location.Equals("left"))
         {
-        //     GameObject windColliderObject = (GameObject) Instantiate(Resources.Load("WindCollider"),
-        //         spawnLocation.position, Quaternion.identity);
-        //     WindCollider windColliderScript = windColliderObject.GetComponent<WindCollider>();
-        //     windColliderScript.gliderInfo = gliderInfo;
-        // } else if (location.Equals("right"))
-        // {
-        //     GameObject windColliderObject = (GameObject) Instantiate(Resources.Load("WindCollider"),
-        //         leftLocation.position, Quaternion.identity);
-        //     WindCollider windColliderScript = windColliderObject.GetComponent<WindCollider>();
-        //     windColliderScript.gliderInfo = gliderInfo;
-        // } else if (location.Equals("middle"))
-        // {
-        //     GameObject windColliderObject = (GameObject) Instantiate(Resources.Load("WindCollider"),
-        //         middleLocation.position, Quaternion.identity);
-        //     WindCollider windColliderScript = windColliderObject.GetComponent<WindCollider>();
-        //     windColliderScript.gliderInfo = gliderInfo;
+            GameObject go = Instantiate(voiceObstacle, null, true);
+            go.transform.position = LeftLocation();
+        } else if (location.Equals("right"))
+        {
+            GameObject go = Instantiate(voiceObstacle, null, true);
+            go.transform.position = RightLocation();
         }
-        // TODO: implement spawnvoiceobstaacle callback!
+        else
+        {
+            GameObject go = Instantiate(voiceObstacle, null, true);
+            go.transform.position = transform.position;
+        }
     }
 }

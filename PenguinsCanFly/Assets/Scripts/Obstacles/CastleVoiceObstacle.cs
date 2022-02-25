@@ -7,39 +7,42 @@ using UnityEngine;
 public class CastleVoiceObstacle : VoiceObstacle
 {
     public GameObject offset;
+
+    public GameObject mesh;
+    public GameObject destroyedPieces;
+    
     // Start is called before the first frame update
     void Start()
     {
         offset.transform.localPosition += Vector3.down * 50;
+        mesh.SetActive(true);
+        destroyedPieces.SetActive(false);
     }
-    
-
     public void Update()
     {
         base.Update();
         Vector3 localOffset = offset.transform.localPosition;
         offset.transform.localPosition = Vector3.Lerp(localOffset, Vector3.zero, Time.deltaTime);
     }
-    
-    public void OnEnable()
+
+    public override float GetCollisionForce()
     {
-        throw new NotImplementedException();
+        return 20;
     }
 
-    // Update is called once per frame
-    public override float GetSpawnOffsetLowerBound()
+    public override void CustomCollisionEffects(Collider other)
     {
-        throw new System.NotImplementedException();
+        mesh.SetActive(false);
+        
+        Vector3 collisionLocation = other.transform.position;
+        destroyedPieces.SetActive(true);
+        for (int i = 0; i < destroyedPieces.transform.childCount; i++)
+        {
+            Transform destroyedPiece = destroyedPieces.transform.GetChild(i);
+            Rigidbody destroyedPieceRb = destroyedPiece.GetComponent<Rigidbody>();
+            destroyedPieceRb.AddExplosionForce(1000, collisionLocation, 50, 20);
+        }
+        
+        Destroy(gameObject, 7);
     }
-
-    public override float GetSpawnOffsetUpperBound()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override Quaternion GetSpawnRotation()
-    {
-        throw new System.NotImplementedException();
-    }
-    
 }
