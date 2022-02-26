@@ -85,10 +85,43 @@ public class TerrainManager : MonoBehaviour
         }
     }
 
-    // Subtile positioning
+    void generateTile(String sceneName, int inAdvance)
+    {
+        generateTerrainTile(sceneName, inAdvance);
+        generateSideTile(sceneName, inAdvance);
+    }
+    
+    // Side subtile positioning
+    // left, terrain, terrain, right
+    // left, terrain, terrain, right
+    void generateSideTile(String sceneName, int inAdvance)
+    {
+        // Left 1:
+        Instantiate(Resources.Load( sceneName + "/SideTileLeft1"),
+            new Vector3(-105 - subtileSize, 0, totalDistance + tileSize * inAdvance),
+            Quaternion.identity);
+        
+        // Right 1:
+        Instantiate(Resources.Load( sceneName + "/SideTileRight1"),
+            new Vector3(-105 + subtileSize + subtileSize, 0, totalDistance + tileSize * inAdvance),
+            Quaternion.identity);
+        
+        // Left 2:
+        Instantiate(Resources.Load( sceneName + "/SideTileLeft1"),
+            new Vector3(-105 - subtileSize, 0, totalDistance + tileSize * inAdvance + subtileSize),
+            Quaternion.identity);
+        
+        // Right 2:
+        Instantiate(Resources.Load( sceneName + "/SideTileRight1"),
+            new Vector3(-105 + subtileSize + subtileSize, 0, totalDistance + tileSize * inAdvance + subtileSize),
+            Quaternion.identity);
+    }
+    
+    
+    // Terrain subtile positioning
     // 3, 4
     // 1, 2
-    void generateTile(String sceneName, int inAdvance)
+    void generateTerrainTile(String sceneName, int inAdvance)
     {
         // Tile 1:
         int[] subtileRotation1 = subtileRotations[rnd.Next(0, 4)];
