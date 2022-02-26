@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Sprites;
 using UnityEngine;
 
 // TODO: Remove hard coding of instantiation, destroy past tiles, clean up overall
@@ -87,8 +88,16 @@ public class TerrainManager : MonoBehaviour
 
     void generateTile(String sceneName, int inAdvance)
     {
+        generateBase(sceneName, inAdvance);
         generateTerrainTile(sceneName, inAdvance);
         generateSideTile(sceneName, inAdvance);
+    }
+
+    void generateBase(String sceneName, int inAdvance)
+    {
+        Instantiate(Resources.Load( sceneName + "/BaseTile"),
+            new Vector3(0, 0, totalDistance + tileSize * inAdvance),
+            Quaternion.identity);
     }
     
     // Side subtile positioning
@@ -97,22 +106,26 @@ public class TerrainManager : MonoBehaviour
     void generateSideTile(String sceneName, int inAdvance)
     {
         // Left 1:
-        Instantiate(Resources.Load( sceneName + "/SideTileLeft1"),
+        int tilePickerLeft1 = rnd.Next(1, 2);
+        Instantiate(Resources.Load( sceneName + "/SideTileLeft" + tilePickerLeft1),
             new Vector3(-105 - subtileSize, 0, totalDistance + tileSize * inAdvance),
             Quaternion.identity);
         
         // Right 1:
-        Instantiate(Resources.Load( sceneName + "/SideTileRight1"),
+        int tilePickerRight1 = rnd.Next(1, 2);
+        Instantiate(Resources.Load( sceneName + "/SideTileRight" + tilePickerRight1),
             new Vector3(-105 + subtileSize + subtileSize, 0, totalDistance + tileSize * inAdvance),
             Quaternion.identity);
         
         // Left 2:
-        Instantiate(Resources.Load( sceneName + "/SideTileLeft1"),
+        int tilePickerLeft2 = rnd.Next(1, 2);
+        Instantiate(Resources.Load( sceneName + "/SideTileLeft" + tilePickerLeft2),
             new Vector3(-105 - subtileSize, 0, totalDistance + tileSize * inAdvance + subtileSize),
             Quaternion.identity);
         
         // Right 2:
-        Instantiate(Resources.Load( sceneName + "/SideTileRight1"),
+        int tilePickerRight2 = rnd.Next(1, 2);
+        Instantiate(Resources.Load( sceneName + "/SideTileRight" + tilePickerRight2),
             new Vector3(-105 + subtileSize + subtileSize, 0, totalDistance + tileSize * inAdvance + subtileSize),
             Quaternion.identity);
     }
@@ -125,28 +138,28 @@ public class TerrainManager : MonoBehaviour
     {
         // Tile 1:
         int[] subtileRotation1 = subtileRotations[rnd.Next(0, 4)];
-        int tilePicker1 = rnd.Next(1, 4);
+        int tilePicker1 = rnd.Next(1, 5);
         Instantiate(Resources.Load( sceneName + "/Tile" + tilePicker1),
             new Vector3(-105 + subtileRotation1[1], 0, totalDistance + tileSize * inAdvance + subtileRotation1[2]),
             Quaternion.Euler(0, subtileRotation1[0], 0));
         
         // Tile 2:
         int[] subtileRotation2 = subtileRotations[rnd.Next(0, 4)];
-        int tilePicker2 = rnd.Next(1, 4);
+        int tilePicker2 = rnd.Next(1, 5);
         Instantiate(Resources.Load( sceneName + "/Tile" + tilePicker2),
             new Vector3(-105 + subtileSize + subtileRotation2[1], 0, totalDistance + tileSize * inAdvance + subtileRotation2[2]),
             Quaternion.Euler(0, subtileRotation2[0], 0));
         
         // Tile 3:
         int[] subtileRotation3 = subtileRotations[rnd.Next(0, 4)];
-        int tilePicker3 = rnd.Next(1, 4);
+        int tilePicker3 = rnd.Next(1, 5);
         Instantiate(Resources.Load( sceneName + "/Tile" + tilePicker3),
             new Vector3(-105 + subtileRotation3[1], 0, totalDistance + tileSize * inAdvance + subtileSize + subtileRotation3[2]),
             Quaternion.Euler(0, subtileRotation3[0], 0));
         
         // Tile 4:
         int[] subtileRotation4 = subtileRotations[rnd.Next(0, 4)];
-        int tilePicker4 = rnd.Next(1, 4);
+        int tilePicker4 = rnd.Next(1, 5);
         Instantiate(Resources.Load( sceneName + "/Tile" + tilePicker4),
             new Vector3(-105 + subtileSize + subtileRotation4[1], 0, totalDistance + tileSize * inAdvance + subtileSize + subtileRotation4[2]),
             Quaternion.Euler(0, subtileRotation4[0], 0));
