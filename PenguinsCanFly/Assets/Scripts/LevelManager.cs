@@ -1,11 +1,11 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class LevelManager : MonoBehaviour
 {
+    public GameObject checkpointPrefab;
     public Transform penguinXROTransform;
     
     private float _lastPositionZ;
@@ -128,9 +128,29 @@ public class LevelManager : MonoBehaviour
     private void SpawnCheckpoint(float spawnZOffset)
     {
         _distanceOfLastCheckpoint = spawnZOffset;
-        float spawnX = Random.Range(-50f, 50f);
         float spawnZ = GameController.Instance.gliderInfo.penguinXROTransform.position.z + spawnZOffset;
-        Instantiate(Resources.Load("Checkpoint"), new Vector3(spawnX, 20, spawnZ), Quaternion.identity);
+        
+        bool validPosition = false;
+        Vector3 position = Vector3.zero;
+        int spawnAttempts = 0;
+
+        // these are checkpoints, but just reuse this number of max attempts
+        while(!validPosition && spawnAttempts < _maxSpawnAttemptsPerObstacle)
+        {
+            spawnAttempts++;
+            
+            float spawnX = Random.Range(-50f, 50f);
+            position = new Vector3(spawnX, 20, spawnZ);
+            
+            Collider[] colliders = Physics.OverlapBox(position, checkpointPrefab.transform.localScale / 2,
+                Quaternion.identity);
+
+            validPosition = colliders.Length == 0;
+        }
+
+        // Even if we never found a valid position, we need to spawn a checkpoint anyway
+        Instantiate(checkpointPrefab, position, Quaternion.identity);
+        Debug.Log("num attempts to spawn checkpoint: " + spawnAttempts);
     }
 
     private void GenerateObstacles(float startOfInterval)

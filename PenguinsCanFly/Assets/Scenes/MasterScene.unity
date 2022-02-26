@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43020576, g: 0.56304204, b: 0.71133375, a: 1}
+  m_IndirectSpecularColor: {r: 0.43062702, g: 0.56337565, b: 0.7113785, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1228,6 +1228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25ac310ec28d4a5b8a75db96bb62d91e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpointPrefab: {fileID: 7732528977967360018, guid: 4abc8c5c1675940e09ff52eaa1342a0b, type: 3}
   penguinXROTransform: {fileID: 2078797934}
   obstacleTypes:
   - {fileID: 2733523344670738679, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
@@ -5088,7 +5089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   voiceObstacle: {fileID: 440510015710742410, guid: 0ae1fa5e17a164a459f936affab46b6e, type: 3}
-  TempUseRandom: 1
+  TempUseRandom: 0
 --- !u!1 &2009954528
 GameObject:
   m_ObjectHideFlags: 0
