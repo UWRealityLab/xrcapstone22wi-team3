@@ -13,7 +13,7 @@ public class GliderHUD : MonoBehaviour
     public Transform Needle;
 
     public GameObject Warnings;
-    public TextMeshPro WarningTextCUes;
+    public TextMeshProUGUI WarningTextCues;
 
     private static GliderHUD _instance;
 

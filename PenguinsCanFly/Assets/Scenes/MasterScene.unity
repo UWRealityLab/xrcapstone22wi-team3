@@ -498,7 +498,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &176942150
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1128,7 +1128,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 471, y: 274}
+  m_AnchoredPosition: {x: 471, y: 283}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &263921381
@@ -1151,7 +1151,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Attacking in 3...
+  m_text: ---
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 67cae947f652c42979cb3b4bbae4b1e1, type: 2}
   m_sharedMaterial: {fileID: 5615566499496784776, guid: 67cae947f652c42979cb3b4bbae4b1e1, type: 2}
@@ -1178,8 +1178,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1214,7 +1214,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -522.2656, y: -18.305897, z: -422.28397, w: -95.90979}
+  m_margin: {x: -729.87006, y: -18.305897, z: -605.3713, w: -95.90979}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1852,7 +1852,7 @@ MonoBehaviour:
   onMultiValueEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2005257365}
         m_TargetAssemblyTypeName: VoiceObstacleHandler, Assembly-CSharp
         m_MethodName: SpawnVoiceObstacle
         m_Mode: 0
@@ -2965,6 +2965,8 @@ MonoBehaviour:
   speedText: {fileID: 7498767414863956628}
   distanceText: {fileID: 4027067154871453822}
   Needle: {fileID: 2481897834495542835}
+  Warnings: {fileID: 1374826171}
+  WarningTextCues: {fileID: 263921381}
 --- !u!1 &893343336
 GameObject:
   m_ObjectHideFlags: 0
@@ -4041,7 +4043,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 95}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1385982922
@@ -5290,7 +5292,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2005257361}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2aa0b5fd9d4421645a0c62affae7800d, type: 3}
   m_Name: 
@@ -5392,8 +5394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a84296678cc47cda5bd9dc5eca58c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wit: {fileID: 0}
   voiceObstacle: {fileID: 440510015710742410, guid: 0ae1fa5e17a164a459f936affab46b6e, type: 3}
-  TempUseRandom: 1
 --- !u!1 &2009954528
 GameObject:
   m_ObjectHideFlags: 0
