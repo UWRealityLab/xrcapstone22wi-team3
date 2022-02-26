@@ -37,6 +37,5 @@ public class VoiceSystemActivator : MonoBehaviour
                 Debug.Log("Activated wit");
             }
         }
-        
     }
 }

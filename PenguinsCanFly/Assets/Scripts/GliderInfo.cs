@@ -69,7 +69,6 @@ public class GliderInfo : MonoBehaviour
             
             if (primaryButtonValue)
             {
-                Debug.Log("Hacker detected!");
                 penguinXRORigidbody.AddForce(Vector3.up * 75);
             }
             else if (secondaryButtonValue)

@@ -12,7 +12,29 @@ public class GliderHUD : MonoBehaviour
     public TextMeshProUGUI distanceText;
     public Transform Needle;
 
-    
+    public GameObject Warnings;
+    public TextMeshProUGUI WarningTextCues;
+
+    private static GliderHUD _instance;
+
+    public static GliderHUD Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        _instance = this;
+    }
+
     // Update is called once per frame
     void Update()
     {
