@@ -15,8 +15,8 @@ public class LevelManager : MonoBehaviour
     private const float ObstacleInterval = 100;  // generate obstacles in this interval
     
     private int _numObstacleIntervalsGenerated = 0;
-    private float _locationOfLastCheckpoint;
     private int _numCheckpointsInstantiated = 0;
+    private float _distanceOfLastCheckpoint;
     
     private const float ObstacleCheckRadius = 15f;
     private int _maxSpawnAttemptsPerObstacle = 10;  // to prevent infinite loop
@@ -60,7 +60,7 @@ public class LevelManager : MonoBehaviour
         Instantiate(Resources.Load("Checkpoint"),
             new Vector3(checkpointX, 20, checkpointZ),
             Quaternion.identity);
-        _locationOfLastCheckpoint = checkpointZ;
+        _distanceOfLastCheckpoint = checkpointZ;
         
         // Don't generate obstacles in the first interval
         for (int i = 1; i < GenerateDistance / ObstacleInterval; i++)
@@ -84,24 +84,33 @@ public class LevelManager : MonoBehaviour
         
         Debug.Log("SAVE:numObstaclesActive:" + NumObstaclesActiveInGame);
     }
-
-    public void ReadyToGenerateCheckpoint()
+    
+    public void PlayerMissedCheckpoint()
+    {
+        // The player missed a checkpoint, so spawn one that's extra far away
+        float spawnZOffset = _distanceOfLastCheckpoint * 2;
+        SpawnCheckpoint(spawnZOffset);
+        _numCheckpointsInstantiated++;
+        
+        Debug.Log("Missed checkpoint! Spawn a far one");
+    }
+    
+    public void PlayerPassedCheckpoint()
     {
         StartCoroutine(IncreaseSpeed(GetSpeedIncrease()));
-            
-        _locationOfLastCheckpoint = Single.MaxValue;
-        GenerateCheckpoint();
+        
+        GenerateNextCheckpoint();
         _numCheckpointsInstantiated++;
         Debug.Log("num checkpoints passed:" + _numCheckpointsInstantiated);
     }
-    
-    private void GenerateCheckpoint()
+
+    private void GenerateNextCheckpoint()
     {
         GliderInfo gliderInfo = GameController.Instance.gliderInfo;
 
         float predictedPositionY = gliderInfo.penguinXROTransform.position.y;
         // TODO: physics says this should be sqrt, but removing it gives a much better approximation
-        float targetHeightToHitCheckpoint = 50;
+        float targetHeightToHitCheckpoint = 40;
         float timeUntilWeHitGround = -2 * (predictedPositionY - targetHeightToHitCheckpoint)/ (Physics.gravity.y + gliderInfo.drag); // sqrt
 
         float projectedSpeed = gliderInfo.ActualSpeed + GetSpeedIncrease();
@@ -111,10 +120,16 @@ public class LevelManager : MonoBehaviour
         Debug.Log("distance until land:" + distanceWhereWeWillLand);
 
         float minSpawnOffset = 200f;
-        float spawnZ = gliderInfo.penguinXROTransform.position.z + Math.Max(minSpawnOffset, distanceWhereWeWillLand);
-        _locationOfLastCheckpoint = spawnZ;
-        
+        float spawnZOffset = Math.Max(minSpawnOffset, distanceWhereWeWillLand);
+
+        SpawnCheckpoint(spawnZOffset);
+    }
+
+    private void SpawnCheckpoint(float spawnZOffset)
+    {
+        _distanceOfLastCheckpoint = spawnZOffset;
         float spawnX = Random.Range(-50f, 50f);
+        float spawnZ = GameController.Instance.gliderInfo.penguinXROTransform.position.z + spawnZOffset;
         Instantiate(Resources.Load("Checkpoint"), new Vector3(spawnX, 20, spawnZ), Quaternion.identity);
     }
 

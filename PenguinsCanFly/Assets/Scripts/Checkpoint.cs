@@ -24,6 +24,7 @@ public class Checkpoint : MonoBehaviour
             float selfPositionZ = transform.position.z;
             if (selfPositionZ - gliderPositionZ < -20f)
             {
+                LevelManager.Instance.PlayerMissedCheckpoint();
                 Destroy(gameObject);
             }
         }
@@ -46,7 +47,7 @@ public class Checkpoint : MonoBehaviour
             GameController.Instance.gliderInfo.penguinXRORigidbody.AddForce(Vector3.up * 50);
             yield return null;
         }
-        LevelManager.Instance.ReadyToGenerateCheckpoint();
+        LevelManager.Instance.PlayerPassedCheckpoint();
         Destroy(gameObject);
     }
 }
