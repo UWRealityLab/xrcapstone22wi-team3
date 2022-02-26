@@ -61,6 +61,12 @@ public abstract class Obstacle : MonoBehaviour
         float iterations = 300;
         for (int i = 0; i < iterations; i++)
         {
+            if (LandingController.Instance.GetDistanceToGround() <= LandingController.LandingHeight)
+            {
+                // Don't apply force if we are too close to the ground
+                break;
+            }
+            
             GameController.Instance.gliderInfo.penguinXRORigidbody.AddForce(Vector3.down * GetCollisionForce());
             yield return null;
         }
