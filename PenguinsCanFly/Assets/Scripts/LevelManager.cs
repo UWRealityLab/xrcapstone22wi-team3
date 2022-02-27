@@ -187,15 +187,8 @@ public class LevelManager : MonoBehaviour
         int maxNumFishPatternsPerInterval = 1 + _numCheckpointsInstantiated / 4;
         for (int i = 0; i < maxNumFishPatternsPerInterval; i++)
         {
-            if (Random.value > 0.0)
-            {
-                SpawnFishCoins(startOfInterval);
-            }
-
-            if (Random.value > 0.0)
-            {
-                SpawnFishCoins(startOfInterval + TerrainManager.subtileSize);
-            }
+            SpawnFishCoins(startOfInterval);
+            SpawnFishCoins(startOfInterval + TerrainManager.subtileSize);
         }
 
         // Generate cosmetic obstacles
