@@ -157,7 +157,8 @@ public class TerrainManager : MonoBehaviour
     {
         // Tile 1:
         int[] subtileRotation1 = subtileRotations[rnd.Next(0, 4)];
-        int tilePicker1 = rnd.Next(1, 5);
+        // HARD CODE FOR SNOW SUBTILE SAMPLE VIEWING, WILL SHOW AT LEAST ONCE PER TILE
+        int tilePicker1 = rnd.Next(1, 2);
         Instantiate(Resources.Load( sceneName + "/Tile" + tilePicker1),
             new Vector3(-105 + subtileRotation1[1], 0, totalDistance + tileSize * inAdvance + subtileRotation1[2]),
             Quaternion.Euler(0, subtileRotation1[0], 0));
