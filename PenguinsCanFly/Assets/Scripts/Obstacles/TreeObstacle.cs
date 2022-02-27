@@ -2,32 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlowerObstacle : Obstacle
+public class TreeObstacle : Obstacle
 {
-    
     void Start()
     {
-        float randomScale = Random.Range(60, 90);
+        float randomScale = Random.Range(30, 50);
         transform.localScale = new Vector3(randomScale, randomScale, randomScale);
     }
-
+    
     public override bool ShouldSpawnOnGround()
     {
-        return false;
+        return true;
     }
-
+    
     public override float GetSpawnOffsetLowerBound()
     {
-        return -40f;
+        throw new System.NotSupportedException();
     }
 
     public override float GetSpawnOffsetUpperBound()
     {
-        return 50f;
+        throw new System.NotSupportedException();
     }
 
     public override Quaternion GetSpawnRotation()
     {
-        return Quaternion.identity;
+        Quaternion rotation = new Quaternion();
+        rotation.eulerAngles = new Vector3(0, Random.Range(0, 360), 0);
+        return rotation;
     }
 }

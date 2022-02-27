@@ -19,6 +19,11 @@ public class SnowflakeObstacle : Obstacle
         base.Update();
         transform.Rotate((20f+_rotateOffset) * Vector3.forward * Time.deltaTime);
     }
+    
+    public override bool ShouldSpawnOnGround()
+    {
+        return false;
+    }
 
     public override float GetSpawnOffsetLowerBound()
     {
