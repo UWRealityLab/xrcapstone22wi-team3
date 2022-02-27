@@ -11,11 +11,24 @@ public class CoinMagnet : MonoBehaviour
     // Start is called before the first frame update
     void FixedUpdate()
     {
-        Debug.Log("SAVE:numCoins:" + caughtCoins.Count);
+        Debug.Log("SAVE:caughtCoins:" + caughtCoins.Count);
+        ISet<Rigidbody> coinsToDestroy = new HashSet<Rigidbody>();
+        
         foreach (Rigidbody r in caughtCoins)
         {
             r.velocity = (transform.position - (r.transform.position + r.centerOfMass)) * magnetForce * Time.deltaTime;
             r.transform.localScale *= 0.97f;
+
+            if (r.transform.localScale == Vector3.zero) // == allows for float imprecision
+            {
+                coinsToDestroy.Add(r);
+            }
+        }
+
+        foreach (Rigidbody r in coinsToDestroy)
+        {
+            caughtCoins.Remove(r);
+            Destroy(r.gameObject);
         }
     }
 
@@ -23,7 +36,10 @@ public class CoinMagnet : MonoBehaviour
     {
         if (other.gameObject.CompareTag(FishCoinTag))
         {
-            caughtCoins.Add(other.attachedRigidbody);
+            if (caughtCoins.Add(other.attachedRigidbody))
+            {
+                ScoreCounter.Instance.numCoins++;
+            }
         }
     }
 }

@@ -17,6 +17,8 @@ public class LevelManager : MonoBehaviour
     private int _maxSpawnAttemptsPerObstacle = 10;  // to prevent infinite loop
 
     private const float MaxObstacleHeight = 500f;
+
+    public GameObject[] fishCoinPatterns;
     
     // All our obstacles
     public GameObject cloudBigObstacle;
