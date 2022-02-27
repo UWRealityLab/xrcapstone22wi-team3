@@ -1370,6 +1370,7 @@ MonoBehaviour:
   balloonObstacle: {fileID: 5296170243713047716, guid: 0627e719efc3c48549c06799a8cae4da, type: 3}
   flowerRoseObstacle: {fileID: 2662968072914038443, guid: 94e121ad6231c4de4ad69b55d738dfc6, type: 3}
   flowerCarnationObstacle: {fileID: 5526197929275111512, guid: 503e560ed7295433eb85eec00dd616a6, type: 3}
+  treeOakObstacle: {fileID: 7077153259473431457, guid: dc339ea191282448692356b53cf2141e, type: 3}
 --- !u!4 &437040826
 Transform:
   m_ObjectHideFlags: 0

@@ -57,7 +57,7 @@ public class LevelManager : MonoBehaviour
             {"Snow World", new[]{snowflakeObstacle, snowflakeObstacle, snowflakeObstacle, balloonObstacle, 
                 cloudBigObstacle, cloudFluffyObstacle}},
             {"Desert World", new[]{cloudBigObstacle, cloudFluffyObstacle}},
-            {"Garden World", new[]{flowerRoseObstacle, flowerRoseObstacle, flowerCarnationObstacle, flowerCarnationObstacle, 
+            {"Garden World", new[]{flowerRoseObstacle, flowerCarnationObstacle, 
                 treeOakObstacle, cloudBigObstacle, cloudFluffyObstacle}}
         };
     }
