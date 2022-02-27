@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -7,13 +8,7 @@ public class LevelManager : MonoBehaviour
 {
     public GameObject checkpointPrefab;
     public Transform penguinXROTransform;
-    
-    private float _lastPositionZ;
-    private float _totalDistance;
 
-    private const float GenerateDistance = 1000;  // generate this far in advance
-    private const float ObstacleInterval = 100;  // generate obstacles in this interval
-    
     private int _numObstacleIntervalsGenerated = 0;
     private int _numCheckpointsInstantiated = 0;
     private float _distanceOfLastCheckpoint;
@@ -22,8 +17,15 @@ public class LevelManager : MonoBehaviour
     private int _maxSpawnAttemptsPerObstacle = 10;  // to prevent infinite loop
 
     private const float MaxObstacleHeight = 500f;
+    
+    // All our obstacles
+    public GameObject cloudBigObstacle;
+    public GameObject cloudFluffyObstacle;
+    public GameObject snowflakeObstacle;
+    public GameObject balloonObstacle;
 
-    public GameObject[] obstacleTypes;
+    // Initialized in Awake()
+    private Dictionary<string, GameObject[]> terrainToObstacleTypes;
 
     // TODO: remove, this is for debugging purposes
     public static int NumObstaclesActiveInGame = 0;
@@ -46,14 +48,37 @@ public class LevelManager : MonoBehaviour
             return;
         }
         _instance = this;
+        
+        terrainToObstacleTypes = new Dictionary<string, GameObject[]>
+        {
+            {"Snow World", new[]{snowflakeObstacle, snowflakeObstacle, snowflakeObstacle, balloonObstacle,
+                                 cloudBigObstacle, cloudFluffyObstacle}},
+            {"Desert World", new[]{cloudBigObstacle, cloudFluffyObstacle}},
+            {"Garden World", new[]{cloudBigObstacle, cloudFluffyObstacle}}
+        };
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        _lastPositionZ = penguinXROTransform.position.z;
-
+        // Sanity check that we have all the required terrain types
+        // Have to do this in Start() instead of Awake() because we need to guarantee that TerrainManager.Instance is set up
+        foreach (string terrainType in TerrainManager.Instance.sceneWorlds)
+        {
+            if (!terrainToObstacleTypes.ContainsKey(terrainType))
+            {
+                Debug.Log("ERROR: LevelManager missing " + terrainType + "!");
+            }
+        }
+        foreach (string terrainType in terrainToObstacleTypes.Keys)
+        {
+            if (!TerrainManager.Instance.sceneWorlds.Contains(terrainType))
+            {
+                Debug.Log("ERROR: TerrainManager missing " + terrainType + "!");
+            }
+        }
+        
         // Hardcode spawn first checkpoint
         float checkpointX = Random.Range(-75f, 75f);
         float checkpointZ = 200f;
@@ -61,27 +86,11 @@ public class LevelManager : MonoBehaviour
             new Vector3(checkpointX, 20, checkpointZ),
             Quaternion.identity);
         _distanceOfLastCheckpoint = checkpointZ;
-        
-        // Don't generate obstacles in the first interval
-        for (int i = 1; i < GenerateDistance / ObstacleInterval; i++)
-        {
-            GenerateObstacles(i * ObstacleInterval);
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        float newPositionZ = penguinXROTransform.position.z;
-        _totalDistance += (newPositionZ - _lastPositionZ);
-        _lastPositionZ = newPositionZ;
-
-        if ((int)(_totalDistance / ObstacleInterval) == _numObstacleIntervalsGenerated)
-        {
-            GenerateObstacles(_totalDistance + GenerateDistance);
-            _numObstacleIntervalsGenerated++;
-        }
-        
         Debug.Log("SAVE:numObstaclesActive:" + NumObstaclesActiveInGame);
     }
     
@@ -153,14 +162,22 @@ public class LevelManager : MonoBehaviour
         Debug.Log("num attempts to spawn checkpoint: " + spawnAttempts);
     }
 
-    private void GenerateObstacles(float startOfInterval)
+    // StartOfInterval - where we should start spawning obstacles
+    // EndOfInterval = StartOfInterval + TerrainManager.TileSize
+    public void GenerateObstacles(float startOfInterval, string terrainType)
     {
         // Generate obstacles in the danger zone
         int numObstaclesPerInterval = 2 + _numCheckpointsInstantiated / 3;
+        
         for (int i = 0; i < numObstaclesPerInterval; i++)
         {
-            SpawnRandomObstacle(startOfInterval, GetPositionForObstacleInDangerZone);
+            // Generate obstacles for first subtile interval
+            SpawnRandomObstacle(startOfInterval, GetPositionForObstacleInDangerZone, terrainType);
+            
+            // Generate obstacles for second subtile interval
+            SpawnRandomObstacle(startOfInterval + TerrainManager.subtileSize, GetPositionForObstacleInDangerZone, terrainType);
         }
+        
 
         // Generate cosmetic obstacles
         // int numCosmeticLower = Math.Max(2, (int) penguinXROTransform.position.y / 100);
@@ -176,14 +193,15 @@ public class LevelManager : MonoBehaviour
         // }
     }
 
-    private void SpawnRandomObstacle(float startOfInterval, Func<Obstacle, float, Vector3> getPositionForObstacle)
+    private void SpawnRandomObstacle(float startOfInterval, Func<Obstacle, float, Vector3> getPositionForObstacle, string terrainType)
     {
         Vector3 position = Vector3.zero;
         bool validPosition = false;
         int spawnAttempts = 0;
             
         // Choose a random obstacle
-        GameObject obstacle = obstacleTypes[Random.Range(0, obstacleTypes.Length)];
+        GameObject[] obstacleChoices = terrainToObstacleTypes[terrainType];
+        GameObject obstacle = obstacleChoices[Random.Range(0, obstacleChoices.Length)];
         Obstacle obstacleScript = obstacle.GetComponent<Obstacle>();
 
         // While we don't have a valid position and we haven't tried spawning this obstacle too many times
@@ -215,7 +233,7 @@ public class LevelManager : MonoBehaviour
         float y = penguinXROTransform.position.y + 
                   Random.Range(obstacleScript.GetSpawnOffsetLowerBound(), obstacleScript.GetSpawnOffsetUpperBound());
         y = Math.Max(20, y);  // min spawn height of 20
-        float z = startOfInterval + Random.Range(0, ObstacleInterval);
+        float z = startOfInterval + Random.Range(0, TerrainManager.subtileSize);
         return new Vector3(x, y, z);
     }
     
@@ -225,7 +243,7 @@ public class LevelManager : MonoBehaviour
         // TODO: maybe this x range is too wide
         float x = Random.Range(-200, 200);
         float y = Random.Range(10, obstacleScript.GetSpawnOffsetLowerBound() + penguinXROTransform.position.y);
-        float z = startOfInterval + Random.Range(0, ObstacleInterval);
+        float z = startOfInterval + Random.Range(0, TerrainManager.subtileSize);
         return new Vector3(x, y, z);
     }
     
@@ -234,7 +252,7 @@ public class LevelManager : MonoBehaviour
     {
         float x = Random.Range(-200, 200);
         float y = Random.Range(penguinXROTransform.position.y + obstacleScript.GetSpawnOffsetUpperBound(), MaxObstacleHeight);
-        float z = startOfInterval + Random.Range(0, ObstacleInterval);
+        float z = startOfInterval + Random.Range(0, TerrainManager.subtileSize);
         return new Vector3(x, y, z);
     }
 
