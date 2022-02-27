@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class CoinMagnet : MonoBehaviour
 {
+    public AudioSource audioSource;
+    
     private const string FishCoinTag = "FishCoin";
     private const float magnetForce = 100;
 
@@ -39,6 +41,7 @@ public class CoinMagnet : MonoBehaviour
             if (caughtCoins.Add(other.attachedRigidbody))
             {
                 ScoreCounter.Instance.numCoins++;
+                audioSource.Play();
             }
         }
     }
