@@ -7,7 +7,7 @@ public class FlowerObstacle : Obstacle
     
     void Start()
     {
-        float randomScale = Random.Range(60, 90);
+        float randomScale = Random.Range(50, 80);
         transform.localScale = new Vector3(randomScale, randomScale, randomScale);
     }
 
