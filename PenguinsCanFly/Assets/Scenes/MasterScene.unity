@@ -322,7 +322,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2078797934}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &165585583
 GameObject:
@@ -1339,6 +1339,7 @@ GameObject:
   - component: {fileID: 381808487}
   - component: {fileID: 381808489}
   - component: {fileID: 381808488}
+  - component: {fileID: 381808490}
   m_Layer: 0
   m_Name: CoinMagnet
   m_TagString: Untagged
@@ -1353,12 +1354,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 381808486}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.52, z: 7.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6770263185554202720}
-  m_RootOrder: 5
+  m_Father: {fileID: 2078797934}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &381808488
 MonoBehaviour:
@@ -1381,9 +1382,23 @@ SphereCollider:
   m_GameObject: {fileID: 381808486}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 100
+  m_Radius: 30
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &381808490
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381808486}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 8
+  m_Height: 25
+  m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &385213744 stripped
 Transform:
@@ -2228,7 +2243,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2078797934}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &697821473
 GameObject:
@@ -5870,6 +5885,7 @@ Transform:
   - {fileID: 172605653}
   - {fileID: 745573854}
   - {fileID: 733509495}
+  - {fileID: 381808487}
   - {fileID: 2088056303}
   - {fileID: 656115085}
   - {fileID: 156368365}
@@ -5923,7 +5939,7 @@ Transform:
   m_LocalScale: {x: 0.38654977, y: 0.24759, z: 1}
   m_Children: []
   m_Father: {fileID: 2078797934}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2088056304
 BoxCollider:
@@ -8122,7 +8138,6 @@ Transform:
   - {fileID: 6770263186451093695}
   - {fileID: 769299407608049982}
   - {fileID: 138975254759111831}
-  - {fileID: 381808487}
   m_Father: {fileID: 1980159961}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

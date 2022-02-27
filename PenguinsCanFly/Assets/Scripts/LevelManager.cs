@@ -183,7 +183,20 @@ public class LevelManager : MonoBehaviour
             // Generate obstacles for second subtile interval
             SpawnRandomObstacle(startOfInterval + TerrainManager.subtileSize, GetPositionForObstacleInDangerZone, terrainType);
         }
-        
+
+        int maxNumFishPatternsPerInterval = 1 + _numCheckpointsInstantiated / 4;
+        for (int i = 0; i < maxNumFishPatternsPerInterval; i++)
+        {
+            if (Random.value > 0.0)
+            {
+                SpawnFishCoins(startOfInterval);
+            }
+
+            if (Random.value > 0.0)
+            {
+                SpawnFishCoins(startOfInterval + TerrainManager.subtileSize);
+            }
+        }
 
         // Generate cosmetic obstacles
         // int numCosmeticLower = Math.Max(2, (int) penguinXROTransform.position.y / 100);
@@ -270,6 +283,21 @@ public class LevelManager : MonoBehaviour
         float y = Random.Range(penguinXROTransform.position.y + obstacleScript.GetSpawnOffsetUpperBound(), MaxObstacleHeight);
         float z = startOfInterval + Random.Range(0, TerrainManager.subtileSize);
         return new Vector3(x, y, z);
+    }
+
+    private void SpawnFishCoins(float startOfInterval)
+    {
+        // Choose a random fish pattern
+        GameObject fishPattern = fishCoinPatterns[Random.Range(0, fishCoinPatterns.Length)];
+        
+        // Pick a random position
+        float x = Random.Range(-100f, 100f);
+        float y = penguinXROTransform.position.y + Random.Range(-10, 10);
+        y = Math.Max(20, y);  // min spawn height of 20
+        float z = startOfInterval + Random.Range(0, TerrainManager.subtileSize); 
+        Vector3 position = new Vector3(x, y, z);
+        
+        Instantiate(fishPattern, position, Quaternion.identity);
     }
 
     private float GetSpeedIncrease()
