@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CloudObstacle : Obstacle
+public class FlowerObstacle : Obstacle
 {
-    // Start is called before the first frame update
+    
     void Start()
     {
+        float randomScale = Random.Range(50, 80);
+        transform.localScale = new Vector3(randomScale, randomScale, randomScale);
     }
 
     public override bool ShouldSpawnOnGround()

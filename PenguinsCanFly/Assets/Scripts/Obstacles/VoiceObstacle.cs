@@ -4,6 +4,11 @@ using UnityEngine;
 namespace Obstacles
 { public abstract class VoiceObstacle : Obstacle
     {
+        public override bool ShouldSpawnOnGround()
+        {
+            throw new NotSupportedException();
+        }
+
         public override float GetSpawnOffsetLowerBound()
         {
             throw new NotSupportedException();

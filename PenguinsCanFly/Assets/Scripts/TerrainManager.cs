@@ -23,8 +23,8 @@ public class TerrainManager : MonoBehaviour
     private float totalDistance;
     
     // tile metrics
-    private float tileSize = 240;
-    private float subtileSize = 120;
+    public const float tileSize = 240;
+    public const float subtileSize = 120;
 
     // used to keep track of tile generation
     private int numInstantiated;
@@ -32,7 +32,7 @@ public class TerrainManager : MonoBehaviour
     // used to keep track of current scene
     private String sceneWorld;
     
-    private List<String> sceneWorlds = new List<String>
+    [NonSerialized] public List<String> sceneWorlds = new List<String>
     {
         "Snow World",
         "Desert World",
@@ -51,6 +51,26 @@ public class TerrainManager : MonoBehaviour
     // rnd picker for scene, subtile type and subtile angle
     private System.Random rnd = new System.Random();
     
+    private static TerrainManager _instance;
+
+    public static TerrainManager Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+    
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        _instance = this;
+    }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +79,7 @@ public class TerrainManager : MonoBehaviour
         for (int i = 0; i < numInstantiateInAdvance; i++)
         {
             generateTile(sceneWorlds[0], i);
+            LevelManager.Instance.GenerateObstacles( tileSize * i, sceneWorlds[0]);
         }
     }
 
@@ -79,6 +100,7 @@ public class TerrainManager : MonoBehaviour
             }
 
             generateTile(sceneWorld, numInstantiateInAdvance);
+            LevelManager.Instance.GenerateObstacles(totalDistance + tileSize * numInstantiateInAdvance, sceneWorld);
             
             numInstantiated++;
             Debug.Log("SAVE:Tile Instantiated:" + numInstantiated);

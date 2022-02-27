@@ -9,9 +9,13 @@ public abstract class Obstacle : MonoBehaviour
     private const float DestroyDistance = 1000f;
     
     private bool _obstacleHit = false;
-
+    
+    // should this obstacle always be spawned on the ground? if so, Lower and UpperBound will be ignored
+    public abstract bool ShouldSpawnOnGround();
     public abstract float GetSpawnOffsetLowerBound();
     public abstract float GetSpawnOffsetUpperBound();
+    
+    
     public abstract Quaternion GetSpawnRotation();
 
     public void Update()
@@ -61,6 +65,12 @@ public abstract class Obstacle : MonoBehaviour
         float iterations = 300;
         for (int i = 0; i < iterations; i++)
         {
+            if (LandingController.Instance.GetDistanceToGround() <= LandingController.LandingHeight)
+            {
+                // Don't apply force if we are too close to the ground
+                break;
+            }
+            
             GameController.Instance.gliderInfo.penguinXRORigidbody.AddForce(Vector3.down * GetCollisionForce());
             yield return null;
         }

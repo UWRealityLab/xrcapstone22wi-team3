@@ -13,12 +13,32 @@ public class LandingController : MonoBehaviour
     public GameObject goMenuPrefab;
     
     // Distance from the ground where we turn off gravity and decay speed faster
-    private const float LandingHeight = 2f;
+    public const float LandingHeight = 2f;
     
     private Transform penguinXROTransform;
     private Rigidbody penguinXRORigidbody;
 
     private bool isLanded = false;
+    
+    private static LandingController _instance;
+
+    public static LandingController Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+    
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        _instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()

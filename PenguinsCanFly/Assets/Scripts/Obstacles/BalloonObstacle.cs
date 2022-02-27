@@ -22,6 +22,11 @@ public class BalloonObstacle : Obstacle
         transform.position += Vector3.up * y;
     }
 
+    public override bool ShouldSpawnOnGround()
+    {
+        return false;
+    }
+
     public override float GetSpawnOffsetLowerBound()
     {
         return -30f;
