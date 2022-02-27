@@ -23,6 +23,8 @@ public class LevelManager : MonoBehaviour
     public GameObject cloudFluffyObstacle;
     public GameObject snowflakeObstacle;
     public GameObject balloonObstacle;
+    public GameObject flowerRoseObstacle;
+    public GameObject flowerCarnationObstacle;
 
     // Initialized in Awake()
     private Dictionary<string, GameObject[]> terrainToObstacleTypes;
@@ -51,10 +53,11 @@ public class LevelManager : MonoBehaviour
         
         terrainToObstacleTypes = new Dictionary<string, GameObject[]>
         {
-            {"Snow World", new[]{snowflakeObstacle, snowflakeObstacle, snowflakeObstacle, balloonObstacle,
-                                 cloudBigObstacle, cloudFluffyObstacle}},
+            {"Snow World", new[]{snowflakeObstacle, snowflakeObstacle, snowflakeObstacle, balloonObstacle, 
+                cloudBigObstacle, cloudFluffyObstacle}},
             {"Desert World", new[]{cloudBigObstacle, cloudFluffyObstacle}},
-            {"Garden World", new[]{cloudBigObstacle, cloudFluffyObstacle}}
+            {"Garden World", new[]{flowerRoseObstacle, flowerRoseObstacle, flowerCarnationObstacle, flowerCarnationObstacle, 
+                cloudBigObstacle, cloudFluffyObstacle}}
         };
     }
 
