@@ -13,7 +13,7 @@ public class LevelManager : MonoBehaviour
     private int _numCheckpointsInstantiated = 0;
     private float _distanceOfLastCheckpoint;
     
-    private const float ObstacleCheckRadius = 15f;
+    private const float ObstacleCheckRadius = 10f;
     private int _maxSpawnAttemptsPerObstacle = 10;  // to prevent infinite loop
 
     private const float MaxObstacleHeight = 500f;
@@ -23,6 +23,7 @@ public class LevelManager : MonoBehaviour
     public GameObject cloudFluffyObstacle;
     public GameObject snowflakeObstacle;
     public GameObject balloonObstacle;
+    public GameObject treeOakObstacle;
 
     // Initialized in Awake()
     private Dictionary<string, GameObject[]> terrainToObstacleTypes;
@@ -54,7 +55,7 @@ public class LevelManager : MonoBehaviour
             {"Snow World", new[]{snowflakeObstacle, snowflakeObstacle, snowflakeObstacle, balloonObstacle,
                                  cloudBigObstacle, cloudFluffyObstacle}},
             {"Desert World", new[]{cloudBigObstacle, cloudFluffyObstacle}},
-            {"Garden World", new[]{cloudBigObstacle, cloudFluffyObstacle}}
+            {"Garden World", new[]{treeOakObstacle, cloudBigObstacle, cloudBigObstacle, cloudFluffyObstacle, cloudFluffyObstacle}}
         };
     }
 
@@ -215,7 +216,9 @@ public class LevelManager : MonoBehaviour
             // Collect all colliders within our Obstacle Check Radius
             Collider[] colliders = Physics.OverlapSphere(position, ObstacleCheckRadius);
 
-            validPosition = colliders.Length == 0;
+            // TODO: i made this always be a valid position bc the trees were always conflicting
+            validPosition = true;
+            // validPosition = colliders.Length == 0;
         }
             
         if(validPosition)
@@ -229,10 +232,18 @@ public class LevelManager : MonoBehaviour
     // Obstacles that the user will probably player
     private Vector3 GetPositionForObstacleInDangerZone(Obstacle obstacleScript, float startOfInterval)
     {
-        float x = Random.Range(-150, 150);
-        float y = penguinXROTransform.position.y + 
-                  Random.Range(obstacleScript.GetSpawnOffsetLowerBound(), obstacleScript.GetSpawnOffsetUpperBound());
-        y = Math.Max(20, y);  // min spawn height of 20
+        float x = Random.Range(-120f, 120f);
+        float y;
+        if (obstacleScript.ShouldSpawnOnGround())
+        {
+            y = 0;
+        }
+        else
+        {
+            y = penguinXROTransform.position.y + 
+                Random.Range(obstacleScript.GetSpawnOffsetLowerBound(), obstacleScript.GetSpawnOffsetUpperBound());
+            y = Math.Max(20, y);  // min spawn height of 20
+        }
         float z = startOfInterval + Random.Range(0, TerrainManager.subtileSize);
         return new Vector3(x, y, z);
     }

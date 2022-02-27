@@ -9,9 +9,13 @@ public abstract class Obstacle : MonoBehaviour
     private const float DestroyDistance = 1000f;
     
     private bool _obstacleHit = false;
-
+    
+    // should this obstacle always be spawned on the ground? if so, Lower and UpperBound will be ignored
+    public abstract bool ShouldSpawnOnGround();
     public abstract float GetSpawnOffsetLowerBound();
     public abstract float GetSpawnOffsetUpperBound();
+    
+    
     public abstract Quaternion GetSpawnRotation();
 
     public void Update()

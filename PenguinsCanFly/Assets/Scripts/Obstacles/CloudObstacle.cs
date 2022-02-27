@@ -8,7 +8,12 @@ public class CloudObstacle : Obstacle
     void Start()
     {
     }
-    
+
+    public override bool ShouldSpawnOnGround()
+    {
+        return false;
+    }
+
     public override float GetSpawnOffsetLowerBound()
     {
         return -40f;
