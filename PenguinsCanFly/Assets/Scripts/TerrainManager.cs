@@ -76,10 +76,13 @@ public class TerrainManager : MonoBehaviour
     {
         lastPositionZ = penguinXROTransform.position.z;
         
-        for (int i = 0; i < numInstantiateInAdvance; i++)
+        generateTile(sceneWorlds[0], 0);
+        LevelManager.Instance.GenerateInitialElements(sceneWorlds[0]);
+        
+        for (int i = 1; i < numInstantiateInAdvance; i++)
         {
             generateTile(sceneWorlds[0], i);
-            LevelManager.Instance.GenerateInitialElements( tileSize * i, sceneWorlds[0]);
+            LevelManager.Instance.GenerateObstacles(tileSize * i, sceneWorlds[0]);
         }
     }
 

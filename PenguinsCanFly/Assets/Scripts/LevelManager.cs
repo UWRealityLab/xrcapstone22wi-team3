@@ -101,16 +101,13 @@ public class LevelManager : MonoBehaviour
     }
 
     // Generate obstacles and coins for initial game tile
-    public void GenerateInitialElements(float startOfFirstTile, string terrainType)
+    public void GenerateInitialElements(string terrainType)
     {
         for (int i = 0; i < 2; i++)
         {
             // Only generate obstacles for second subtile interval (skip the first)
-            SpawnRandomObstacle(startOfFirstTile + TerrainManager.subtileSize, GetPositionForObstacleInDangerZone, terrainType);
+            SpawnRandomObstacle(TerrainManager.subtileSize, GetPositionForObstacleInDangerZone, terrainType);
         }
-        
-        SpawnFishCoins(startOfFirstTile);
-        SpawnFishCoins(startOfFirstTile + TerrainManager.subtileSize);
     }
     
     public void PlayerMissedCheckpoint()
@@ -302,8 +299,12 @@ public class LevelManager : MonoBehaviour
         y = Math.Max(20, y);  // min spawn height of 20
         float z = startOfInterval + Random.Range(0, TerrainManager.subtileSize); 
         Vector3 position = new Vector3(x, y, z);
+
+        Quaternion rotation = new Quaternion();
+        int yRotation = Random.Range(0, 2) * 180;
+        rotation.eulerAngles = new Vector3(0, yRotation, 0);
         
-        Instantiate(fishPattern, position, Quaternion.identity);
+        Instantiate(fishPattern, position, rotation);
     }
 
     private float GetSpeedIncrease()

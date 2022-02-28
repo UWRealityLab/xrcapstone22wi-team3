@@ -1537,6 +1537,7 @@ MonoBehaviour:
   fishCoinPatterns:
   - {fileID: 5024797152366223775, guid: 731a3e781ac3f42e89c8a7224aafaacd, type: 3}
   - {fileID: 5495216357621947196, guid: c5f6468651ec24729bf892fceb5fc5ed, type: 3}
+  - {fileID: 2747608041787638400, guid: 9a63c6dbed2e2437f89144280569786d, type: 3}
   cloudBigObstacle: {fileID: 3201319466194407585, guid: 6eef0a0cae59e468a94d6aa0ebc618f5, type: 3}
   cloudFluffyObstacle: {fileID: 1997974335414912520, guid: 46421ad737dcb4882ada07309ce8cde0, type: 3}
   snowflakeObstacle: {fileID: 2733523344670738679, guid: 1bcbe3603509c486bbe075a8a9e68ebf, type: 3}
