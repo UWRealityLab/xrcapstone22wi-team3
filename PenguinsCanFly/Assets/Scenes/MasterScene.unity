@@ -1341,7 +1341,7 @@ GameObject:
   - component: {fileID: 381808488}
   - component: {fileID: 381808490}
   - component: {fileID: 381808491}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CoinMagnet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8845,7 +8845,7 @@ GameObject:
   - component: {fileID: 769299407608049982}
   - component: {fileID: 7098035442907050928}
   - component: {fileID: 8060948914716731044}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HangGliderCollider
   m_TagString: HangGlider
   m_Icon: {fileID: 0}
