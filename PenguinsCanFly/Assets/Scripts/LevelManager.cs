@@ -99,6 +99,19 @@ public class LevelManager : MonoBehaviour
     {
         Debug.Log("SAVE:numObstaclesActive:" + NumObstaclesActiveInGame);
     }
+
+    // Generate obstacles and coins for initial game tile
+    public void GenerateInitialElements(float startOfFirstTile, string terrainType)
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            // Only generate obstacles for second subtile interval (skip the first)
+            SpawnRandomObstacle(startOfFirstTile + TerrainManager.subtileSize, GetPositionForObstacleInDangerZone, terrainType);
+        }
+        
+        SpawnFishCoins(startOfFirstTile);
+        SpawnFishCoins(startOfFirstTile + TerrainManager.subtileSize);
+    }
     
     public void PlayerMissedCheckpoint()
     {

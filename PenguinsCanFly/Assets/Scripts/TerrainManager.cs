@@ -79,7 +79,7 @@ public class TerrainManager : MonoBehaviour
         for (int i = 0; i < numInstantiateInAdvance; i++)
         {
             generateTile(sceneWorlds[0], i);
-            LevelManager.Instance.GenerateObstacles( tileSize * i, sceneWorlds[0]);
+            LevelManager.Instance.GenerateInitialElements( tileSize * i, sceneWorlds[0]);
         }
     }
 
