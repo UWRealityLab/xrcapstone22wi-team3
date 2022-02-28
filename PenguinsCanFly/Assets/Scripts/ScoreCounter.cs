@@ -6,6 +6,8 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class ScoreCounter : MonoBehaviour
 {
+    [NonSerialized] public int numCoins = 0;
+    
     private float lastPositionZ;
     private float totalDistance;
     
@@ -42,6 +44,8 @@ public class ScoreCounter : MonoBehaviour
         float newPositionZ = transform.position.z;
         totalDistance += (newPositionZ - lastPositionZ);
         lastPositionZ = newPositionZ;
+        
+        Debug.Log("SAVE:numCoins:" + numCoins);
     }
 
     public int GetScore()

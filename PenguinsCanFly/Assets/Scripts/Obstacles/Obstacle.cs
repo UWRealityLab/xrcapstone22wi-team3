@@ -37,8 +37,9 @@ public abstract class Obstacle : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag(HangGliderTag))
+        if (other.gameObject.CompareTag(HangGliderTag) && !_obstacleHit) // for obstacles that have multiple colliders
         {
+            _obstacleHit = true;
             DeviceManager.Instance.SendCollisionHaptics();
             CustomCollisionEffects(other);
             StartCoroutine(DecreaseHeight());
