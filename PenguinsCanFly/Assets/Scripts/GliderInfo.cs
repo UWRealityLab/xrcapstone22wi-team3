@@ -36,7 +36,17 @@ public class GliderInfo : MonoBehaviour
         // Add speed forward based on glider direction
         Vector3 gliderDirectionForward = gliderDirection.forward;
         float modifiedSpeed = speed + extraSpeed;
-        penguinXRORigidbody.AddForce(gliderDirectionForward * (modifiedSpeed * 10));
+        Vector3 forceToApply = gliderDirectionForward * (modifiedSpeed * 10);
+        // Bound movement within an area
+        if (penguinXRORigidbody.transform.position.x <= -TerrainManager.gameWidth / 2)
+        {
+            forceToApply.x = Math.Max(0, forceToApply.x);
+        }
+        else if (penguinXRORigidbody.transform.position.x >= TerrainManager.gameWidth / 2)
+        {
+            forceToApply.x = Math.Min(0, forceToApply.x);
+        }
+        penguinXRORigidbody.AddForce(forceToApply);
         
         // Reduce extra speed towards 0
         if (extraSpeed > 0)
