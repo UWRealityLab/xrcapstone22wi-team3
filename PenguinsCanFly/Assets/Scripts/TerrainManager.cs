@@ -119,7 +119,7 @@ public class TerrainManager : MonoBehaviour
     void generateBase(String sceneName, int inAdvance)
     {
         Instantiate(Resources.Load( sceneName + "/BaseTile"),
-            new Vector3(0, 0, totalDistance + tileSize * inAdvance + subtileSize),
+            new Vector3(0, -1, totalDistance + tileSize * inAdvance + subtileSize),
             Quaternion.identity);
     }
     
