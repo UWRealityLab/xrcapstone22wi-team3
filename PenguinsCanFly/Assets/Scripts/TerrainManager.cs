@@ -25,6 +25,9 @@ public class TerrainManager : MonoBehaviour
     // tile metrics
     public const float tileSize = 240;
     public const float subtileSize = 120;
+    
+    // Width of allowed playing area
+    public const float gameWidth = 260;
 
     // used to keep track of tile generation
     private int numInstantiated;
