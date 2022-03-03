@@ -1402,7 +1402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb621850fe7de488bafe84f877891e3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: CHANGE_TO_SCENE_NAME
+  sceneToLoad: FlapTutorialScene
   resetManager: {fileID: 1011293437}
 --- !u!114 &576431543
 MonoBehaviour:
@@ -2637,7 +2637,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855312300}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.32, y: 2.2, z: 0.08}
+  m_LocalPosition: {x: 0.45, y: 2.2, z: 0.26}
   m_LocalScale: {x: 0.06250001, y: 0.0625, z: 0.06250001}
   m_Children: []
   m_Father: {fileID: 576431546}
@@ -2651,7 +2651,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855312300}
-  m_Text: Demo
+  m_Text: Tutorial
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
