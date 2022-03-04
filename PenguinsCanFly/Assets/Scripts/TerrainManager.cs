@@ -132,25 +132,25 @@ public class TerrainManager : MonoBehaviour
     void generateSideTile(String sceneName, int inAdvance)
     {
         // Left 1:
-        int tilePickerLeft1 = rnd.Next(1, 2);
+        int tilePickerLeft1 = rnd.Next(1, 4);
         Instantiate(Resources.Load( sceneName + "/SideTileLeft" + tilePickerLeft1),
             new Vector3(-105 - subtileSize, 0, totalDistance + tileSize * inAdvance),
             Quaternion.identity);
         
         // Right 1:
-        int tilePickerRight1 = rnd.Next(1, 2);
+        int tilePickerRight1 = rnd.Next(1, 4);
         Instantiate(Resources.Load( sceneName + "/SideTileRight" + tilePickerRight1),
             new Vector3(-105 + subtileSize + subtileSize, 0, totalDistance + tileSize * inAdvance),
             Quaternion.identity);
         
         // Left 2:
-        int tilePickerLeft2 = rnd.Next(1, 2);
+        int tilePickerLeft2 = rnd.Next(1, 4);
         Instantiate(Resources.Load( sceneName + "/SideTileLeft" + tilePickerLeft2),
             new Vector3(-105 - subtileSize, 0, totalDistance + tileSize * inAdvance + subtileSize),
             Quaternion.identity);
         
         // Right 2:
-        int tilePickerRight2 = rnd.Next(1, 2);
+        int tilePickerRight2 = rnd.Next(1, 4);
         Instantiate(Resources.Load( sceneName + "/SideTileRight" + tilePickerRight2),
             new Vector3(-105 + subtileSize + subtileSize, 0, totalDistance + tileSize * inAdvance + subtileSize),
             Quaternion.identity);
