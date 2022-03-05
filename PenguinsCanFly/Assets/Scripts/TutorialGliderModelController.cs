@@ -57,7 +57,7 @@ public class TutorialGliderModelController : MonoBehaviour
             if (hasGrabbed && !hasTiltedDown && leftHandlebar.IsBeingHeld() && rightHandlebar.IsBeingHeld())
             {
                 hasTiltedDown = true;
-                tutorialText.text = "Great! Now grab the certificate or click the home button on the left controller to go exit";
+                tutorialText.text = "Great! Now grab the certificate or click the home button on the left controller to exit";
 
                 // Spawn the go back to menu screen
                 Transform penguinTransform = gliderInfo.transform;
