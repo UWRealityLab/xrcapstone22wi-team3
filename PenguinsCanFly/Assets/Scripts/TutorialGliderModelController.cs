@@ -3,11 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using TMPro;
 
 public class TutorialGliderModelController : MonoBehaviour
 {
     public const int MaxPitchOffsetDegree = 40;
     private const float MaxRotationDegrees = 35;
+    private bool hasGrabbed = false;
+    private bool hasTiltedDown = false;
+    public TextMeshProUGUI tutorialText;
+    public GameObject goMenuPrefab;
 
     public TutorialGliderInfo gliderInfo = null;
     public HandlebarHandle leftHandlebar = null;
@@ -31,6 +36,12 @@ public class TutorialGliderModelController : MonoBehaviour
         float rightTriggerValue = 0;
         float leftTriggerValue = 0;
         float goalPitch = 0;
+        if (!hasGrabbed && leftHandlebar.IsBeingHeld() && rightHandlebar.IsBeingHeld())
+        {
+            hasGrabbed = true;
+            tutorialText.text = "Now use the primary trigger buttons on both controllers to tilt your glider downwards";
+        }
+
         if (leftHandlebar.IsBeingHeld())
         {
             DeviceManager.Instance.leftHandDevice.TryGetFeatureValue(CommonUsages.trigger, out leftTriggerValue);
@@ -40,10 +51,21 @@ public class TutorialGliderModelController : MonoBehaviour
         {
             DeviceManager.Instance.rightHandDevice.TryGetFeatureValue(CommonUsages.trigger, out rightTriggerValue);
         }
-
         float averageForceDownPercent = (rightTriggerValue + leftTriggerValue) / 2;
         if (averageForceDownPercent > 0)
         {
+            if (hasGrabbed && !hasTiltedDown && leftHandlebar.IsBeingHeld() && rightHandlebar.IsBeingHeld())
+            {
+                hasTiltedDown = true;
+                tutorialText.text = "Great! Now grab the certificate or click the home button on the left controller to go exit";
+
+                // Spawn the go back to menu screen
+                Transform penguinTransform = gliderInfo.transform;
+                Vector3 localOffset = new Vector3(-0.3f, 1f, 0.75f);  // spawn in front and to the left
+                Vector3 worldOffset = penguinTransform.rotation * localOffset;
+                Vector3 spawnPosition = penguinTransform.position + worldOffset;
+                Instantiate(goMenuPrefab, spawnPosition, penguinTransform.rotation);
+            }
             goalPitch = MaxPitchOffsetDegree;
         }
         //Vector3 gliderDirectionForward = gliderInfo.penguinXRORigidbody.velocity.normalized;

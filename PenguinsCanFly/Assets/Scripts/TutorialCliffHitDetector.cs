@@ -7,7 +7,7 @@ public class TutorialCliffHitDetector : MonoBehaviour
 {
     public ResetManager resetManager;
 
-    public const string MENU_SCENE = "JamesMenuScene";
+    public const string GliderTutorialScene = "GliderTutorialScene";
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,7 @@ public class TutorialCliffHitDetector : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            resetManager.FadeResetToScene(MENU_SCENE);
+            resetManager.FadeResetToScene(GliderTutorialScene);
         }
     }
 }
