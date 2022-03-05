@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR;
 
 public class ResetManager : MonoBehaviour
 {
@@ -20,7 +21,12 @@ public class ResetManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        bool menuButtonValue;
+        DeviceManager.Instance.leftHandDevice.TryGetFeatureValue(CommonUsages.menuButton, out menuButtonValue);
+        if (menuButtonValue)
+        {
+            FadeResetToScene("JamesMenuScene");
+        }
     }
 
     public void FadeResetToScene(string sceneToLoad)

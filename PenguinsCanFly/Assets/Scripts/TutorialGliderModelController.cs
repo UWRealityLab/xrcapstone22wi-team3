@@ -7,7 +7,7 @@ using TMPro;
 
 public class TutorialGliderModelController : MonoBehaviour
 {
-    public const int MaxPitchOffsetDegree = 40;
+    public const int MaxPitchOffsetDegree = 15;
     private const float MaxRotationDegrees = 35;
     private bool hasGrabbed = false;
     private bool hasTiltedDown = false;
