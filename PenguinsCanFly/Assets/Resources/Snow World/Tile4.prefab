@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7925796767918766940
 Transform:
@@ -85,7 +85,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4715868333909183109
 Transform:
@@ -117,7 +117,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7489415041673101557
 Transform:
@@ -161,6 +161,10 @@ PrefabInstance:
     - target: {fileID: 1000011133995102, guid: 26ad6491227b1d44dbaae3714d3f4901, type: 3}
       propertyPath: m_Name
       value: icicle (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011133995102, guid: 26ad6491227b1d44dbaae3714d3f4901, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000011762629900, guid: 26ad6491227b1d44dbaae3714d3f4901, type: 3}
       propertyPath: m_RootOrder
@@ -227,6 +231,10 @@ PrefabInstance:
     - target: {fileID: 1000012753756142, guid: c34d857fb922b4841962c7b3d4817c6b, type: 3}
       propertyPath: m_Name
       value: igloo (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012753756142, guid: c34d857fb922b4841962c7b3d4817c6b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000010588819208, guid: c34d857fb922b4841962c7b3d4817c6b, type: 3}
       propertyPath: m_RootOrder
@@ -306,6 +314,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -371,6 +383,10 @@ PrefabInstance:
     - target: {fileID: 1000011133995102, guid: 26ad6491227b1d44dbaae3714d3f4901, type: 3}
       propertyPath: m_Name
       value: icicle (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011133995102, guid: 26ad6491227b1d44dbaae3714d3f4901, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000011762629900, guid: 26ad6491227b1d44dbaae3714d3f4901, type: 3}
       propertyPath: m_RootOrder
@@ -438,6 +454,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -503,6 +523,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -570,6 +594,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -635,6 +663,10 @@ PrefabInstance:
     - target: {fileID: 1000011133995102, guid: 26ad6491227b1d44dbaae3714d3f4901, type: 3}
       propertyPath: m_Name
       value: icicle (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011133995102, guid: 26ad6491227b1d44dbaae3714d3f4901, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000011762629900, guid: 26ad6491227b1d44dbaae3714d3f4901, type: 3}
       propertyPath: m_RootOrder
@@ -702,6 +734,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 36
@@ -767,6 +803,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -834,6 +874,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 37
@@ -899,6 +943,10 @@ PrefabInstance:
     - target: {fileID: 1000012753756142, guid: c34d857fb922b4841962c7b3d4817c6b, type: 3}
       propertyPath: m_Name
       value: igloo (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012753756142, guid: c34d857fb922b4841962c7b3d4817c6b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000010588819208, guid: c34d857fb922b4841962c7b3d4817c6b, type: 3}
       propertyPath: m_RootOrder
@@ -978,6 +1026,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-plane-plain (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1043,6 +1095,10 @@ PrefabInstance:
     - target: {fileID: 1000011204566910, guid: 077d547ef8ef3e24d9a2bbf0b37957b6, type: 3}
       propertyPath: m_Name
       value: snowman (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011204566910, guid: 077d547ef8ef3e24d9a2bbf0b37957b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000013214073972, guid: 077d547ef8ef3e24d9a2bbf0b37957b6, type: 3}
       propertyPath: m_RootOrder
@@ -1122,6 +1178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: igloo (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000012753756142, guid: c34d857fb922b4841962c7b3d4817c6b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010588819208, guid: c34d857fb922b4841962c7b3d4817c6b, type: 3}
       propertyPath: m_RootOrder
       value: 32
@@ -1199,6 +1259,10 @@ PrefabInstance:
     - target: {fileID: 1000012753756142, guid: c34d857fb922b4841962c7b3d4817c6b, type: 3}
       propertyPath: m_Name
       value: igloo (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012753756142, guid: c34d857fb922b4841962c7b3d4817c6b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000010588819208, guid: c34d857fb922b4841962c7b3d4817c6b, type: 3}
       propertyPath: m_RootOrder
@@ -1278,6 +1342,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1344,6 +1412,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 35
@@ -1409,6 +1481,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -1479,6 +1555,10 @@ PrefabInstance:
     - target: {fileID: 1833029047212144, guid: 94ac6c4ade9ea4ad3b68abed356206d0, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833029047212144, guid: 94ac6c4ade9ea4ad3b68abed356206d0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4809235775907454, guid: 94ac6c4ade9ea4ad3b68abed356206d0, type: 3}
       propertyPath: m_RootOrder
@@ -1558,6 +1638,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: snowman (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000011204566910, guid: 077d547ef8ef3e24d9a2bbf0b37957b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013214073972, guid: 077d547ef8ef3e24d9a2bbf0b37957b6, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -1636,6 +1720,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-plane-plain (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -1702,6 +1790,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 38
@@ -1767,6 +1859,10 @@ PrefabInstance:
     - target: {fileID: 1000012753756142, guid: c34d857fb922b4841962c7b3d4817c6b, type: 3}
       propertyPath: m_Name
       value: igloo (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012753756142, guid: c34d857fb922b4841962c7b3d4817c6b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000010588819208, guid: c34d857fb922b4841962c7b3d4817c6b, type: 3}
       propertyPath: m_RootOrder
@@ -1846,6 +1942,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: snowman (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000011204566910, guid: 077d547ef8ef3e24d9a2bbf0b37957b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013214073972, guid: 077d547ef8ef3e24d9a2bbf0b37957b6, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -1924,6 +2024,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: icicle
       objectReference: {fileID: 0}
+    - target: {fileID: 1000011133995102, guid: 26ad6491227b1d44dbaae3714d3f4901, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000011762629900, guid: 26ad6491227b1d44dbaae3714d3f4901, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1990,6 +2094,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-plane-plain (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -2055,6 +2163,10 @@ PrefabInstance:
     - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_Name
       value: tree-fir-snow (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
@@ -2125,6 +2237,10 @@ PrefabInstance:
     - target: {fileID: 1833029047212144, guid: 94ac6c4ade9ea4ad3b68abed356206d0, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833029047212144, guid: 94ac6c4ade9ea4ad3b68abed356206d0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4809235775907454, guid: 94ac6c4ade9ea4ad3b68abed356206d0, type: 3}
       propertyPath: m_RootOrder
@@ -2204,6 +2320,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: icicle (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000011133995102, guid: 26ad6491227b1d44dbaae3714d3f4901, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000011762629900, guid: 26ad6491227b1d44dbaae3714d3f4901, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -2269,6 +2389,10 @@ PrefabInstance:
     - target: {fileID: 1000010405474918, guid: ef99d56f958214e45a4ccfcf96821618, type: 3}
       propertyPath: m_Name
       value: stalags
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010405474918, guid: ef99d56f958214e45a4ccfcf96821618, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000011714160038, guid: ef99d56f958214e45a4ccfcf96821618, type: 3}
       propertyPath: m_RootOrder
@@ -2348,6 +2472,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: snowman (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000011204566910, guid: 077d547ef8ef3e24d9a2bbf0b37957b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013214073972, guid: 077d547ef8ef3e24d9a2bbf0b37957b6, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -2426,6 +2554,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: icicle
       objectReference: {fileID: 0}
+    - target: {fileID: 1000011133995102, guid: 26ad6491227b1d44dbaae3714d3f4901, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000011762629900, guid: 26ad6491227b1d44dbaae3714d3f4901, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2500,6 +2632,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-plane-plain (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2565,6 +2701,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -2632,6 +2772,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-plane-plain (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -2697,6 +2841,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -2764,6 +2912,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 34
@@ -2829,6 +2981,10 @@ PrefabInstance:
     - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_Name
       value: tree-fir-snow (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
@@ -2896,6 +3052,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 40
@@ -2962,6 +3122,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-plane-plain (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3027,6 +3191,10 @@ PrefabInstance:
     - target: {fileID: 1000012753756142, guid: c34d857fb922b4841962c7b3d4817c6b, type: 3}
       propertyPath: m_Name
       value: igloo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012753756142, guid: c34d857fb922b4841962c7b3d4817c6b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000010588819208, guid: c34d857fb922b4841962c7b3d4817c6b, type: 3}
       propertyPath: m_RootOrder
@@ -3106,6 +3274,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-plane-plain (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -3171,6 +3343,10 @@ PrefabInstance:
     - target: {fileID: 1000011204566910, guid: 077d547ef8ef3e24d9a2bbf0b37957b6, type: 3}
       propertyPath: m_Name
       value: snowman (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011204566910, guid: 077d547ef8ef3e24d9a2bbf0b37957b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000013214073972, guid: 077d547ef8ef3e24d9a2bbf0b37957b6, type: 3}
       propertyPath: m_RootOrder
@@ -3250,6 +3426,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: snowman (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000011204566910, guid: 077d547ef8ef3e24d9a2bbf0b37957b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013214073972, guid: 077d547ef8ef3e24d9a2bbf0b37957b6, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -3328,6 +3508,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -3393,6 +3577,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -3460,6 +3648,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3525,6 +3717,10 @@ PrefabInstance:
     - target: {fileID: 1000011133995102, guid: 26ad6491227b1d44dbaae3714d3f4901, type: 3}
       propertyPath: m_Name
       value: icicle (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011133995102, guid: 26ad6491227b1d44dbaae3714d3f4901, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000011762629900, guid: 26ad6491227b1d44dbaae3714d3f4901, type: 3}
       propertyPath: m_RootOrder
@@ -3592,6 +3788,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -3658,6 +3858,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-plane-plain (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -3723,6 +3927,10 @@ PrefabInstance:
     - target: {fileID: 1000011204566910, guid: 077d547ef8ef3e24d9a2bbf0b37957b6, type: 3}
       propertyPath: m_Name
       value: snowman
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011204566910, guid: 077d547ef8ef3e24d9a2bbf0b37957b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000013214073972, guid: 077d547ef8ef3e24d9a2bbf0b37957b6, type: 3}
       propertyPath: m_RootOrder
@@ -3802,6 +4010,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-plane-plain (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -3868,6 +4080,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 39
@@ -3933,6 +4149,10 @@ PrefabInstance:
     - target: {fileID: 1000011204566910, guid: 077d547ef8ef3e24d9a2bbf0b37957b6, type: 3}
       propertyPath: m_Name
       value: snowman (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011204566910, guid: 077d547ef8ef3e24d9a2bbf0b37957b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000013214073972, guid: 077d547ef8ef3e24d9a2bbf0b37957b6, type: 3}
       propertyPath: m_RootOrder
@@ -4012,6 +4232,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 33
@@ -4077,6 +4301,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -4144,6 +4372,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: icicle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000011133995102, guid: 26ad6491227b1d44dbaae3714d3f4901, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000011762629900, guid: 26ad6491227b1d44dbaae3714d3f4901, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -4209,6 +4441,10 @@ PrefabInstance:
     - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_Name
       value: tree-fir-snow (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder

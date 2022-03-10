@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4715868333909183109
 Transform:
@@ -46,7 +46,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3937983956789867224
 Transform:
@@ -153,7 +153,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7489415041673101557
 Transform:
@@ -241,6 +241,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski-lift-seat (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5281512632720735853, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6635610016300867061, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -307,6 +311,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski-lift-seat (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5281512632720735853, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6635610016300867061, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -328,6 +336,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -439,6 +451,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski-lift-seat
       objectReference: {fileID: 0}
+    - target: {fileID: 5281512632720735853, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6635610016300867061, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -509,6 +525,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski-lift-stake (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7166332534463472413, guid: 4ec5e04fc39ede74e9350923384ded96, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec5e04fc39ede74e9350923384ded96, type: 3}
 --- !u!4 &7250405571838659375 stripped
@@ -575,6 +595,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski-lift-stake (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7166332534463472413, guid: 4ec5e04fc39ede74e9350923384ded96, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec5e04fc39ede74e9350923384ded96, type: 3}
 --- !u!4 &7631348007637716531 stripped
@@ -636,6 +660,10 @@ PrefabInstance:
     - target: {fileID: 6610824909113250578, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
       propertyPath: m_Name
       value: snowboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610824909113250578, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9164555231032884532, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
       propertyPath: m_Enabled
@@ -703,6 +731,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: snowboard (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 6610824909113250578, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9164555231032884532, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -768,6 +800,10 @@ PrefabInstance:
     - target: {fileID: 5281512632720735853, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
       propertyPath: m_Name
       value: ski-lift-seat (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5281512632720735853, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6635610016300867061, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
       propertyPath: m_Enabled
@@ -835,6 +871,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: snowboard (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 6610824909113250578, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9164555231032884532, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -856,6 +896,10 @@ PrefabInstance:
     - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Name
       value: man-winter (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8110703485121042181, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Enabled
@@ -967,6 +1011,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski-lift-seat (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5281512632720735853, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6635610016300867061, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1033,6 +1081,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski-lift-seat (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5281512632720735853, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6635610016300867061, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1054,6 +1106,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -1120,6 +1176,10 @@ PrefabInstance:
     - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Name
       value: man-winter (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8110703485121042181, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Enabled
@@ -1191,6 +1251,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski-flag (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 3574672266327827787, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3574672266328193387, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
       propertyPath: m_RootOrder
       value: 65
@@ -1252,6 +1316,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -1363,6 +1431,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: snowboard (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 6610824909113250578, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9164555231032884532, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1384,6 +1456,10 @@ PrefabInstance:
     - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Name
       value: man-winter (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8110703485121432986, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_RootOrder
@@ -1446,6 +1522,10 @@ PrefabInstance:
     - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Name
       value: man-winter (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8110703485121042181, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Enabled
@@ -1512,6 +1592,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -1623,6 +1707,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: building-cabin-small (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3856839257831695451, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7086693449507119305, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1644,6 +1732,10 @@ PrefabInstance:
     - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Name
       value: man-winter (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8110703485121042181, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Enabled
@@ -1755,6 +1847,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski-lift-seat (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 5281512632720735853, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6635610016300867061, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1821,6 +1917,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: snowboard (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6610824909113250578, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9164555231032884532, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1886,6 +1986,10 @@ PrefabInstance:
     - target: {fileID: 5281512632720735853, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
       propertyPath: m_Name
       value: ski-lift-seat (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5281512632720735853, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6635610016300867061, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
       propertyPath: m_Enabled
@@ -1957,6 +2061,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8021798257658076902, guid: 8001319e8c6348e4488412c90dfbb1cf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8001319e8c6348e4488412c90dfbb1cf, type: 3}
 --- !u!4 &6761282126077236788 stripped
@@ -1978,6 +2086,10 @@ PrefabInstance:
     - target: {fileID: 3574672266327827787, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
       propertyPath: m_Name
       value: ski-flag (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574672266327827787, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3574672266328193387, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
       propertyPath: m_RootOrder
@@ -2040,6 +2152,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -2106,6 +2222,10 @@ PrefabInstance:
     - target: {fileID: 289511946450096477, guid: be6c96a779760d444b790de440ad0a16, type: 3}
       propertyPath: m_Name
       value: woman-ski
+      objectReference: {fileID: 0}
+    - target: {fileID: 289511946450096477, guid: be6c96a779760d444b790de440ad0a16, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 289511946450128253, guid: be6c96a779760d444b790de440ad0a16, type: 3}
       propertyPath: m_RootOrder
@@ -2217,6 +2337,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski-lift-seat (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 5281512632720735853, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6635610016300867061, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2283,6 +2407,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski-lift-seat (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 5281512632720735853, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6635610016300867061, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2308,6 +2436,10 @@ PrefabInstance:
     - target: {fileID: 3574672266327827787, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
       propertyPath: m_Name
       value: ski-flag (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574672266327827787, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3574672266328193387, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
       propertyPath: m_RootOrder
@@ -2419,6 +2551,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski-lift-stake (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 7166332534463472413, guid: 4ec5e04fc39ede74e9350923384ded96, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec5e04fc39ede74e9350923384ded96, type: 3}
 --- !u!4 &6866620170075285246 stripped
@@ -2481,6 +2617,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: snowboard (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6610824909113250578, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9164555231032884532, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2502,6 +2642,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -2613,6 +2757,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: building-cabin-small (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3856839257831695451, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7086693449507119305, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2678,6 +2826,10 @@ PrefabInstance:
     - target: {fileID: 6610824909113250578, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
       propertyPath: m_Name
       value: snowboard (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610824909113250578, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9164555231032884532, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
       propertyPath: m_Enabled
@@ -2749,6 +2901,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8021798257658076902, guid: 8001319e8c6348e4488412c90dfbb1cf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8001319e8c6348e4488412c90dfbb1cf, type: 3}
 --- !u!4 &3341135083167721162 stripped
@@ -2810,6 +2966,10 @@ PrefabInstance:
     - target: {fileID: 5281512632720735853, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
       propertyPath: m_Name
       value: ski-lift-seat (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5281512632720735853, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6635610016300867061, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
       propertyPath: m_Enabled
@@ -2877,6 +3037,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: building-cabin-small (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3856839257831695451, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7086693449507119305, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2902,6 +3066,10 @@ PrefabInstance:
     - target: {fileID: 3574672266327827787, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
       propertyPath: m_Name
       value: ski-flag
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574672266327827787, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3574672266328193387, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
       propertyPath: m_RootOrder
@@ -3009,6 +3177,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: snowboard (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6610824909113250578, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9164555231032884532, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -3074,6 +3246,10 @@ PrefabInstance:
     - target: {fileID: 6610824909113250578, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
       propertyPath: m_Name
       value: snowboard (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610824909113250578, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9164555231032884532, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
       propertyPath: m_Enabled
@@ -3141,6 +3317,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski-lift-seat (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 5281512632720735853, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6635610016300867061, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -3166,6 +3346,10 @@ PrefabInstance:
     - target: {fileID: 3574672266327827787, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
       propertyPath: m_Name
       value: ski-flag (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574672266327827787, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3574672266328193387, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
       propertyPath: m_RootOrder
@@ -3273,6 +3457,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: snowboard (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 6610824909113250578, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9164555231032884532, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -3339,6 +3527,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: snowboard (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6610824909113250578, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9164555231032884532, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -3360,6 +3552,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -3471,6 +3667,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski-lift-seat (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 5281512632720735853, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6635610016300867061, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -3537,6 +3737,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski-lift-seat (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 5281512632720735853, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6635610016300867061, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -3558,6 +3762,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -3625,6 +3833,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-plane-plain (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -3690,6 +3902,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -3805,6 +4021,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski-lift-stake (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7166332534463472413, guid: 4ec5e04fc39ede74e9350923384ded96, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec5e04fc39ede74e9350923384ded96, type: 3}
 --- !u!4 &3830515390615117025 stripped
@@ -3822,6 +4042,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -3889,6 +4113,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-plane-plain (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -3954,6 +4182,10 @@ PrefabInstance:
     - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Name
       value: man-winter
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8110703485121042181, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Enabled
@@ -4025,6 +4257,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski-flag (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3574672266327827787, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3574672266328193387, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
       propertyPath: m_RootOrder
       value: 57
@@ -4086,6 +4322,10 @@ PrefabInstance:
     - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Name
       value: man-winter (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8110703485121042181, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Enabled
@@ -4153,6 +4393,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: woman-ski (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 289511946450096477, guid: be6c96a779760d444b790de440ad0a16, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 289511946450128253, guid: be6c96a779760d444b790de440ad0a16, type: 3}
       propertyPath: m_RootOrder
       value: 72
@@ -4218,6 +4462,10 @@ PrefabInstance:
     - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Name
       value: man-winter (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8110703485121042181, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Enabled
@@ -4333,6 +4581,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8021798257658076902, guid: 8001319e8c6348e4488412c90dfbb1cf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8001319e8c6348e4488412c90dfbb1cf, type: 3}
 --- !u!4 &955201535261747483 stripped
@@ -4350,6 +4602,10 @@ PrefabInstance:
     - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Name
       value: man-winter (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8110703485121432986, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_RootOrder
@@ -4412,6 +4668,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -4482,6 +4742,10 @@ PrefabInstance:
     - target: {fileID: 3574672266327827787, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
       propertyPath: m_Name
       value: ski-flag (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574672266327827787, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3574672266328193387, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
       propertyPath: m_RootOrder
@@ -4589,6 +4853,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: snowboard (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 6610824909113250578, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9164555231032884532, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -4659,6 +4927,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski-lift-stake (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7166332534463472413, guid: 4ec5e04fc39ede74e9350923384ded96, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec5e04fc39ede74e9350923384ded96, type: 3}
 --- !u!4 &314844849107067374 stripped
@@ -4676,6 +4948,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -4746,6 +5022,10 @@ PrefabInstance:
     - target: {fileID: 1833029047212144, guid: 94ac6c4ade9ea4ad3b68abed356206d0, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833029047212144, guid: 94ac6c4ade9ea4ad3b68abed356206d0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4809235775907454, guid: 94ac6c4ade9ea4ad3b68abed356206d0, type: 3}
       propertyPath: m_RootOrder
@@ -4869,6 +5149,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: building-cabin-small (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3856839257831695451, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7086693449507119305, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -4890,6 +5174,10 @@ PrefabInstance:
     - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Name
       value: man-winter (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8110703485121042181, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Enabled
@@ -5005,6 +5293,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8021798257658076902, guid: 8001319e8c6348e4488412c90dfbb1cf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8001319e8c6348e4488412c90dfbb1cf, type: 3}
 --- !u!4 &286802611593078851 stripped
@@ -5067,6 +5359,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski-lift-seat (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5281512632720735853, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6635610016300867061, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -5088,6 +5384,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -5155,6 +5455,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: woman-ski (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 289511946450096477, guid: be6c96a779760d444b790de440ad0a16, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 289511946450128253, guid: be6c96a779760d444b790de440ad0a16, type: 3}
       propertyPath: m_RootOrder
       value: 74
@@ -5220,6 +5524,10 @@ PrefabInstance:
     - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Name
       value: man-winter (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8110703485121042181, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Enabled
@@ -5331,6 +5639,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: snowboard (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6610824909113250578, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9164555231032884532, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -5352,6 +5664,10 @@ PrefabInstance:
     - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Name
       value: man-winter (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8110703485121042181, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Enabled
@@ -5467,6 +5783,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski-lift-stake (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7166332534463472413, guid: 4ec5e04fc39ede74e9350923384ded96, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec5e04fc39ede74e9350923384ded96, type: 3}
 --- !u!4 &1728066991805495195 stripped
@@ -5488,6 +5808,10 @@ PrefabInstance:
     - target: {fileID: 3574672266327827787, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
       propertyPath: m_Name
       value: ski-flag (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574672266327827787, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3574672266328193387, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
       propertyPath: m_RootOrder
@@ -5599,6 +5923,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8021798257658076902, guid: 8001319e8c6348e4488412c90dfbb1cf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8001319e8c6348e4488412c90dfbb1cf, type: 3}
 --- !u!4 &1922855078195976933 stripped
@@ -5665,6 +5993,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski-lift-stake
       objectReference: {fileID: 0}
+    - target: {fileID: 7166332534463472413, guid: 4ec5e04fc39ede74e9350923384ded96, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec5e04fc39ede74e9350923384ded96, type: 3}
 --- !u!4 &1534890860821461261 stripped
@@ -5726,6 +6058,10 @@ PrefabInstance:
     - target: {fileID: 6610824909113250578, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
       propertyPath: m_Name
       value: snowboard (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610824909113250578, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9164555231032884532, guid: e85b7ad7f7e546a4db7547bbee43732c, type: 3}
       propertyPath: m_Enabled
@@ -5797,6 +6133,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski-lift-stake (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 7166332534463472413, guid: 4ec5e04fc39ede74e9350923384ded96, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec5e04fc39ede74e9350923384ded96, type: 3}
 --- !u!4 &1947305446900982999 stripped
@@ -5814,6 +6154,10 @@ PrefabInstance:
     - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Name
       value: man-winter (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8110703485121042181, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Enabled
@@ -5929,6 +6273,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski
       objectReference: {fileID: 0}
+    - target: {fileID: 8021798257658076902, guid: 8001319e8c6348e4488412c90dfbb1cf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8001319e8c6348e4488412c90dfbb1cf, type: 3}
 --- !u!4 &1637116932359477226 stripped
@@ -5995,6 +6343,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: building-cabin-big
       objectReference: {fileID: 0}
+    - target: {fileID: 3497508636989580512, guid: 03ad5baac3072a844be1c1ae8a717952, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03ad5baac3072a844be1c1ae8a717952, type: 3}
 --- !u!4 &5372889586204341284 stripped
@@ -6012,6 +6364,10 @@ PrefabInstance:
     - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Name
       value: man-winter (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110703485120942522, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8110703485121042181, guid: d64d9bcf645db204ca99bbd584f57039, type: 3}
       propertyPath: m_Enabled
@@ -6078,6 +6434,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -6149,6 +6509,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ski-flag (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3574672266327827787, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3574672266328193387, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
       propertyPath: m_RootOrder
       value: 59
@@ -6214,6 +6578,10 @@ PrefabInstance:
     - target: {fileID: 3574672266327827787, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
       propertyPath: m_Name
       value: ski-flag (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574672266327827787, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3574672266328193387, guid: e2167394a02156f46b48cb347fae02a6, type: 3}
       propertyPath: m_RootOrder
@@ -6321,6 +6689,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: building-cabin-small
       objectReference: {fileID: 0}
+    - target: {fileID: 3856839257831695451, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7086693449507119305, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -6386,6 +6758,10 @@ PrefabInstance:
     - target: {fileID: 5281512632720735853, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
       propertyPath: m_Name
       value: ski-lift-seat (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5281512632720735853, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6635610016300867061, guid: 7bea0282fffbf4a44926ba90e29928bb, type: 3}
       propertyPath: m_Enabled
