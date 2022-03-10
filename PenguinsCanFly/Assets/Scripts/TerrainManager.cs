@@ -79,6 +79,7 @@ public class TerrainManager : MonoBehaviour
     {
         lastPositionZ = penguinXROTransform.position.z;
         
+        // TODO: TAYLOR Revert this to sceneWorlds[0]
         generateTile(sceneWorlds[1], 0);
         LevelManager.Instance.GenerateInitialElements(sceneWorlds[1]);
         
