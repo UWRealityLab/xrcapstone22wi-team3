@@ -9,7 +9,8 @@ public class SaveManager : MonoBehaviour
     // Saved values
     private float hiScore;
     private float prevScore;
-    private float totalCoins;
+    private int totalCoins;
+    private int prevNumCoins;
     
     public static SaveManager Instance
     {
@@ -27,15 +28,17 @@ public class SaveManager : MonoBehaviour
             return;
         }
         _instance = this;
+        
+        hiScore = PlayerPrefs.GetFloat("hiScore", 0);
+        prevScore = PlayerPrefs.GetFloat("prevScore", 0);
+        totalCoins = PlayerPrefs.GetInt("totalCoins", 0);
+        prevNumCoins = PlayerPrefs.GetInt("prevNumCoins", 0);
     }
     
     
     // Start is called before the first frame update
     void Start()
     {
-        hiScore = PlayerPrefs.GetFloat("hiScore", 0);
-        prevScore = PlayerPrefs.GetFloat("prevScore", 0);
-        totalCoins = PlayerPrefs.GetFloat("totalCoins", 0);
     }
 
     public float GetHiScore()
@@ -53,6 +56,11 @@ public class SaveManager : MonoBehaviour
         return totalCoins;
     }
 
+    public int GetPrevNumCoins()
+    {
+        return prevNumCoins;
+    }
+
     public void SaveScore(float score, int numCoins)
     {
         prevScore = score;
@@ -63,7 +71,10 @@ public class SaveManager : MonoBehaviour
             PlayerPrefs.SetFloat("hiScore", hiScore);
         }
 
+        prevNumCoins = numCoins;
+        PlayerPrefs.SetInt("prevNumCoins", prevNumCoins);
+
         totalCoins += numCoins;
-        PlayerPrefs.SetFloat("totalCoins", totalCoins);
+        PlayerPrefs.SetInt("totalCoins", totalCoins);
     }
 }
