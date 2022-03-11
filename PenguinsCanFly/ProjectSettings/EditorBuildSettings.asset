@@ -5,12 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MasterScene.unity
     guid: 75903851234dc4227afc159cdaf31dc9
   - enabled: 1
     path: Assets/Scenes/JamesMenuScene.unity
     guid: 5fbe7b53d0c104bc8962fdcc93d1186f
+  - enabled: 1
+    path: Assets/Scenes/FlapTutorialScene.unity
+    guid: c8aa8d247185b44ab87fe5ed116f10f7
+  - enabled: 1
+    path: Assets/Scenes/GliderTutorialScene.unity
+    guid: 512fd66e7c6f848df8a5a9f3f362697b
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 8383bc818588f794f82d39eafdf30719, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 76fd00d40ec5aca4781936bf3d94abd7, type: 2}
