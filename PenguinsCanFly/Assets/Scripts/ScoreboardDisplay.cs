@@ -10,7 +10,8 @@ public class ScoreboardDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        textbox.text = SaveManager.Instance.GetHiScore() + "\n" + SaveManager.Instance.GetPrevScore();
+        textbox.text = SaveManager.Instance.GetHiScore() + "\n" + SaveManager.Instance.GetPrevScore() 
+                       + "\n" + SaveManager.Instance.GetTotalCoins();
     }
 
     // Update is called once per frame
