@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4715868333909183109
 Transform:
@@ -46,7 +46,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4955463209426411458
 Transform:
@@ -106,7 +106,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7489415041673101557
 Transform:
@@ -152,6 +152,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -196,6 +200,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64000012024005170, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
 --- !u!4 &195911183639479170 stripped
@@ -213,6 +221,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -280,6 +292,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -322,6 +338,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64000012024005170, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -386,6 +406,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: building-cabin-small (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3856839257831695451, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086693449507119305, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
 --- !u!4 &2830706975008865551 stripped
@@ -403,6 +431,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -470,6 +502,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -514,6 +550,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64000012024005170, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
 --- !u!4 &1761619586818856544 stripped
@@ -535,6 +575,10 @@ PrefabInstance:
     - target: {fileID: 1833029047212144, guid: 94ac6c4ade9ea4ad3b68abed356206d0, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833029047212144, guid: 94ac6c4ade9ea4ad3b68abed356206d0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4809235775907454, guid: 94ac6c4ade9ea4ad3b68abed356206d0, type: 3}
       propertyPath: m_RootOrder
@@ -658,6 +702,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: building-cabin-small (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3856839257831695451, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086693449507119305, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
 --- !u!4 &3450472949332432688 stripped
@@ -675,6 +727,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -742,6 +798,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -786,6 +846,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64000012024005170, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
 --- !u!4 &1989843220114854338 stripped
@@ -803,6 +867,10 @@ PrefabInstance:
     - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_Name
       value: tree-fir-snow (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
@@ -848,6 +916,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64000012024005170, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
 --- !u!4 &2031780325458347132 stripped
@@ -865,6 +937,10 @@ PrefabInstance:
     - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_Name
       value: tree-fir-snow (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
@@ -908,6 +984,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64000012024005170, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -968,9 +1048,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3497508636989481543, guid: 03ad5baac3072a844be1c1ae8a717952, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3497508636989580512, guid: 03ad5baac3072a844be1c1ae8a717952, type: 3}
       propertyPath: m_Name
       value: building-cabin-big (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497508636989580512, guid: 03ad5baac3072a844be1c1ae8a717952, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03ad5baac3072a844be1c1ae8a717952, type: 3}
@@ -989,6 +1077,10 @@ PrefabInstance:
     - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_Name
       value: tree-fir-snow (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
@@ -1034,6 +1126,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64000012024005170, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
 --- !u!4 &2431271302145074637 stripped
@@ -1051,6 +1147,10 @@ PrefabInstance:
     - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_Name
       value: tree-fir-snow (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
@@ -1096,6 +1196,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64000012024005170, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
 --- !u!4 &2708610874989570244 stripped
@@ -1113,6 +1217,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -1180,6 +1288,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -1222,6 +1334,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64000012024005170, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1286,6 +1402,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: building-cabin-small (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3856839257831695451, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086693449507119305, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
 --- !u!4 &540353188839731665 stripped
@@ -1303,6 +1427,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -1370,6 +1498,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-plane-plain (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -1436,6 +1568,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -1480,6 +1616,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64000012024005170, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
 --- !u!4 &4684713738578593274 stripped
@@ -1497,6 +1637,10 @@ PrefabInstance:
     - target: {fileID: 192738, guid: eafb6c39ba701a541a6473aa217fa9c3, type: 3}
       propertyPath: m_Name
       value: fireplace
+      objectReference: {fileID: 0}
+    - target: {fileID: 192738, guid: eafb6c39ba701a541a6473aa217fa9c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 406200, guid: eafb6c39ba701a541a6473aa217fa9c3, type: 3}
       propertyPath: m_RootOrder
@@ -1554,6 +1698,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6541770, guid: eafb6c39ba701a541a6473aa217fa9c3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eafb6c39ba701a541a6473aa217fa9c3, type: 3}
 --- !u!4 &4920791155708245745 stripped
@@ -1571,6 +1719,10 @@ PrefabInstance:
     - target: {fileID: 192738, guid: eafb6c39ba701a541a6473aa217fa9c3, type: 3}
       propertyPath: m_Name
       value: fireplace (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 192738, guid: eafb6c39ba701a541a6473aa217fa9c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 406200, guid: eafb6c39ba701a541a6473aa217fa9c3, type: 3}
       propertyPath: m_RootOrder
@@ -1628,6 +1780,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6541770, guid: eafb6c39ba701a541a6473aa217fa9c3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eafb6c39ba701a541a6473aa217fa9c3, type: 3}
 --- !u!4 &4999696339569493507 stripped
@@ -1649,6 +1805,10 @@ PrefabInstance:
     - target: {fileID: 1833029047212144, guid: 94ac6c4ade9ea4ad3b68abed356206d0, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833029047212144, guid: 94ac6c4ade9ea4ad3b68abed356206d0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4809235775907454, guid: 94ac6c4ade9ea4ad3b68abed356206d0, type: 3}
       propertyPath: m_RootOrder
@@ -1728,6 +1888,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -1772,6 +1936,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64000012024005170, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
 --- !u!4 &5091378425595363598 stripped
@@ -1789,6 +1957,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -1856,6 +2028,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -1900,6 +2076,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64000012024005170, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
 --- !u!4 &5682989679710638610 stripped
@@ -1917,6 +2097,10 @@ PrefabInstance:
     - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_Name
       value: tree-fir-snow (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
@@ -1962,6 +2146,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64000012024005170, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
 --- !u!4 &5889625163139523021 stripped
@@ -1979,6 +2167,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -2046,6 +2238,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-plane-plain (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -2111,6 +2307,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -2178,6 +2378,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-plane-plain (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2243,6 +2447,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -2354,6 +2562,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: building-cabin-small (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3856839257831695451, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086693449507119305, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
 --- !u!4 &7704440232677895961 stripped
@@ -2371,6 +2587,10 @@ PrefabInstance:
     - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_Name
       value: tree-fir-snow (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
@@ -2414,6 +2634,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64000012024005170, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2478,6 +2702,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: building-cabin-small (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3856839257831695451, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086693449507119305, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
 --- !u!4 &5834937089279917608 stripped
@@ -2495,6 +2727,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -2561,6 +2797,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -2631,6 +2871,10 @@ PrefabInstance:
     - target: {fileID: 1833029047212144, guid: 94ac6c4ade9ea4ad3b68abed356206d0, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833029047212144, guid: 94ac6c4ade9ea4ad3b68abed356206d0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4809235775907454, guid: 94ac6c4ade9ea4ad3b68abed356206d0, type: 3}
       propertyPath: m_RootOrder
@@ -2710,6 +2954,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -2752,6 +3000,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64000012024005170, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2816,6 +3068,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: building-cabin-small
       objectReference: {fileID: 0}
+    - target: {fileID: 3856839257831695451, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086693449507119305, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
 --- !u!4 &6457901913028600972 stripped
@@ -2833,6 +3093,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -2900,6 +3164,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-fir-snow (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -2944,6 +3212,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64000012024005170, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
 --- !u!4 &8016617737504299511 stripped
@@ -2961,6 +3233,10 @@ PrefabInstance:
     - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_Name
       value: tree-fir-snow (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
@@ -3006,6 +3282,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64000012024005170, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
 --- !u!4 &8054805887452635623 stripped
@@ -3023,6 +3303,10 @@ PrefabInstance:
     - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_Name
       value: tree-fir-snow (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
@@ -3066,6 +3350,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64000012024005170, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3126,9 +3414,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3497508636989481543, guid: 03ad5baac3072a844be1c1ae8a717952, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3497508636989580512, guid: 03ad5baac3072a844be1c1ae8a717952, type: 3}
       propertyPath: m_Name
       value: building-cabin-big
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497508636989580512, guid: 03ad5baac3072a844be1c1ae8a717952, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03ad5baac3072a844be1c1ae8a717952, type: 3}
@@ -3147,6 +3443,10 @@ PrefabInstance:
     - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_Name
       value: tree-fir-snow (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010665976784, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000013545229646, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
       propertyPath: m_RootOrder
@@ -3192,6 +3492,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64000012024005170, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a5a1eb4c47f03419956f8c76de78a9, type: 3}
 --- !u!4 &8934924566207098586 stripped
@@ -3209,6 +3513,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -3319,6 +3627,14 @@ PrefabInstance:
     - target: {fileID: 3856839257831695451, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
       propertyPath: m_Name
       value: building-cabin-small (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3856839257831695451, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086693449507119305, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56f9b5cb0547ea743a7d81154f3fff4c, type: 3}

@@ -5,12 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/MasterScene.unity
-    guid: 75903851234dc4227afc159cdaf31dc9
   - enabled: 1
     path: Assets/Scenes/JamesMenuScene.unity
     guid: 5fbe7b53d0c104bc8962fdcc93d1186f
+  - enabled: 1
+    path: Assets/Scenes/MasterScene.unity
+    guid: 75903851234dc4227afc159cdaf31dc9
   - enabled: 1
     path: Assets/Scenes/FlapTutorialScene.unity
     guid: c8aa8d247185b44ab87fe5ed116f10f7

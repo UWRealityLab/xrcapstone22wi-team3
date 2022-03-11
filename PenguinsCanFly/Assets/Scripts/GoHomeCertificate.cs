@@ -21,8 +21,9 @@ public class GoHomeCertificate : XRGrabInteractable
     void Start()
     {
         float score = ScoreCounter.Instance.GetScore();
-        SaveManager.Instance.SaveScore(score);
-        scoreText.text = score + "\n" + SaveManager.Instance.GetHiScore();
+        int numCoins = ScoreCounter.Instance.numCoins;
+        SaveManager.Instance.SaveScore(score, numCoins);
+        scoreText.text = score + "\n" + SaveManager.Instance.GetHiScore() + "\n" + numCoins;
     }
 
     // Update is called once per frame

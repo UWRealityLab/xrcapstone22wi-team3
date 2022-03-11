@@ -281,7 +281,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: '14000
 
-    14000'
+    14000
+
+    600'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9d5a3d1da2ca847de94419b075bfbdb4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 9d5a3d1da2ca847de94419b075bfbdb4, type: 2}
@@ -344,7 +346,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -96.657005, y: -55.016487, z: 54.507984, w: -19.797834}
+  m_margin: {x: -96.657005, y: -55.016487, z: 54.507984, w: -65.727356}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -821,7 +823,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score:
 
-    Hi-Score:'
+    Hi-Score:
+
+    Coins:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9d5a3d1da2ca847de94419b075bfbdb4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 9d5a3d1da2ca847de94419b075bfbdb4, type: 2}
@@ -884,7 +888,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -252.08368, y: -89.81771, z: 99.16777, w: 11.897113}
+  m_margin: {x: -252.08368, y: -89.81771, z: 99.16777, w: -32.410748}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

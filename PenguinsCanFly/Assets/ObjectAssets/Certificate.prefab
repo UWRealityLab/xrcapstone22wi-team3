@@ -198,7 +198,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -63, y: 30}
+  m_AnchoredPosition: {x: -63, y: 46}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &576811026013262323
@@ -231,7 +231,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score:
 
-    Hi-Score:'
+    Hi-Score:
+
+    Coins:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fffa53baa68db4a278e65710f94ffaee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: fffa53baa68db4a278e65710f94ffaee, type: 2}
@@ -294,7 +296,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -154.77386, y: -29.556046, z: 78.98458, w: -66.42362}
+  m_margin: {x: -154.77386, y: -29.556046, z: 78.98458, w: -120.16813}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -563,7 +565,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -90, y: 30}
+  m_AnchoredPosition: {x: -90, y: 46}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7887683551872504503
@@ -596,7 +598,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: '115500
 
-    15355'
+    15355
+
+    40'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fffa53baa68db4a278e65710f94ffaee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: fffa53baa68db4a278e65710f94ffaee, type: 2}
@@ -659,7 +663,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 128.49554, y: -29.556046, z: -191.96445, w: -66.42362}
+  m_margin: {x: 128.49554, y: -29.556046, z: -191.96445, w: -122.41408}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
