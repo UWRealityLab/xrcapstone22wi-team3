@@ -6148,7 +6148,7 @@ MonoBehaviour:
   gliderDirection: {fileID: 2088056303}
   penguinXROTransform: {fileID: 2078797934}
   totalYawDegree: 0
-  userControlEnabled: 0
+  userControlEnabled: 1
 --- !u!4 &1980159961
 Transform:
   m_ObjectHideFlags: 0
