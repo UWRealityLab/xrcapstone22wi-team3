@@ -23,7 +23,7 @@ public class VoiceObstacleHandler : MonoBehaviour
         EXECUTING,
     }
 
-    public const bool MultiplayerMode = true;
+    public static bool MultiplayerMode = true;
     
     [SerializeField] private Wit wit;
 
