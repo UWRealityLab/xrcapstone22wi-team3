@@ -44,6 +44,7 @@ public class TutorialGameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        glidingController.SetActive(false);
         gliderInfo = glidingController.GetComponent<TutorialGliderInfo>();
         StartStandingMode();
     }

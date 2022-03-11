@@ -10,6 +10,8 @@ public class TutorialGliderModelController : MonoBehaviour
     public const int MaxPitchOffsetDegree = 15;
     private const float MaxRotationDegrees = 35;
     private bool hasGrabbed = false;
+    private bool hasTiltedLeft = false;
+    private bool hasTiltedRight = false;
     private bool hasTiltedDown = false;
     public TextMeshProUGUI tutorialText;
     public GameObject goMenuPrefab;
@@ -39,7 +41,7 @@ public class TutorialGliderModelController : MonoBehaviour
         if (!hasGrabbed && leftHandlebar.IsBeingHeld() && rightHandlebar.IsBeingHeld())
         {
             hasGrabbed = true;
-            tutorialText.text = "Now use the primary trigger buttons on both controllers to tilt your glider downwards";
+            tutorialText.text = "Now manuever the glider by tilting left! This is how you'll dodge obstacles and hit wind checkpoints to advance.";
         }
 
         if (leftHandlebar.IsBeingHeld())
@@ -54,17 +56,17 @@ public class TutorialGliderModelController : MonoBehaviour
         float averageForceDownPercent = (rightTriggerValue + leftTriggerValue) / 2;
         if (averageForceDownPercent > 0)
         {
-            if (hasGrabbed && !hasTiltedDown && leftHandlebar.IsBeingHeld() && rightHandlebar.IsBeingHeld())
+            if (hasGrabbed && hasTiltedLeft && hasTiltedRight && !hasTiltedDown && leftHandlebar.IsBeingHeld() && rightHandlebar.IsBeingHeld())
             {
                 hasTiltedDown = true;
-                tutorialText.text = "Great! Now grab the certificate or click the home button on the left controller to exit";
+                tutorialText.text = "Congratulations on graduating! Now grab the certificate or click the home button on the left controller to exit.";
 
                 // Spawn the go back to menu screen
                 Transform penguinTransform = gliderInfo.transform;
-                Vector3 localOffset = new Vector3(-0.3f, 1f, 0.75f);  // spawn in front and to the left
+                Vector3 localOffset = new Vector3(-0.4f, 1f, 0.5f);  // spawn in front and to the left
                 Vector3 worldOffset = penguinTransform.rotation * localOffset;
                 Vector3 spawnPosition = penguinTransform.position + worldOffset;
-                Instantiate(goMenuPrefab, spawnPosition, penguinTransform.rotation);
+                Instantiate(goMenuPrefab, spawnPosition, penguinTransform.rotation * Quaternion.Euler(0, -20, 0));
             }
             goalPitch = MaxPitchOffsetDegree;
         }
@@ -85,6 +87,18 @@ public class TutorialGliderModelController : MonoBehaviour
         }
 
         transform.localRotation = finalLocalRotation;
+        if (hasGrabbed && !hasTiltedLeft && transform.localRotation.z > 0.25)
+        {
+            hasTiltedLeft = true;
+            tutorialText.text = "In local multiplayer, spectators yell 'spawn left/middle/right' to spawn obstacles in your way. Now tilt right to continue!";
+        }
+        if (hasGrabbed && hasTiltedLeft && !hasTiltedRight && transform.localRotation.z < -0.25)
+        {
+            hasTiltedRight = true;
+            tutorialText.text = "Now hold down the primary trigger buttons on both controllers to tilt your glider downwards";
+        }
+        Debug.Log(transform.localRotation);
+
 
         // TODO: remove magic numbers
         // Change yaw based on the local rotation so glider actually turns
