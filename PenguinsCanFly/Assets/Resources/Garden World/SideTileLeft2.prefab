@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4715868333909183109
 Transform:
@@ -46,7 +46,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3937983956789867224
 Transform:
@@ -80,7 +80,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7489415041673101557
 Transform:
@@ -122,6 +122,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -188,6 +192,10 @@ PrefabInstance:
     - target: {fileID: 1000010667862826, guid: dd28cee60ff222848ada1197745eb6d4, type: 3}
       propertyPath: m_Name
       value: mountains (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010667862826, guid: dd28cee60ff222848ada1197745eb6d4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000013070176524, guid: dd28cee60ff222848ada1197745eb6d4, type: 3}
       propertyPath: m_RootOrder
@@ -259,6 +267,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-plane-plain (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -324,6 +336,10 @@ PrefabInstance:
     - target: {fileID: 1000010667862826, guid: dd28cee60ff222848ada1197745eb6d4, type: 3}
       propertyPath: m_Name
       value: mountains (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010667862826, guid: dd28cee60ff222848ada1197745eb6d4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000013070176524, guid: dd28cee60ff222848ada1197745eb6d4, type: 3}
       propertyPath: m_RootOrder
@@ -391,6 +407,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-plane-plain (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -456,6 +476,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -523,6 +547,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-plane-plain (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -588,6 +616,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -655,6 +687,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: mountains (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010667862826, guid: dd28cee60ff222848ada1197745eb6d4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013070176524, guid: dd28cee60ff222848ada1197745eb6d4, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -720,6 +756,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -787,6 +827,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-plane-plain
       objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -852,6 +896,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -919,6 +967,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-plane-plain (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -984,6 +1036,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -1051,6 +1107,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-plane-plain (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1116,6 +1176,10 @@ PrefabInstance:
     - target: {fileID: 1000010667862826, guid: dd28cee60ff222848ada1197745eb6d4, type: 3}
       propertyPath: m_Name
       value: mountains (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010667862826, guid: dd28cee60ff222848ada1197745eb6d4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000013070176524, guid: dd28cee60ff222848ada1197745eb6d4, type: 3}
       propertyPath: m_RootOrder
@@ -1183,6 +1247,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-plane-plain (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1248,6 +1316,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
@@ -1315,6 +1387,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-plane-plain (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1380,6 +1456,10 @@ PrefabInstance:
     - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_Name
       value: terrain-plane-plain (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291641267741850, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4733648253010772, guid: 5391a36fb631c4c5995bfb4ac56a2758, type: 3}
       propertyPath: m_RootOrder
