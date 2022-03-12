@@ -14,6 +14,9 @@ public abstract class Obstacle : MonoBehaviour
     public abstract bool ShouldSpawnOnGround();
     public abstract float GetSpawnOffsetLowerBound();
     public abstract float GetSpawnOffsetUpperBound();
+
+    public GameObject mesh;
+    public GameObject destroyedPieces;
     
     
     public abstract Quaternion GetSpawnRotation();
@@ -47,9 +50,23 @@ public abstract class Obstacle : MonoBehaviour
         }
     }
 
-    public virtual void CustomCollisionEffects(Collider other)
+    public void CustomCollisionEffects(Collider other)
     {
-        // TODO: find out what code can be shared so we can use base.CustomCollisionEffects
+        if (mesh == null)
+        {
+            return;
+        }
+        
+        mesh.SetActive(false);
+        
+        Vector3 collisionLocation = other.transform.position;
+        destroyedPieces.SetActive(true);
+        for (int i = 0; i < destroyedPieces.transform.childCount; i++)
+        {
+            Transform destroyedPiece = destroyedPieces.transform.GetChild(i);
+            Rigidbody destroyedPieceRb = destroyedPiece.GetComponent<Rigidbody>();
+            destroyedPieceRb.AddExplosionForce(1000, collisionLocation, 50, 15);
+        }
     }
 
     void OnDestroy()

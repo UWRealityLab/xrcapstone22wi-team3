@@ -8,9 +8,6 @@ public class CastleVoiceObstacle : VoiceObstacle
 {
     public GameObject offset;
 
-    public GameObject mesh;
-    public GameObject destroyedPieces;
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -28,20 +25,5 @@ public class CastleVoiceObstacle : VoiceObstacle
     public override float GetCollisionForce()
     {
         return 50;
-    }
-
-    public override void CustomCollisionEffects(Collider other)
-    {
-        mesh.SetActive(false);
-        
-        Vector3 collisionLocation = other.transform.position;
-        destroyedPieces.SetActive(true);
-        for (int i = 0; i < destroyedPieces.transform.childCount; i++)
-        {
-            Transform destroyedPiece = destroyedPieces.transform.GetChild(i);
-            Rigidbody destroyedPieceRb = destroyedPiece.GetComponent<Rigidbody>();
-            destroyedPieceRb.AddExplosionForce(1000, collisionLocation, 50, 15);
-        }
-        
     }
 }
