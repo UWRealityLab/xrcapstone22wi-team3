@@ -6084,7 +6084,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2037629502
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6214,7 +6214,7 @@ MonoBehaviour:
   gliderDirection: {fileID: 1744012362}
   penguinXROTransform: {fileID: 1099805280}
   totalYawDegree: 0
-  userControlEnabled: 1
+  userControlEnabled: 0
 --- !u!4 &2041344161
 Transform:
   m_ObjectHideFlags: 0

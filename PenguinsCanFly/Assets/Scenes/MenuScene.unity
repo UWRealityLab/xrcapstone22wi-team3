@@ -4255,6 +4255,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cap-baseball (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7856380686448450153, guid: 1d1e584c101c4194aab749221ccd3a1c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4ea8e2de4ac6b564c98a36f67a2ad64f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d1e584c101c4194aab749221ccd3a1c, type: 3}
 --- !u!1 &1561290927
