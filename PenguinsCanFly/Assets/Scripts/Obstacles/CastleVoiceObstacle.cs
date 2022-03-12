@@ -8,9 +8,6 @@ public class CastleVoiceObstacle : VoiceObstacle
 {
     public GameObject offset;
 
-    public GameObject mesh;
-    public GameObject destroyedPieces;
-    
     // Start is called before the first frame update
     void Start()
     {
