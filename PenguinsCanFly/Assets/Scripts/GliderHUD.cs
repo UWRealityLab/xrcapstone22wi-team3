@@ -15,6 +15,8 @@ public class GliderHUD : MonoBehaviour
     public GameObject Warnings;
     public TextMeshProUGUI WarningTextCues;
 
+    public TextMeshProUGUI fishText;
+
     private static GliderHUD _instance;
 
     public static GliderHUD Instance
@@ -43,5 +45,6 @@ public class GliderHUD : MonoBehaviour
         distanceText.text = ScoreCounter.Instance.GetScore().ToString("D7");
         float needleAngle = Mathf.Clamp(185 - 185 * (gliderSpeed / 50f), -12, 185);
         Needle.localRotation = Quaternion.Euler(0, 0, needleAngle);
+        fishText.text = ScoreCounter.Instance.numCoins.ToString("D2");
     }
 }
