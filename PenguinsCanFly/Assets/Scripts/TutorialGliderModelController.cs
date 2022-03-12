@@ -95,7 +95,7 @@ public class TutorialGliderModelController : MonoBehaviour
         {
             successAudioSource.Play();
             hasTiltedLeft = true;
-            tutorialText.text = "In local multiplayer, spectators yell 'spawn left/middle/right' to spawn obstacles in your way. Now tilt right to continue!";
+            tutorialText.text = "In local multiplayer, spectators yell 'attack left/middle/right' to spawn obstacles in your way. Now tilt right to continue!";
         }
         if (hasGrabbed && hasTiltedLeft && !hasTiltedRight && transform.localRotation.z < -0.25)
         {
