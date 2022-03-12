@@ -7,7 +7,7 @@ public class FlipperShoulderScript : MonoBehaviour
     public Transform controller;
     public GameObject flipper;
     public GameObject gliderDirection;
-    private Camera mainCamera;
+    public Transform mainCamera;
 
     public bool isLeft;
 
@@ -27,7 +27,6 @@ public class FlipperShoulderScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mainCamera = Camera.main;
         shoulderOffset = new Vector3(isLeft ? -shoulderXOffset : shoulderXOffset, shoulderYOffset, shoulderZOffset);
     }
 
