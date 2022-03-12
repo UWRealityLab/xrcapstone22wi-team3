@@ -1,9 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class GoHomeCertificate : XRGrabInteractable
@@ -11,7 +8,6 @@ public class GoHomeCertificate : XRGrabInteractable
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI returnHomeText;
 
-    
     private bool _goHomeCalled = false;
     private float _goHomeCallTime = -1f;
     

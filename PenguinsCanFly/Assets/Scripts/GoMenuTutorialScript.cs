@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class GoMenuTutorialScript : XRGrabInteractable
 {
     public TextMeshProUGUI returnHomeText;
+
+    public AudioSource successAudioSource;
 
     private bool _goMenuCalled = false;
     private float _goMenuCallTime = -1f;
@@ -26,6 +29,11 @@ public class GoMenuTutorialScript : XRGrabInteractable
     {
         if (!_goMenuCalled && isSelected)
         {
+            if (SceneManager.GetSceneByName("GliderTutorialScene").isLoaded)
+            {
+                successAudioSource.Play();
+            }
+
             // Initiate go menu timer
             _goMenuCalled = true;
             _goMenuCallTime = Time.time;
