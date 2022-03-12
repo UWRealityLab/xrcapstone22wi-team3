@@ -18,6 +18,8 @@ public class LevelManager : MonoBehaviour
 
     private const float MaxObstacleHeight = 500f;
 
+    public AudioSource collisionAudioSource;
+
     public GameObject[] fishCoinPatterns;
     
     // All our obstacles

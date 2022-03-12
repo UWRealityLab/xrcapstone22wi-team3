@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
+    public AudioSource checkpointAudioSource;
+    
     private const string HangGliderTag = "HangGlider";
 
     private bool checkpointHit = false;
@@ -35,6 +37,7 @@ public class Checkpoint : MonoBehaviour
         if (other.gameObject.CompareTag(HangGliderTag))
         {
             checkpointHit = true;
+            checkpointAudioSource.Play();
             StartCoroutine(IncreaseHeight());
         }
     }
