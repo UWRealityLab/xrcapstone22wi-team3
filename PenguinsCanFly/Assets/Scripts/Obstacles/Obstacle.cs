@@ -50,8 +50,13 @@ public abstract class Obstacle : MonoBehaviour
         }
     }
 
-    public virtual void CustomCollisionEffects(Collider other)
+    public void CustomCollisionEffects(Collider other)
     {
+        if (mesh == null)
+        {
+            return;
+        }
+        
         mesh.SetActive(false);
         
         Vector3 collisionLocation = other.transform.position;
