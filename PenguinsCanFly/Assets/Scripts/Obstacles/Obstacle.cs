@@ -41,6 +41,7 @@ public abstract class Obstacle : MonoBehaviour
         {
             _obstacleHit = true;
             DeviceManager.Instance.SendCollisionHaptics();
+            LevelManager.Instance.collisionAudioSource.Play();
             CustomCollisionEffects(other);
             StartCoroutine(DecreaseHeight());
         }
