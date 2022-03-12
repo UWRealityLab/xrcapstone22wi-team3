@@ -20,6 +20,8 @@ public class TutorialGliderModelController : MonoBehaviour
     public HandlebarHandle leftHandlebar = null;
     public HandlebarHandle rightHandlebar = null;
 
+    public AudioSource successAudioSource;
+    
     // Update is called once per frame
     void Update()
     {
@@ -40,6 +42,7 @@ public class TutorialGliderModelController : MonoBehaviour
         float goalPitch = 0;
         if (!hasGrabbed && leftHandlebar.IsBeingHeld() && rightHandlebar.IsBeingHeld())
         {
+            successAudioSource.Play();
             hasGrabbed = true;
             tutorialText.text = "Now manuever the glider by tilting left! This is how you'll dodge obstacles and hit wind checkpoints to advance.";
         }
@@ -58,6 +61,7 @@ public class TutorialGliderModelController : MonoBehaviour
         {
             if (hasGrabbed && hasTiltedLeft && hasTiltedRight && !hasTiltedDown && leftHandlebar.IsBeingHeld() && rightHandlebar.IsBeingHeld())
             {
+                successAudioSource.Play();
                 hasTiltedDown = true;
                 tutorialText.text = "Congratulations on graduating! Now grab the certificate or click the home button on the left controller to exit.";
 
@@ -89,11 +93,13 @@ public class TutorialGliderModelController : MonoBehaviour
         transform.localRotation = finalLocalRotation;
         if (hasGrabbed && !hasTiltedLeft && transform.localRotation.z > 0.25)
         {
+            successAudioSource.Play();
             hasTiltedLeft = true;
             tutorialText.text = "In local multiplayer, spectators yell 'spawn left/middle/right' to spawn obstacles in your way. Now tilt right to continue!";
         }
         if (hasGrabbed && hasTiltedLeft && !hasTiltedRight && transform.localRotation.z < -0.25)
         {
+            successAudioSource.Play();
             hasTiltedRight = true;
             tutorialText.text = "Now hold down the primary trigger buttons on both controllers to tilt your glider downwards";
         }
