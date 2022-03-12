@@ -25,7 +25,7 @@ public class ResetManager : MonoBehaviour
         DeviceManager.Instance.leftHandDevice.TryGetFeatureValue(CommonUsages.menuButton, out menuButtonValue);
         if (menuButtonValue)
         {
-            FadeResetToScene("JamesMenuScene");
+            FadeResetToScene("MenuScene");
         }
     }
 

@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
     private static GameController _instance;
 
     public const string MASTER_SCENE_NAME = "MasterScene";
-    public const string MENU_SCENE_NAME = "JamesMenuScene";
+    public const string MENU_SCENE_NAME = "MenuScene";
 
     public static GameController Instance
     {
