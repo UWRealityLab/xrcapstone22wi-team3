@@ -71,23 +71,7 @@ public class GliderInfo : MonoBehaviour
         // Yaw camera globally
         Quaternion cameraTargetNewRotation = Quaternion.Euler(0, totalYawDegree, 0);
         penguinXROTransform.rotation = Quaternion.Slerp(penguinXROTransform.rotation, cameraTargetNewRotation, Time.deltaTime);
-        
-        if (userControlEnabled)
-        {
-            DeviceManager.Instance.rightHandDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
-            DeviceManager.Instance.rightHandDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue);
-            
-            if (primaryButtonValue)
-            {
-                penguinXRORigidbody.AddForce(Vector3.up * 75);
-            }
-            else if (secondaryButtonValue)
-            {
-                penguinXRORigidbody.AddForce(Vector3.down * 30);
 
-            }
-        }
-        
         float audioPitchIncrease = Mathf.Clamp((speed + extraSpeed) / 20, 0, 1);
         float audioVolume = Mathf.Clamp((speed + extraSpeed) / 15, 0f, 1.5f);
         if (speed < 5)
