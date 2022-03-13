@@ -88,8 +88,7 @@ public class VoiceObstacleHandler : MonoBehaviour
             wit = GetComponent<Wit>();
         }
 
-        // TODO: temporary location and also need to determine if in multiplayer mode or not
-        if (GameController.Instance.gliderInfo.transform.position.y > 20 && wit != null)
+        if (GameController.Instance.gliderInfo.transform.position.y > 20 && GameController.Instance.inGlidingMode && wit != null)
         {
             EnableVoiceObstaclesSpawn();
         }

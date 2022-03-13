@@ -21,6 +21,8 @@ public class GameController : MonoBehaviour
     public const string MASTER_SCENE_NAME = "MasterScene";
     public const string MENU_SCENE_NAME = "MenuScene";
 
+    public bool inGlidingMode = false;
+
     public static GameController Instance
     {
         get
@@ -69,6 +71,8 @@ public class GameController : MonoBehaviour
         glidingController.SetActive(false);
         landingController.SetActive(false);
         locomotionSystem.SetActive(false);
+
+        inGlidingMode = false;
     }
 
     public void StartGlidingMode()
@@ -80,6 +84,8 @@ public class GameController : MonoBehaviour
         glidingController.SetActive(true);
         landingController.SetActive(true);
         locomotionSystem.SetActive(false);
+
+        inGlidingMode = true;
     }
 
     public void StartLandingMode()
@@ -91,6 +97,8 @@ public class GameController : MonoBehaviour
         gliderInfo.DisableUserControlOfGlider();
         landingController.SetActive(true);
         locomotionSystem.SetActive(false);
+
+        inGlidingMode = false;
     }
 
     public void DisableGliderController()
