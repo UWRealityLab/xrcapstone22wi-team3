@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: UW-CSE481V-WI22-Team3
   productName: PenguinsCanFly
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -1085,7 +1085,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.DefaultCompany.PenguinsCanFly
+    Android: com.UWCSE481VWI22Team3.PenguinsCanFly
   buildNumber:
     Standalone: 0
     iPhone: 0
